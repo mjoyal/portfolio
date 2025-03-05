@@ -12,8 +12,8 @@ const AppWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-left: clamp(20px, 5vw, 48px);
-  margin-right: clamp(20px, 5vw, 48px);
+  margin-left: clamp(20px, 4vw, 48px);
+  margin-right: clamp(20px, 4vw, 48px);
 `;
 
 function App() {

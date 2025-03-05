@@ -14,6 +14,16 @@ const themeOptions: ThemeOptions = {
       default: "#0A0A0C",
     },
   },
+
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 500,
+      md: 900,
+      lg: 1200,
+      xl: 1600,
+    },
+  },
 };
 
 // Create the theme using `themeOptions`
