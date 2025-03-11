@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import BodyText, { TextTypes } from "../BodyText";
 
 const Container = styled.div``;
 
@@ -12,12 +13,6 @@ const LabelContainer = styled.div`
   align-items: flex-start;
   gap: 1rem;
 `;
-
-const NameLabel = styled.p`
-  font-weight: 600;
-`;
-
-const RoleLabel = styled.p``;
 
 interface IProjectCardProps {
   imageSource: any;
@@ -33,8 +28,8 @@ const ProjectCard = (props: IProjectCardProps) => {
     <Container>
       <Image src={imageSource} alt={imageAlt} />
       <LabelContainer>
-        <NameLabel>{name}</NameLabel>
-        <RoleLabel>{role}</RoleLabel>
+        <BodyText type={TextTypes.LABEL}>{name}</BodyText>
+        <BodyText type={TextTypes.BODY_MEDIUM}>{role}</BodyText>
       </LabelContainer>
     </Container>
   );

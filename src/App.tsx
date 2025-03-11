@@ -1,4 +1,3 @@
-import "./App.css";
 import styled from "@emotion/styled";
 import CssBaseline from "@mui/material/CssBaseline";
 import HeroSection from "./components/HeroSection";

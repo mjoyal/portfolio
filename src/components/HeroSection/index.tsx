@@ -23,6 +23,7 @@ const TextContainer = styled.div`
 `;
 
 const HeroText = styled.div`
+  font-weight: 500;
   font-size: clamp(3rem, 18vw, 12rem);
   letter-spacing: -0.05em;
   line-height: 1;
@@ -63,8 +64,6 @@ const FooterText = styled.p`
   left: 25%;
 `;
 
-const StarCharacter = styled.p``;
-
 const HeroSection = () => {
   return (
     <HeroContainer>
@@ -80,7 +79,6 @@ const HeroSection = () => {
         </HeroText>
         <span>
           <BioText>
-            {" "}
             specialist in ux/ui, web design, & <br /> front-end development.
           </BioText>
         </span>
