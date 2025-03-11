@@ -4,6 +4,7 @@ import HeroSection from "./components/HeroSection";
 import ProjectSection from "./components/ProjectSection";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
+import Button from "./components/Button";
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -21,6 +22,12 @@ function App() {
       <CssBaseline /> {/* Resets default browser styles */}
       <AppWrapper>
         <HeroSection />
+        <Button
+          label="Email me"
+          onClick={() => {
+            alert("test");
+          }}
+        />
         <ProjectSection />
       </AppWrapper>
     </ThemeProvider>
