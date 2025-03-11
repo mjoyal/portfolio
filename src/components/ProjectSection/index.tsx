@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
+import ProjectCard from "../ProjectCard";
 
 const ProjectContainer = styled.div`
-  background-color: white;
-  width 100%;
-  height: 500px; 
+  padding-top: 100px;
+  padding-bottom: 100px;
 `;
 
 const Title = styled.h2`
@@ -11,11 +11,19 @@ const Title = styled.h2`
   letter-spacing: -0.05em;
 `;
 
+// TODO: Add image alts
+
 const ProjectSection = () => {
   return (
     <>
       <Title>projects</Title>
-      <ProjectContainer></ProjectContainer>
+      <ProjectContainer>
+        <ProjectCard
+          name="Gigpit"
+          role="UI/UX Design & UI Development"
+          imageSource={"/images/gigpit.png"}
+        />
+      </ProjectContainer>
     </>
   );
 };

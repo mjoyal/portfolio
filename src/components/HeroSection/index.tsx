@@ -10,7 +10,6 @@ const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
 `;
 
 const TextContainer = styled.div`
@@ -20,37 +19,41 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: blue;
   padding-bottom: 80px;
 `;
 
 const HeroText = styled.div`
-  font-size: clamp(3rem, 17vw, 13rem);
+  font-size: clamp(3rem, 18vw, 12rem);
   letter-spacing: -0.05em;
   line-height: 1;
   text-align: start;
   background-color: ${({ theme }) => (theme as any).palette.background.primary};
-  margin-top: 20px;
+  margin-top: 35px;
+
+  ${({ theme }) => (theme as any).breakpoints.up("lg")} {
+    margin-top: 25px;
+  }
+
+  ${({ theme }) => (theme as any).breakpoints.up("lg")} {
+    margin-top: 20px;
+  }
 `;
 
 const BioText = styled.p`
   position: absolute;
   bottom: 0;
-  right: 20%;
+  right: 30%;
   text-align: left;
-
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    right: 40%;
-  }
+  width: fit-content;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     top: 15%;
     right: 0;
   }
 
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+  ${({ theme }) => (theme as any).breakpoints.up("lg")} {
     top: 15%;
-    right: 10%;
+    right: 5%;
   }
 `;
 
@@ -59,6 +62,8 @@ const FooterText = styled.p`
   bottom: 5%;
   left: 25%;
 `;
+
+const StarCharacter = styled.p``;
 
 const HeroSection = () => {
   return (
@@ -73,10 +78,12 @@ const HeroSection = () => {
             .
           </Box>
         </HeroText>
-        <BioText>
-          {" "}
-          specialist in ux/ui, web design, & <br /> front-end development.
-        </BioText>
+        <span>
+          <BioText>
+            {" "}
+            specialist in ux/ui, web design, & <br /> front-end development.
+          </BioText>
+        </span>
       </TextContainer>
       <FooterText>[ making the internet prettier since 2019 ]</FooterText>
     </HeroContainer>

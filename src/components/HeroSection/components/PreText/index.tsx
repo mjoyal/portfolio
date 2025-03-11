@@ -10,7 +10,8 @@ const StyledPreText = styled.p`
   left: 15%;
 
   ${({ theme }) => (theme as any).breakpoints.up("sm")} {
-    left: 20%;
+    // left: 22.5%;
+    left: 10vw;
     top: 0;
   }
 
@@ -20,7 +21,7 @@ const StyledPreText = styled.p`
   }
 
   ${({ theme }) => (theme as any).breakpoints.up("lg")} {
-    left: 32%;
+    left: 30%;
     top: 0;
   }
 `;
