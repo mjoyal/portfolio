@@ -31,7 +31,7 @@ const HeroText = styled.div`
   background-color: ${({ theme }) => (theme as any).palette.background.primary};
   margin-top: 35px;
 
-  ${({ theme }) => (theme as any).breakpoints.up("lg")} {
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
     margin-top: 25px;
   }
 

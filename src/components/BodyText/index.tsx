@@ -13,7 +13,7 @@ interface IStyledTextTypesProps {
 }
 
 const StyledText = styled.p<IStyledTextTypesProps>`
-  font-size: ${({ type, theme }) => {
+  font-size: ${({ type }) => {
     if (type === TextTypes.BODY) {
       return "1.5rem";
     }
@@ -22,7 +22,7 @@ const StyledText = styled.p<IStyledTextTypesProps>`
       return "2.5rem";
     }
 
-    return "2rem";
+    return "1.5rem";
   }};
   font-weight: ${({ type }) => (type === TextTypes.LABEL ? 500 : 300)};
   padding: 0;
