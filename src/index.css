@@ -9,3 +9,71 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h1 {
+  font-size: 6.25rem;
+  font-weight: 500;
+  letter-spacing: -5px;
+}
+
+h2 {
+  font-size: 4.5rem;
+  font-weight: 500;
+  letter-spacing: -3.6px;
+}
+
+h3 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -1.8px;
+}
+
+h4 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -1.4px;
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 7rem;
+    letter-spacing: -5.6px;
+  }
+
+  h2 {
+    font-size: 3.75rem;
+    letter-spacing: -4px;
+  }
+
+  h3 {
+    font-size: 3rem;
+    letter-spacing: -2.4px;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+    letter-spacing: -2px;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 10rem;
+    letter-spacing: -8px;
+  }
+
+  h2 {
+    font-size: 6rem;
+    letter-spacing: -5px;
+  }
+
+  h3 {
+    font-size: 4.5rem;
+    letter-spacing: -3.6px;
+  }
+
+  h4 {
+    font-size: 3rem;
+    letter-spacing: -2.4px;
+  }
+}

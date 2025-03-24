@@ -9,11 +9,6 @@ const ProjectContainer = styled.div`
   padding-bottom: 100px;
 `;
 
-const Title = styled.h2`
-  font-size: 14vw;
-  letter-spacing: -0.05em;
-`;
-
 const ProjectSectionContainer = styled.div``;
 
 // TODO: Add image alts
@@ -21,7 +16,7 @@ const ProjectSectionContainer = styled.div``;
 const ProjectSection = () => {
   return (
     <ProjectSectionContainer>
-      <Title>projects</Title>
+      <h1>projects</h1>
       <ProjectContainer>
         <ProjectCard
           name="gigpit"

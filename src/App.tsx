@@ -22,13 +22,13 @@ function App() {
       <CssBaseline /> {/* Resets default browser styles */}
       <AppWrapper>
         <HeroSection />
+        <ProjectSection />
         <Button
           label="Email me"
           onClick={() => {
             alert("test");
           }}
         />
-        <ProjectSection />
       </AppWrapper>
     </ThemeProvider>
   );
