@@ -24,6 +24,10 @@ const themeOptions: ThemeOptions = {
       xl: 1600,
     },
   },
+
+  typography: {
+    fontFamily: '"Degular", sans-serif',
+  },
 };
 
 // Create the theme using `themeOptions`
