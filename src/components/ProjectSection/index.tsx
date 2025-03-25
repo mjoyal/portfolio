@@ -3,6 +3,8 @@ import ProjectCard from "../ProjectCard";
 import SkillsTitle from "../Titles/SkillsTitle";
 import TechnologyTitle from "../Titles/TechnologyTitle";
 import ProjectsTitle from "../Titles/ProjectsTitle";
+import { observer } from "mobx-react";
+import useStores from "src/hooks/useStores";
 
 const ProjectContainer = styled.div`
   display: flex;
@@ -42,18 +44,16 @@ const projects = [
 ];
 
 const ProjectSection = () => {
+  const {
+    projectStore: { projects },
+  } = useStores();
+
   return (
     <ProjectSectionContainer>
       <ProjectsTitle />
       <ProjectContainer>
         {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            name={project.name}
-            slug={project.slug}
-            role={project.role}
-            imageSource={project.imageSource}
-          />
+          <ProjectCard key={project.id} project={project} />
         ))}
 
         <SkillsTitle />
@@ -63,4 +63,4 @@ const ProjectSection = () => {
   );
 };
 
-export default ProjectSection;
+export default observer(ProjectSection);

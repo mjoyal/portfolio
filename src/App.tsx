@@ -7,6 +7,7 @@ import theme from "./theme";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./pages/Home";
 import ProjectPage from "./pages/Project";
+import StoreProvider from "./store";
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -20,17 +21,19 @@ const AppWrapper = styled.div`
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline /> {/* Resets default browser styles */}
-      <BrowserRouter>
-        <AppWrapper>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/:slug" element={<ProjectPage />} />
-          </Routes>
-        </AppWrapper>
-      </BrowserRouter>
-    </ThemeProvider>
+    <StoreProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline /> {/* Resets default browser styles */}
+        <BrowserRouter>
+          <AppWrapper>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/:slug" element={<ProjectPage />} />
+            </Routes>
+          </AppWrapper>
+        </BrowserRouter>
+      </ThemeProvider>
+    </StoreProvider>
   );
 }
 
