@@ -32,7 +32,7 @@ const EmailMeButton = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              gap: "0.5rem",
+              gap: "8px",
             }}
           >
             Email copied to clipboard!

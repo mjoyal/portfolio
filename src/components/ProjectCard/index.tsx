@@ -15,7 +15,7 @@ const Image = styled.img`
 const LabelContainer = styled.div`
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 16px;
 `;
 
 interface IProjectCardProps {
