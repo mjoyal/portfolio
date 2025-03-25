@@ -1,7 +1,12 @@
 import styled from "@emotion/styled";
 import BodyText, { TextTypes } from "../BodyText";
+import { useNavigate } from "react-router-dom";
 
-const Container = styled.div``;
+const ButtonContainer = styled.button`
+  border: 0px;
+  background-color: transparent;
+  cursor: pointer;
+`;
 
 const Image = styled.img`
   width: 100%;
@@ -15,23 +20,26 @@ const LabelContainer = styled.div`
 `;
 
 interface IProjectCardProps {
+  name: string;
+  slug: string;
+  role: string;
   imageSource: any;
   imageAlt?: string;
-  name: string;
-  role: string;
 }
 
 const ProjectCard = (props: IProjectCardProps) => {
-  const { imageSource, imageAlt, name, role } = props;
+  const { slug, name, role, imageSource, imageAlt } = props;
+
+  const navigate = useNavigate();
 
   return (
-    <Container>
+    <ButtonContainer onClick={() => navigate(slug)}>
       <Image src={imageSource} alt={imageAlt} />
       <LabelContainer>
         <BodyText type={TextTypes.LABEL}>{name}</BodyText>
         <BodyText type={TextTypes.BODY_MEDIUM}>{role}</BodyText>
       </LabelContainer>
-    </Container>
+    </ButtonContainer>
   );
 };
 

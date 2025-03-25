@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
 import CssBaseline from "@mui/material/CssBaseline";
-import HeroSection from "./components/HeroSection";
-import ProjectSection from "./components/ProjectSection";
+
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
-import Button from "./components/Button";
+
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import HomePage from "./pages/Home";
+import ProjectPage from "./pages/Project";
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -20,16 +22,14 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline /> {/* Resets default browser styles */}
-      <AppWrapper>
-        <HeroSection />
-        <ProjectSection />
-        <Button
-          label="Email me"
-          onClick={() => {
-            alert("test");
-          }}
-        />
-      </AppWrapper>
+      <BrowserRouter>
+        <AppWrapper>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/:slug" element={<ProjectPage />} />
+          </Routes>
+        </AppWrapper>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
