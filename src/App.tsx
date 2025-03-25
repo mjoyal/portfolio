@@ -8,6 +8,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./pages/Home";
 import ProjectPage from "./pages/Project";
 import StoreProvider from "./store";
+import NavBar from "./components/NavBar";
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -25,6 +26,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline /> {/* Resets default browser styles */}
         <BrowserRouter>
+          <NavBar />
           <AppWrapper>
             <Routes>
               <Route path="/" element={<HomePage />} />

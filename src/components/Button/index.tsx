@@ -14,7 +14,6 @@ const StyledButton = styled.button`
   font-weight: 400;
   padding: 0.75rem 2.5rem;
   font-size: 1.5rem;
-  cursor: pointer;
 `;
 
 const Button = (props: IButtonProps) => {

@@ -5,11 +5,7 @@ import { observer } from "mobx-react";
 import { IProjectModel } from "src/store/ProjectStore/ProjectModel";
 import useStores from "src/hooks/useStores";
 
-const ButtonContainer = styled.button`
-  border: 0px;
-  background-color: transparent;
-  cursor: pointer;
-`;
+const ButtonContainer = styled.button``;
 
 const Image = styled.img`
   width: 100%;
