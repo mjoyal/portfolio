@@ -5,7 +5,19 @@ import { observer } from "mobx-react";
 import { IProjectModel } from "src/store/ProjectStore/ProjectModel";
 import useStores from "src/hooks/useStores";
 
-const ButtonContainer = styled.button``;
+const ButtonContainer = styled.button<{ projectId: number }>`
+  grid-area: ${({ projectId }) => {
+    if (projectId === 1) {
+      return "1 / 1 / 3 / 2";
+    }
+
+    if (projectId === 2) {
+      return "1 / 2 / 2 / 3";
+    }
+
+    return "2 / 2 / 3 / 3";
+  }};
+`;
 
 const Image = styled.img<{ projectId: number }>`
   aspect-ratio: ${({ projectId }) => {
@@ -51,6 +63,7 @@ const ProjectCard = (props: IProjectCardProps) => {
         setSelectedProject(id);
         navigate(slug);
       }}
+      projectId={id}
     >
       <Image src={imageSource} projectId={id} />
       <LabelContainer>

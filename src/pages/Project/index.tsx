@@ -133,14 +133,22 @@ const ProjectPage = () => {
       <Stack flexDirection={"row"} gap={3}>
         <ProjectSectionLabel number="04" title="outcomes" />
 
-        <Box>
+        <Stack alignItems={"flex-start"}>
           <h4>a web application for discovering local music gigs.</h4>
           <BodyText>
             maybe i could have a little bit of text here to fill out the space.
             could be a nice little morsel of text about me. little quirky facts.
             fun facts. but also serious facts. very professional serious facts.
           </BodyText>
-        </Box>
+          <Spacer />
+          <Button
+            onClick={() => {
+              alert("Not implemented");
+            }}
+          >
+            View Project
+          </Button>
+        </Stack>
       </Stack>
       <Spacer />
 

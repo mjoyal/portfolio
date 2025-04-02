@@ -12,7 +12,7 @@ const StyledButton = styled.button`
   border-radius: 100px;
   font-family: "Degular", sans-serif;
   font-weight: 400;
-  padding: 12px 40px;
+  padding: 10px 40px;
   font-size: 1.5rem;
 `;
 
