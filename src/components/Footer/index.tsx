@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import EmailMeButton from "../EmailMeButton";
-import BodyText from "../BodyText";
+import BodyText, { TextTypes } from "../BodyText";
 import InfiniteMarquee from "./InfinityMarquee";
 
 const FooterContainer = styled.div`
@@ -26,6 +26,7 @@ const BottomContainer = styled.div`
   align-items: flex-end;
   border-bottom: 1px solid white;
   margin-bottom: 24px;
+  padding-top: 48px;
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     margin-bottom: 44px;
   }
@@ -51,7 +52,9 @@ const Footer = () => {
       </TopContainer>
 
       <BottomContainer>
-        <StyledBodyText>mackenzie.joyal@gmail.com</StyledBodyText>
+        <StyledBodyText type={TextTypes.BODY_MEDIUM}>
+          mackenzie.joyal@gmail.com
+        </StyledBodyText>
         <InfiniteMarquee />
       </BottomContainer>
     </FooterContainer>
