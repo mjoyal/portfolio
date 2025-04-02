@@ -8,28 +8,18 @@ import useStores from "src/hooks/useStores";
 const ButtonContainer = styled.button``;
 
 const Image = styled.img<{ projectId: number }>`
-  height: ${({ projectId }) => {
+  aspect-ratio: ${({ projectId }) => {
     if (projectId === 1) {
-      return "844px";
+      return "687 / 844";
     }
 
     if (projectId === 2) {
-      return "442px";
+      return "700 / 442";
     }
 
-    return "638px";
+    return "576 / 638";
   }};
-  width: ${({ projectId }) => {
-    if (projectId === 1) {
-      return "687px";
-    }
-
-    if (projectId === 2) {
-      return "700px";
-    }
-
-    return "576px";
-  }};
+  width: 100%;
 `;
 
 const LabelContainer = styled.div`
