@@ -20,13 +20,25 @@ const Scroller = styled.div`
   }
 `;
 
-const marqueeText = " let’s talk ✻ let’s talk ✻ let’s talk ✻ ";
+const Asterisk = styled.span`
+  font-size: 0.5em;
+  vertical-align: middle;
+  color: ${({ theme }) => (theme as any).palette.text.secondary};
+`;
+
+// const marqueeText = " let’s talk ✻ let’s talk ✻ let’s talk ✻ ";
 
 const InfiniteMarquee = () => {
+  const marqueeText = Array.from({ length: 30 }, (_, i) => (
+    <span key={i}>
+      let’s talk <Asterisk>✻</Asterisk>{" "}
+    </span>
+  ));
+
   return (
     <Wrapper>
       <Scroller>
-        <h2>{marqueeText.repeat(10)}</h2>
+        <h2>{marqueeText}</h2>
       </Scroller>
     </Wrapper>
   );
