@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import BodyText, { TextTypes } from "../BodyText";
-import { useNavigate } from "react-router-dom";
 import { observer } from "mobx-react";
 import { IProjectModel } from "src/store/ProjectStore/ProjectModel";
 import useStores from "src/hooks/useStores";
+import useNavigateAndScroll from "src/hooks/useNavigateAndScroll";
 
 const ButtonContainer = styled.button<{ projectId: number }>`
   grid-area: ${({ projectId }) => {
@@ -55,7 +55,7 @@ const ProjectCard = (props: IProjectCardProps) => {
     projectStore: { setSelectedProject },
   } = useStores();
 
-  const navigate = useNavigate();
+  const navigate = useNavigateAndScroll();
 
   return (
     <ButtonContainer
