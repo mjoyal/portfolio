@@ -5,12 +5,20 @@ import { observer } from "mobx-react";
 import useStores from "src/hooks/useStores";
 
 const ProjectContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  display: grid;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+  }
+  gap: 48px;
 `;
 
-const ProjectSectionContainer = styled.div``;
+const ProjectSectionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
 
 const ProjectSection = () => {
   const {

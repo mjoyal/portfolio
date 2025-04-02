@@ -7,9 +7,29 @@ import useStores from "src/hooks/useStores";
 
 const ButtonContainer = styled.button``;
 
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
+const Image = styled.img<{ projectId: number }>`
+  height: ${({ projectId }) => {
+    if (projectId === 1) {
+      return "844px";
+    }
+
+    if (projectId === 2) {
+      return "442px";
+    }
+
+    return "638px";
+  }};
+  width: ${({ projectId }) => {
+    if (projectId === 1) {
+      return "687px";
+    }
+
+    if (projectId === 2) {
+      return "700px";
+    }
+
+    return "576px";
+  }};
 `;
 
 const LabelContainer = styled.div`
@@ -42,7 +62,7 @@ const ProjectCard = (props: IProjectCardProps) => {
         navigate(slug);
       }}
     >
-      <Image src={imageSource} />
+      <Image src={imageSource} projectId={id} />
       <LabelContainer>
         <BodyText type={TextTypes.LABEL}>{name}</BodyText>
         <BodyText type={TextTypes.BODY_MEDIUM}>{role}</BodyText>

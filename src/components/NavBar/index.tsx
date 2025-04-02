@@ -5,8 +5,8 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   height: 48px;
-  padding-left: clamp(20px, 4vw, 48px);
-  padding-right: clamp(20px, 4vw, 48px);
+  padding-left: clamp(20px, 5vw, 60px);
+  padding-right: clamp(20px, 5vw, 60px);
   background-color: ${({ theme }) => (theme as any).palette.background.default};
 `;
 

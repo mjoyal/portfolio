@@ -10,7 +10,12 @@ import useStores from "src/hooks/useStores";
 import ProjectSectionLabel from "./ProjectSectionLabel";
 import { Box, Stack } from "@mui/material";
 
-const ProjectPageContainer = styled.div``;
+const ProjectPageContainer = styled.div`
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+`;
 
 const Image = styled.img`
   height: 100%;
