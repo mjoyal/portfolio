@@ -64,6 +64,10 @@ const FooterText = styled.p`
   left: 25%;
 `;
 
+const StyledSpan = styled.span`
+  color: ${({ theme }) => (theme as any).palette.text.secondary};
+`;
+
 const HeroSection = () => {
   return (
     <HeroContainer>
@@ -79,7 +83,8 @@ const HeroSection = () => {
         </HeroText>
         <span>
           <BioText>
-            specialist in ux/ui, web design, & <br /> front-end development.
+            <StyledSpan>*</StyledSpan> specialist in ux/ui, web design, & <br />{" "}
+            front-end development.
           </BioText>
         </span>
       </TextContainer>

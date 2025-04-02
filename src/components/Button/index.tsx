@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 interface IButtonProps {
   onClick: any;
-  label: string;
+  children: any;
 }
 
 const StyledButton = styled.button`
@@ -17,10 +17,10 @@ const StyledButton = styled.button`
 `;
 
 const Button = (props: IButtonProps) => {
-  const { onClick, label, ...rest } = props;
+  const { onClick, children, ...rest } = props;
   return (
     <StyledButton onClick={onClick} {...rest}>
-      {label}
+      {children}
     </StyledButton>
   );
 };

@@ -37,6 +37,12 @@ const ProjectStore = types
           (project) => project.id === id
         );
       },
+
+      getProjectFromSlug(slug: string) {
+        return (self as IProjectStore).projects.find(
+          (project) => project.slug === slug
+        );
+      },
     };
   });
 

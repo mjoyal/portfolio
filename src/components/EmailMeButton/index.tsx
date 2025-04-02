@@ -21,7 +21,7 @@ const EmailMeButton = () => {
   };
   return (
     <>
-      <Button label="Email me" onClick={handleCopy} />
+      <Button onClick={handleCopy}>Email me</Button>
       <Snackbar
         open={open}
         autoHideDuration={5000}
