@@ -21,7 +21,7 @@ const ProjectsTitle = () => {
   return (
     <Container>
       <svg
-        width={isSmall ? 300 : 600}
+        width={isSmall ? 400 : 600}
         height="89"
         viewBox="0 0 365 89"
         fill="none"

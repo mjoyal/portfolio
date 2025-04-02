@@ -8,8 +8,6 @@ const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding-top: 100px;
-  padding-bottom: 100px;
 `;
 
 const ProjectSectionContainer = styled.div``;

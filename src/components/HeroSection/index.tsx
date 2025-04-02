@@ -5,7 +5,7 @@ import PreText from "./components/PreText";
 const HeroContainer = styled.div`
   position: relative; /* Allows absolute positioning for child elements */
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background-color: ${({ theme }) => (theme as any).palette.background.primary};
   display: flex;
   justify-content: center;

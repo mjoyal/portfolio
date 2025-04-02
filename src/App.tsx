@@ -9,6 +9,7 @@ import HomePage from "./pages/Home";
 import ProjectPage from "./pages/Project";
 import StoreProvider from "./store";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -33,6 +34,7 @@ function App() {
               <Route path="/:slug" element={<ProjectPage />} />
             </Routes>
           </AppWrapper>
+          <Footer />
         </BrowserRouter>
       </ThemeProvider>
     </StoreProvider>
