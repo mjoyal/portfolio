@@ -46,7 +46,7 @@ const ProjectPage = () => {
       <h1>{selectedProject?.name}</h1>
       <Image src={"/images/gigpit-square.png"} />
       <Stack alignItems={"flex-start"}>
-        <h3>a web application for discovering local music gigs.</h3>
+        <h4>a web application for discovering local music gigs.</h4>
         <BodyText>
           maybe i could have a little bit of text here to fill out the space.
           could be a nice little morsel of text about me. little quirky facts.
@@ -60,6 +60,9 @@ const ProjectPage = () => {
         >
           View Project
         </Button>
+        <Spacer />
+        <Spacer />
+        <Spacer />
         <Spacer />
       </Stack>
 
@@ -75,8 +78,10 @@ const ProjectPage = () => {
           </BodyText>
         </Box>
       </Stack>
+      <Spacer />
 
       <Image src={"/images/gigpit-landscape.png"} />
+      <Spacer />
 
       <Stack flexDirection={"row"} gap={3}>
         <ProjectSectionLabel number="02" title="goals" />
@@ -90,8 +95,11 @@ const ProjectPage = () => {
           </BodyText>
         </Box>
       </Stack>
+      <Spacer />
 
+      <Spacer />
       <Image src={"/images/gigpit-landscape.png"} />
+      <Spacer />
 
       <Stack flexDirection={"row"} gap={3}>
         <ProjectSectionLabel number="03" title="process" />
@@ -105,6 +113,7 @@ const ProjectPage = () => {
           </BodyText>
         </Box>
       </Stack>
+      <Spacer />
 
       <Stack gap={1}>
         <Stack direction={"row"} gap={1}>
@@ -114,6 +123,7 @@ const ProjectPage = () => {
 
         <Image src={"/images/gigpit-landscape.png"} />
       </Stack>
+      <Spacer />
 
       <Stack flexDirection={"row"} gap={3}>
         <ProjectSectionLabel number="04" title="outcomes" />
@@ -127,6 +137,7 @@ const ProjectPage = () => {
           </BodyText>
         </Box>
       </Stack>
+      <Spacer />
 
       <Image src={"/images/gigpit-landscape.png"} />
       <Image src={"/images/gigpit-landscape.png"} />
