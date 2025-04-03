@@ -15,14 +15,14 @@ interface IStyledTextTypesProps {
 const StyledText = styled.p<IStyledTextTypesProps>`
   font-size: ${({ type }) => {
     if (type === TextTypes.BODY) {
-      return "1.25rem";
+      return "1rem";
     }
 
     if (type === TextTypes.BODY_LARGE) {
-      return "1.75rem";
+      return "1.5rem";
     }
 
-    return "1.5rem"; // Medium or Label
+    return "1.25rem"; // Medium or Label
   }};
   font-weight: ${({ type }) => (type === TextTypes.LABEL ? 500 : 300)};
   padding: 0;
