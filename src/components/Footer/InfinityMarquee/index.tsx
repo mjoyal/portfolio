@@ -21,7 +21,7 @@ const Scroller = styled.div`
 `;
 
 const Asterisk = styled.span`
-  font-size: 0.5em;
+  font-size: 0.7em;
   vertical-align: middle;
   color: ${({ theme }) => (theme as any).palette.text.secondary};
 `;
@@ -31,7 +31,7 @@ const Asterisk = styled.span`
 const InfiniteMarquee = () => {
   const marqueeText = Array.from({ length: 30 }, (_, i) => (
     <span key={i}>
-      let’s talk <Asterisk>✻</Asterisk>{" "}
+      let’s talk <Asterisk>*</Asterisk>{" "}
     </span>
   ));
 
