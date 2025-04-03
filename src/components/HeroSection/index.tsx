@@ -19,24 +19,27 @@ const TextContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding-bottom: 80px;
+  margin-bottom: 120px;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    margin-bottom: unset;
+  }
 `;
 
 const HeroText = styled.div`
   font-weight: 500;
   font-size: clamp(5.5rem, 18vw, 14rem);
-  // font-size: 5.5rem;
+
   letter-spacing: -0.05em;
   line-height: 1;
   text-align: left;
   background-color: ${({ theme }) => (theme as any).palette.background.primary};
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    // font-size: 8rem;
     margin-top: 25px;
   }
 
   ${({ theme }) => (theme as any).breakpoints.up("lg")} {
-    // font-size: 12rem;
     margin-top: 20px;
   }
 `;
@@ -49,15 +52,8 @@ const BioText = styled.div`
   width: 300px;
   gap: 4px;
   bottom: 0%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    // top: 15%;
-    // right: 0;
-    // transform: unset;
-    // bottom: unset;
-  }
+  right: 50%;
+  transform: translateX(50%);
 
   ${({ theme }) => (theme as any).breakpoints.up("lg")} {
     top: 15%;

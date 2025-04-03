@@ -12,7 +12,7 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.h1`
+const Title = styled.h2`
   position: absolute;
 `;
 
@@ -24,7 +24,7 @@ const ProjectsTitle = () => {
   return (
     <Container>
       <svg
-        width={isSmall ? 400 : 600}
+        width={isSmall ? 300 : 600}
         height="89"
         viewBox="0 0 365 89"
         fill="none"
