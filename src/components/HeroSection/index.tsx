@@ -24,12 +24,12 @@ const TextContainer = styled.div`
 
 const HeroText = styled.div`
   font-weight: 500;
-  font-size: clamp(3rem, 18vw, 12rem);
+  // font-size: clamp(5.5rem, 18vw, 12rem);
+  font-size: 5.75rem;
   letter-spacing: -0.05em;
   line-height: 1;
   text-align: start;
   background-color: ${({ theme }) => (theme as any).palette.background.primary};
-  margin-top: 35px;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     margin-top: 25px;
@@ -40,12 +40,18 @@ const HeroText = styled.div`
   }
 `;
 
-const BioText = styled.p`
+const BioText = styled.div`
   position: absolute;
-  bottom: 0;
-  right: 30%;
+  display: flex;
+
   text-align: left;
   width: fit-content;
+
+  gap: 4px;
+  font-size: 1.25rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     top: 15%;
@@ -61,11 +67,11 @@ const BioText = styled.p`
 const FooterText = styled.p`
   position: absolute;
   bottom: 5%;
-  left: 25%;
-`;
+  font-size: 1.15rem;
 
-const StyledSpan = styled.span`
-  color: ${({ theme }) => (theme as any).palette.text.secondary};
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    left: 25%;
+  }
 `;
 
 const HeroSection = () => {
@@ -83,8 +89,16 @@ const HeroSection = () => {
         </HeroText>
         <span>
           <BioText>
-            <StyledSpan>*</StyledSpan> specialist in ux/ui, web design, & <br />{" "}
-            front-end development.
+            <Box
+              component="span"
+              color="text.secondary"
+              sx={{ marginTop: "4px" }}
+            >
+              *
+            </Box>{" "}
+            <p>
+              specialist in ux/ui, web design, & <br /> front-end development.
+            </p>
           </BioText>
         </span>
       </TextContainer>

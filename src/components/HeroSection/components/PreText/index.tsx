@@ -3,17 +3,12 @@ import { Box } from "@mui/material";
 
 const StyledPreText = styled.p`
   position: absolute;
-  font-size: clamp(1.15rem, 3vw, 1.75rem);
+  // font-size: clamp(1.15rem, 3vw, 1.75rem);
+  font-size: 1.25rem;
   line-height: 1;
   letter-spacing: -0.03em;
-  top: -8%;
-  left: 15%;
-
-  ${({ theme }) => (theme as any).breakpoints.up("sm")} {
-    // left: 22.5%;
-    left: 10vw;
-    top: 0;
-  }
+  top: -5%;
+  left: 20%;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     left: 25%;

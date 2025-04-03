@@ -14,7 +14,7 @@ const HomeButton = styled.button``;
 
 const Logo = styled.h4`
   font-weight: 600;
-  color: white;
+  color: ${({ theme }) => (theme as any).palette.text.primary};
 `;
 
 const NavBar = () => {
