@@ -11,6 +11,8 @@ import ProjectSectionLabel from "./ProjectSectionLabel";
 import { Box, Stack } from "@mui/material";
 
 const ProjectPageContainer = styled.div`
+  /* These 100% widths are important to keep the overall margin of the site */
+  width: 100%;
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     padding-left: 60px;
     padding-right: 60px;

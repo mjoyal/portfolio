@@ -7,7 +7,10 @@ import ProjectSection from "src/components/ProjectSection";
 import SkillsTitle from "src/components/Titles/SkillsTitle";
 import TechnologyTitle from "src/components/Titles/TechnologyTitle";
 
-const HomePageContainer = styled.div``;
+const HomePageContainer = styled.div`
+  /* These 100% widths are important to keep the overall margin of the site */
+  width: 100%;
+`;
 
 const StyledBodyText = styled(BodyText)`
   margin-left: 40px;

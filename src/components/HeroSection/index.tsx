@@ -3,17 +3,16 @@ import { Box } from "@mui/material";
 import PreText from "./components/PreText";
 
 const HeroContainer = styled.div`
-  position: relative; /* Allows absolute positioning for child elements */
-  width: 100%;
-  height: 90vh;
-  background-color: ${({ theme }) => (theme as any).palette.background.primary};
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 90vh;
+  background-color: ${({ theme }) => (theme as any).palette.background.primary};
 `;
 
 const TextContainer = styled.div`
-  position: relative; /* Needed for absolute children */
+  position: relative;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -24,18 +23,19 @@ const TextContainer = styled.div`
 
 const HeroText = styled.div`
   font-weight: 500;
-  // font-size: clamp(5.5rem, 18vw, 12rem);
-  font-size: 5.75rem;
+  font-size: 5.5rem;
   letter-spacing: -0.05em;
   line-height: 1;
-  text-align: start;
+  text-align: left;
   background-color: ${({ theme }) => (theme as any).palette.background.primary};
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    font-size: 8rem;
     margin-top: 25px;
   }
 
   ${({ theme }) => (theme as any).breakpoints.up("lg")} {
+    font-size: 12rem;
     margin-top: 20px;
   }
 `;
@@ -43,13 +43,11 @@ const HeroText = styled.div`
 const BioText = styled.div`
   position: absolute;
   display: flex;
-
   text-align: left;
-  width: fit-content;
-
-  gap: 4px;
   font-size: 1.25rem;
-  bottom: 0;
+  width: fit-content;
+  gap: 4px;
+  bottom: 0%;
   left: 50%;
   transform: translateX(-50%);
 
@@ -87,20 +85,19 @@ const HeroSection = () => {
             .
           </Box>
         </HeroText>
-        <span>
-          <BioText>
-            <Box
-              component="span"
-              color="text.secondary"
-              sx={{ marginTop: "4px" }}
-            >
-              *
-            </Box>{" "}
-            <p>
-              specialist in ux/ui, web design, & <br /> front-end development.
-            </p>
-          </BioText>
-        </span>
+
+        <BioText>
+          <Box
+            component="span"
+            color="text.secondary"
+            sx={{ marginTop: "4px" }}
+          >
+            *
+          </Box>{" "}
+          <p>
+            specialist in ux/ui, web design, & <br /> front-end development.
+          </p>
+        </BioText>
       </TextContainer>
       <FooterText>[ making the internet prettier since 2019 ]</FooterText>
     </HeroContainer>
