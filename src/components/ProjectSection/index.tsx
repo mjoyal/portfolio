@@ -10,9 +10,10 @@ const ProjectContainer = styled.div`
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-template-areas:
+      "top top"
+      "left right";
+    grid-column-gap: 12px;
   }
   gap: 48px;
   width: 100%;

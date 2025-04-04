@@ -5,6 +5,7 @@ const projects = [
     slug: "gigpit",
     role: "ui/ux design & ui development",
     imageSource: "/images/gigpit.png",
+    heroImageSource: "/images/hero-gigpit.png",
   },
   {
     id: 2,

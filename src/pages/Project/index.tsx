@@ -25,7 +25,6 @@ const Image = styled.img`
 `;
 
 const SmallImage = styled.img`
-  background-color: blue;
   width: 48%;
   height: 100%;
 `;

@@ -6,6 +6,7 @@ import NumberedListItem from "src/components/NumberedListItem";
 import ProjectSection from "src/components/ProjectSection";
 import SkillsTitle from "src/components/Titles/SkillsTitle";
 import TechnologyTitle from "src/components/Titles/TechnologyTitle";
+import { Stack } from "@mui/material";
 
 const HomePageContainer = styled.div`
   /* These 100% widths are important to keep the overall margin of the site */
@@ -25,6 +26,8 @@ const ListContainer = styled.div`
   margin-right: 40px;
 `;
 
+const StyledStack = styled(Stack)``;
+
 const Spacer = styled.div`
   height: 40px;
 `;
@@ -34,13 +37,15 @@ const HomePage = () => {
     <HomePageContainer>
       <HeroSection />
       <ProjectSection />
-      <SkillsTitle />
-      <ListContainer>
-        <NumberedListItem number="01" listItem="front-end engineering" />
-        <NumberedListItem number="02" listItem="ux/ ui design" />
-        <NumberedListItem number="03" listItem="business degree" />
-      </ListContainer>
-      <Spacer />
+      <StyledStack>
+        <SkillsTitle />
+        <ListContainer>
+          <NumberedListItem number="01" listItem="front-end engineering" />
+          <NumberedListItem number="02" listItem="ux/ ui design" />
+          <NumberedListItem number="03" listItem="business degree" />
+        </ListContainer>
+      </StyledStack>
+
       <StyledBodyText>
         maybe i could have a little bit of text here to fill out the space.
         could be a nice little morsel of text about me. little quirky facts. fun

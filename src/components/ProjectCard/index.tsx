@@ -4,34 +4,27 @@ import { observer } from "mobx-react";
 import { IProjectModel } from "src/store/ProjectStore/ProjectModel";
 import useStores from "src/hooks/useStores";
 import useNavigateAndScroll from "src/hooks/useNavigateAndScroll";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const ButtonContainer = styled.button<{ projectId: number }>`
   grid-area: ${({ projectId }) => {
     if (projectId === 1) {
-      return "1 / 1 / 3 / 2";
+      return "top";
     }
 
     if (projectId === 2) {
-      return "1 / 2 / 2 / 3";
+      return "left";
     }
 
-    return "2 / 2 / 3 / 3";
+    return "right";
   }};
+
+  background-color: lightgreen;
 `;
 
 const Image = styled.img<{ projectId: number }>`
-  aspect-ratio: ${({ projectId }) => {
-    if (projectId === 1) {
-      return "687 / 844";
-    }
-
-    if (projectId === 2) {
-      return "700 / 442";
-    }
-
-    return "576 / 638";
-  }};
   width: 100%;
+  height: 100%;
 `;
 
 const LabelContainer = styled.div`
@@ -48,7 +41,7 @@ interface IProjectCardProps {
 
 const ProjectCard = (props: IProjectCardProps) => {
   const {
-    project: { id, name, slug, role, imageSource },
+    project: { id, name, slug, role, imageSource, heroImageSource },
   } = props;
 
   const {
@@ -56,6 +49,17 @@ const ProjectCard = (props: IProjectCardProps) => {
   } = useStores();
 
   const navigate = useNavigateAndScroll();
+
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down("md"));
+
+  const getImageSource = () => {
+    if (isSmall) {
+      return imageSource;
+    }
+
+    return id === 1 ? heroImageSource : imageSource;
+  };
 
   return (
     <ButtonContainer
@@ -65,7 +69,7 @@ const ProjectCard = (props: IProjectCardProps) => {
       }}
       projectId={id}
     >
-      <Image src={imageSource} projectId={id} />
+      <Image src={getImageSource()} projectId={id} />
       <LabelContainer>
         <BodyText type={TextTypes.LABEL}>{name}</BodyText>
         <BodyText type={TextTypes.BODY_MEDIUM}>{role}</BodyText>

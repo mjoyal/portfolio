@@ -8,6 +8,7 @@ const ProjectModel = types.model("ProjectModel", {
   slug: types.string,
   role: types.maybe(types.string),
   imageSource: types.string,
+  heroImageSource: types.maybe(types.string),
   description: types.maybe(types.string),
 });
 
