@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 
 const Scroller = styled.div`
   display: inline-flex;
-  animation: scroll 200s linear infinite;
+  animation: scroll 150s linear infinite;
 
   @keyframes scroll {
     0% {
@@ -35,7 +35,7 @@ const StyledHeader = styled.h1`
 const InfiniteMarquee = () => {
   const marqueeText = Array.from({ length: 30 }, (_, i) => (
     <span key={i}>
-      let’s talk <Asterisk>*</Asterisk>{" "}
+      Say hi! <Asterisk>*</Asterisk>{" "}
     </span>
   ));
 

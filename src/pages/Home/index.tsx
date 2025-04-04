@@ -40,12 +40,19 @@ const Spacer = styled.div`
   height: 40px;
 `;
 
+// TODO: Section Divider & Spacer Components
+const SectionDivider = styled.div`
+  height: 200px;
+`;
+
 const HomePage = () => {
   return (
     <HomePageContainer>
       <HeroSection />
+      <SectionDivider />
       <ProjectSection />
-      <Spacer />
+      <SectionDivider />
+
       <Stack direction={{ md: "row" }} rowGap={5}>
         <StyledStack>
           <SkillsTitle />
@@ -65,7 +72,7 @@ const HomePage = () => {
           </StyledBodyText>
         </ParagraphContainer>
       </Stack>
-      <Spacer />
+      <SectionDivider />
       <Stack alignItems={{ xs: "center", md: "flex-end" }}>
         <Stack paddingRight={{ xs: 0, md: 6 }}>
           <TechnologyTitle />
@@ -79,7 +86,7 @@ const HomePage = () => {
           </ListContainer>
         </Stack>
       </Stack>
-      <Spacer />
+      <SectionDivider />
     </HomePageContainer>
   );
 };

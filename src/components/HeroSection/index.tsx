@@ -7,7 +7,12 @@ const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 90vh;
+  height: 80vh;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    height: 90vh;
+  }
+
   background-color: ${({ theme }) => (theme as any).palette.background.primary};
 `;
 
@@ -19,7 +24,7 @@ const TextContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding-bottom: 80px;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     margin-bottom: unset;

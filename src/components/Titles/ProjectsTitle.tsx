@@ -12,7 +12,7 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
   position: absolute;
 `;
 
@@ -37,7 +37,7 @@ const ProjectsTitle = () => {
         />
       </svg>
 
-      <Title>projects</Title>
+      <Title>work</Title>
     </Container>
   );
 };

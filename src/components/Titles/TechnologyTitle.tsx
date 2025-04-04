@@ -15,7 +15,7 @@ const Title = styled.h1`
 const TechnologyTitle = () => {
   const theme = useTheme();
 
-  const isSmall = useMediaQuery(theme.breakpoints.down("lg"));
+  const isSmall = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Container>

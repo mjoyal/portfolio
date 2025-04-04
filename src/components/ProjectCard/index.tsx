@@ -25,6 +25,7 @@ const Image = styled.img<{ projectId: number }>`
   height: auto;
   display: block;
   object-fit: cover;
+  border-radius: 5px;
 `;
 
 const LabelContainer = styled.div`
@@ -71,8 +72,8 @@ const ProjectCard = (props: IProjectCardProps) => {
     >
       <Image src={getImageSource()} projectId={id} />
       <LabelContainer>
-        <BodyText type={TextTypes.LABEL}>{name}</BodyText>
-        <BodyText type={TextTypes.BODY_MEDIUM}>{role}</BodyText>
+        <BodyText type={TextTypes.BODY_LARGE}>{name}</BodyText>
+        <BodyText type={TextTypes.BODY_LARGE}>{role}</BodyText>
       </LabelContainer>
     </ButtonContainer>
   );
