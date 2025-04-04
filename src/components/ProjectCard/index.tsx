@@ -28,8 +28,9 @@ const Image = styled.img<{ projectId: number }>`
 
 const LabelContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 4px;
   color: ${({ theme }) => (theme as any).palette.text.primary};
 `;
 

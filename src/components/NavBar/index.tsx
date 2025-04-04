@@ -23,7 +23,7 @@ const NavBar = () => {
   return (
     <Container>
       <HomeButton onClick={() => navigate("/")}>
-        <Logo>mac</Logo>
+        <Logo>mac.</Logo>
       </HomeButton>
     </Container>
   );

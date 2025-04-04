@@ -33,6 +33,10 @@ const Spacer = styled.div`
   height: 24px;
 `;
 
+const SectionDivider = styled.div`
+  height: 200px;
+`;
+
 const ProjectPage = () => {
   const {
     projectStore: { selectedProject, setSelectedProject, getProjectFromSlug },
@@ -66,10 +70,7 @@ const ProjectPage = () => {
         >
           View Project
         </Button>
-        <Spacer />
-        <Spacer />
-        <Spacer />
-        <Spacer />
+        <SectionDivider />
       </Stack>
 
       <Stack flexDirection={"row"} gap={3}>
@@ -87,7 +88,7 @@ const ProjectPage = () => {
       <Spacer />
 
       <Image src={"/images/project-landscape.png"} />
-      <Spacer />
+      <SectionDivider />
 
       <Stack flexDirection={"row"} gap={3}>
         <ProjectSectionLabel number="02" title="goals" />
@@ -103,9 +104,8 @@ const ProjectPage = () => {
       </Stack>
       <Spacer />
 
-      <Spacer />
       <Image src={"/images/project-landscape.png"} />
-      <Spacer />
+      <SectionDivider />
 
       <Stack flexDirection={"row"} gap={3}>
         <ProjectSectionLabel number="03" title="process" />
@@ -129,7 +129,7 @@ const ProjectPage = () => {
 
         <Image src={"/images/project-landscape.png"} />
       </Stack>
-      <Spacer />
+      <SectionDivider />
 
       <Stack flexDirection={"row"} gap={3}>
         <ProjectSectionLabel number="04" title="outcomes" />
@@ -155,6 +155,7 @@ const ProjectPage = () => {
 
       <Image src={"/images/project-landscape.png"} />
       <Image src={"/images/project-landscape.png"} />
+      <SectionDivider />
     </ProjectPageContainer>
   );
 };

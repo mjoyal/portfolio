@@ -19,6 +19,9 @@ const ProjectContainer = styled.div`
   width: 100%;
 `;
 
+const Spacer = styled.div`
+  height: 48px;
+`;
 const ProjectSection = () => {
   const {
     projectStore: { projects },
@@ -27,6 +30,7 @@ const ProjectSection = () => {
   return (
     <>
       <ProjectsTitle />
+      <Spacer />
       <ProjectContainer>
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
