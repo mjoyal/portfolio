@@ -1,6 +1,5 @@
 import { observer } from "mobx-react";
 import styled from "@emotion/styled";
-import BodyText from "src/components/BodyText";
 import HeroSection from "src/components/HeroSection";
 import NumberedListItem from "src/components/NumberedListItem";
 import ProjectSection from "src/components/ProjectSection";
@@ -20,7 +19,7 @@ const ParagraphContainer = styled.div`
   flex: 1 1 0;
 `;
 
-const StyledBodyText = styled(BodyText)`
+const StyledText = styled.p`
   width: 35ch;
   // Keeps text nice and square
 `;
@@ -65,11 +64,11 @@ const HomePage = () => {
         </StyledStack>
 
         <ParagraphContainer>
-          <StyledBodyText>
+          <StyledText>
             maybe i could have a little bit of text here to fill out the space.
             could be a nice little morsel of text about me. little quirky facts.
             fun facts. but also serious facts. very professional serious facts.
-          </StyledBodyText>
+          </StyledText>
         </ParagraphContainer>
       </Stack>
       <SectionDivider />

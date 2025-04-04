@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import BodyText, { TextTypes } from "../BodyText";
 
 const Container = styled.div`
   display: flex;
@@ -19,8 +18,8 @@ const NumberedListItem = (props: INumberedListItemProps) => {
 
   return (
     <Container>
-      <BodyText type={TextTypes.BODY_LARGE}>{number}</BodyText>
-      <BodyText type={TextTypes.BODY_LARGE}>{listItem}</BodyText>
+      <h6>{number}</h6>
+      <h6>{listItem}</h6>
     </Container>
   );
 };

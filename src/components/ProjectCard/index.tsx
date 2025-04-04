@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import BodyText, { TextTypes } from "../BodyText";
 import { observer } from "mobx-react";
 import { IProjectModel } from "src/store/ProjectStore/ProjectModel";
 import useStores from "src/hooks/useStores";
@@ -25,13 +24,13 @@ const Image = styled.img<{ projectId: number }>`
   height: auto;
   display: block;
   object-fit: cover;
-  border-radius: 5px;
 `;
 
 const LabelContainer = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  color: ${({ theme }) => (theme as any).palette.text.primary};
 `;
 
 interface IProjectCardProps {
@@ -76,8 +75,8 @@ const ProjectCard = (props: IProjectCardProps) => {
       <Image src={getImageSource()} projectId={id} />
       <Spacer />
       <LabelContainer>
-        <BodyText type={TextTypes.BODY_LARGE}>{name}</BodyText>
-        <BodyText type={TextTypes.BODY_LARGE}>{role}</BodyText>
+        <h5>{name}</h5>
+        <h6>{role}</h6>
       </LabelContainer>
     </ButtonContainer>
   );

@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import EmailMeButton from "../EmailMeButton";
-import BodyText, { TextTypes } from "../BodyText";
 import InfiniteMarquee from "./InfinityMarquee";
 
 const FooterContainer = styled.div`
@@ -32,7 +31,7 @@ const BottomContainer = styled.div`
   }
 `;
 
-const StyledBodyText = styled(BodyText)`
+const StyledText = styled.h6`
   margin-right: 20px;
 `;
 
@@ -52,9 +51,7 @@ const Footer = () => {
       </TopContainer>
 
       <BottomContainer>
-        <StyledBodyText type={TextTypes.BODY_MEDIUM}>
-          mackenzie.joyal@gmail.com
-        </StyledBodyText>
+        <StyledText>mackenzie.joyal@gmail.com</StyledText>
         <InfiniteMarquee />
       </BottomContainer>
     </FooterContainer>

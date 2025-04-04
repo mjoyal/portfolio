@@ -3,7 +3,6 @@ import { useTheme, useMediaQuery } from "@mui/material";
 
 const Container = styled.div`
   position: relative;
-  height: 200px; /* set a height */
   display: flex;
   align-items: center;
   justify-content: center;

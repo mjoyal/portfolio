@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
-import BodyText, { TextTypes } from "src/components/BodyText";
 
 const Bracket = styled.span`
   color: ${({ theme }) => (theme as any).palette.text.secondary};
@@ -16,12 +15,12 @@ const ProjectSectionLabel = (props: IProjectSectionLabelProps) => {
   return (
     <Stack paddingTop={"8px"}>
       {/*8px padding to align with headings on project page*/}
-      <BodyText type={TextTypes.BODY}>
+      <p>
         <Bracket>{"["}</Bracket>
         {number}
         <Bracket>{"]"}</Bracket>
-      </BodyText>
-      <BodyText type={TextTypes.BODY}>{title}</BodyText>
+      </p>
+      <p>{title}</p>
     </Stack>
   );
 };

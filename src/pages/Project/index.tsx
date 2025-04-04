@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { observer } from "mobx-react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import BodyText from "src/components/BodyText";
+
 import Button from "src/components/Button";
 
 import useStores from "src/hooks/useStores";
@@ -50,14 +50,14 @@ const ProjectPage = () => {
   return (
     <ProjectPageContainer>
       <h1>{selectedProject?.name}</h1>
-      <Image src={"/images/gigpit-square.png"} />
+      <Image src={"/images/project-square.png"} />
       <Stack alignItems={"flex-start"}>
         <h4>a web application for discovering local music gigs.</h4>
-        <BodyText>
+        <p>
           maybe i could have a little bit of text here to fill out the space.
           could be a nice little morsel of text about me. little quirky facts.
           fun facts. but also serious facts. very professional serious facts.
-        </BodyText>
+        </p>
         <Spacer />
         <Button
           onClick={() => {
@@ -77,16 +77,16 @@ const ProjectPage = () => {
 
         <Box>
           <h4>a web application for discovering local music gigs.</h4>
-          <BodyText>
+          <p>
             maybe i could have a little bit of text here to fill out the space.
             could be a nice little morsel of text about me. little quirky facts.
             fun facts. but also serious facts. very professional serious facts.
-          </BodyText>
+          </p>
         </Box>
       </Stack>
       <Spacer />
 
-      <Image src={"/images/gigpit-landscape.png"} />
+      <Image src={"/images/project-landscape.png"} />
       <Spacer />
 
       <Stack flexDirection={"row"} gap={3}>
@@ -94,17 +94,17 @@ const ProjectPage = () => {
 
         <Box>
           <h4>a web application for discovering local music gigs.</h4>
-          <BodyText>
+          <p>
             maybe i could have a little bit of text here to fill out the space.
             could be a nice little morsel of text about me. little quirky facts.
             fun facts. but also serious facts. very professional serious facts.
-          </BodyText>
+          </p>
         </Box>
       </Stack>
       <Spacer />
 
       <Spacer />
-      <Image src={"/images/gigpit-landscape.png"} />
+      <Image src={"/images/project-landscape.png"} />
       <Spacer />
 
       <Stack flexDirection={"row"} gap={3}>
@@ -112,22 +112,22 @@ const ProjectPage = () => {
 
         <Box>
           <h4>a web application for discovering local music gigs.</h4>
-          <BodyText>
+          <p>
             maybe i could have a little bit of text here to fill out the space.
             could be a nice little morsel of text about me. little quirky facts.
             fun facts. but also serious facts. very professional serious facts.
-          </BodyText>
+          </p>
         </Box>
       </Stack>
       <Spacer />
 
       <Stack gap={1}>
         <Stack direction={"row"} gap={1}>
-          <SmallImage src={"/images/gigpit-square.png"} />
-          <SmallImage src={"/images/gigpit-square.png"} />
+          <SmallImage src={"/images/project-square.png"} />
+          <SmallImage src={"/images/project-square.png"} />
         </Stack>
 
-        <Image src={"/images/gigpit-landscape.png"} />
+        <Image src={"/images/project-landscape.png"} />
       </Stack>
       <Spacer />
 
@@ -136,11 +136,11 @@ const ProjectPage = () => {
 
         <Stack alignItems={"flex-start"}>
           <h4>a web application for discovering local music gigs.</h4>
-          <BodyText>
+          <p>
             maybe i could have a little bit of text here to fill out the space.
             could be a nice little morsel of text about me. little quirky facts.
             fun facts. but also serious facts. very professional serious facts.
-          </BodyText>
+          </p>
           <Spacer />
           <Button
             onClick={() => {
@@ -153,8 +153,8 @@ const ProjectPage = () => {
       </Stack>
       <Spacer />
 
-      <Image src={"/images/gigpit-landscape.png"} />
-      <Image src={"/images/gigpit-landscape.png"} />
+      <Image src={"/images/project-landscape.png"} />
+      <Image src={"/images/project-landscape.png"} />
     </ProjectPageContainer>
   );
 };

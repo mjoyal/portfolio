@@ -26,7 +26,7 @@ button {
 }
 
 h1 {
-  font-size: 7rem;
+  font-size: 8rem;
   font-weight: 500;
   letter-spacing: -5px;
   text-align: left;
@@ -62,13 +62,13 @@ h5 {
 
 /* Using h6 as large body text */
 h6 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: -1.4px;
+  font-size: 1.5rem;
+  font-weight: 300;
   text-align: left;
 }
 
 p {
+  font-size: 1.15rem;
   font-weight: 300;
   text-align: left;
 }
