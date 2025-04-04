@@ -15,14 +15,8 @@ const ProjectContainer = styled.div`
       "left right";
     grid-column-gap: 12px;
   }
-  gap: 48px;
+  gap: 16px;
   width: 100%;
-`;
-
-const ProjectSectionContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 `;
 
 const ProjectSection = () => {
@@ -31,14 +25,14 @@ const ProjectSection = () => {
   } = useStores();
 
   return (
-    <ProjectSectionContainer>
+    <>
       <ProjectsTitle />
       <ProjectContainer>
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </ProjectContainer>
-    </ProjectSectionContainer>
+    </>
   );
 };
 

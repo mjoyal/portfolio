@@ -13,20 +13,29 @@ const HomePageContainer = styled.div`
   width: 100%;
 `;
 
+const ParagraphContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex: 1 1 0;
+`;
+
 const StyledBodyText = styled(BodyText)`
-  margin-left: 40px;
-  margin-right: 40px;
+  width: 35ch;
+  // Keeps this nice and square
 `;
 
 const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
-  margin-left: 40px;
-  margin-right: 40px;
 `;
 
-const StyledStack = styled(Stack)``;
+const StyledStack = styled(Stack)`
+  flex: 1 1 0;
+`;
 
 const Spacer = styled.div`
   height: 40px;
@@ -37,29 +46,39 @@ const HomePage = () => {
     <HomePageContainer>
       <HeroSection />
       <ProjectSection />
-      <StyledStack>
-        <SkillsTitle />
-        <ListContainer>
-          <NumberedListItem number="01" listItem="front-end engineering" />
-          <NumberedListItem number="02" listItem="ux/ ui design" />
-          <NumberedListItem number="03" listItem="business degree" />
-        </ListContainer>
-      </StyledStack>
+      <Spacer />
+      <Stack direction={{ md: "row" }} rowGap={6}>
+        <StyledStack>
+          <SkillsTitle />
+          <Spacer />
+          <ListContainer>
+            <NumberedListItem number="01" listItem="front-end engineering" />
+            <NumberedListItem number="02" listItem="ux/ ui design" />
+            <NumberedListItem number="03" listItem="business degree" />
+          </ListContainer>
+        </StyledStack>
 
-      <StyledBodyText>
-        maybe i could have a little bit of text here to fill out the space.
-        could be a nice little morsel of text about me. little quirky facts. fun
-        facts. but also serious facts. very professional serious facts.
-      </StyledBodyText>
-      <TechnologyTitle />
-
-      <ListContainer>
-        <NumberedListItem number="01" listItem="react & react native" />
-        <NumberedListItem number="02" listItem="javascript" />
-        <NumberedListItem number="03" listItem="html, css" />
-        <NumberedListItem number="04" listItem="css libraries" />
-        <NumberedListItem number="05" listItem="figma" />
-      </ListContainer>
+        <ParagraphContainer>
+          <StyledBodyText>
+            maybe i could have a little bit of text here to fill out the space.
+            could be a nice little morsel of text about me. little quirky facts.
+            fun facts. but also serious facts. very professional serious facts.
+          </StyledBodyText>
+        </ParagraphContainer>
+      </Stack>
+      <Stack alignItems={{ xs: "center", md: "flex-end" }}>
+        <Stack paddingRight={{ xs: 0, md: 6 }}>
+          <TechnologyTitle />
+          <ListContainer>
+            <NumberedListItem number="01" listItem="react & react native" />
+            <NumberedListItem number="02" listItem="javascript" />
+            <NumberedListItem number="03" listItem="html, css" />
+            <NumberedListItem number="04" listItem="css libraries" />
+            <NumberedListItem number="05" listItem="figma" />
+          </ListContainer>
+        </Stack>
+      </Stack>
+      <Spacer />
     </HomePageContainer>
   );
 };

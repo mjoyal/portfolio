@@ -7,24 +7,24 @@ import useNavigateAndScroll from "src/hooks/useNavigateAndScroll";
 import { useMediaQuery, useTheme } from "@mui/material";
 
 const ButtonContainer = styled.button<{ projectId: number }>`
-  grid-area: ${({ projectId }) => {
-    if (projectId === 1) {
-      return "top";
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    &:nth-of-type(1) {
+      grid-area: top;
     }
-
-    if (projectId === 2) {
-      return "left";
+    &:nth-of-type(2) {
+      grid-area: left;
     }
-
-    return "right";
-  }};
-
-  background-color: lightgreen;
+    &:nth-of-type(3) {
+      grid-area: right;
+    }
+  }
 `;
 
 const Image = styled.img<{ projectId: number }>`
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 `;
 
 const LabelContainer = styled.div`
