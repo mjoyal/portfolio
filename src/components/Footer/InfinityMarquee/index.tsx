@@ -26,6 +26,10 @@ const Asterisk = styled.span`
   color: ${({ theme }) => (theme as any).palette.text.secondary};
 `;
 
+const StyledHeader = styled.h1`
+  font-weight: 500;
+`;
+
 // const marqueeText = " let’s talk ✻ let’s talk ✻ let’s talk ✻ ";
 
 const InfiniteMarquee = () => {
@@ -38,7 +42,7 @@ const InfiniteMarquee = () => {
   return (
     <Wrapper>
       <Scroller>
-        <h1>{marqueeText}</h1>
+        <StyledHeader>{marqueeText}</StyledHeader>
       </Scroller>
     </Wrapper>
   );
