@@ -12,19 +12,47 @@ interface IStyledTextTypesProps {
   type: TextTypes;
 }
 
+// const StyledText = styled.p<IStyledTextTypesProps>`
+//   font-size: ${({ type }) => {
+//     if (type === TextTypes.BODY) {
+//       return "1rem";
+//     }
+
+//     if (type === TextTypes.BODY_LARGE) {
+//       return "1.5rem";
+//     }
+
+//     return "1.25rem"; // Medium or Label
+//   }};
+
+//   font-weight: ${({ type }) => (type === TextTypes.LABEL ? 600 : 300)};
+//   padding: 0;
+//   margin: 0;
+//   color: ${({ theme }) => (theme as any).palette.text.primary};
+//   text-align: left;
+// `;
+
 const StyledText = styled.p<IStyledTextTypesProps>`
-  font-size: ${({ type }) => {
-    if (type === TextTypes.BODY) {
-      return "1rem";
-    }
-
-    if (type === TextTypes.BODY_LARGE) {
-      return "1.5rem";
-    }
-
-    return "1.25rem"; // Medium or Label
+  font-size: ${({ type, theme }) => {
+    if (type === TextTypes.BODY) return "1rem";
+    if (type === TextTypes.BODY_LARGE) return "1.5rem"; // base for sm
+    return "1.25rem"; // fallback or medium
   }};
-  font-weight: ${({ type }) => (type === TextTypes.LABEL ? 500 : 300)};
+
+  ${({ type, theme }) =>
+    type === TextTypes.BODY_LARGE &&
+    `
+      ${(theme as any).breakpoints.up("md")} {
+        font-size: 1.5rem;
+      }
+
+      ${(theme as any).breakpoints.up("lg")} {
+        font-size: 1.75rem;
+
+      }
+    `}
+
+  font-weight: ${({ type }) => (type === TextTypes.LABEL ? 600 : 300)};
   padding: 0;
   margin: 0;
   color: ${({ theme }) => (theme as any).palette.text.primary};

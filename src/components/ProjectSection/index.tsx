@@ -13,9 +13,9 @@ const ProjectContainer = styled.div`
     grid-template-areas:
       "top top"
       "left right";
-    grid-column-gap: 12px;
+    grid-column-gap: 40px;
   }
-  gap: 16px;
+  gap: 40px;
   width: 100%;
 `;
 

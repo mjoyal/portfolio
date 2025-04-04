@@ -40,6 +40,9 @@ interface IProjectCardProps {
 
 // TODO: Add image alt
 
+const Spacer = styled.div`
+  height: 10px;
+`;
 const ProjectCard = (props: IProjectCardProps) => {
   const {
     project: { id, name, slug, role, imageSource, heroImageSource },
@@ -71,6 +74,7 @@ const ProjectCard = (props: IProjectCardProps) => {
       projectId={id}
     >
       <Image src={getImageSource()} projectId={id} />
+      <Spacer />
       <LabelContainer>
         <BodyText type={TextTypes.BODY_LARGE}>{name}</BodyText>
         <BodyText type={TextTypes.BODY_LARGE}>{role}</BodyText>
