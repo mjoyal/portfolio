@@ -17,13 +17,12 @@ const ParagraphContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   flex: 1 1 0;
 `;
 
 const StyledBodyText = styled(BodyText)`
   width: 35ch;
-  // Keeps this nice and square
+  // Keeps text nice and square
 `;
 
 const ListContainer = styled.div`
@@ -47,7 +46,7 @@ const HomePage = () => {
       <HeroSection />
       <ProjectSection />
       <Spacer />
-      <Stack direction={{ md: "row" }} rowGap={6}>
+      <Stack direction={{ md: "row" }} rowGap={5}>
         <StyledStack>
           <SkillsTitle />
           <Spacer />
@@ -66,9 +65,11 @@ const HomePage = () => {
           </StyledBodyText>
         </ParagraphContainer>
       </Stack>
+      <Spacer />
       <Stack alignItems={{ xs: "center", md: "flex-end" }}>
         <Stack paddingRight={{ xs: 0, md: 6 }}>
           <TechnologyTitle />
+          <Spacer />
           <ListContainer>
             <NumberedListItem number="01" listItem="react & react native" />
             <NumberedListItem number="02" listItem="javascript" />
