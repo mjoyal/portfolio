@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 
 const Scroller = styled.div`
   display: inline-flex;
-  animation: scroll 80s linear infinite;
+  animation: scroll 200s linear infinite;
 
   @keyframes scroll {
     0% {
@@ -38,7 +38,7 @@ const InfiniteMarquee = () => {
   return (
     <Wrapper>
       <Scroller>
-        <h2>{marqueeText}</h2>
+        <h1>{marqueeText}</h1>
       </Scroller>
     </Wrapper>
   );
