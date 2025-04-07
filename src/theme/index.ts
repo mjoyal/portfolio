@@ -4,11 +4,11 @@ import { createTheme, ThemeOptions } from "@mui/material/styles";
 const themeOptions: ThemeOptions = {
   palette: {
     primary: {
-      main: "#E6F187",
+      main: "#A0C7FF",
     },
     text: {
       primary: "#F5F5F5",
-      secondary: "#E6F187",
+      secondary: "#A0C7FF",
     },
     background: {
       default: "#0A0A0C",

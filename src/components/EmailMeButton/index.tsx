@@ -41,7 +41,7 @@ const EmailMeButton = () => {
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         sx={{
           "& .MuiSnackbarContent-root": {
-            backgroundColor: "#E6F187",
+            backgroundColor: "#A0C7FF",
             color: "#0A0A0C",
             fontSize: "1rem",
             fontWeight: "500",

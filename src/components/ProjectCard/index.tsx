@@ -4,8 +4,9 @@ import { IProjectModel } from "src/store/ProjectStore/ProjectModel";
 import useStores from "src/hooks/useStores";
 import useNavigateAndScroll from "src/hooks/useNavigateAndScroll";
 import { useMediaQuery, useTheme } from "@mui/material";
+import { motion } from "framer-motion";
 
-const ButtonContainer = styled.button<{ projectId: number }>`
+const ButtonContainer = styled(motion.button)`
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     &:nth-of-type(1) {
       grid-area: top;
@@ -17,9 +18,16 @@ const ButtonContainer = styled.button<{ projectId: number }>`
       grid-area: right;
     }
   }
+  color: ${({ theme }) => (theme as any).palette.text.primary};
 `;
 
-const Image = styled.img<{ projectId: number }>`
+const ImageWrapper = styled.div`
+  overflow: hidden;
+  width: 100%;
+  border-radius: 3px;
+`;
+
+const ZoomImage = styled(motion.img)`
   width: 100%;
   height: auto;
   display: block;
@@ -31,18 +39,16 @@ const LabelContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
-  color: ${({ theme }) => (theme as any).palette.text.primary};
 `;
 
 interface IProjectCardProps {
   project: IProjectModel;
 }
 
-// TODO: Add image alt
-
 const Spacer = styled.div`
   height: 10px;
 `;
+
 const ProjectCard = (props: IProjectCardProps) => {
   const {
     project: { id, name, slug, role, imageSource, heroImageSource },
@@ -71,13 +77,21 @@ const ProjectCard = (props: IProjectCardProps) => {
         setSelectedProject(id);
         navigate(slug);
       }}
-      projectId={id}
+      whileHover={{ color: "#A0C7FF" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      <Image src={getImageSource()} projectId={id} />
+      <ImageWrapper>
+        <ZoomImage
+          src={getImageSource()}
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        />
+      </ImageWrapper>
+
       <Spacer />
       <LabelContainer>
-        <h5>{name}</h5>
-        <h6>{role}</h6>
+        <h5>{name?.toLocaleUpperCase()}</h5>
+        <h6 style={{ color: "#f5f5f5" }}>{role}</h6>
       </LabelContainer>
     </ButtonContainer>
   );
