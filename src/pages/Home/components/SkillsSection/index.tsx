@@ -63,14 +63,7 @@ const SkillsSection = () => {
       </Stack>
 
       <SectionDivider />
-      <Stack direction={{ md: "row" }} columnGap={5}>
-        <StyledStack
-          alignItems={"center"}
-          justifyContent={"center"}
-          paddingTop={"200px"}
-        >
-          <LongArrow />
-        </StyledStack>
+      <Stack direction={{ md: "row-reverse" }} columnGap={5}>
         <StyledStack>
           <Stack alignItems={"flex-start"}>
             <ListContainer>
@@ -89,6 +82,14 @@ const SkillsSection = () => {
               <NumberedListItem number="05" listItem="figma" />
             </ListContainer>
           </Stack>
+        </StyledStack>
+
+        <StyledStack
+          alignItems={"center"}
+          justifyContent={"center"}
+          paddingTop={{ md: "200px", xs: "100px" }}
+        >
+          <LongArrow />
         </StyledStack>
       </Stack>
     </Stack>
