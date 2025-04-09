@@ -7,10 +7,10 @@ import { useParams } from "react-router-dom";
 import Button from "src/components/Button";
 
 import useStores from "src/hooks/useStores";
-import ProjectSectionLabel from "./ProjectSectionLabel";
-import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Stack, useMediaQuery, useTheme } from "@mui/material";
 import LittleArrow from "src/icons/LittleArrow";
 import OpenNewArrow from "src/icons/OpenNewArrow";
+import ProjectSectionText from "./ProjectSectionText";
 
 const ProjectPageContainer = styled.div`
   /* These 100% widths are important to keep the overall margin of the site */
@@ -111,49 +111,34 @@ const ProjectPage = () => {
         <SectionDivider />
       </Stack>
 
-      <Stack flexDirection={"row"} gap={3}>
-        <ProjectSectionLabel number="01" title="project overview" />
+      <ProjectSectionText number="01" title="project overview">
+        maybe i could have a little bit of text here to fill out the space.
+        could be a nice little morsel of text about me. little quirky facts. fun
+        facts. but also serious facts. very professional serious facts.
+      </ProjectSectionText>
 
-        <Box>
-          <StyledP>
-            maybe i could have a little bit of text here to fill out the space.
-            could be a nice little morsel of text about me. little quirky facts.
-            fun facts. but also serious facts. very professional serious facts.
-          </StyledP>
-        </Box>
-      </Stack>
       <Spacer />
 
       <Image src={"/images/project-landscape.png"} />
       <SectionDivider />
 
-      <Stack flexDirection={"row"} gap={3}>
-        <ProjectSectionLabel number="02" title="goals" />
+      <ProjectSectionText number="02" title="goals">
+        maybe i could have a little bit of text here to fill out the space.
+        could be a nice little morsel of text about me. little quirky facts. fun
+        facts. but also serious facts. very professional serious facts.
+      </ProjectSectionText>
 
-        <Box>
-          <StyledP>
-            maybe i could have a little bit of text here to fill out the space.
-            could be a nice little morsel of text about me. little quirky facts.
-            fun facts. but also serious facts. very professional serious facts.
-          </StyledP>
-        </Box>
-      </Stack>
       <Spacer />
 
       <Image src={"/images/project-landscape.png"} />
       <SectionDivider />
 
-      <Stack flexDirection={"row"} gap={3}>
-        <ProjectSectionLabel number="03" title="process" />
+      <ProjectSectionText number="03" title="process">
+        maybe i could have a little bit of text here to fill out the space.
+        could be a nice little morsel of text about me. little quirky facts. fun
+        facts. but also serious facts. very professional serious facts.
+      </ProjectSectionText>
 
-        <Box>
-          <StyledP>
-            maybe i could have a little bit of text here to fill out the space.
-            could be a nice little morsel of text about me. little quirky facts.
-            fun facts. but also serious facts. very professional serious facts.
-          </StyledP>
-        </Box>
-      </Stack>
       <Spacer />
 
       <Stack gap={1}>
@@ -167,24 +152,11 @@ const ProjectPage = () => {
       <SectionDivider />
 
       <Stack flexDirection={"row"} gap={3}>
-        <ProjectSectionLabel number="04" title="outcomes" />
-
-        <Stack alignItems={"flex-start"}>
-          <StyledP>
-            maybe i could have a little bit of text here to fill out the space.
-            could be a nice little morsel of text about me. little quirky facts.
-            fun facts. but also serious facts. very professional serious facts.
-          </StyledP>
-          <Spacer />
-          <Button
-            onClick={() => {
-              alert("Not implemented");
-            }}
-          >
-            <h5> View Project</h5>
-            <OpenNewArrow />
-          </Button>
-        </Stack>
+        <ProjectSectionText number="04" title="outcomes" hasButton>
+          maybe i could have a little bit of text here to fill out the space.
+          could be a nice little morsel of text about me. little quirky facts.
+          fun facts. but also serious facts. very professional serious facts.
+        </ProjectSectionText>
       </Stack>
       <Spacer />
 
