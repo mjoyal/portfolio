@@ -8,7 +8,7 @@ import Button from "src/components/Button";
 
 import useStores from "src/hooks/useStores";
 import ProjectSectionLabel from "./ProjectSectionLabel";
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 
 const ProjectPageContainer = styled.div`
   /* These 100% widths are important to keep the overall margin of the site */
@@ -19,9 +19,22 @@ const ProjectPageContainer = styled.div`
   }
 `;
 
+const HeaderSection = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const StyledHeader = styled.h1`
+  text-align: right;
+  line-height: 1;
+`;
+
 const Image = styled.img`
-  height: 100%;
   width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 3px;
 `;
 
 const SmallImage = styled.img`
@@ -44,6 +57,10 @@ const ProjectPage = () => {
 
   const { slug } = useParams();
 
+  const theme = useTheme();
+
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
   useEffect(() => {
     if (!selectedProject && slug) {
       const project = getProjectFromSlug(slug);
@@ -53,8 +70,14 @@ const ProjectPage = () => {
 
   return (
     <ProjectPageContainer>
-      <h1>{selectedProject?.name}</h1>
-      <Image src={"/images/project-square.png"} />
+      <HeaderSection>
+        <Stack gap={"20px"}>
+          <StyledHeader>{selectedProject?.name}</StyledHeader>
+          <Image src={"/images/project-square.png"} />
+        </Stack>
+      </HeaderSection>
+      {isSmallScreen ? <Spacer /> : <SectionDivider />}
+
       <Stack alignItems={"flex-start"}>
         <h4>a web application for discovering local music gigs.</h4>
         <p>
