@@ -15,12 +15,12 @@ const ProjectSectionLabel = (props: IProjectSectionLabelProps) => {
   return (
     <Stack paddingTop={"8px"}>
       {/*8px padding to align with headings on project page*/}
-      <p>
+      <h6>
         <Bracket>{"["}</Bracket>
         {number}
         <Bracket>{"]"}</Bracket>
-      </p>
-      <p>{title}</p>
+      </h6>
+      <h6>{title}</h6>
     </Stack>
   );
 };

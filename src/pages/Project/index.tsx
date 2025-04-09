@@ -51,6 +51,10 @@ const SectionDivider = styled.div`
   height: 200px;
 `;
 
+const StyledP = styled.p`
+  max-width: 50ch;
+`;
+
 const ProjectPage = () => {
   const {
     projectStore: { selectedProject, setSelectedProject, getProjectFromSlug },
@@ -83,12 +87,16 @@ const ProjectPage = () => {
       {isSmallScreen ? <Spacer /> : <SectionDivider />}
 
       <Stack alignItems={"flex-start"}>
-        <h4>a web application for discovering local music gigs.</h4>
-        <p>
+        <h3>
+          a web application for discovering
+          <br />
+          local music gigs.
+        </h3>
+        <StyledP>
           maybe i could have a little bit of text here to fill out the space.
           could be a nice little morsel of text about me. little quirky facts.
           fun facts. but also serious facts. very professional serious facts.
-        </p>
+        </StyledP>
         <Spacer />
         <Button
           onClick={() => {
@@ -107,12 +115,11 @@ const ProjectPage = () => {
         <ProjectSectionLabel number="01" title="project overview" />
 
         <Box>
-          <h4>a web application for discovering local music gigs.</h4>
-          <p>
+          <StyledP>
             maybe i could have a little bit of text here to fill out the space.
             could be a nice little morsel of text about me. little quirky facts.
             fun facts. but also serious facts. very professional serious facts.
-          </p>
+          </StyledP>
         </Box>
       </Stack>
       <Spacer />
@@ -124,12 +131,11 @@ const ProjectPage = () => {
         <ProjectSectionLabel number="02" title="goals" />
 
         <Box>
-          <h4>a web application for discovering local music gigs.</h4>
-          <p>
+          <StyledP>
             maybe i could have a little bit of text here to fill out the space.
             could be a nice little morsel of text about me. little quirky facts.
             fun facts. but also serious facts. very professional serious facts.
-          </p>
+          </StyledP>
         </Box>
       </Stack>
       <Spacer />
@@ -141,12 +147,11 @@ const ProjectPage = () => {
         <ProjectSectionLabel number="03" title="process" />
 
         <Box>
-          <h4>a web application for discovering local music gigs.</h4>
-          <p>
+          <StyledP>
             maybe i could have a little bit of text here to fill out the space.
             could be a nice little morsel of text about me. little quirky facts.
             fun facts. but also serious facts. very professional serious facts.
-          </p>
+          </StyledP>
         </Box>
       </Stack>
       <Spacer />
@@ -165,12 +170,11 @@ const ProjectPage = () => {
         <ProjectSectionLabel number="04" title="outcomes" />
 
         <Stack alignItems={"flex-start"}>
-          <h4>a web application for discovering local music gigs.</h4>
-          <p>
+          <StyledP>
             maybe i could have a little bit of text here to fill out the space.
             could be a nice little morsel of text about me. little quirky facts.
             fun facts. but also serious facts. very professional serious facts.
-          </p>
+          </StyledP>
           <Spacer />
           <Button
             onClick={() => {
