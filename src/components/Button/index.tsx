@@ -6,13 +6,12 @@ interface IButtonProps {
 }
 
 const StyledButton = styled.button`
-  background-color: ${({ theme }) => (theme as any).palette.background.default};
   border: ${({ theme }) =>
     `1.5px solid ${(theme as any).palette.primary.main}`};
   color: ${({ theme }) => (theme as any).palette.text.primary};
   border-radius: 100px;
-  font-family: "Degular", sans-serif;
-  font-weight: 400;
+
+  font-weight: 600;
   padding: 10px 40px;
   font-size: 1.5rem;
 `;

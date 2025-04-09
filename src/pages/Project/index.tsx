@@ -9,6 +9,8 @@ import Button from "src/components/Button";
 import useStores from "src/hooks/useStores";
 import ProjectSectionLabel from "./ProjectSectionLabel";
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
+import LittleArrow from "src/icons/LittleArrow";
+import OpenNewArrow from "src/icons/OpenNewArrow";
 
 const ProjectPageContainer = styled.div`
   /* These 100% widths are important to keep the overall margin of the site */
@@ -21,7 +23,6 @@ const ProjectPageContainer = styled.div`
 
 const HeaderSection = styled.div`
   display: flex;
-  justify-content: flex-end;
 `;
 
 const StyledHeader = styled.h1`
@@ -71,7 +72,10 @@ const ProjectPage = () => {
   return (
     <ProjectPageContainer>
       <HeaderSection>
-        <Stack gap={"20px"}>
+        <Stack flex={1} justifyContent={"flex-end"}>
+          <LittleArrow />
+        </Stack>
+        <Stack gap={"20px"} flex={1}>
           <StyledHeader>{selectedProject?.name}</StyledHeader>
           <Image src={"/images/project-square.png"} />
         </Stack>
@@ -91,7 +95,10 @@ const ProjectPage = () => {
             alert("Not implemented");
           }}
         >
-          View Project
+          <Stack direction={"row"} columnGap={2} alignItems={"center"}>
+            <h5> View Project</h5>
+            <OpenNewArrow />
+          </Stack>
         </Button>
         <SectionDivider />
       </Stack>
@@ -170,7 +177,8 @@ const ProjectPage = () => {
               alert("Not implemented");
             }}
           >
-            View Project
+            <h5> View Project</h5>
+            <OpenNewArrow />
           </Button>
         </Stack>
       </Stack>

@@ -6,10 +6,13 @@ const themeOptions: ThemeOptions = {
     primary: {
       main: "#A0C7FF",
     },
+
     text: {
       primary: "#F5F5F5",
       secondary: "#A0C7FF",
+      contrast: "#0A0A0C",
     },
+
     background: {
       default: "#0A0A0C",
     },
