@@ -5,7 +5,7 @@ import ProjectSectionLabel from "../ProjectSectionLabel";
 import OpenNewArrow from "src/icons/OpenNewArrow";
 import Button from "src/components/Button";
 
-const StyledP = styled.p`
+const StyledP = styled.h6`
   max-width: 40ch;
 `;
 
@@ -19,7 +19,11 @@ const ProjectSectionText = (props: IProjectSectionLabelProps) => {
   const { number, title, children, hasButton } = props;
 
   return (
-    <Stack flexDirection={"row"} gap={3}>
+    <Stack
+      flexDirection={{ md: "row", xs: "column" }}
+      justifyContent={"space-between"}
+      gap={3}
+    >
       <ProjectSectionLabel number={number} title={title} />
 
       <Stack alignItems={"flex-start"} gap={2}>

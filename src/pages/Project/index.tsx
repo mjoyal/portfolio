@@ -51,8 +51,12 @@ const SectionDivider = styled.div`
   height: 200px;
 `;
 
-const StyledP = styled.p`
+const StyledP = styled.h6`
   max-width: 50ch;
+`;
+
+const StyledTitle = styled.h3`
+  max-width: 20ch;
 `;
 
 const ProjectPage = () => {
@@ -76,9 +80,11 @@ const ProjectPage = () => {
   return (
     <ProjectPageContainer>
       <HeaderSection>
-        <Stack flex={1} justifyContent={"flex-end"}>
-          <LittleArrow />
-        </Stack>
+        {!isSmallScreen && (
+          <Stack flex={1} justifyContent={"flex-end"}>
+            <LittleArrow />
+          </Stack>
+        )}
         <Stack gap={"20px"} flex={1}>
           <StyledHeader>{selectedProject?.name}</StyledHeader>
           <Image src={"/images/project-square.png"} />
@@ -87,16 +93,16 @@ const ProjectPage = () => {
       {isSmallScreen ? <Spacer /> : <SectionDivider />}
 
       <Stack alignItems={"flex-start"}>
-        <h3>
-          a web application for discovering
-          <br />
-          local music gigs.
-        </h3>
+        <StyledTitle>
+          a web application for discovering local music gigs.
+        </StyledTitle>
+        <Spacer />
         <StyledP>
           maybe i could have a little bit of text here to fill out the space.
           could be a nice little morsel of text about me. little quirky facts.
           fun facts. but also serious facts. very professional serious facts.
         </StyledP>
+        <Spacer />
         <Spacer />
         <Button
           onClick={() => {
@@ -118,8 +124,7 @@ const ProjectPage = () => {
       </ProjectSectionText>
 
       <Spacer />
-
-      <Image src={"/images/project-landscape.png"} />
+      <Image src={"/images/gigpit.png"} />
       <SectionDivider />
 
       <ProjectSectionText number="02" title="goals">
@@ -129,8 +134,7 @@ const ProjectPage = () => {
       </ProjectSectionText>
 
       <Spacer />
-
-      <Image src={"/images/project-landscape.png"} />
+      <Image src={"/images/gigpit.png"} />
       <SectionDivider />
 
       <ProjectSectionText number="03" title="process">
@@ -147,21 +151,19 @@ const ProjectPage = () => {
           <SmallImage src={"/images/project-square.png"} />
         </Stack>
 
-        <Image src={"/images/project-landscape.png"} />
+        <Image src={"/images/gigpit.png"} />
       </Stack>
       <SectionDivider />
 
-      <Stack flexDirection={"row"} gap={3}>
-        <ProjectSectionText number="04" title="outcomes" hasButton>
-          maybe i could have a little bit of text here to fill out the space.
-          could be a nice little morsel of text about me. little quirky facts.
-          fun facts. but also serious facts. very professional serious facts.
-        </ProjectSectionText>
-      </Stack>
+      <ProjectSectionText number="04" title="outcomes" hasButton>
+        maybe i could have a little bit of text here to fill out the space.
+        could be a nice little morsel of text about me. little quirky facts. fun
+        facts. but also serious facts. very professional serious facts.
+      </ProjectSectionText>
+
       <Spacer />
 
-      <Image src={"/images/project-landscape.png"} />
-      <Image src={"/images/project-landscape.png"} />
+      <Image src={"/images/gigpit.png"} />
       <SectionDivider />
     </ProjectPageContainer>
   );
