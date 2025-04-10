@@ -6,7 +6,7 @@ const Container = styled.div`
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     gap: 80px;
   }
-  width: 300px;
+  width: 350px;
 `;
 
 interface INumberedListItemProps {

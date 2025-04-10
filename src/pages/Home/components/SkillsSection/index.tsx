@@ -6,6 +6,7 @@ import TechnologyTitle from "src/components/Titles/TechnologyTitle";
 import styled from "@emotion/styled";
 import SkillsTitle from "src/components/Titles/SkillsTitle";
 import LongArrow from "src/icons/LongArrow";
+
 const ParagraphContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -23,7 +24,6 @@ const ListContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  // background-color: green;
 `;
 
 const StyledStack = styled(Stack)`
@@ -53,6 +53,7 @@ const SkillsSection = () => {
           </ListContainer>
         </StyledStack>
 
+        <Spacer />
         <ParagraphContainer>
           <StyledText>
             maybe i could have a little bit of text here to fill out the space.

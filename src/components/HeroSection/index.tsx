@@ -1,89 +1,56 @@
 import styled from "@emotion/styled";
-import { Box } from "@mui/material";
+import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import PreText from "./components/PreText";
+import LittleArrow from "src/icons/LittleArrow";
 
 const HeroContainer = styled.div`
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  flex-direction: column;
   height: 80vh;
-
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    height: 90vh;
+    height: 92vh;
   }
-
-  background-color: ${({ theme }) => (theme as any).palette.background.primary};
 `;
 
 const TextContainer = styled.div`
-  position: relative;
   display: flex;
-  width: 100%;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding-bottom: 80px;
-  margin-bottom: 80px;
+  align-items: flex-start;
+  padding-bottom: 75px;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    margin-bottom: unset;
   }
 `;
 
-const HeroText = styled.div`
+const HeroText = styled.h4`
   font-weight: 600;
-  font-size: clamp(5.5rem, 18vw, 14rem);
-
+  font-size: clamp(5.5rem, 22vw, 16rem);
   letter-spacing: -0.05em;
   line-height: 1;
   text-align: left;
-  background-color: ${({ theme }) => (theme as any).palette.background.primary};
-
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    margin-top: 25px;
-  }
-
-  ${({ theme }) => (theme as any).breakpoints.up("lg")} {
-    margin-top: 20px;
-  }
-`;
-
-const BioText = styled.div`
-  position: absolute;
-  display: flex;
-  text-align: left;
-  font-size: 1.25rem;
-  width: 300px;
-  gap: 4px;
-  bottom: 0%;
-  right: 50%;
-  transform: translateX(50%);
-
-  ${({ theme }) => (theme as any).breakpoints.up("lg")} {
-    top: 15%;
-    right: 0;
-    transform: unset;
-    bottom: unset;
-  }
 `;
 
 const FooterText = styled.p`
-  position: absolute;
-  bottom: 5%;
-  font-size: 1.15rem;
-
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    left: 25%;
-  }
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 400;
+  text-align: center;
 `;
 
 const HeroSection = () => {
+  const theme = useTheme();
+
+  const isMedium = useMediaQuery(theme.breakpoints.up("sm"));
+
   return (
     <HeroContainer>
       <TextContainer>
-        <PreText />
         <HeroText>
+          <PreText />
           Creative
           <br />
           Developer
@@ -91,21 +58,21 @@ const HeroSection = () => {
             .
           </Box>
         </HeroText>
-
-        <BioText>
-          <Box
-            component="span"
-            color="text.secondary"
-            sx={{ marginTop: "4px" }}
-          >
-            *
-          </Box>{" "}
-          <p>
-            specialist in ux/ui, web design, & <br /> front-end development.
-          </p>
-        </BioText>
       </TextContainer>
-      <FooterText>[ making the internet prettier since 2019 ]</FooterText>
+      <Stack
+        sx={{
+          width: "100%",
+          position: "absolute",
+          bottom: 35,
+        }}
+        gap={{ xs: 5, md: 10 }}
+        direction={"row"}
+        justifyContent={{ xs: "center", md: "flex-end" }}
+        alignItems={"flex-end"}
+      >
+        <FooterText>making the internet prettier since 2019</FooterText>
+        {isMedium && <LittleArrow />}
+      </Stack>
     </HeroContainer>
   );
 };

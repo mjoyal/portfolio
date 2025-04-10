@@ -24,8 +24,9 @@ const BottomContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
   border-bottom: 1px solid white;
-  margin-bottom: 24px;
   padding-top: 48px;
+  padding-bottom: 10px;
+  margin-bottom: 32px;
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     margin-bottom: 44px;
   }
@@ -36,6 +37,7 @@ const StyledText = styled.h6`
 `;
 
 const StyledHeader = styled.h3`
+  line-height: 1.25;
   text-align: left;
 `;
 
