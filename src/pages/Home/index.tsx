@@ -1,8 +1,7 @@
 import { observer } from "mobx-react";
 import styled from "@emotion/styled";
-import HeroSection from "src/components/HeroSection";
-import ProjectSection from "src/components/ProjectSection";
-
+import HeroSection from "./components/HeroSection";
+import ProjectSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
 import BioSection from "./components/BioSection";
 

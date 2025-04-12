@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
-import ProjectCard from "../ProjectCard";
-import ProjectsTitle from "../Titles/ProjectsTitle";
+import ProjectCard from "../../../../components/ProjectCard";
+import ProjectsTitle from "../../../../components/Titles/ProjectsTitle";
 import { observer } from "mobx-react";
 import useStores from "src/hooks/useStores";
+import { Box } from "@mui/material";
 
 const ProjectContainer = styled.div`
   display: flex;
@@ -28,7 +29,7 @@ const ProjectSection = () => {
   } = useStores();
 
   return (
-    <>
+    <Box id="work">
       <ProjectsTitle />
       <Spacer />
       <ProjectContainer>
@@ -36,7 +37,7 @@ const ProjectSection = () => {
           <ProjectCard key={project.id} project={project} />
         ))}
       </ProjectContainer>
-    </>
+    </Box>
   );
 };
 
