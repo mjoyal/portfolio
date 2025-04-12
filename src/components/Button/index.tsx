@@ -14,12 +14,13 @@ const StyledButton = styled.button`
   font-weight: 600;
   padding: 10px 40px;
   font-size: 1.5rem;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 
   &:hover {
     background-color: ${({ theme }) => (theme as any).palette.primary.main};
     color: #0a0a0c;
-    // box-shadow: 0 0 8px #a3bffa;
+    box-shadow: 0 0 8px #a3bffa;
   }
 `;
 

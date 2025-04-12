@@ -20,7 +20,7 @@ const EmailMeButton = () => {
     <>
       <Button onClick={handleCopy}>Email me</Button>
       <Toast
-        message="Email copied to clipboard!"
+        message="Email copied to clipboard"
         isOpen={isOpen}
         handleClose={() => setIsOpen(false)}
       />

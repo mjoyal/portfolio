@@ -36,7 +36,7 @@ const HeroText = styled.h4`
 `;
 
 const FooterText = styled.p`
-  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 400;
   text-align: center;
 `;

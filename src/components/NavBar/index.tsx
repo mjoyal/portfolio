@@ -16,14 +16,14 @@ const Container = styled.div`
 
 const StyledLink = styled.a`
   text-decoration: none;
-  &:hover {
-    color: red;
-  }
 `;
 
 const StyledLinkText = styled.h5`
+  color: ${({ theme }) => (theme as any).palette.text.primary};
+  transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
   &:hover {
-    color: red;
+    color: ${({ theme }) => (theme as any).palette.text.secondary};
+    text-shadow: 0 0 6px #a3bffa;
   }
 `;
 
@@ -76,7 +76,7 @@ const NavBar = () => {
         </button>
       </Stack>
       <Toast
-        message={"Email copied to clipboard!"}
+        message={"Email copied to clipboard"}
         isOpen={isOpen}
         handleClose={() => setIsOpen(false)}
       />

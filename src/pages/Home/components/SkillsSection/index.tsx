@@ -34,6 +34,10 @@ const Spacer = styled.div`
   height: 40px;
 `;
 
+const StyledEmphasis = styled.em`
+  color: ${({ theme }) => (theme as any).palette.text.secondary};
+`;
+
 // TODO: Section Divider & Spacer Components
 const SectionDivider = styled.div`
   height: 200px;
@@ -42,6 +46,19 @@ const SectionDivider = styled.div`
 const SkillsSection = () => {
   return (
     <Stack>
+      <Stack maxWidth={"80ch"}>
+        <h3>
+          a bit about me is that i like to{" "}
+          <StyledEmphasis>blah blah.</StyledEmphasis>
+        </h3>
+        <h6>
+          maybe i could have a little bit of text here to fill out the space.
+          could be a nice little morsel of text about me. little quirky facts.
+          fun facts. but also serious facts. very professional serious facts.
+        </h6>
+      </Stack>
+      <SectionDivider />
+
       <Stack direction={{ md: "row" }} rowGap={5}>
         <StyledStack>
           <SkillsTitle />
