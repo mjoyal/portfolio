@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import { Snackbar, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import useNavigateAndScroll from "src/hooks/useNavigateAndScroll";
-import EmailMeButton from "../EmailMeButton";
 import { useState } from "react";
+import Toast from "../Toast";
 
 const Container = styled.div`
   display: flex;
@@ -16,33 +16,41 @@ const Container = styled.div`
 
 const StyledLink = styled.a`
   text-decoration: none;
+  &:hover {
+    color: red;
+  }
 `;
+
+const StyledLinkText = styled.h5`
+  &:hover {
+    color: red;
+  }
+`;
+
 const HomeButton = styled.button``;
 
 const NavBar = () => {
   const navigate = useNavigateAndScroll();
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleCopy = async () => {
     try {
       const myEmail = "mackenzie.joyal@gmail.com";
       await navigator.clipboard.writeText(myEmail);
 
-      handleClick();
+      setIsOpen(true);
     } catch (err) {
       console.error("Failed to copy: ", err);
       alert("Copy failed. Try again.");
     }
   };
+
   return (
     <Container>
       <HomeButton onClick={() => navigate("/")}>
         <svg
-          width="152"
-          height="39"
+          width="100"
+          height="30"
           viewBox="0 0 152 39"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -60,41 +68,17 @@ const NavBar = () => {
 
       <Stack direction={"row"} gap={5}>
         <StyledLink href="#work">
-          <h4>work</h4>
+          <StyledLinkText>work</StyledLinkText>
         </StyledLink>
 
         <button onClick={handleCopy}>
-          <h4>say hi!</h4>
+          <StyledLinkText>say hi!</StyledLinkText>
         </button>
       </Stack>
-
-      <Snackbar
-        open={open}
-        autoHideDuration={5000}
-        onClose={handleClose}
-        message={
-          <span
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "8px",
-            }}
-          >
-            Email copied to clipboard!
-          </span>
-        }
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-        sx={{
-          "& .MuiSnackbarContent-root": {
-            backgroundColor: "#A0C7FF",
-            color: "#0A0A0C",
-            fontSize: "1rem",
-            fontWeight: "500",
-            borderRadius: 0,
-            border: "2px solid white",
-          },
-        }}
+      <Toast
+        message={"Email copied to clipboard!"}
+        isOpen={isOpen}
+        handleClose={() => setIsOpen(false)}
       />
     </Container>
   );
