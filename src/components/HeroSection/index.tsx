@@ -29,7 +29,7 @@ const TextContainer = styled.div`
 
 const HeroText = styled.h4`
   font-weight: 600;
-  font-size: clamp(5.5rem, 22vw, 16rem);
+  font-size: clamp(5.5rem, 20vw, 14rem);
   letter-spacing: -0.05em;
   line-height: 1;
   text-align: left;

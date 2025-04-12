@@ -3,10 +3,11 @@ import styled from "@emotion/styled";
 const Container = styled.div`
   display: flex;
   gap: 40px;
+  width: 300px;
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    width: 350px;
     gap: 80px;
   }
-  width: 350px;
 `;
 
 interface INumberedListItemProps {

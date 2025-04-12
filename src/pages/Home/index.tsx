@@ -4,6 +4,7 @@ import HeroSection from "src/components/HeroSection";
 import ProjectSection from "src/components/ProjectSection";
 
 import SkillsSection from "./components/SkillsSection";
+import BioSection from "./components/BioSection";
 
 const HomePageContainer = styled.div`
   /* These 100% widths are important to keep the overall margin of the site */
@@ -12,13 +13,15 @@ const HomePageContainer = styled.div`
 
 // TODO: Section Divider & Spacer Components
 const SectionDivider = styled.div`
-  height: 200px;
+  height: 250px;
 `;
 
 const HomePage = () => {
   return (
     <HomePageContainer>
       <HeroSection />
+      <SectionDivider />
+      <BioSection />
       <SectionDivider />
       <ProjectSection />
       <SectionDivider />

@@ -66,7 +66,7 @@ const SkillsSection = () => {
       <SectionDivider />
       <Stack direction={{ md: "row-reverse" }} columnGap={5}>
         <StyledStack>
-          <Stack alignItems={"flex-start"}>
+          <Stack alignItems={{ xs: "center", md: "flex-start" }}>
             <ListContainer>
               <TechnologyTitle />
               <Spacer />
@@ -75,8 +75,10 @@ const SkillsSection = () => {
             </ListContainer>
           </Stack>
 
-          <Spacer />
-          <Stack alignItems={"flex-end"}>
+          <Stack
+            alignItems={{ xs: "center", md: "flex-end" }}
+            paddingTop={{ xs: "20px", md: "40px" }}
+          >
             <ListContainer>
               <NumberedListItem number="03" listItem="html, css" />
               <NumberedListItem number="04" listItem="css libraries" />

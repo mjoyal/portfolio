@@ -23,10 +23,8 @@ const BottomContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  border-bottom: 1px solid white;
   padding-top: 48px;
-  padding-bottom: 10px;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     margin-bottom: 44px;
   }

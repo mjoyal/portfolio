@@ -17,7 +17,7 @@ const StyledButton = styled.button`
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
   &:hover {
-    background-color: #a0c7ff;
+    background-color: ${({ theme }) => (theme as any).palette.primary.main};
     color: #0a0a0c;
     // box-shadow: 0 0 8px #a3bffa;
   }

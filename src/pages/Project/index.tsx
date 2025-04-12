@@ -25,7 +25,7 @@ const HeaderSection = styled.div`
   display: flex;
 `;
 
-const StyledHeader = styled.h1`
+const StyledHeader = styled.h2`
   text-align: right;
   line-height: 1;
 `;
