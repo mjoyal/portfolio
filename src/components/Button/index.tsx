@@ -1,16 +1,18 @@
 import styled from "@emotion/styled";
 
 interface IButtonProps {
-  onClick: any;
+  onClick: () => void;
   children: any;
+  isTextButton?: boolean;
 }
 
-const StyledButton = styled.button`
-  border: ${({ theme }) =>
-    `1.5px solid ${(theme as any).palette.primary.main}`};
+const StyledButton = styled.button<{ isTextButton?: boolean }>`
+  border: ${({ theme, isTextButton }) =>
+    isTextButton
+      ? "0px"
+      : `1.5px solid ${(theme as any).palette.primary.main}`};
   color: ${({ theme }) => (theme as any).palette.text.primary};
   border-radius: 100px;
-
   font-weight: 600;
   padding: 10px 40px;
   font-size: 1.5rem;
@@ -18,16 +20,21 @@ const StyledButton = styled.button`
     box-shadow 0.3s ease-in-out;
 
   &:hover {
-    background-color: ${({ theme }) => (theme as any).palette.primary.main};
-    color: #0a0a0c;
-    box-shadow: 0 0 8px #a3bffa;
+    background-color: ${({ theme, isTextButton }) =>
+      isTextButton ? "" : (theme as any).palette.primary.main};
+    color: ${({ theme, isTextButton }) =>
+      isTextButton
+        ? (theme as any).palette.text.secondary
+        : (theme as any).palette.text.contrast};
+    box-shadow: ${({ isTextButton }) =>
+      isTextButton ? "" : "0 0 8px #a3bffa"};
   }
 `;
 
 const Button = (props: IButtonProps) => {
-  const { onClick, children, ...rest } = props;
+  const { onClick, children, isTextButton, ...rest } = props;
   return (
-    <StyledButton onClick={onClick} {...rest}>
+    <StyledButton onClick={onClick} {...rest} isTextButton={isTextButton}>
       {children}
     </StyledButton>
   );

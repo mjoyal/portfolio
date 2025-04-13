@@ -6,6 +6,7 @@ import TechnologyTitle from "src/components/Titles/TechnologyTitle";
 import styled from "@emotion/styled";
 import SkillsTitle from "src/components/Titles/SkillsTitle";
 import LongArrow from "src/icons/LongArrow";
+import Button from "src/components/Button";
 
 const ParagraphContainer = styled.div`
   display: flex;
@@ -46,7 +47,7 @@ const SectionDivider = styled.div`
 const SkillsSection = () => {
   return (
     <Stack>
-      <Stack maxWidth={"80ch"}>
+      <Stack maxWidth={"80ch"} alignItems={"flex-start"} gap={2}>
         <h3>
           a bit about me is that i like to{" "}
           <StyledEmphasis>blah blah.</StyledEmphasis>
@@ -56,6 +57,11 @@ const SkillsSection = () => {
           could be a nice little morsel of text about me. little quirky facts.
           fun facts. but also serious facts. very professional serious facts.
         </h6>
+
+        <Spacer />
+        <Button onClick={() => alert("not implemented")}>
+          Download my resume
+        </Button>
       </Stack>
       <SectionDivider />
 

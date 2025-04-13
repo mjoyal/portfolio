@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 import EmailMeButton from "../EmailMeButton";
 import InfiniteMarquee from "./InfinityMarquee";
+import Button from "../Button";
+import { Stack } from "@mui/material";
 
 const FooterContainer = styled.div`
   max-width: 100vw;
@@ -47,7 +49,12 @@ const Footer = () => {
           Ready to get in <br />
           touch?
         </StyledHeader>
-        <EmailMeButton />
+        <Stack direction={"row"} gap={3}>
+          <EmailMeButton />
+          <Button isTextButton onClick={() => alert("not implemented")}>
+            Download my resume
+          </Button>
+        </Stack>
       </TopContainer>
 
       <BottomContainer>
