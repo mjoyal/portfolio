@@ -2,7 +2,11 @@ import { useState } from "react";
 import Button from "../Button";
 import Toast from "../Toast";
 
-const EmailMeButton = () => {
+interface IEmailMeButtonProps {
+  isTextButton?: boolean;
+}
+const EmailMeButton = (props: IEmailMeButtonProps) => {
+  const { isTextButton = false } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCopy = async () => {
@@ -18,7 +22,9 @@ const EmailMeButton = () => {
   };
   return (
     <>
-      <Button onClick={handleCopy}>Email me</Button>
+      <Button onClick={handleCopy} isTextButton={isTextButton}>
+        Email me
+      </Button>
       <Toast
         message="Email copied to clipboard"
         isOpen={isOpen}

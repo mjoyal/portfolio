@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import { observer } from "mobx-react";
 import { IProjectModel } from "src/store/ProjectStore/ProjectModel";
 import useStores from "src/hooks/useStores";
-import useNavigateAndScroll from "src/hooks/useNavigateAndScroll";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const ButtonContainer = styled(motion.button)`
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
@@ -58,7 +58,7 @@ const ProjectCard = (props: IProjectCardProps) => {
     projectStore: { setSelectedProject },
   } = useStores();
 
-  const navigate = useNavigateAndScroll();
+  const navigate = useNavigate();
 
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down("md"));

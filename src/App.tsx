@@ -10,6 +10,7 @@ import ProjectPage from "./pages/Project";
 import StoreProvider from "./store";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -27,6 +28,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline /> {/* Resets default browser styles */}
         <BrowserRouter>
+          <ScrollToTop />
           <NavBar />
           <AppWrapper>
             <Routes>

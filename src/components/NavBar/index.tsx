@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
-import useNavigateAndScroll from "src/hooks/useNavigateAndScroll";
 import { useState } from "react";
 import Toast from "../Toast";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ const StyledLinkText = styled.h5`
 const HomeButton = styled.button``;
 
 const NavBar = () => {
-  const navigate = useNavigateAndScroll();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCopy = async () => {

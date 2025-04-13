@@ -15,6 +15,7 @@ import ProjectSectionText from "./ProjectSectionText";
 const ProjectPageContainer = styled.div`
   /* These 100% widths are important to keep the overall margin of the site */
   width: 100%;
+  min-height: 100vh;
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     padding-left: 60px;
     padding-right: 60px;
@@ -22,6 +23,7 @@ const ProjectPageContainer = styled.div`
 `;
 
 const HeaderSection = styled.div`
+  margin-top: 48px;
   display: flex;
 `;
 
@@ -85,7 +87,7 @@ const ProjectPage = () => {
             <LittleArrow />
           </Stack>
         )}
-        <Stack gap={"20px"} flex={1}>
+        <Stack gap={"32px"} flex={1}>
           <StyledHeader>{selectedProject?.name}</StyledHeader>
           <Image src={"/images/project-square.png"} />
         </Stack>
@@ -124,6 +126,8 @@ const ProjectPage = () => {
       </ProjectSectionText>
 
       <Spacer />
+      <Spacer />
+
       <Image src={"/images/gigpit.png"} />
       <SectionDivider />
 
@@ -134,6 +138,7 @@ const ProjectPage = () => {
       </ProjectSectionText>
 
       <Spacer />
+      <Spacer />
       <Image src={"/images/gigpit.png"} />
       <SectionDivider />
 
@@ -143,6 +148,7 @@ const ProjectPage = () => {
         facts. but also serious facts. very professional serious facts.
       </ProjectSectionText>
 
+      <Spacer />
       <Spacer />
 
       <Stack gap={1}>
@@ -161,6 +167,7 @@ const ProjectPage = () => {
         facts. but also serious facts. very professional serious facts.
       </ProjectSectionText>
 
+      <Spacer />
       <Spacer />
 
       <Image src={"/images/gigpit.png"} />
