@@ -38,8 +38,10 @@ const Toast = (props: IToastProps) => {
           color: "#0A0A0C",
           fontSize: "1rem",
           fontWeight: "500",
-          borderRadius: 0,
-          border: "4px solid #A0C7FF",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+          borderRadius: "8px",
+          padding: "12px 20px",
+          margin: "24px",
         },
       }}
     />
