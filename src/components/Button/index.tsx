@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 
 interface IButtonProps {
-  onClick: () => void;
-  children: any;
+  onClick?: () => void;
+  children: React.ReactNode;
+  href?: string;
   isTextButton?: boolean;
 }
 
@@ -29,11 +30,25 @@ const StyledButton = styled.button<{ isTextButton?: boolean }>`
     box-shadow: ${({ isTextButton }) =>
       isTextButton ? "" : "0 0 8px #a3bffa"};
   }
+  cursor: pointer;
 `;
 
+const StyledLink = StyledButton.withComponent("a");
+
 const Button = (props: IButtonProps) => {
-  const { onClick, children, isTextButton, ...rest } = props;
-  return (
+  const { onClick, children, isTextButton, href, ...rest } = props;
+
+  return !!href ? (
+    <StyledLink
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      isTextButton
+      {...rest}
+    >
+      {children}
+    </StyledLink>
+  ) : (
     <StyledButton onClick={onClick} {...rest} isTextButton={isTextButton}>
       {children}
     </StyledButton>

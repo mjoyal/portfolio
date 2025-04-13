@@ -26,7 +26,7 @@ const Footer = () => {
           Download my resume
         </Button>
         <EmailMeButton isTextButton />
-        <Button isTextButton onClick={() => alert("not implemented")}>
+        <Button isTextButton href="https://www.linkedin.com/in/mackenziejoyal">
           LinkedIn
         </Button>
       </Stack>

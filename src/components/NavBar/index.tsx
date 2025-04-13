@@ -20,7 +20,6 @@ const StyledLinkText = styled.h5`
   transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
   &:hover {
     color: ${({ theme }) => (theme as any).palette.text.secondary};
-    text-shadow: 0 0 6px #a3bffa;
   }
 `;
 
