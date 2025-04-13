@@ -11,6 +11,7 @@ import StoreProvider from "./store";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+// import PageTransition from "./components/PageTransition";
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -29,11 +30,12 @@ function App() {
         <CssBaseline /> {/* Resets default browser styles */}
         <BrowserRouter>
           <ScrollToTop />
+          {/* <PageTransition /> */}
           <NavBar />
           <AppWrapper>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/:slug" element={<ProjectPage />} />
+              <Route path="/project/:slug" element={<ProjectPage />} />
             </Routes>
           </AppWrapper>
           <Footer />

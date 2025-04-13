@@ -75,7 +75,7 @@ const ProjectCard = (props: IProjectCardProps) => {
     <ButtonContainer
       onClick={() => {
         setSelectedProject(id);
-        navigate(slug);
+        navigate(`/project/${slug}`);
       }}
       whileHover={{ color: "#A0C7FF" }}
       transition={{ duration: 0.4, ease: "easeOut" }}

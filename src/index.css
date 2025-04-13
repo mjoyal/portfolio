@@ -16,6 +16,9 @@ html {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html.smooth-scroll {
   scroll-behavior: smooth;
 }
 

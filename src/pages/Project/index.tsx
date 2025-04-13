@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-
 import { observer } from "mobx-react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";

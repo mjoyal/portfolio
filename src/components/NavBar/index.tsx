@@ -2,7 +2,8 @@ import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
 import { useState } from "react";
 import Toast from "../Toast";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
 
 const Container = styled.div`
   display: flex;
@@ -12,10 +13,6 @@ const Container = styled.div`
   padding-right: clamp(20px, 5vw, 60px);
   justify-content: space-between;
   align-items: flex-end;
-`;
-
-const StyledLink = styled.a`
-  text-decoration: none;
 `;
 
 const StyledLinkText = styled.h5`
@@ -30,8 +27,10 @@ const StyledLinkText = styled.h5`
 const HomeButton = styled.button``;
 
 const NavBar = () => {
-  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const scrollToAnchor = useSmoothScrollToAnchor();
+  const { pathname } = useLocation();
 
   const handleCopy = async () => {
     try {
@@ -44,6 +43,8 @@ const NavBar = () => {
       alert("Copy failed. Try again.");
     }
   };
+
+  const isHomePage = pathname === "/";
 
   return (
     <Container>
@@ -67,9 +68,15 @@ const NavBar = () => {
       </HomeButton>
 
       <Stack direction={"row"} gap={5}>
-        <StyledLink href="#work">
-          <StyledLinkText>work</StyledLinkText>
-        </StyledLink>
+        {isHomePage ? (
+          <button onClick={() => scrollToAnchor("work")}>
+            <StyledLinkText>work</StyledLinkText>
+          </button>
+        ) : (
+          <button onClick={() => navigate("/")}>
+            <StyledLinkText>home</StyledLinkText>
+          </button>
+        )}
 
         <button onClick={handleCopy}>
           <StyledLinkText>say hi!</StyledLinkText>
