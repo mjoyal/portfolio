@@ -112,7 +112,7 @@ const ProjectPage = () => {
         >
           <Stack direction={"row"} columnGap={2} alignItems={"center"}>
             <h5> View Project</h5>
-            <OpenNewArrow />
+            {/* <OpenNewArrow /> */}
           </Stack>
         </Button>
         <SectionDivider />

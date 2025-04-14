@@ -2,7 +2,7 @@ const LittleArrow = () => {
   return (
     <svg
       width="12"
-      height="57"
+      height="48"
       viewBox="0 0 12 57"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

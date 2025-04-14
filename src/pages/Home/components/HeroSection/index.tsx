@@ -11,7 +11,7 @@ const HeroContainer = styled.div`
   align-items: center;
   flex-direction: column;
   height: 80vh;
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+  ${({ theme }) => (theme as any).breakpoints.up("sm")} {
     height: 92vh;
   }
 `;
@@ -29,14 +29,14 @@ const TextContainer = styled.div`
 
 const HeroText = styled.h4`
   font-weight: 600;
-  font-size: clamp(5.5rem, 20vw, 14rem);
+  font-size: clamp(5.5rem, 18vw, 13rem);
   letter-spacing: -0.05em;
   line-height: 1;
   text-align: left;
 `;
 
 const FooterText = styled.p`
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-size: clamp(1.25rem, 3vw, 1.35rem);
   font-weight: 400;
   text-align: center;
 `;
@@ -63,14 +63,15 @@ const HeroSection = () => {
         sx={{
           width: "100%",
           position: "absolute",
-          bottom: 35,
+          bottom: 45,
         }}
         gap={{ xs: 5, md: 10 }}
+        paddingRight={{ xs: "0px", sm: "30px" }}
         direction={"row"}
         justifyContent={{ xs: "center", md: "flex-end" }}
         alignItems={"flex-end"}
       >
-        <FooterText>making the internet prettier since 2019</FooterText>
+        <FooterText>making the internet prettier since 2019.</FooterText>
         {isMedium && <LittleArrow />}
       </Stack>
     </HeroContainer>

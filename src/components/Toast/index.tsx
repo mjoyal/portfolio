@@ -13,7 +13,7 @@ const Toast = (props: IToastProps) => {
   return (
     <Snackbar
       open={isOpen}
-      autoHideDuration={5000}
+      autoHideDuration={4000}
       onClose={handleClose}
       message={
         <span

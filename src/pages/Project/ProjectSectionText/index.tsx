@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import { Stack } from "@mui/material";
 import { observer } from "mobx-react";
 import ProjectSectionLabel from "../ProjectSectionLabel";
-import OpenNewArrow from "src/icons/OpenNewArrow";
 import Button from "src/components/Button";
 
 const StyledP = styled.h6`
@@ -35,8 +34,7 @@ const ProjectSectionText = (props: IProjectSectionLabelProps) => {
             }}
           >
             <Stack direction={"row"} columnGap={2} alignItems={"center"}>
-              <h5> View Project</h5>
-              <OpenNewArrow />
+              <h5>Download my resume</h5>
             </Stack>
           </Button>
         )}

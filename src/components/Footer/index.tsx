@@ -4,24 +4,20 @@ import InfiniteMarquee from "./InfinityMarquee";
 import Button from "../Button";
 import { Stack } from "@mui/material";
 
-const FooterContainer = styled.div`
+const FooterContainer = styled(Stack)`
   max-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 20px;
-  padding-top: 48px;
-  margin-bottom: 28px;
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    margin-bottom: 44px;
-  }
+  margin-bottom: 32px;
 `;
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer alignItems={{ xs: "center", sm: "flex-end" }}>
       <InfiniteMarquee />
-      <Stack direction={"row"}>
+      <Stack direction={{ xs: "column", sm: "row" }}>
         <Button isTextButton onClick={() => alert("not implemented")}>
           Download my resume
         </Button>

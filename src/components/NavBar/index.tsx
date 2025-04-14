@@ -5,14 +5,11 @@ import Toast from "../Toast";
 import { useLocation, useNavigate } from "react-router-dom";
 import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
 
-const Container = styled.div`
-  display: flex;
+const Container = styled(Stack)`
   width: 100%;
   height: 60px;
   padding-left: clamp(20px, 5vw, 60px);
   padding-right: clamp(20px, 5vw, 60px);
-  justify-content: space-between;
-  align-items: flex-end;
 `;
 
 const StyledLinkText = styled.h5`
@@ -46,7 +43,11 @@ const NavBar = () => {
   const isHomePage = pathname === "/";
 
   return (
-    <Container>
+    <Container
+      direction={"row"}
+      alignItems={"center"}
+      justifyContent={"space-between"}
+    >
       <HomeButton onClick={() => navigate("/")}>
         <svg
           width="100"
