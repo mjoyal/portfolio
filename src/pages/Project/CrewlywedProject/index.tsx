@@ -56,7 +56,7 @@ const StyledP = styled.h6`
   max-width: 50ch;
 `;
 
-const StyledTitle = styled.h3`
+const StyledTitle = styled.h4`
   max-width: 20ch;
 `;
 

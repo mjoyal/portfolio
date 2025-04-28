@@ -1,25 +1,11 @@
 import styled from "@emotion/styled";
 import { observer } from "mobx-react";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 import Button from "src/components/Button";
 
-import useStores from "src/hooks/useStores";
 import { Stack, useMediaQuery, useTheme } from "@mui/material";
 import LittleArrow from "src/icons/LittleArrow";
-import OpenNewArrow from "src/icons/OpenNewArrow";
 import ProjectSectionText from "../ProjectSectionText";
-
-const ProjectPageContainer = styled.div`
-  /* These 100% widths are important to keep the overall margin of the site */
-  width: 100%;
-  min-height: 100vh;
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-`;
 
 const HeaderSection = styled.div`
   margin-top: 48px;
@@ -56,21 +42,17 @@ const StyledP = styled.h6`
   max-width: 50ch;
 `;
 
-const StyledTitle = styled.h3`
-  max-width: 20ch;
+const StyledTitle = styled.h4`
+  max-width: 30ch;
 `;
 
 const ProjectPage = () => {
-  const {
-    projectStore: { selectedProject },
-  } = useStores();
-
   const theme = useTheme();
 
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <ProjectPageContainer>
+    <>
       <HeaderSection>
         {!isSmallScreen && (
           <Stack flex={1} justifyContent={"flex-end"}>
@@ -78,19 +60,23 @@ const ProjectPage = () => {
           </Stack>
         )}
         <Stack gap={"32px"} flex={1}>
-          <StyledHeader>{selectedProject?.name}</StyledHeader>
+          <StyledHeader>fit52</StyledHeader>
           <Image src={"/images/project-square.png"} />
         </Stack>
       </HeaderSection>
       {isSmallScreen ? <Spacer /> : <SectionDivider />}
 
       <Stack alignItems={"flex-start"}>
-        <StyledTitle>a web app for discovering local music gigs.</StyledTitle>
+        <StyledTitle>
+          a holistic fitness platform inspired by Carrie Underwood’s wellness
+          philosophy
+        </StyledTitle>
         <Spacer />
         <StyledP>
-          maybe i could have a little bit of text here to fill out the space.
-          could be a nice little morsel of text about me. little quirky facts.
-          fun facts. but also serious facts. very professional serious facts.
+          Built around a 52-card metaphor, fit52 generates dynamic, personalized
+          workouts that adapt to each user’s fitness level and goals. The app
+          also integrates nutrition guidance and community-driven features to
+          support long-term health and motivation.
         </StyledP>
         <Spacer />
         <Spacer />
@@ -107,60 +93,101 @@ const ProjectPage = () => {
         <SectionDivider />
       </Stack>
 
-      <ProjectSectionText number="01" title="project overview">
-        maybe i could have a little bit of text here to fill out the space.
-        could be a nice little morsel of text about me. little quirky facts. fun
-        facts. but also serious facts. very professional serious facts.
+      <ProjectSectionText number="01" title="my role">
+        Over three years at Fit52, I worked across UI refinement, scalable
+        component architecture, and user-facing feature development. I focused
+        on improving visual clarity, usability, and long-term
+        maintainability—refining UX/UI in the user feed, leading component
+        refactors to simplify development workflows, and building interactive
+        features like the exercise swap system. My work sat at the intersection
+        of design, engineering, and product, translating design intent into
+        polished, scalable interfaces.
       </ProjectSectionText>
 
       <Spacer />
       <Spacer />
 
+      <Image src={"/images/fit52-feed.png"} />
+      <SectionDivider />
+
+      <ProjectSectionText number="02" title="key contributions">
+        <strong>User Feed Redesign & Implementation</strong> <br />
+        I led the redesign and full implementation of the Fit52 user feed to
+        improve clarity, engagement, and information density. The previous
+        version featured oversized elements, uneven spacing, and clunky buttons
+        that made it hard to see more than one post at a time—discouraging users
+        from scrolling or interacting. I modernized the layout by reducing
+        visual bulk, tightening spacing, and reworking interaction patterns to
+        feel more intuitive on mobile.
+        <br />
+        <br />
+        As part of the update, I removed redundant elements like the “View All
+        Comments” button and folded that functionality directly into the comment
+        icon—streamlining the UI and reinforcing intuitive behavior. After
+        launch, the feedback from users and team members was immediate and
+        overwhelmingly positive, with many calling the feed “cleaner,” “easier
+        to read,” and “more fun to scroll.”
+        <br />
+        <br />
+        <strong>TopBar API Refactor</strong> <br />
+        One of my most impactful technical contributions was refactoring the
+        TopBar component, which had become hard to maintain due to excessive
+        configuration props (`rightComponentColor`, `skipButtonIsDisabled`,
+        etc.). To address this, I broke the component into clear subcomponents
+        (such as `Logo`, `BackButton`, and `CloseButton`) and introduced a more
+        composable API using `leftComponent`, `middleComponent`, and
+        `rightComponent` props. This shifted the pattern from prop-based
+        configuration to direct component injection—reducing prop bloat,
+        improving readability, and making it far easier for developers to
+        compose flexible layouts without cluttering the codebase. <br />
+        <br />
+        The refactor not only cleaned up the codebase, but also fixed several
+        visual bugs and inconsistencies—such as incorrect icon sizes, misaligned
+        elements, and mismatched colors. After the change, the component was
+        easier to implement, easier to debug, and far less prone to introducing
+        regressions.
+        <br />
+        <br />
+        <strong>Feature Development – Exercise Swap System</strong> <br />
+        I implemented a multi-step UI flow that let users swap exercises within
+        dynamically generated workouts. The system included carousels, filtering
+        logic, swap validation, and dynamic state handling to ensure
+        replacements stayed within workout constraints. I focused on maintaining
+        state persistence and delivering clear, responsive UI feedback to make
+        the experience feel seamless and empowering.
+        <br />
+        <br />
+        Before this feature, users could only reroll exercises at random if they
+        didn’t like a move. With the new system, they could browse, search, and
+        filter to find moves that matched their goals and needs—giving them real
+        control. Adoption was immediate and widespread—users embraced the added
+        control, and it became a core part of the workout experience.
+      </ProjectSectionText>
+
+      <Spacer />
+      <Spacer />
       <Image src={"/images/gigpit.png"} />
       <SectionDivider />
 
-      <ProjectSectionText number="02" title="goals">
-        maybe i could have a little bit of text here to fill out the space.
-        could be a nice little morsel of text about me. little quirky facts. fun
-        facts. but also serious facts. very professional serious facts.
+      <ProjectSectionText number="03" title="learnings">
+        Working on Fit52 over several years taught me how much impact thoughtful
+        structure can have—not just on users, but on the developers building the
+        product. Refactoring components like the TopBar showed how simplifying
+        architecture can prevent bugs, improve consistency, and make
+        implementation faster across a growing codebase. <br />
+        <br /> This was also where I first learned MobX and began understanding
+        state management at scale. It gave me a foundational perspective on how
+        architectural choices shape long-term maintainability and team
+        efficiency. <br />
+        <br />
+        Building the exercise swap system reminded me how powerful it is to give
+        users real control. That feature reinforced a product principle I carry
+        with me: good UX means giving people the ability to shape their own
+        experience.
       </ProjectSectionText>
 
-      <Spacer />
-      <Spacer />
-      <Image src={"/images/gigpit.png"} />
       <SectionDivider />
-
-      <ProjectSectionText number="03" title="process">
-        maybe i could have a little bit of text here to fill out the space.
-        could be a nice little morsel of text about me. little quirky facts. fun
-        facts. but also serious facts. very professional serious facts.
-      </ProjectSectionText>
-
-      <Spacer />
-      <Spacer />
-
-      <Stack gap={1}>
-        <Stack direction={"row"} gap={1}>
-          <SmallImage src={"/images/project-square.png"} />
-          <SmallImage src={"/images/project-square.png"} />
-        </Stack>
-
-        <Image src={"/images/gigpit.png"} />
-      </Stack>
-      <SectionDivider />
-
-      <ProjectSectionText number="04" title="outcomes" hasButton>
-        maybe i could have a little bit of text here to fill out the space.
-        could be a nice little morsel of text about me. little quirky facts. fun
-        facts. but also serious facts. very professional serious facts.
-      </ProjectSectionText>
-
-      <Spacer />
-      <Spacer />
-
-      <Image src={"/images/gigpit.png"} />
-      <SectionDivider />
-    </ProjectPageContainer>
+    </>
   );
 };
 
