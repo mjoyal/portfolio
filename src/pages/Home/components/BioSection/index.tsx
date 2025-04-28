@@ -22,7 +22,7 @@ const BioSection = () => {
         <h3>
           I specialize in ux/ui, web design, & front-end development. I’m
           <EmphasisText> obsessed</EmphasisText> with clean and scalable styling
-          code.
+          code. Leave the codebase better than you found it
         </h3>
       </Stack>
     </Stack>

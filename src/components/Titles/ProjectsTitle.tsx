@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const Container = styled.div`
   position: relative;
@@ -11,20 +12,23 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 9rem;
   position: absolute;
   line-height: 0.8;
-  bottom: 10px;
+  bottom: 20px;
 `;
 
 const ProjectsTitle = () => {
+  const theme = useTheme();
+
+  const isSmall = useMediaQuery(theme.breakpoints.down("lg"));
+
   return (
     <Container>
       <svg
         fill="none"
         height="132"
         viewBox="0 0 464 132"
-        width={330}
+        width={isSmall ? 300 : 330}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

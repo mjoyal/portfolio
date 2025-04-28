@@ -17,8 +17,7 @@ const StyledButton = styled.button<{ isTextButton?: boolean }>`
   font-weight: 600;
   padding: 10px 40px;
   font-size: 1.5rem;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
   &:hover {
     background-color: ${({ theme, isTextButton }) =>
@@ -27,11 +26,12 @@ const StyledButton = styled.button<{ isTextButton?: boolean }>`
       isTextButton
         ? (theme as any).palette.text.secondary
         : (theme as any).palette.text.contrast};
-    box-shadow: ${({ isTextButton }) =>
-      isTextButton ? "" : "0 0 8px #a3bffa"};
   }
   cursor: pointer;
 `;
+
+// box-shadow: ${({ isTextButton }) =>
+//   isTextButton ? "" : "0 0 8px #a3bffa"};
 
 const StyledLink = StyledButton.withComponent("a");
 

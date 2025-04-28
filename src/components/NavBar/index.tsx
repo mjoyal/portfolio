@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Stack } from "@mui/material";
+import { Stack, useTheme } from "@mui/material";
 import { useState } from "react";
 import Toast from "../Toast";
 import { useLocation, useNavigate } from "react-router-dom";

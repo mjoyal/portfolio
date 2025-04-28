@@ -15,7 +15,7 @@ const TechnologyTitle = () => {
   return (
     <Container>
       <svg
-        width="380"
+        width="330"
         height="100"
         viewBox="0 0 391 110"
         fill="none"

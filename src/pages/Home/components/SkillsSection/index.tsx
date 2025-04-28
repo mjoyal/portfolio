@@ -35,6 +35,10 @@ const Spacer = styled.div`
   height: 40px;
 `;
 
+const SmallSpacer = styled.div`
+  height: 20px;
+`;
+
 const StyledEmphasis = styled.em`
   color: ${({ theme }) => (theme as any).palette.text.secondary};
 `;
@@ -47,7 +51,14 @@ const SectionDivider = styled.div`
 const SkillsSection = () => {
   return (
     <Stack>
-      <Stack maxWidth={"80ch"} alignItems={"flex-start"} gap={2}>
+      <Stack
+        maxWidth={"80ch"}
+        marginLeft={{ sm: 3, md: 4, lg: 6 }}
+        marginRight={{ sm: 3, md: 4 }}
+        alignItems={"flex-start"}
+        gap={2}
+        // bgcolor="blue"
+      >
         <h3>
           a bit about me is that i like to{" "}
           <StyledEmphasis>blah blah.</StyledEmphasis>
@@ -58,7 +69,7 @@ const SkillsSection = () => {
           fun facts. but also serious facts. very professional serious facts.
         </h6>
 
-        <Spacer />
+        <SmallSpacer />
         <Button onClick={() => alert("not implemented")}>
           Download my resume
         </Button>
