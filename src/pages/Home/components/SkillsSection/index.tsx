@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { observer } from "mobx-react";
 import NumberedListItem from "src/components/NumberedListItem";
 import TechnologyTitle from "src/components/Titles/TechnologyTitle";
@@ -71,7 +71,9 @@ const SkillsSection = () => {
 
         <SmallSpacer />
         <Button onClick={() => alert("not implemented")}>
-          Download my resume
+          <Box component={"span"} bgcolor={"red"}>
+            Download my resume
+          </Box>
         </Button>
       </Stack>
       <SectionDivider />
