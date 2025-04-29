@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { observer } from "mobx-react";
 import { IProjectModel } from "src/store/ProjectStore/ProjectModel";
 import useStores from "src/hooks/useStores";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { Stack, useMediaQuery, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -34,7 +34,7 @@ const ZoomImage = styled(motion.img)`
   object-fit: cover;
 `;
 
-const LabelContainer = styled.div`
+const LabelContainer = styled(Stack)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -95,10 +95,10 @@ const ProjectCard = (props: IProjectCardProps) => {
       </ImageWrapper>
 
       <Spacer />
-      <LabelContainer>
-        <h5>{name?.toLocaleUpperCase()}</h5>
+      <Stack direction={{ xs: "column", sm: "row" }} gap={1.5}>
+        <h5>{name}</h5>
         <h6 style={{ color: "#f5f5f5" }}>{role}</h6>
-      </LabelContainer>
+      </Stack>
     </ButtonContainer>
   );
 };

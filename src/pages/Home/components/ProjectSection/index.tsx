@@ -3,7 +3,7 @@ import ProjectCard from "../../../../components/ProjectCard";
 import ProjectsTitle from "../../../../components/Titles/ProjectsTitle";
 import { observer } from "mobx-react";
 import useStores from "src/hooks/useStores";
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 
 const ProjectContainer = styled.div`
@@ -21,12 +21,12 @@ const ProjectContainer = styled.div`
   width: 100%;
 `;
 
-const CustomCursor = styled.div<{ isVisible: boolean }>`
+const CustomCursor = styled(Stack)<{ isVisible: boolean }>`
   position: fixed;
   width: 120px;
   height: 120px;
-  background: black;
-  color: white;
+  background: ${({ theme }) => (theme as any).palette.background.default};
+  color: ${({ theme }) => (theme as any).palette.text.secondary};
   font-weight: bold;
   font-size: 16px;
   border-radius: 50%;
@@ -35,10 +35,12 @@ const CustomCursor = styled.div<{ isVisible: boolean }>`
   justify-content: center;
   text-align: center;
   pointer-events: none;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -75%) rotate(-20deg);
+
   z-index: 9999;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 0.2s ease;
+  letter-spacing: 1.5px;
 `;
 
 const Spacer = styled.div`
@@ -81,9 +83,8 @@ const ProjectSection = () => {
         isVisible={isVisible}
         style={{ left: `${position.x}px`, top: `${position.y}px` }}
       >
-        VIEW
-        <br />
-        PROJECT
+        <Box>VIEW</Box>
+        <Box>PROJECT</Box>
       </CustomCursor>
     </Box>
   );
