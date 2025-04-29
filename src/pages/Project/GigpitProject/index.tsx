@@ -85,10 +85,7 @@ const GitpitProject = () => {
             alert("Not implemented");
           }}
         >
-          <Stack direction={"row"} columnGap={2} alignItems={"center"}>
-            <h5> View Project</h5>
-            {/* <OpenNewArrow /> */}
-          </Stack>
+          View Project
         </Button>
         <SectionDivider />
       </Stack>

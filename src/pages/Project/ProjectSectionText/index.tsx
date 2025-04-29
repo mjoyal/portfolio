@@ -33,7 +33,7 @@ const ProjectSectionText = (props: IProjectSectionLabelProps) => {
               alert("Not implemented");
             }}
           >
-            <h5>View Project</h5>
+            View Project
           </Button>
         )}
       </Stack>

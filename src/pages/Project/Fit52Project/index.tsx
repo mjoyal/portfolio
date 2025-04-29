@@ -80,9 +80,7 @@ const ProjectPage = () => {
         </StyledP>
         <Spacer />
         <Spacer />
-        <Button href="https://www.fit52.com/">
-          <h5> View Project</h5>
-        </Button>
+        <Button href="https://www.fit52.com/">View Project</Button>
         <SectionDivider />
       </Stack>
 
