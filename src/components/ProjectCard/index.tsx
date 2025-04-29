@@ -43,6 +43,7 @@ const LabelContainer = styled.div`
 
 interface IProjectCardProps {
   project: IProjectModel;
+  setIsVisible: (arg1: boolean) => void;
 }
 
 const Spacer = styled.div`
@@ -52,6 +53,8 @@ const Spacer = styled.div`
 const ProjectCard = (props: IProjectCardProps) => {
   const {
     project: { id, name, slug, role, imageSource, heroImageSource },
+    setIsVisible,
+    ...rest
   } = props;
 
   const {
@@ -79,6 +82,9 @@ const ProjectCard = (props: IProjectCardProps) => {
       }}
       whileHover={{ color: "#A0C7FF" }}
       transition={{ duration: 0.4, ease: "easeOut" }}
+      onMouseEnter={() => setIsVisible(true)}
+      onMouseLeave={() => setIsVisible(false)}
+      {...rest}
     >
       <ImageWrapper>
         <ZoomImage

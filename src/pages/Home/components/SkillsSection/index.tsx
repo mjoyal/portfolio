@@ -71,9 +71,7 @@ const SkillsSection = () => {
 
         <SmallSpacer />
         <Button onClick={() => alert("not implemented")}>
-          <Box component={"span"} bgcolor={"red"}>
-            Download my resume
-          </Box>
+          Download my resume
         </Button>
       </Stack>
       <SectionDivider />

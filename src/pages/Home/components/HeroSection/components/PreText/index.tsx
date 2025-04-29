@@ -15,8 +15,7 @@ const StyledPreText = styled.p`
   }
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    margin-left: 15%;
-    margin-bottom: -5%;
+    margin-bottom: -3%;
   }
 `;
 
