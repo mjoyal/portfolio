@@ -36,7 +36,7 @@ const Spacer = styled.div`
 `;
 
 const SmallSpacer = styled.div`
-  height: 20px;
+  height: 16px;
 `;
 
 const StyledEmphasis = styled.em`
@@ -52,21 +52,21 @@ const SkillsSection = () => {
   return (
     <Stack>
       <Stack
-        maxWidth={"80ch"}
+        maxWidth={"90ch"}
         marginLeft={{ sm: 3, md: 4, lg: 6 }}
         marginRight={{ sm: 3, md: 4 }}
         alignItems={"flex-start"}
-        gap={2}
+        gap={3}
         // bgcolor="blue"
       >
         <h3>
-          a bit about me is that i like to{" "}
-          <StyledEmphasis>blah blah.</StyledEmphasis>
+          Just like camping, i believe you should leave the codebase
+          <StyledEmphasis> better than</StyledEmphasis> you found it.
         </h3>
         <h6>
-          maybe i could have a little bit of text here to fill out the space.
-          could be a nice little morsel of text about me. little quirky facts.
-          fun facts. but also serious facts. very professional serious facts.
+          Maybe I could have a little bit of text here to fill out the space.
+          Could be a nice little morsel of text about me. Little quirky facts.
+          Fun facts. But also serious facts. Very professional serious facts.
         </h6>
 
         <SmallSpacer />
@@ -105,7 +105,10 @@ const SkillsSection = () => {
               <TechnologyTitle />
               <Spacer />
               <NumberedListItem number="01" listItem="react & react native" />
-              <NumberedListItem number="02" listItem="javascript" />
+              <NumberedListItem
+                number="02"
+                listItem="javascript & typescript"
+              />
             </ListContainer>
           </Stack>
 

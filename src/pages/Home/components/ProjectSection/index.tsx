@@ -84,8 +84,10 @@ const ProjectSection = () => {
       <CustomCursor
         isVisible={isVisible}
         style={{ left: `${position.x}px`, top: `${position.y}px` }}
+        direction={"row"}
+        gap={1}
       >
-        Have a look
+        <span>Have a look</span>
       </CustomCursor>
     </Box>
   );

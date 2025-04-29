@@ -18,11 +18,11 @@ const BioSection = () => {
         </Stack>
       )}
 
-      <Stack flex={2}>
+      <Stack flex={3}>
         <h3>
-          I specialize in ux/ui, web design, & front-end development. I’m
-          <EmphasisText> obsessed</EmphasisText> with clean and scalable styling
-          code. Leave the codebase better than you found it
+          Hi, I'm Mackenzie. I specialize in front-end development and UX/UI
+          design — and I'm <EmphasisText> obsessed </EmphasisText> with building
+          interfaces that feel good, spark excitement, and scale beautifully.
         </h3>
       </Stack>
     </Stack>

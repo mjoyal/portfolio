@@ -60,7 +60,7 @@ const StyledTitle = styled.h4`
   max-width: 20ch;
 `;
 
-const ProjectPage = () => {
+const CrewlywedProject = () => {
   const {
     projectStore: { selectedProject },
   } = useStores();
@@ -161,4 +161,4 @@ const ProjectPage = () => {
   );
 };
 
-export default observer(ProjectPage);
+export default observer(CrewlywedProject);
