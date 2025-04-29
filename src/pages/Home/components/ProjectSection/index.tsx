@@ -23,24 +23,26 @@ const ProjectContainer = styled.div`
 
 const CustomCursor = styled(Stack)<{ isVisible: boolean }>`
   position: fixed;
-  width: 120px;
-  height: 120px;
-  background: ${({ theme }) => (theme as any).palette.background.default};
-  color: ${({ theme }) => (theme as any).palette.text.secondary};
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 50%;
+  padding: 12px 20px;
+  color: ${({ theme }) => (theme as any).palette.background.default};
+  background: ${({ theme }) => (theme as any).palette.text.secondary};
+  font-weight: 600;
+  font-size: 1.35rem;
+  border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   pointer-events: none;
-  transform: translate(-50%, -75%) rotate(-20deg);
-
+  transform: translate(-50%, -80%) rotate(-20deg);
+  border: ${({ theme }) =>
+    `1.5px solid ${(theme as any).palette.primary.main}`};
   z-index: 9999;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  transition: opacity 0.2s ease;
-  letter-spacing: 1.5px;
+  transition: opacity 0.3s ease;
+  letter-spacing: -1px;
+  line-height: 1;
+  white-space: nowrap;
 `;
 
 const Spacer = styled.div`
@@ -83,8 +85,7 @@ const ProjectSection = () => {
         isVisible={isVisible}
         style={{ left: `${position.x}px`, top: `${position.y}px` }}
       >
-        <Box>VIEW</Box>
-        <Box>PROJECT</Box>
+        Have a look
       </CustomCursor>
     </Box>
   );

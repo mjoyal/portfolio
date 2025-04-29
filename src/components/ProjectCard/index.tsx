@@ -34,13 +34,6 @@ const ZoomImage = styled(motion.img)`
   object-fit: cover;
 `;
 
-const LabelContainer = styled(Stack)`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-`;
-
 interface IProjectCardProps {
   project: IProjectModel;
   setIsVisible: (arg1: boolean) => void;
@@ -80,7 +73,6 @@ const ProjectCard = (props: IProjectCardProps) => {
         setSelectedProject(id);
         navigate(`/project/${slug}`);
       }}
-      whileHover={{ color: "#A0C7FF" }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
