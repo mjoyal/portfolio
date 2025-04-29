@@ -1,14 +1,11 @@
 import styled from "@emotion/styled";
 import { observer } from "mobx-react";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 import Button from "src/components/Button";
 
 import useStores from "src/hooks/useStores";
 import { Stack, useMediaQuery, useTheme } from "@mui/material";
 import LittleArrow from "src/icons/LittleArrow";
-import OpenNewArrow from "src/icons/OpenNewArrow";
 import ProjectSectionText from "../ProjectSectionText";
 
 const ProjectPageContainer = styled.div`

@@ -25,11 +25,6 @@ const Image = styled.img`
   border-radius: 3px;
 `;
 
-const SmallImage = styled.img`
-  width: 48%;
-  height: 100%;
-`;
-
 const Spacer = styled.div`
   height: 24px;
 `;
@@ -46,7 +41,7 @@ const StyledTitle = styled.h4`
   max-width: 30ch;
 `;
 
-const ProjectPage = () => {
+const Fit52Project = () => {
   const theme = useTheme();
 
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -182,4 +177,4 @@ const ProjectPage = () => {
   );
 };
 
-export default observer(ProjectPage);
+export default observer(Fit52Project);
