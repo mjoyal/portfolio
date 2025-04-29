@@ -4,9 +4,10 @@ import Toast from "../Toast";
 
 interface IEmailMeButtonProps {
   isTextButton?: boolean;
+  isShortText?: boolean;
 }
 const EmailMeButton = (props: IEmailMeButtonProps) => {
-  const { isTextButton = false } = props;
+  const { isTextButton = false, isShortText = false, ...rest } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCopy = async () => {
@@ -22,8 +23,8 @@ const EmailMeButton = (props: IEmailMeButtonProps) => {
   };
   return (
     <>
-      <Button onClick={handleCopy} isTextButton={isTextButton}>
-        Email me
+      <Button onClick={handleCopy} isTextButton={isTextButton} {...rest}>
+        {isShortText ? "Email" : "Email me"}
       </Button>
       <Toast
         message="Email copied to clipboard"

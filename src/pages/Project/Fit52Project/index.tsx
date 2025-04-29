@@ -80,15 +80,8 @@ const ProjectPage = () => {
         </StyledP>
         <Spacer />
         <Spacer />
-        <Button
-          onClick={() => {
-            alert("Not implemented");
-          }}
-        >
-          <Stack direction={"row"} columnGap={2} alignItems={"center"}>
-            <h5> View Project</h5>
-            {/* <OpenNewArrow /> */}
-          </Stack>
+        <Button href="https://www.fit52.com/">
+          <h5> View Project</h5>
         </Button>
         <SectionDivider />
       </Stack>

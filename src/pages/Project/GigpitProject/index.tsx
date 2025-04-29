@@ -35,7 +35,7 @@ const SectionDivider = styled.div`
   height: 200px;
 `;
 
-const StyledP = styled.h6`
+const StyledP = styled.p`
   max-width: 70ch;
 `;
 
@@ -57,7 +57,7 @@ const GitpitProject = () => {
           </Stack>
         )}
         <Stack gap={"32px"} flex={1}>
-          <StyledHeader>Gigpit</StyledHeader>
+          <StyledHeader>gigpit</StyledHeader>
           <Image src={"/images/project-square.png"} />
         </Stack>
       </HeaderSection>

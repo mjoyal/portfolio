@@ -18,7 +18,6 @@ const StyledButton = styled.button<{ isTextButton?: boolean }>`
   padding: 10px 40px;
   font-size: 1.5rem;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-
   &:hover {
     background-color: ${({ theme, isTextButton }) =>
       isTextButton ? "" : (theme as any).palette.primary.main};
@@ -43,13 +42,13 @@ const Button = (props: IButtonProps) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      isTextButton
+      isTextButton={isTextButton}
       {...rest}
     >
       {children}
     </StyledLink>
   ) : (
-    <StyledButton onClick={onClick} {...rest} isTextButton={isTextButton}>
+    <StyledButton onClick={onClick} isTextButton={isTextButton} {...rest}>
       {children}
     </StyledButton>
   );

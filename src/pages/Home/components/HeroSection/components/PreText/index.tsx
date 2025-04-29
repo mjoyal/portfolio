@@ -5,8 +5,9 @@ const StyledPreText = styled.p`
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1;
   letter-spacing: -0.03em;
-  margin-left: 5%;
+  margin-left: 2%;
   margin-bottom: -1%;
+  font-style: italic;
 
   ${({ theme }) => (theme as any).breakpoints.up("sm")} {
     margin-left: 10%;
@@ -25,7 +26,7 @@ const PreText = () => {
       <Box component="span" color="text.secondary">
         (
       </Box>{" "}
-      your favourite
+      your new favourite
       <Box component="span" color="text.secondary">
         {" "}
         )
