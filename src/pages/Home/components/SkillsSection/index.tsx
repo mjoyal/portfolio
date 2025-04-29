@@ -35,10 +35,6 @@ const Spacer = styled.div`
   height: 40px;
 `;
 
-const SmallSpacer = styled.div`
-  height: 16px;
-`;
-
 const StyledEmphasis = styled.em`
   color: ${({ theme }) => (theme as any).palette.text.secondary};
 `;
@@ -60,7 +56,7 @@ const SkillsSection = () => {
         // bgcolor="blue"
       >
         <h3>
-          Just like camping, i believe you should leave the codebase
+          Just like camping, I believe you should leave the codebase
           <StyledEmphasis> better than</StyledEmphasis> you found it.
         </h3>
         <h6>
@@ -69,7 +65,6 @@ const SkillsSection = () => {
           Fun facts. But also serious facts. Very professional serious facts.
         </h6>
 
-        <SmallSpacer />
         <Button onClick={() => alert("not implemented")}>
           Download my resume
         </Button>

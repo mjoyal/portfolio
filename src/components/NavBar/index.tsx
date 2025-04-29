@@ -83,7 +83,7 @@ const NavBar = () => {
         </button>
       </Stack>
       <Toast
-        message={"Email copied to clipboard"}
+        message="Email copied — paste away!"
         isOpen={isOpen}
         handleClose={() => setIsOpen(false)}
       />

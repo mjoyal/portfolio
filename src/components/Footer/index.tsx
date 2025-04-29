@@ -80,7 +80,7 @@ const Footer = () => {
       {!isMobile && (
         <Stack direction={"row"}>
           <Button isTextButton onClick={() => alert("not implemented")}>
-            {isBelowMedium ? "Resume" : "Download resume"}
+            {isBelowMedium ? "Resume" : "Download my resume"}
           </Button>
 
           <EmailMeButton isTextButton isShortText={isBelowMedium} />
