@@ -11,7 +11,7 @@ const BioSection = () => {
   const isMedium = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
-    <Stack direction={"row"}>
+    <Stack direction={"row"} id="bio">
       {isMedium && (
         <Stack flex={1} alignItems={"center"} paddingTop={2}>
           <h4>✻</h4>

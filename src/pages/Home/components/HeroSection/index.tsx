@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import PreText from "./components/PreText";
 import LittleArrow from "src/icons/LittleArrow";
+import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
 
 const HeroContainer = styled.div`
   position: relative;
@@ -43,7 +44,7 @@ const FooterText = styled.p`
 
 const HeroSection = () => {
   const theme = useTheme();
-
+  const scrollToAnchor = useSmoothScrollToAnchor();
   const isMedium = useMediaQuery(theme.breakpoints.up("sm"));
 
   return (
@@ -72,7 +73,11 @@ const HeroSection = () => {
         alignItems={"flex-end"}
       >
         <FooterText>making the internet prettier since 2019.</FooterText>
-        {isMedium && <LittleArrow />}
+        {isMedium && (
+          <button onClick={() => scrollToAnchor("bio")}>
+            <LittleArrow />
+          </button>
+        )}
       </Stack>
     </HeroContainer>
   );

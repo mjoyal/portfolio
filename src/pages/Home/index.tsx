@@ -19,7 +19,7 @@ const HomePage = () => {
   return (
     <HomePageContainer>
       <HeroSection />
-      <SectionDivider />
+      <SectionDivider id="bio" />
       <BioSection />
       <SectionDivider />
       <ProjectSection />
