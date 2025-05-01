@@ -5,9 +5,13 @@ interface IButtonProps {
   children: React.ReactNode;
   href?: string;
   isTextButton?: boolean;
+  isSmall?: boolean;
 }
 
-const StyledButton = styled.button<{ isTextButton?: boolean }>`
+const StyledButton = styled.button<{
+  isTextButton?: boolean;
+  isSmall?: boolean;
+}>`
   border: ${({ theme, isTextButton }) =>
     isTextButton
       ? "0px"
@@ -15,8 +19,8 @@ const StyledButton = styled.button<{ isTextButton?: boolean }>`
   color: ${({ theme }) => (theme as any).palette.text.primary};
   border-radius: 100px;
   font-weight: 600;
-  padding: 10px 40px;
-  font-size: 1.5rem;
+  padding: ${({ isSmall }) => (isSmall ? "8px 30px" : "10px 40px")};
+  font-size: ${({ isSmall }) => (isSmall ? "1.5rem" : "1.5rem")};
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   &:hover {
     background-color: ${({ theme, isTextButton }) =>
@@ -35,7 +39,14 @@ const StyledButton = styled.button<{ isTextButton?: boolean }>`
 const StyledLink = StyledButton.withComponent("a");
 
 const Button = (props: IButtonProps) => {
-  const { onClick, children, isTextButton, href, ...rest } = props;
+  const {
+    onClick,
+    children,
+    isTextButton,
+    href,
+    isSmall = false,
+    ...rest
+  } = props;
 
   return !!href ? (
     <StyledLink
@@ -43,12 +54,18 @@ const Button = (props: IButtonProps) => {
       target="_blank"
       rel="noopener noreferrer"
       isTextButton={isTextButton}
+      isSmall={isSmall}
       {...rest}
     >
       {children}
     </StyledLink>
   ) : (
-    <StyledButton onClick={onClick} isTextButton={isTextButton} {...rest}>
+    <StyledButton
+      onClick={onClick}
+      isTextButton={isTextButton}
+      isSmall={isSmall}
+      {...rest}
+    >
       {children}
     </StyledButton>
   );
