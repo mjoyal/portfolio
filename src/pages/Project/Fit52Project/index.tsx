@@ -55,7 +55,7 @@ const Fit52Project = () => {
           </Stack>
         )}
         <Stack gap={"32px"} flex={1}>
-          <StyledHeader>fit52</StyledHeader>
+          <StyledHeader>Fit52</StyledHeader>
           <Image src={"/images/project-square.png"} />
         </Stack>
       </HeaderSection>
@@ -63,7 +63,7 @@ const Fit52Project = () => {
 
       <Stack alignItems={"flex-start"}>
         <StyledTitle>
-          a holistic fitness platform inspired by Carrie Underwood’s wellness
+          A holistic fitness platform inspired by Carrie Underwood’s wellness
           philosophy
         </StyledTitle>
         <Spacer />
@@ -79,7 +79,7 @@ const Fit52Project = () => {
         <SectionDivider />
       </Stack>
 
-      <ProjectSectionText number="01" title="my role">
+      <ProjectSectionText number="01" title="My Role">
         Over three years at Fit52, I worked across UI refinement, scalable
         component architecture, and user-facing feature development. I focused
         on improving visual clarity, usability, and long-term
@@ -96,7 +96,7 @@ const Fit52Project = () => {
       <Image src={"/images/fit52-feed.png"} />
       <SectionDivider />
 
-      <ProjectSectionText number="02" title="key contributions">
+      <ProjectSectionText number="02" title="Key Contributions">
         <strong>User Feed Redesign & Implementation</strong> <br />
         I led the redesign and full implementation of the Fit52 user feed to
         improve clarity, engagement, and information density. The previous
@@ -155,7 +155,7 @@ const Fit52Project = () => {
       <Image src={"/images/gigpit.png"} />
       <SectionDivider />
 
-      <ProjectSectionText number="03" title="learnings">
+      <ProjectSectionText number="03" title="Learnings">
         Working on Fit52 over several years taught me how much impact thoughtful
         structure can have—not just on users, but on the developers building the
         product. Refactoring components like the TopBar showed how simplifying

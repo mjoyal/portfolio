@@ -57,14 +57,14 @@ const GitpitProject = () => {
           </Stack>
         )}
         <Stack gap={"32px"} flex={1}>
-          <StyledHeader>gigpit</StyledHeader>
+          <StyledHeader>Gigpit</StyledHeader>
           <Image src={"/images/project-square.png"} />
         </Stack>
       </HeaderSection>
       {isSmallScreen ? <Spacer /> : <SectionDivider />}
       <Stack alignItems={"flex-start"}>
         <StyledTitle>
-          a web app making local music easy to find <em>(and hard to miss)</em>
+          A web app making local music easy to find <em>(and hard to miss)</em>
         </StyledTitle>
         <Spacer />
         <StyledP>
@@ -92,7 +92,7 @@ const GitpitProject = () => {
       <Image src={"/images/gigpit.png"} />
       <Spacer />
       <Spacer />
-      <ProjectSectionText number="01" title="my role">
+      <ProjectSectionText number="01" title="My Role">
         I joined Gigpit to help translate it from a static website into a
         mobile-first web application. While the early design work was strong,
         the platform needed clearer UX flows and a product-driven approach.
@@ -117,7 +117,7 @@ const GitpitProject = () => {
       <Image src={"/images/gigpit-profile.png"} />
       <Spacer />
       <Spacer />
-      <ProjectSectionText number="02" title="design process">
+      <ProjectSectionText number="02" title="Design Process">
         We wanted the platform to feel fun and engaging—something users would
         actually enjoy exploring. That meant stripping away friction,
         simplifying decision points, and making every interaction feel
@@ -144,7 +144,7 @@ const GitpitProject = () => {
       <Image src={"/images/gitpit-explore.png"} />
       <Spacer />
       <Spacer />
-      <ProjectSectionText number="02" title="design process">
+      <ProjectSectionText number="02" title="Design Process">
         <strong>Rethinking Navigation</strong> <br />
         We initially considered a bottom navigation bar to keep core actions
         within easy reach on mobile. But introducing it would have meant
@@ -170,7 +170,7 @@ const GitpitProject = () => {
       <Image src={"/images/gigpit-shows.png"} />
       <Spacer />
       <Spacer />
-      <ProjectSectionText number="03" title="outcomes">
+      <ProjectSectionText number="03" title="Outcomes">
         We built a fully functional web application, optimized for both desktop
         and mobile, that gives local music the visibility it deserves. Unlike
         platforms driven by opaque algorithms, Gigpit democratizes discovery,
@@ -192,7 +192,7 @@ const GitpitProject = () => {
       <Spacer />
       <Spacer />
       <Spacer />
-      <ProjectSectionText number="04" title="learnings" hasButton>
+      <ProjectSectionText number="04" title="Learnings" hasButton>
         This project clarified how much I value constraints—and how essential
         they are for building focused, high-impact products. Without a product
         manager or clear MVP boundaries, scope expanded quickly, and engineers

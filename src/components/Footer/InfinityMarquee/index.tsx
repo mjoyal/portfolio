@@ -35,7 +35,7 @@ const StyledHeader = styled.h1`
 const InfiniteMarquee = () => {
   const marqueeText = Array.from({ length: 30 }, (_, i) => (
     <span key={i}>
-      Say hi! <Asterisk>*</Asterisk>{" "}
+      say hi! <Asterisk>*</Asterisk>{" "}
     </span>
   ));
 

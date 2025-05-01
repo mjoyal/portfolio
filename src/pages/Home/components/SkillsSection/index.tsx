@@ -15,8 +15,10 @@ const ParagraphContainer = styled.div`
   flex: 1 1 0;
 `;
 
-const StyledText = styled.p`
-  width: 35ch;
+const StyledText = styled.h6`
+  max-width: 35ch;
+  margin-left: 20px;
+  margin-right: 20px;
   // Keeps text nice and square
 `;
 
@@ -52,21 +54,14 @@ const SkillsSection = () => {
         marginLeft={{ sm: 3, md: 4, lg: 6 }}
         marginRight={{ sm: 3, md: 4 }}
         alignItems={"flex-start"}
-        gap={3}
-        // bgcolor="blue"
+        gap={6}
       >
         <h3>
           Just like camping, I believe you should leave the codebase
           <StyledEmphasis> better than</StyledEmphasis> you found it.
         </h3>
-        <h6>
-          Maybe I could have a little bit of text here to fill out the space.
-          Could be a nice little morsel of text about me. Little quirky facts.
-          Fun facts. But also serious facts. Very professional serious facts.
-        </h6>
-
         <Button onClick={() => alert("not implemented")}>
-          Download my resume
+          Check out my resume
         </Button>
       </Stack>
       <SectionDivider />
@@ -76,18 +71,20 @@ const SkillsSection = () => {
           <SkillsTitle />
           <Spacer />
           <ListContainer>
-            <NumberedListItem number="01" listItem="front-end engineering" />
-            <NumberedListItem number="02" listItem="ux/ ui design" />
-            <NumberedListItem number="03" listItem="business degree" />
+            <NumberedListItem number="01" listItem="Front-end Engineering" />
+            <NumberedListItem number="02" listItem="UX/UI Design" />
+            <NumberedListItem number="03" listItem="Business Degree" />
           </ListContainer>
         </StyledStack>
 
         <Spacer />
         <ParagraphContainer>
           <StyledText>
-            maybe i could have a little bit of text here to fill out the space.
-            could be a nice little morsel of text about me. little quirky facts.
-            fun facts. but also serious facts. very professional serious facts.
+            Part developer, part designer, part product brain—I move between
+            Figma and the frontend with ease. With my background in business, I
+            care as much about product goals as I do about polish. After 4 years
+            in this work, one thing’s clear: good UI takes empathy, a sharp eye,
+            and a bit of craft.
           </StyledText>
         </ParagraphContainer>
       </Stack>
@@ -99,11 +96,13 @@ const SkillsSection = () => {
             <ListContainer>
               <TechnologyTitle />
               <Spacer />
-              <NumberedListItem number="01" listItem="react & react native" />
+              <NumberedListItem number="01" listItem="React" />
+              <NumberedListItem number="02" listItem="React Native" />
               <NumberedListItem
-                number="02"
-                listItem="javascript & typescript"
+                number="03"
+                listItem="JavaScript / TypeScript"
               />
+              <NumberedListItem number="04" listItem="MobX / MST" />
             </ListContainer>
           </Stack>
 
@@ -112,9 +111,10 @@ const SkillsSection = () => {
             paddingTop={{ xs: "20px", md: "40px" }}
           >
             <ListContainer>
-              <NumberedListItem number="03" listItem="html, css" />
-              <NumberedListItem number="04" listItem="css libraries" />
-              <NumberedListItem number="05" listItem="figma" />
+              <NumberedListItem number="05" listItem="HTML / CSS" />
+              <NumberedListItem number="06" listItem="Emotion" />
+              <NumberedListItem number="07" listItem="Tailwind" />
+              <NumberedListItem number="08" listItem="Figma" />
             </ListContainer>
           </Stack>
         </StyledStack>
