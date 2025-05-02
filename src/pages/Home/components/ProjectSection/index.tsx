@@ -10,14 +10,9 @@ const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "top top"
-      "left right";
-    grid-column-gap: 40px;
+    flex-direction: row;
   }
-  gap: 40px;
+  gap: 30px;
   width: 100%;
 `;
 
@@ -69,7 +64,7 @@ const ProjectSection = () => {
   }, []);
 
   return (
-    <Box id="work">
+    <Box id="work" paddingTop={"30px"}>
       <ProjectsTitle />
       <Spacer />
       <ProjectContainer>

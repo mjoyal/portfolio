@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { observer } from "mobx-react";
 import { IProjectModel } from "src/store/ProjectStore/ProjectModel";
 import useStores from "src/hooks/useStores";
-import { Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Stack } from "@mui/material";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -45,7 +45,7 @@ const Spacer = styled.div`
 
 const ProjectCard = (props: IProjectCardProps) => {
   const {
-    project: { id, name, slug, role, imageSource, heroImageSource },
+    project: { id, name, slug, role, imageSource },
     setIsVisible,
     ...rest
   } = props;
@@ -55,17 +55,6 @@ const ProjectCard = (props: IProjectCardProps) => {
   } = useStores();
 
   const navigate = useNavigate();
-
-  const theme = useTheme();
-  const isSmall = useMediaQuery(theme.breakpoints.down("md"));
-
-  const getImageSource = () => {
-    if (isSmall) {
-      return imageSource;
-    }
-
-    return id === 1 ? heroImageSource : imageSource;
-  };
 
   return (
     <ButtonContainer
@@ -80,7 +69,7 @@ const ProjectCard = (props: IProjectCardProps) => {
     >
       <ImageWrapper>
         <ZoomImage
-          src={getImageSource()}
+          src={imageSource}
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         />
