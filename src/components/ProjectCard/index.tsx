@@ -6,22 +6,7 @@ import { Stack } from "@mui/material";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const ButtonContainer = styled(motion.button)`
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    &:nth-of-type(1) {
-      grid-area: top;
-    }
-    &:nth-of-type(2) {
-      grid-area: left;
-    }
-    &:nth-of-type(3) {
-      grid-area: right;
-    }
-  }
-  color: ${({ theme }) => (theme as any).palette.text.primary};
-`;
-
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(motion.button)`
   overflow: hidden;
   width: 100%;
   border-radius: 3px;
@@ -57,17 +42,17 @@ const ProjectCard = (props: IProjectCardProps) => {
   const navigate = useNavigate();
 
   return (
-    <ButtonContainer
-      onClick={() => {
-        setSelectedProject(id);
-        navigate(`/project/${slug}`);
-      }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      onMouseEnter={() => setIsVisible(true)}
-      onMouseLeave={() => setIsVisible(false)}
-      {...rest}
-    >
-      <ImageWrapper>
+    <Stack>
+      <ImageWrapper
+        onClick={() => {
+          setSelectedProject(id);
+          navigate(`/project/${slug}`);
+        }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        onMouseEnter={() => setIsVisible(true)}
+        onMouseLeave={() => setIsVisible(false)}
+        {...rest}
+      >
         <ZoomImage
           src={imageSource}
           whileHover={{ scale: 1.1 }}
@@ -80,7 +65,7 @@ const ProjectCard = (props: IProjectCardProps) => {
         <h5>{name}</h5>
         <p style={{ color: "#f5f5f5" }}>{quickDescription}</p>
       </Stack>
-    </ButtonContainer>
+    </Stack>
   );
 };
 
