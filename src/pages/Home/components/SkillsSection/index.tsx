@@ -60,8 +60,9 @@ const SkillsSection = () => {
           Just like camping, I believe you should leave the codebase
           <StyledEmphasis> better than</StyledEmphasis> you found it.
         </h3>
-        <Button onClick={() => alert("not implemented")}>
-          Check out my resume
+
+        <Button href="/assets/resume-2025.pdf" isDownload>
+          Download my resume
         </Button>
       </Stack>
       <SectionDivider />

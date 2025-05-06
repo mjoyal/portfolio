@@ -40,12 +40,12 @@ interface IProjectCardProps {
 }
 
 const Spacer = styled.div`
-  height: 10px;
+  height: 20px;
 `;
 
 const ProjectCard = (props: IProjectCardProps) => {
   const {
-    project: { id, name, slug, role, imageSource },
+    project: { id, name, slug, imageSource, quickDescription },
     setIsVisible,
     ...rest
   } = props;
@@ -76,9 +76,9 @@ const ProjectCard = (props: IProjectCardProps) => {
       </ImageWrapper>
 
       <Spacer />
-      <Stack direction={{ xs: "column", sm: "row" }} gap={1.5}>
+      <Stack gap={0.5}>
         <h5>{name}</h5>
-        <h6 style={{ color: "#f5f5f5" }}>{role}</h6>
+        <p style={{ color: "#f5f5f5" }}>{quickDescription}</p>
       </Stack>
     </ButtonContainer>
   );

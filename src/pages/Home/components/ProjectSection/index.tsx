@@ -9,11 +9,12 @@ import { useEffect, useState } from "react";
 const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 40px;
+  width: 100%;
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     flex-direction: row;
+    gap: 16px;
   }
-  gap: 30px;
-  width: 100%;
 `;
 
 const CustomCursor = styled(Stack)<{ isVisible: boolean }>`
