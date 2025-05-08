@@ -2,26 +2,11 @@ import styled from "@emotion/styled";
 import { observer } from "mobx-react";
 import { IProjectModel } from "src/store/ProjectStore/ProjectModel";
 import useStores from "src/hooks/useStores";
-import { Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Stack } from "@mui/material";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const ButtonContainer = styled(motion.button)`
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    &:nth-of-type(1) {
-      grid-area: top;
-    }
-    &:nth-of-type(2) {
-      grid-area: left;
-    }
-    &:nth-of-type(3) {
-      grid-area: right;
-    }
-  }
-  color: ${({ theme }) => (theme as any).palette.text.primary};
-`;
-
-const ImageWrapper = styled.div`
+const ImageWrapper = styled(motion.button)`
   overflow: hidden;
   width: 100%;
   border-radius: 3px;
@@ -40,12 +25,12 @@ interface IProjectCardProps {
 }
 
 const Spacer = styled.div`
-  height: 10px;
+  height: 20px;
 `;
 
 const ProjectCard = (props: IProjectCardProps) => {
   const {
-    project: { id, name, slug, role, imageSource, heroImageSource },
+    project: { id, name, slug, imageSource, quickDescription },
     setIsVisible,
     ...rest
   } = props;
@@ -56,42 +41,31 @@ const ProjectCard = (props: IProjectCardProps) => {
 
   const navigate = useNavigate();
 
-  const theme = useTheme();
-  const isSmall = useMediaQuery(theme.breakpoints.down("md"));
-
-  const getImageSource = () => {
-    if (isSmall) {
-      return imageSource;
-    }
-
-    return id === 1 ? heroImageSource : imageSource;
-  };
-
   return (
-    <ButtonContainer
-      onClick={() => {
-        setSelectedProject(id);
-        navigate(`/project/${slug}`);
-      }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      onMouseEnter={() => setIsVisible(true)}
-      onMouseLeave={() => setIsVisible(false)}
-      {...rest}
-    >
-      <ImageWrapper>
+    <Stack>
+      <ImageWrapper
+        onClick={() => {
+          setSelectedProject(id);
+          navigate(`/project/${slug}`);
+        }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        onMouseEnter={() => setIsVisible(true)}
+        onMouseLeave={() => setIsVisible(false)}
+        {...rest}
+      >
         <ZoomImage
-          src={getImageSource()}
+          src={imageSource}
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         />
       </ImageWrapper>
 
       <Spacer />
-      <Stack direction={{ xs: "column", sm: "row" }} gap={1.5}>
+      <Stack gap={0.5}>
         <h5>{name}</h5>
-        <h6 style={{ color: "#f5f5f5" }}>{role}</h6>
+        <p style={{ color: "#f5f5f5" }}>{quickDescription}</p>
       </Stack>
-    </ButtonContainer>
+    </Stack>
   );
 };
 

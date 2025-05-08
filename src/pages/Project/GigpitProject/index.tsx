@@ -3,10 +3,10 @@ import { observer } from "mobx-react";
 
 import Button from "src/components/Button";
 
-import { Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Stack, useMediaQuery, useTheme, Box } from "@mui/material";
 import LittleArrow from "src/icons/LittleArrow";
-// import OpenNewArrow from "src/icons/OpenNewArrow";
 import ProjectSectionText from "../ProjectSectionText";
+// import OpenNewArrow from "src/icons/OpenNewArrow";
 
 const HeaderSection = styled.div`
   margin-top: 48px;
@@ -19,9 +19,9 @@ const StyledHeader = styled.h2`
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: auto;
   display: block;
+  height: auto;
+  width: 100%;
   object-fit: cover;
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -49,7 +49,7 @@ const GitpitProject = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <>
+    <Box>
       <HeaderSection>
         {!isSmallScreen && (
           <Stack flex={1} justifyContent={"flex-end"}>
@@ -89,8 +89,8 @@ const GitpitProject = () => {
         </Button>
         <SectionDivider />
       </Stack>
-      <Image src={"/images/gigpit.png"} />
-      <Spacer />
+      <SectionDivider />
+
       <Spacer />
       <ProjectSectionText number="01" title="My Role">
         I joined Gigpit to help translate it from a static website into a
@@ -114,7 +114,6 @@ const GitpitProject = () => {
         system.
       </ProjectSectionText>
       <SectionDivider />
-      <Image src={"/images/gigpit-profile.png"} />
       <Spacer />
       <Spacer />
       <ProjectSectionText number="02" title="Design Process">
@@ -141,7 +140,6 @@ const GitpitProject = () => {
       <Spacer />
       <Spacer />
 
-      <Image src={"/images/gitpit-explore.png"} />
       <Spacer />
       <Spacer />
       <ProjectSectionText number="02" title="Design Process">
@@ -167,7 +165,7 @@ const GitpitProject = () => {
         every interaction.
       </ProjectSectionText>
       <SectionDivider />
-      <Image src={"/images/gigpit-shows.png"} />
+
       <Spacer />
       <Spacer />
       <ProjectSectionText number="03" title="Outcomes">
@@ -206,8 +204,88 @@ const GitpitProject = () => {
         thoughtful, intentional work that creates real value.
       </ProjectSectionText>
       <SectionDivider />
-    </>
+
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+          gap: 5,
+          width: "100%",
+        }}
+      >
+        <Image src="/images/gitpit-explore.png" />
+        <Stack>
+          <h4>Design Process</h4>
+          <Spacer />
+          <p>
+            We wanted the platform to feel fun and engaging—something users
+            would actually enjoy exploring. That meant stripping away friction,
+            simplifying decision points, and making every interaction feel
+            intuitive. Two areas that shaped that process most: the home screen
+            and navigation.
+            <br /> <br />
+            <strong>Reimagining the Home Page</strong> <br />
+            We initially considered separating content into a traditional home
+            screen and a personalized “For You” page, but the overlap introduced
+            unnecessary complexity. Instead, we embedded personalization
+            directly into the home screen using dynamic carousels based on user
+            location and saved shows—keeping the experience streamlined and
+            relevant. <br />
+            <br />
+            This approach gave users immediate access to content that felt
+            tailored, while maintaining a clean, focused interface. The
+            structure also sets us up to expand personalization over time,
+            incorporating behaviour like attended shows, liked events, or artist
+            follows.
+            <br /> <br /> Every decision was grounded in our core mission: to
+            make it easier for people to discover local music that speaks to
+            them.
+          </p>
+        </Stack>
+      </Box>
+    </Box>
   );
 };
 
 export default observer(GitpitProject);
+
+/* 
+
+ <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+          gap: 10,
+          width: "100%",
+        }}
+      >
+        <Image src="/images/gitpit-explore.png" />
+        <Stack justifyContent={"center"}>
+          <h4>My role</h4>
+          <Spacer />
+          <p>
+            I joined Gigpit to help translate it from a static website into a
+            mobile-first web application. While the early design work was
+            strong, the platform needed clearer UX flows and a product-driven
+            approach.
+            <br />
+            <br /> I brought a product-focused mindset, thinking not just about
+            how the interface looked but how it would be used, built, and
+            scaled. I led mobile design, created high-fidelity mockups in Figma,
+            and refined key user flows to build on a strong visual foundation
+            and deliver a more functional, intuitive experience. I also made
+            decisions to prioritize development efficiency and reusability
+            without compromising user experience. <br />
+            <br />
+            Midway through, I stepped in on the engineering side to polish
+            high-impact areas like navigation, CTA buttons, the homepage, and
+            the “Post a Show” flow, spaces that defined first impressions and
+            core actions. To address styling inconsistencies, I introduced more
+            reusable Svelte components, reduced redundant Tailwind usage, and
+            implemented a basic Tailwind config to lay the foundation for a more
+            scalable styling system.
+          </p>
+        </Stack>
+      </Box>
+      <SectionDivider />
+*/

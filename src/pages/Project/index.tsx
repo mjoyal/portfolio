@@ -14,10 +14,6 @@ const ProjectPageContainer = styled.div`
   /* These 100% widths are important to keep the overall margin of the site */
   width: 100%;
   min-height: 100vh;
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
 `;
 
 const ProjectPage = () => {

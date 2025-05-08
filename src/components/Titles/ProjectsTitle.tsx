@@ -6,9 +6,6 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    justify-content: flex-start;
-  }
 `;
 
 const Title = styled.h1`

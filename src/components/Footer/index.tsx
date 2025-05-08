@@ -79,7 +79,7 @@ const Footer = () => {
 
       {!isMobile && (
         <Stack direction={"row"}>
-          <Button isTextButton onClick={() => alert("not implemented")}>
+          <Button href="/assets/resume-2025.pdf" isDownload isTextButton>
             {isBelowMedium ? "Resume" : "Download my resume"}
           </Button>
 
