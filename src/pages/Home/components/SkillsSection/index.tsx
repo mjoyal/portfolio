@@ -37,7 +37,7 @@ const Spacer = styled.div`
   height: 40px;
 `;
 
-const StyledEmphasis = styled.em`
+const StyledEmphasis = styled.span`
   color: ${({ theme }) => (theme as any).palette.text.secondary};
 `;
 
