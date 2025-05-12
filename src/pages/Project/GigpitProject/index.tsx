@@ -4,19 +4,9 @@ import { observer } from "mobx-react";
 import Button from "src/components/Button";
 
 import { Stack, useMediaQuery, useTheme, Box } from "@mui/material";
-import LittleArrow from "src/icons/LittleArrow";
 import ProjectSectionText from "../ProjectSectionText";
+import GigpitLogo from "src/icons/GigpitLogo";
 // import OpenNewArrow from "src/icons/OpenNewArrow";
-
-const HeaderSection = styled.div`
-  margin-top: 48px;
-  display: flex;
-`;
-
-const StyledHeader = styled.h2`
-  text-align: right;
-  line-height: 1;
-`;
 
 const Image = styled.img`
   display: block;
@@ -24,7 +14,12 @@ const Image = styled.img`
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+`;
+
+const HeroImage = styled.img`
+  height: auto;
+  width: 600px;
+  border-radius: 5px;
 `;
 
 const Spacer = styled.div`
@@ -49,44 +44,48 @@ const GitpitProject = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Box>
-      <HeaderSection>
-        {!isSmallScreen && (
-          <Stack flex={1} justifyContent={"flex-end"}>
-            <LittleArrow />
-          </Stack>
-        )}
-        <Stack gap={"32px"} flex={1}>
-          <StyledHeader>Gigpit</StyledHeader>
-          <Image src={"/images/project-square.png"} />
+    <Box marginTop={10} marginX={{ xs: 0, md: 10 }}>
+      <Stack
+        direction={{ xs: "column", md: "row-reverse" }}
+        alignItems={"flex-end"}
+      >
+        <Stack gap={5}>
+          <GigpitLogo />
+          <HeroImage src={"/images/project-square.png"} />
         </Stack>
-      </HeaderSection>
+        <Stack flex={1}>
+          <h5>Role</h5>
+          <p>UX/UI & Front-end Engineering</p>
+          <h5>Year</h5>
+          <p>2024 - Current</p>
+          <h5>Design Collaborator</h5>
+          <p>Lizzie, Lead Design</p>
+        </Stack>
+      </Stack>
       {isSmallScreen ? <Spacer /> : <SectionDivider />}
       <Stack alignItems={"flex-start"}>
         <StyledTitle>
           A web app making local music easy to find <em>(and hard to miss)</em>
         </StyledTitle>
         <Spacer />
-        <StyledP>
-          Local music often lives in the margins, buried in Instagram stories,
-          scattered across venue websites, or passed along by word of mouth. For
-          many artists, this means playing to half-empty rooms—not for lack of
-          talent, but for lack of visibility. <br /> <br />
-          Gigpit was built to change that. We created a platform where anyone
-          can post a show and everyone will find it. A shared space for artists,
-          organizers, and fans to connect, making it easier to show up for the
-          scene. By centralizing event info and simplifying discovery, GigPit
-          helps give local music the audience it deserves.
-        </StyledP>
+        <Stack>
+          <StyledP>
+            Local music often lives in the margins, buried in Instagram stories,
+            scattered across venue websites, or passed along by word of mouth.
+            For many artists, this means playing to half-empty rooms—not for
+            lack of talent, but for lack of visibility.
+          </StyledP>
+          <StyledP>
+            Gigpit was built to change that. We created a platform where anyone
+            can post a show and everyone will find it. A shared space for
+            artists, organizers, and fans to connect, making it easier to show
+            up for the scene. By centralizing event info and simplifying
+            discovery, GigPit helps give local music the audience it deserves.
+          </StyledP>
+        </Stack>
         <Spacer />
         <Spacer />
-        <Button
-          onClick={() => {
-            alert("Not implemented");
-          }}
-        >
-          View Project
-        </Button>
+        <Button href="https://gigpit.ca">View Project</Button>
         <SectionDivider />
       </Stack>
       <SectionDivider />

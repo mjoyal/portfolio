@@ -4,13 +4,13 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import useStores from "src/hooks/useStores";
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 
 import GigpitProject from "./GigpitProject";
 import CrewlywedProject from "./CrewlywedProject";
 import Fit52Project from "./Fit52Project";
 
-const ProjectPageContainer = styled.div`
+const ProjectPageContainer = styled(Stack)`
   /* These 100% widths are important to keep the overall margin of the site */
   width: 100%;
   min-height: 100vh;
