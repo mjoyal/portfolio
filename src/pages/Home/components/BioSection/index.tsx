@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Stack, useMediaQuery, useTheme } from "@mui/material";
 
-const EmphasisText = styled.em`
+const EmphasisText = styled.span`
   color: ${({ theme }) => (theme as any).palette.primary.main};
 `;
 
