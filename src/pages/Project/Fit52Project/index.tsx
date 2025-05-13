@@ -3,9 +3,10 @@ import { observer } from "mobx-react";
 
 import Button from "src/components/Button";
 
-import { Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import LittleArrow from "src/icons/LittleArrow";
 import ProjectSectionText from "../ProjectSectionText";
+import Spacer from "src/components/Spacer";
 
 const HeaderSection = styled.div`
   margin-top: 48px;
@@ -25,16 +26,13 @@ const Image = styled.img`
   border-radius: 3px;
 `;
 
-const Spacer = styled.div`
-  height: 24px;
-`;
-
 const SectionDivider = styled.div`
   height: 200px;
 `;
 
-const StyledP = styled.h6`
-  max-width: 50ch;
+export const StyledP = styled.p<{ isHidden?: boolean }>`
+  max-width: 400px;
+  display: ${({ isHidden = false }) => (isHidden ? "none" : "block")};
 `;
 
 const StyledTitle = styled.h4`
@@ -73,28 +71,34 @@ const Fit52Project = () => {
           also integrates nutrition guidance and community-driven features to
           support long-term health and motivation.
         </StyledP>
-        <Spacer />
-        <Spacer />
+        <Spacer level={6} />
+
         <Button href="https://www.fit52.com/">View Project</Button>
         <SectionDivider />
       </Stack>
 
-      <ProjectSectionText number="01" title="My Role">
-        Over three years at Fit52, I worked across UI refinement, scalable
-        component architecture, and user-facing feature development. I focused
-        on improving visual clarity, usability, and long-term
-        maintainability—refining UX/UI in the user feed, leading component
-        refactors to simplify development workflows, and building interactive
-        features like the exercise swap system. My work sat at the intersection
-        of design, engineering, and product, translating design intent into
-        polished, scalable interfaces.
-      </ProjectSectionText>
-
-      <Spacer />
-      <Spacer />
+      <Box>
+        <h4>My Role</h4>
+        <Spacer level={10} />
+        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+          <StyledP>
+            Over three years at Fit52, I worked on UI refinement, scalable
+            component architecture, and user-facing feature development. I
+            focused on improving visual clarity, usability, and long-term
+            maintainability. My contributions included refining the user feed
+            experience and leading component refactors to streamline development
+            workflows.
+          </StyledP>
+          <StyledP>
+            I also built interactive features such as the exercise swap system.
+            My role sat at the intersection of design, engineering, and
+            product—translating design intent into polished, scalable interfaces
+            that balanced aesthetics with functionality.
+          </StyledP>
+        </Stack>
+      </Box>
 
       <Image src={"/images/fit52-feed.png"} />
-      <SectionDivider />
 
       <ProjectSectionText number="02" title="Key Contributions">
         <strong>User Feed Redesign & Implementation</strong> <br />
