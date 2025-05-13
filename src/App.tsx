@@ -4,7 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
 
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, HashRouter as Router } from "react-router-dom";
 import HomePage from "./pages/Home";
 import ProjectPage from "./pages/Project";
 import StoreProvider from "./store";
@@ -28,7 +28,7 @@ function App() {
     <StoreProvider>
       <ThemeProvider theme={theme}>
         <CssBaseline /> {/* Resets default browser styles */}
-        <BrowserRouter>
+        <Router>
           <ScrollToTop />
           {/* <PageTransition /> */}
           <NavBar />
@@ -39,7 +39,7 @@ function App() {
             </Routes>
           </AppWrapper>
           <Footer />
-        </BrowserRouter>
+        </Router>
       </ThemeProvider>
     </StoreProvider>
   );
