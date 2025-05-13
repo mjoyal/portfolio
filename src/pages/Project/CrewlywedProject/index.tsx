@@ -108,43 +108,73 @@ const CrewlywedProject = () => {
         <Spacer level={10} />
         <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
           <StyledP>
-            Over three years at Fit52, I worked on UI refinement, scalable
-            component architecture, and user-facing feature development. I
-            focused on improving visual clarity, usability, and long-term
-            maintainability. My contributions included refining the user feed
-            experience and leading component refactors to streamline development
-            workflows.
+            I co-led the design and front-end development of Crewlywed,
+            collaborating on the game’s branding, character illustrations, and
+            UI components to create a playful, engaging experience. My focus was
+            on interaction design, animations, and implementing the interface
+            using React.
           </StyledP>
           <StyledP>
-            I also built interactive features such as the exercise swap system.
-            My role sat at the intersection of design, engineering, and
-            product—translating design intent into polished, scalable interfaces
-            that balanced aesthetics with functionality.
+            I also researched and led the implementation of WebSocket
+            functionality—designing the real-time architecture and handling
+            state synchronization between players, the game host, and the
+            server.
           </StyledP>
         </Stack>
       </Box>
 
-      <ProjectSectionText number="01" title="project overview">
-        maybe i could have a little bit of text here to fill out the space.
-        could be a nice little morsel of text about me. little quirky facts. fun
-        facts. but also serious facts. very professional serious facts.
-      </ProjectSectionText>
+      <Image src={"/images/gigpit.png"} />
+
+      <Box>
+        <h4>Designing Game Mechanics </h4>
+        <Spacer level={10} />
+        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+          <StyledP>
+            I co-designed the game mechanics from the ground up—structuring how
+            rounds worked, how scoring was calculated, and how host permissions
+            shaped the flow of play. I also mapped out the game state and event
+            flow using WebSockets to ensure the experience felt seamless from
+            one phase to the next.
+          </StyledP>
+          <StyledP>
+            This shared understanding of the full game flow made it easier to
+            make decisions, write cleaner, more focused code, and move forward
+            confidently as a team.
+          </StyledP>
+        </Stack>
+      </Box>
+
+      <Box>
+        <h4>Interaction Design</h4>
+        <Spacer level={10} />
+        <StyledP>
+          To keep the experience intuitive and playful, I designed
+          microinteractions and motion-based feedback across the game flow. From
+          joining a room to submitting a bluff, every moment was crafted to feel
+          light, responsive, and fun—supporting the social energy of the game.
+        </StyledP>
+      </Box>
 
       <Image src={"/images/gigpit.png"} />
 
-      <ProjectSectionText number="02" title="goals">
-        maybe i could have a little bit of text here to fill out the space.
-        could be a nice little morsel of text about me. little quirky facts. fun
-        facts. but also serious facts. very professional serious facts.
-      </ProjectSectionText>
-
-      <Image src={"/images/gigpit.png"} />
-
-      <ProjectSectionText number="03" title="process">
-        maybe i could have a little bit of text here to fill out the space.
-        could be a nice little morsel of text about me. little quirky facts. fun
-        facts. but also serious facts. very professional serious facts.
-      </ProjectSectionText>
+      <Box>
+        <h4>Outcome & Results</h4>
+        <Spacer level={10} />
+        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+          <StyledP>
+            Crewlywed was ranked in the top three final projects of the
+            bootcamp, recognized for its real-time multiplayer functionality and
+            engaging user experience. We successfully built a Jackbox-style game
+            that helped people feel more connected during a time of global
+            isolation.
+          </StyledP>
+          <StyledP>
+            This project was a milestone in designing and building a fully
+            functional, real-time web app—deepening my skills in front-end
+            architecture, state management, and WebSockets.
+          </StyledP>
+        </Stack>
+      </Box>
 
       <Stack gap={1}>
         <Stack direction={"row"} gap={1}>
@@ -155,15 +185,24 @@ const CrewlywedProject = () => {
         <Image src={"/images/gigpit.png"} />
       </Stack>
 
-      <ProjectSectionText number="04" title="outcomes" hasButton>
-        maybe i could have a little bit of text here to fill out the space.
-        could be a nice little morsel of text about me. little quirky facts. fun
-        facts. but also serious facts. very professional serious facts.
-      </ProjectSectionText>
-
-      <Spacer />
-      <Spacer />
-
+      <Box>
+        <h4>Learnings</h4>
+        <Spacer level={10} />
+        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+          <StyledP>
+            Building Crewlywed showed me the importance of scalable
+            architecture—even in small, fast-moving projects. We initially
+            relied on prop drilling for state, simply because more advanced
+            state management (like Context, Redux, or MobX) hadn’t been taught
+            in the bootcamp.
+          </StyledP>
+          <StyledP>
+            As the app grew, managing state became difficult, and I began to see
+            how centralized patterns could simplify complexity and support
+            real-time collaboration more effectively.
+          </StyledP>
+        </Stack>
+      </Box>
       <Image src={"/images/gigpit.png"} />
     </ProjectPageContainer>
   );
