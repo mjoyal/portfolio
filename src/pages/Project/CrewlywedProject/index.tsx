@@ -6,7 +6,6 @@ import Button from "src/components/Button";
 import useStores from "src/hooks/useStores";
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import LittleArrow from "src/icons/LittleArrow";
-import ProjectSectionText from "../ProjectSectionText";
 import Spacer from "src/components/Spacer";
 
 const ProjectPageContainer = styled.div`
@@ -38,8 +37,8 @@ const Image = styled.img`
   border-radius: 3px;
 `;
 
-const SmallImage = styled.img`
-  width: 48%;
+const PhoneMockImage = styled.img`
+  width: 300px;
   height: 100%;
 `;
 
@@ -124,6 +123,20 @@ const CrewlywedProject = () => {
       </Box>
 
       <Image src={"/images/gigpit.png"} />
+      <Box>
+        <h4>Designing for Play</h4>
+        <Spacer level={10} />
+        <StyledP>
+          The UI was designed to keep this flow light, funny, and
+          social—blending clear structure with playful visuals to support both
+          competition and connection. Every screen was built to feel intuitive
+          at a glance, so players could focus on laughing, bluffing, and
+          reacting—not figuring out how to play. Characters are quirky but
+          expressive, prompts are casual and weird in the best way, and
+          microinteractions were kept minimal to avoid distraction. The result
+          is a game that feels just as fun to lose as it does to win.
+        </StyledP>
+      </Box>
 
       <Box>
         <h4>Designing Game Mechanics </h4>
@@ -144,18 +157,18 @@ const CrewlywedProject = () => {
         </Stack>
       </Box>
 
-      <Box>
-        <h4>Interaction Design</h4>
-        <Spacer level={10} />
-        <StyledP>
-          To keep the experience intuitive and playful, I designed
-          microinteractions and motion-based feedback across the game flow. From
-          joining a room to submitting a bluff, every moment was crafted to feel
-          light, responsive, and fun—supporting the social energy of the game.
-        </StyledP>
-      </Box>
+      <Spacer level={15} />
 
-      <Image src={"/images/gigpit.png"} />
+      <Stack direction={{ xs: "column", md: "row" }} gap={3}>
+        <PhoneMockImage
+          src={"/images/crewlywed/crewlywed-question-choice-screen.png"}
+        />
+        <PhoneMockImage
+          src={"/images/crewlywed/crewlywed-question-results-screen.png"}
+        />
+      </Stack>
+
+      <Spacer level={15} />
 
       <Box>
         <h4>Outcome & Results</h4>
@@ -176,15 +189,6 @@ const CrewlywedProject = () => {
         </Stack>
       </Box>
 
-      <Stack gap={1}>
-        <Stack direction={"row"} gap={1}>
-          <SmallImage src={"/images/project-square.png"} />
-          <SmallImage src={"/images/project-square.png"} />
-        </Stack>
-
-        <Image src={"/images/gigpit.png"} />
-      </Stack>
-
       <Box>
         <h4>Learnings</h4>
         <Spacer level={10} />
@@ -203,7 +207,8 @@ const CrewlywedProject = () => {
           </StyledP>
         </Stack>
       </Box>
-      <Image src={"/images/gigpit.png"} />
+
+      <Spacer level={20} />
     </ProjectPageContainer>
   );
 };
