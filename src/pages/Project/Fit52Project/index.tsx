@@ -5,8 +5,18 @@ import Button from "src/components/Button";
 
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import LittleArrow from "src/icons/LittleArrow";
-import ProjectSectionText from "../ProjectSectionText";
 import Spacer from "src/components/Spacer";
+
+const ProjectPageContainer = styled(Box)`
+  /* These 100% widths are important to keep the overall margin of the site */
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 40px;
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+`;
 
 const HeaderSection = styled.div`
   margin-top: 48px;
@@ -45,7 +55,7 @@ const Fit52Project = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Box marginTop={10} marginX={{ xs: 0, md: 10 }}>
+    <ProjectPageContainer>
       <HeaderSection>
         {!isSmallScreen && (
           <Stack flex={1} justifyContent={"flex-end"}>
@@ -57,7 +67,7 @@ const Fit52Project = () => {
           <Image src={"/images/project-square.png"} />
         </Stack>
       </HeaderSection>
-      {isSmallScreen ? <Spacer /> : <SectionDivider />}
+      {isSmallScreen ? <Spacer /> : <Spacer level={50} />}
 
       <Stack alignItems={"flex-start"}>
         <StyledTitle>
@@ -236,7 +246,7 @@ const Fit52Project = () => {
         </Stack>
       </Box>
       <Spacer level={20} />
-    </Box>
+    </ProjectPageContainer>
   );
 };
 

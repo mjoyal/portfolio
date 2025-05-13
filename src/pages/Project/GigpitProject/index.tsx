@@ -10,6 +10,17 @@ import { useState } from "react";
 import MyRole from "./components/GigpitRoleSection";
 import GigpitHeroSection from "./components/GigpitHeroSection";
 
+const ProjectPageContainer = styled(Box)`
+  /* These 100% widths are important to keep the overall margin of the site */
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 40px;
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+`;
+
 const Image = styled.img`
   display: block;
   height: auto;
@@ -40,7 +51,7 @@ const GitpitProject = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Box marginTop={10} marginX={{ xs: 0, md: 10 }}>
+    <ProjectPageContainer>
       <GigpitHeroSection />
       {isSmallScreen ? <Spacer /> : <Spacer level={50} />}
       <Stack alignItems={"flex-start"} borderBottom={1}>
@@ -212,7 +223,7 @@ const GitpitProject = () => {
           </StyledP>
         </Stack>
       </Box>
-    </Box>
+    </ProjectPageContainer>
   );
 };
 
