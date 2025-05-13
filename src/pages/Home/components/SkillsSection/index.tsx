@@ -61,7 +61,7 @@ const SkillsSection = () => {
           <StyledEmphasis> better than</StyledEmphasis> you found it.
         </h3>
 
-        <Button href="/assets/resume-2025.pdf" isDownload>
+        <Button href="/assets/mackenzie-joyal-resume-2025.pdf" isDownload>
           Download my resume
         </Button>
       </Stack>

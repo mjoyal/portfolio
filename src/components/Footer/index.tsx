@@ -56,7 +56,11 @@ const Footer = () => {
         <Stack pl={"16px"} gap={3}>
           <Box textAlign={"left"}>
             <h6>Still Curious?</h6>
-            <MobileButton isTextButton onClick={() => alert("not implemented")}>
+            <MobileButton
+              isDownload
+              isTextButton
+              href="/assets/mackenzie-joyal-resume-2025.pdf"
+            >
               Download my resume
             </MobileButton>
           </Box>
@@ -79,7 +83,11 @@ const Footer = () => {
 
       {!isMobile && (
         <Stack direction={"row"}>
-          <Button href="/assets/resume-2025.pdf" isDownload isTextButton>
+          <Button
+            href="/assets/mackenzie-joyal-resume-2025.pdf"
+            isDownload
+            isTextButton
+          >
             {isBelowMedium ? "Resume" : "Download my resume"}
           </Button>
 
