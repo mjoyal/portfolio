@@ -7,17 +7,13 @@ import useStores from "src/hooks/useStores";
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import LittleArrow from "src/icons/LittleArrow";
 import Spacer from "src/components/Spacer";
-
-const ProjectPageContainer = styled.div`
-  /* These 100% widths are important to keep the overall margin of the site */
-  width: 100%;
-  min-height: 100vh;
-  margin-top: 40px;
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-`;
+import {
+  PhoneMockImage,
+  ProjectImage,
+  ProjectPageContainer,
+  SectionDivider,
+} from "../components";
+import { StyledP } from "../GigpitProject";
 
 const HeaderSection = styled.div`
   margin-top: 48px;
@@ -27,24 +23,6 @@ const HeaderSection = styled.div`
 const StyledHeader = styled.h2`
   text-align: right;
   line-height: 1;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 3px;
-`;
-
-const PhoneMockImage = styled.img`
-  width: 300px;
-  height: 100%;
-`;
-
-export const StyledP = styled.p<{ isHidden?: boolean }>`
-  max-width: 400px;
-  display: ${({ isHidden = false }) => (isHidden ? "none" : "block")};
 `;
 
 const StyledTitle = styled.h4`
@@ -70,10 +48,12 @@ const CrewlywedProject = () => {
         )}
         <Stack gap={"32px"} flex={1}>
           <StyledHeader>{selectedProject?.name}</StyledHeader>
-          <Image src={"/images/project-square.png"} />
+          <ProjectImage src={"/images/project-square.png"} />
         </Stack>
       </HeaderSection>
-      {isSmallScreen ? <Spacer /> : <Spacer level={50} />}
+
+      <SectionDivider />
+
       <Stack alignItems={"flex-start"}>
         <StyledTitle>The Newlywed game for you and your crew</StyledTitle>
         <Spacer />
@@ -100,7 +80,7 @@ const CrewlywedProject = () => {
         </Button>
       </Stack>
 
-      <Spacer level={10} />
+      <SectionDivider />
 
       <Box>
         <h4>My Role</h4>
@@ -121,23 +101,35 @@ const CrewlywedProject = () => {
           </StyledP>
         </Stack>
       </Box>
+      <SectionDivider />
+      <Stack gap={3}>
+        <h4>Designing for Play </h4>
 
-      <Image src={"/images/gigpit.png"} />
-      <Box>
-        <h4>Designing for Play</h4>
-        <Spacer level={10} />
-        <StyledP>
-          The UI was designed to keep this flow light, funny, and
-          social—blending clear structure with playful visuals to support both
-          competition and connection. Every screen was built to feel intuitive
-          at a glance, so players could focus on laughing, bluffing, and
-          reacting—not figuring out how to play. Characters are quirky but
-          expressive, prompts are casual and weird in the best way, and
-          microinteractions were kept minimal to avoid distraction. The result
-          is a game that feels just as fun to lose as it does to win.
-        </StyledP>
-      </Box>
+        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+          <StyledP>
+            The UI was designed to keep this flow light, funny, and
+            social—blending clear structure with playful visuals to support both
+            competition and connection. Every screen was built to feel intuitive
+            at a glance, so players could focus on laughing, bluffing, and
+            reacting—not figuring out how to play.
+          </StyledP>
+          <StyledP>
+            Characters are quirky but expressive, prompts are casual and weird
+            in the best way, and microinteractions were kept minimal to avoid
+            distraction. The result is a game that feels just as fun to lose as
+            it does to win.
+          </StyledP>
+        </Stack>
+      </Stack>
 
+      <SectionDivider />
+
+      <Stack direction={{ xs: "column", md: "row" }} gap={8}>
+        <PhoneMockImage src={"/images/crewlywed/question-screen.png"} />
+        <PhoneMockImage src={"/images/crewlywed/response-screen.png"} />
+      </Stack>
+
+      <SectionDivider />
       <Box>
         <h4>Designing Game Mechanics </h4>
         <Spacer level={10} />
@@ -157,18 +149,14 @@ const CrewlywedProject = () => {
         </Stack>
       </Box>
 
-      <Spacer level={15} />
+      <SectionDivider />
 
-      <Stack direction={{ xs: "column", md: "row" }} gap={3}>
-        <PhoneMockImage
-          src={"/images/crewlywed/crewlywed-question-choice-screen.png"}
-        />
-        <PhoneMockImage
-          src={"/images/crewlywed/crewlywed-question-results-screen.png"}
-        />
+      <Stack direction={{ xs: "column", md: "row" }} gap={8}>
+        <PhoneMockImage src={"/images/crewlywed/choice-screen.png"} />
+        <PhoneMockImage src={"/images/crewlywed/results-screen.png"} />
       </Stack>
 
-      <Spacer level={15} />
+      <SectionDivider />
 
       <Box>
         <h4>Outcome & Results</h4>
@@ -189,6 +177,9 @@ const CrewlywedProject = () => {
         </Stack>
       </Box>
 
+      <PhoneMockImage src={"/images/crewlywed/final-screen.png"} />
+
+      <SectionDivider />
       <Box>
         <h4>Learnings</h4>
         <Spacer level={10} />
@@ -207,8 +198,7 @@ const CrewlywedProject = () => {
           </StyledP>
         </Stack>
       </Box>
-
-      <Spacer level={20} />
+      <SectionDivider />
     </ProjectPageContainer>
   );
 };
