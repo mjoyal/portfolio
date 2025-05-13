@@ -45,14 +45,14 @@ const Fit52Project = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <>
+    <Box marginTop={10} marginX={{ xs: 0, md: 10 }}>
       <HeaderSection>
         {!isSmallScreen && (
           <Stack flex={1} justifyContent={"flex-end"}>
             <LittleArrow />
           </Stack>
         )}
-        <Stack gap={"32px"} flex={1}>
+        <Stack flex={1}>
           <StyledHeader>Fit52</StyledHeader>
           <Image src={"/images/project-square.png"} />
         </Stack>
@@ -99,85 +99,144 @@ const Fit52Project = () => {
       </Box>
 
       <Image src={"/images/fit52-feed.png"} />
-
-      <ProjectSectionText number="02" title="Key Contributions">
-        <strong>User Feed Redesign & Implementation</strong> <br />
-        I led the redesign and full implementation of the Fit52 user feed to
-        improve clarity, engagement, and information density. The previous
-        version featured oversized elements, uneven spacing, and clunky buttons
-        that made it hard to see more than one post at a time—discouraging users
-        from scrolling or interacting. I modernized the layout by reducing
-        visual bulk, tightening spacing, and reworking interaction patterns to
-        feel more intuitive on mobile.
-        <br />
-        <br />
-        As part of the update, I removed redundant elements like the “View All
-        Comments” button and folded that functionality directly into the comment
-        icon—streamlining the UI and reinforcing intuitive behavior. After
-        launch, the feedback from users and team members was immediate and
-        overwhelmingly positive, with many calling the feed “cleaner,” “easier
-        to read,” and “more fun to scroll.”
-        <br />
-        <br />
-        <strong>TopBar API Refactor</strong> <br />
-        One of my most impactful technical contributions was refactoring the
-        TopBar component, which had become hard to maintain due to excessive
-        configuration props (`rightComponentColor`, `skipButtonIsDisabled`,
-        etc.). To address this, I broke the component into clear subcomponents
-        (such as `Logo`, `BackButton`, and `CloseButton`) and introduced a more
-        composable API using `leftComponent`, `middleComponent`, and
-        `rightComponent` props. This shifted the pattern from prop-based
-        configuration to direct component injection—reducing prop bloat,
-        improving readability, and making it far easier for developers to
-        compose flexible layouts without cluttering the codebase. <br />
-        <br />
-        The refactor not only cleaned up the codebase, but also fixed several
-        visual bugs and inconsistencies—such as incorrect icon sizes, misaligned
-        elements, and mismatched colors. After the change, the component was
-        easier to implement, easier to debug, and far less prone to introducing
-        regressions.
-        <br />
-        <br />
-        <strong>Feature Development – Exercise Swap System</strong> <br />
-        I implemented a multi-step UI flow that let users swap exercises within
-        dynamically generated workouts. The system included carousels, filtering
-        logic, swap validation, and dynamic state handling to ensure
-        replacements stayed within workout constraints. I focused on maintaining
-        state persistence and delivering clear, responsive UI feedback to make
-        the experience feel seamless and empowering.
-        <br />
-        <br />
-        Before this feature, users could only reroll exercises at random if they
-        didn’t like a move. With the new system, they could browse, search, and
-        filter to find moves that matched their goals and needs—giving them real
-        control. Adoption was immediate and widespread—users embraced the added
-        control, and it became a core part of the workout experience.
-      </ProjectSectionText>
-
-      <Spacer />
-      <Spacer />
-      <Image src={"/images/gigpit.png"} />
-      <SectionDivider />
-
-      <ProjectSectionText number="03" title="Learnings">
-        Working on Fit52 over several years taught me how much impact thoughtful
-        structure can have—not just on users, but on the developers building the
-        product. Refactoring components like the TopBar showed how simplifying
-        architecture can prevent bugs, improve consistency, and make
-        implementation faster across a growing codebase. <br />
-        <br /> This was also where I first learned MobX and began understanding
-        state management at scale. It gave me a foundational perspective on how
-        architectural choices shape long-term maintainability and team
-        efficiency. <br />
-        <br />
-        Building the exercise swap system reminded me how powerful it is to give
-        users real control. That feature reinforced a product principle I carry
-        with me: good UX means giving people the ability to shape their own
-        experience.
-      </ProjectSectionText>
-
-      <SectionDivider />
-    </>
+      <Spacer level={20} />
+      <Box>
+        <h4>User Feed Redesign & Implementation</h4>
+        <Spacer level={10} />
+        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+          <Stack gap={{ xs: 3, md: 5 }}>
+            <StyledP>
+              I led the redesign and full implementation of the Fit52 user feed
+              to improve clarity, engagement, and information density. The
+              original version used oversized elements, uneven spacing, and
+              awkward buttons that limited visibility to a single
+              post—discouraging users from scrolling or interacting.
+            </StyledP>
+            <StyledP>
+              I modernized the layout by reducing visual bulk, tightening the
+              spacing, and reworking interaction patterns to feel more intuitive
+              on mobile. The result was a cleaner, more inviting experience that
+              encouraged ongoing engagement.
+            </StyledP>
+          </Stack>
+          <Stack gap={{ xs: 3, md: 5 }}>
+            <StyledP>
+              As part of the update, I removed redundant elements such as the
+              “View All Comments” button and integrated that functionality
+              directly into the comment icon. This streamlined the interface and
+              reinforced more intuitive user behavior.
+            </StyledP>
+            <StyledP>
+              After launch, feedback from both users and team members was
+              immediate and overwhelmingly positive. Many described the feed as
+              “cleaner,” “easier to read,” and “more fun to scroll.”
+            </StyledP>
+          </Stack>
+        </Stack>
+      </Box>
+      <Spacer level={20} />
+      <Box>
+        <h4>TopBar API Refactor</h4>
+        <Spacer level={10} />
+        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+          <Stack gap={{ xs: 3, md: 5 }}>
+            <StyledP>
+              One of my most impactful technical contributions was refactoring
+              the TopBar component, which had become hard to maintain due to
+              excessive configuration props (rightComponentColor,
+              skipButtonIsDisabled, etc.).
+            </StyledP>
+            <StyledP>
+              To address this, I broke the component into clear subcomponents
+              (such as Logo, BackButton, and CloseButton) and introduced a more
+              composable API using leftComponent, middleComponent, and
+              rightComponent props.
+            </StyledP>
+          </Stack>
+          <Stack gap={{ xs: 3, md: 5 }}>
+            <StyledP>
+              This shifted the pattern from prop-based configuration to direct
+              component injection—reducing prop bloat, improving readability,
+              and making it far easier for developers to compose flexible
+              layouts without cluttering the codebase.
+            </StyledP>
+            <StyledP>
+              The refactor not only cleaned up the codebase, but also fixed
+              several visual bugs and inconsistencies—such as incorrect icon
+              sizes, misaligned elements, and mismatched colors. After the
+              change, the component was easier to implement, easier to debug,
+              and far less prone to introducing regressions.
+            </StyledP>
+          </Stack>
+        </Stack>
+      </Box>
+      <Spacer level={20} />
+      <Box>
+        <h4>Building the Exercise Swap System</h4>
+        <Spacer level={10} />
+        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+          <Stack gap={{ xs: 3, md: 5 }}>
+            <StyledP>
+              I implemented a multi-step UI flow that let users swap exercises
+              within dynamically generated workouts. The system included
+              carousels, filtering logic, swap validation, and dynamic state
+              handling to ensure replacements stayed within workout constraints.
+            </StyledP>
+            <StyledP>
+              I focused on maintaining state persistence and delivering clear,
+              responsive UI feedback to make the experience feel seamless and
+              empowering.
+            </StyledP>
+          </Stack>
+          <Stack gap={{ xs: 3, md: 5 }}>
+            <StyledP>
+              Before this feature, users could only reroll exercises at random
+              if they didn’t like a move. With the new system, they could
+              browse, search, and filter to find moves that matched their goals
+              and needs—giving them real control.
+            </StyledP>
+            <StyledP>
+              Adoption was immediate and widespread—users embraced the added
+              control, and it became a core part of the workout experience.
+            </StyledP>
+          </Stack>
+        </Stack>
+      </Box>
+      <Spacer level={20} />
+      <Box>
+        <h4>Learnings</h4>
+        <Spacer level={10} />
+        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+          <Stack gap={{ xs: 3, md: 5 }}>
+            <StyledP>
+              Working on Fit52 over several years taught me how much impact
+              thoughtful structure can have—not just on users, but on the
+              developers building the product.
+            </StyledP>
+            <StyledP>
+              Refactoring components like the TopBar showed how simplifying
+              architecture can prevent bugs, improve consistency, and make
+              implementation faster across a growing codebase.
+            </StyledP>
+          </Stack>
+          <Stack gap={{ xs: 3, md: 5 }}>
+            <StyledP>
+              This was also where I first learned MobX and began understanding
+              state management at scale. It gave me a foundational perspective
+              on how architectural choices shape long-term maintainability and
+              team efficiency.
+            </StyledP>
+            <StyledP>
+              Lastly, building the exercise swap system reminded me how powerful
+              it is to give users real control. That feature reinforced a
+              product principle I carry with me: good UX means giving people the
+              ability to shape their own experience.
+            </StyledP>
+          </Stack>
+        </Stack>
+      </Box>
+      <Spacer level={20} />
+    </Box>
   );
 };
 
