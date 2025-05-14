@@ -18,17 +18,12 @@ import {
   StyledP,
 } from "../components";
 
-const HeaderSection = styled.div`
-  margin-top: 48px;
-  display: flex;
-`;
-
 const StyledHeader = styled.h2`
   text-align: right;
   line-height: 1;
 `;
 
-const StyledTitle = styled.h3`
+const StyledTitle = styled.h1`
   max-width: 700px;
 `;
 
@@ -43,7 +38,7 @@ const CrewlywedProject = () => {
 
   return (
     <ProjectPageContainer>
-      <HeaderSection>
+      <Stack>
         {!isSmallScreen && (
           <Stack flex={1} justifyContent={"flex-end"}>
             <LittleArrow />
@@ -53,7 +48,7 @@ const CrewlywedProject = () => {
           <StyledHeader>{selectedProject?.name}</StyledHeader>
           <ProjectImage src={"/images/project-square.png"} />
         </Stack>
-      </HeaderSection>
+      </Stack>
 
       <SectionDivider />
 
@@ -153,10 +148,10 @@ const CrewlywedProject = () => {
 
       <SectionDivider />
 
-      <Stack direction={{ xs: "column", md: "row" }} gap={8}>
+      <MockWrapper>
         <PhoneMockImage src={"/images/crewlywed/choice-screen.png"} />
         <PhoneMockImage src={"/images/crewlywed/results-screen.png"} />
-      </Stack>
+      </MockWrapper>
 
       <SectionDivider />
 
