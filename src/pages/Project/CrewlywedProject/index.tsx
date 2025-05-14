@@ -3,8 +3,7 @@ import styled from "@emotion/styled";
 
 import Button from "src/components/Button";
 
-import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
-import LittleArrow from "src/icons/LittleArrow";
+import { Box, Stack } from "@mui/material";
 import Spacer from "src/components/Spacer";
 import {
   BodyTextWrapper,
@@ -16,6 +15,7 @@ import {
   SectionTitle,
   StyledP,
 } from "../components";
+import CrewlywedLogo from "src/icons/CrewlywedLogo";
 
 const PageTitle = styled.h1`
   max-width: 600px;
@@ -23,19 +23,11 @@ const PageTitle = styled.h1`
 `;
 
 const CrewlywedProject = () => {
-  const theme = useTheme();
-
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-
   return (
     <ProjectPageContainer>
       <Stack>
-        {!isSmallScreen && (
-          <Stack flex={1} justifyContent={"flex-end"}>
-            <LittleArrow />
-          </Stack>
-        )}
         <Stack gap={"32px"} flex={1}>
+          <CrewlywedLogo />
           <ProjectImage src={"/images/project-square.png"} />
         </Stack>
       </Stack>
@@ -146,7 +138,7 @@ const CrewlywedProject = () => {
       <SectionDivider />
 
       <Box>
-        <SectionTitle>Outcome & Results</SectionTitle>
+        <SectionTitle>Outcome & results</SectionTitle>
         <BodyTextWrapper>
           <StyledP>
             Crewlywed was ranked in the top three final projects of the
@@ -188,7 +180,6 @@ const CrewlywedProject = () => {
           </StyledP>
         </BodyTextWrapper>
       </Box>
-      <SectionDivider />
     </ProjectPageContainer>
   );
 };

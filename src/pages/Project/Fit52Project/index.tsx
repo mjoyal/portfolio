@@ -3,17 +3,19 @@ import { observer } from "mobx-react";
 
 import Button from "src/components/Button";
 
-import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
-import LittleArrow from "src/icons/LittleArrow";
+import { Box, Stack } from "@mui/material";
 import Spacer from "src/components/Spacer";
 import {
   BodyTextWrapper,
+  MockWrapper,
+  PhoneMockImage,
   ProjectImage,
   ProjectPageContainer,
   SectionDivider,
   SectionTitle,
   StyledP,
 } from "../components";
+import Fit52Logo from "src/icons/Fit52Logo";
 
 const PageTitle = styled.h1`
   max-width: 700px;
@@ -21,27 +23,19 @@ const PageTitle = styled.h1`
 `;
 
 const Fit52Project = () => {
-  const theme = useTheme();
-
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
-
   return (
     <ProjectPageContainer>
       <Stack>
-        {!isSmallScreen && (
-          <Stack flex={1} justifyContent={"flex-end"}>
-            <LittleArrow />
-          </Stack>
-        )}
         <Stack flex={1}>
+          <Fit52Logo />
           <ProjectImage src={"/images/project-square.png"} />
         </Stack>
       </Stack>
-      {isSmallScreen ? <Spacer /> : <Spacer level={50} />}
+      <SectionDivider />
 
       <Stack alignItems={"flex-start"}>
         <PageTitle>
-          A holistic fitness platform inspired by Carrie Underwood’s wellness
+          Holistic fitness platform inspired by Carrie Underwood’s wellness
           philosophy
         </PageTitle>
         <Spacer />
@@ -76,9 +70,7 @@ const Fit52Project = () => {
           </StyledP>
         </BodyTextWrapper>
       </Box>
-
-      <ProjectImage src={"/images/fit52-feed.png"} />
-      <Spacer level={20} />
+      <SectionDivider />
       <Box>
         <SectionTitle>User Feed Redesign & Implementation</SectionTitle>
         <BodyTextWrapper>
@@ -113,6 +105,17 @@ const Fit52Project = () => {
         </BodyTextWrapper>
       </Box>
       <Spacer level={20} />
+      <MockWrapper>
+        <PhoneMockImage src={"/images/fit52/feed-before.png"} />
+        <PhoneMockImage src={"/images/fit52/feed-after.png"} />
+      </MockWrapper>
+      <Spacer level={20} />
+      <MockWrapper>
+        <PhoneMockImage src={"/images/fit52/comments-before.png"} />
+        <PhoneMockImage src={"/images/fit52/comments-after.png"} />
+      </MockWrapper>
+
+      <SectionDivider />
       <Box>
         <SectionTitle>TopBar API Refactor</SectionTitle>
         <BodyTextWrapper>
@@ -148,6 +151,7 @@ const Fit52Project = () => {
         </BodyTextWrapper>
       </Box>
       <Spacer level={20} />
+
       <Box>
         <SectionTitle>Building the Exercise Swap System</SectionTitle>
         <BodyTextWrapper>
@@ -178,7 +182,15 @@ const Fit52Project = () => {
           </Stack>
         </BodyTextWrapper>
       </Box>
+
       <Spacer level={20} />
+      <MockWrapper>
+        <PhoneMockImage src={"/images/fit52/exercise-swap.png"} />
+        <PhoneMockImage src={"/images/fit52/exercise-suggestions.png"} />
+      </MockWrapper>
+
+      <SectionDivider />
+
       <Box>
         <SectionTitle>Learnings</SectionTitle>
         <BodyTextWrapper>

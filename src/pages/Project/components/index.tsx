@@ -20,6 +20,7 @@ export const ProjectPageContainer = styled(Box)`
   width: 100%;
   min-height: 100vh;
   margin-top: 40px;
+  margin-bottom: 200px;
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     padding-left: 60px;
     padding-right: 60px;
