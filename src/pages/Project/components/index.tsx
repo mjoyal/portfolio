@@ -41,7 +41,7 @@ export const SectionDivider = () => {
 
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
-  return isSmallScreen ? <Spacer level={8} /> : <Spacer level={30} />;
+  return isSmallScreen ? <Spacer level={30} /> : <Spacer level={50} />;
 };
 
 export const MockWrapper = (props: any) => {

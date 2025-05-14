@@ -15,18 +15,9 @@ import {
   StyledP,
 } from "../components";
 
-const HeaderSection = styled.div`
-  margin-top: 48px;
-  display: flex;
-`;
-
-const StyledHeader = styled.h2`
-  text-align: right;
-  line-height: 1;
-`;
-
-const StyledTitle = styled.h4`
-  max-width: 30ch;
+const PageTitle = styled.h1`
+  max-width: 700px;
+  margin-bottom: 20px;
 `;
 
 const Fit52Project = () => {
@@ -36,24 +27,23 @@ const Fit52Project = () => {
 
   return (
     <ProjectPageContainer>
-      <HeaderSection>
+      <Stack>
         {!isSmallScreen && (
           <Stack flex={1} justifyContent={"flex-end"}>
             <LittleArrow />
           </Stack>
         )}
         <Stack flex={1}>
-          <StyledHeader>Fit52</StyledHeader>
           <ProjectImage src={"/images/project-square.png"} />
         </Stack>
-      </HeaderSection>
+      </Stack>
       {isSmallScreen ? <Spacer /> : <Spacer level={50} />}
 
       <Stack alignItems={"flex-start"}>
-        <StyledTitle>
+        <PageTitle>
           A holistic fitness platform inspired by Carrie Underwood’s wellness
           philosophy
-        </StyledTitle>
+        </PageTitle>
         <Spacer />
         <StyledP>
           Built around a 52-card metaphor, fit52 generates dynamic, personalized

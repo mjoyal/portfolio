@@ -1,9 +1,8 @@
-import styled from "@emotion/styled";
 import { observer } from "mobx-react";
+import styled from "@emotion/styled";
 
 import Button from "src/components/Button";
 
-import useStores from "src/hooks/useStores";
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import LittleArrow from "src/icons/LittleArrow";
 import Spacer from "src/components/Spacer";
@@ -18,20 +17,12 @@ import {
   StyledP,
 } from "../components";
 
-const StyledHeader = styled.h2`
-  text-align: right;
-  line-height: 1;
-`;
-
-const StyledTitle = styled.h1`
-  max-width: 700px;
+const PageTitle = styled.h1`
+  max-width: 600px;
+  margin-bottom: 20px;
 `;
 
 const CrewlywedProject = () => {
-  const {
-    projectStore: { selectedProject },
-  } = useStores();
-
   const theme = useTheme();
 
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
@@ -45,7 +36,6 @@ const CrewlywedProject = () => {
           </Stack>
         )}
         <Stack gap={"32px"} flex={1}>
-          <StyledHeader>{selectedProject?.name}</StyledHeader>
           <ProjectImage src={"/images/project-square.png"} />
         </Stack>
       </Stack>
@@ -53,7 +43,7 @@ const CrewlywedProject = () => {
       <SectionDivider />
 
       <Stack alignItems={"flex-start"}>
-        <StyledTitle>The Newlywed game for you and your crew</StyledTitle>
+        <PageTitle>The Newlywed game for you and your crew</PageTitle>
         <Spacer />
         <Stack direction={{ sm: "column", lg: "row" }} gap={{ sm: 5, md: 10 }}>
           <StyledP>

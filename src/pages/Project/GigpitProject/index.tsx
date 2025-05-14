@@ -25,6 +25,11 @@ const QuoteText = styled.h4`
   font-size: 3rem;
 `;
 
+const PageTitle = styled.h1`
+  max-width: 700px;
+  margin-bottom: 20px;
+`;
+
 const GitpitProject = () => {
   const theme = useTheme();
 
@@ -37,10 +42,10 @@ const GitpitProject = () => {
       <GigpitHeroSection />
       {isSmallScreen ? <Spacer /> : <Spacer level={50} />}
       <Stack alignItems={"flex-start"} borderBottom={1}>
-        <h3>
+        <PageTitle>
           A web app making local music easy to find{" "}
           <span>(and hard to miss)</span>
-        </h3>
+        </PageTitle>
         <Spacer />
 
         <Stack direction={{ sm: "column", lg: "row" }} gap={{ sm: 5, md: 10 }}>
