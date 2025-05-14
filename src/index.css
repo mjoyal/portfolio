@@ -86,6 +86,7 @@ p {
   font-size: 1.25rem;
   font-weight: 300;
   text-align: left;
+  line-height: 1.7;
 }
 
 @media (min-width: 900px) {
