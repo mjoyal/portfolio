@@ -9,35 +9,14 @@ import Spacer from "src/components/Spacer";
 import { useState } from "react";
 import MyRole from "./components/GigpitRoleSection";
 import GigpitHeroSection from "./components/GigpitHeroSection";
-import { PhoneMockImage, SectionDivider } from "../components";
-
-const ProjectPageContainer = styled(Box)`
-  /* These 100% widths are important to keep the overall margin of the site */
-  width: 100%;
-  min-height: 100vh;
-  margin-top: 40px;
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-`;
-
-const Image = styled.img`
-  display: block;
-  height: auto;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 5px;
-`;
-
-export const StyledP = styled.p<{ isHidden?: boolean }>`
-  max-width: 400px;
-  display: ${({ isHidden = false }) => (isHidden ? "none" : "block")};
-`;
-
-const StyledTitle = styled.h4`
-  max-width: 700px;
-`;
+import {
+  PhoneMockImage,
+  SectionDivider,
+  ProjectPageContainer,
+  StyledP,
+  SectionTitle,
+  ProjectImage,
+} from "../components";
 
 const QuoteText = styled.h4`
   max-width: 700px;
@@ -56,10 +35,10 @@ const GitpitProject = () => {
       <GigpitHeroSection />
       {isSmallScreen ? <Spacer /> : <Spacer level={50} />}
       <Stack alignItems={"flex-start"} borderBottom={1}>
-        <StyledTitle>
+        <h3>
           A web app making local music easy to find{" "}
           <span>(and hard to miss)</span>
-        </StyledTitle>
+        </h3>
         <Spacer />
 
         <Stack direction={{ sm: "column", lg: "row" }} gap={{ sm: 5, md: 10 }}>
@@ -88,9 +67,14 @@ const GitpitProject = () => {
         setIsRoleTextHidden={setIsRoleTextHidden}
       />
       <Spacer level={10} />
-      <Image src={"/images/project-landscape.png"} />
-
-      <Stack direction={{ xs: "column", md: "row" }}>
+      <ProjectImage src={"/images/project-landscape.png"} />
+      <SectionDivider />
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        gap={4}
+        borderBottom={1}
+        paddingBottom={10}
+      >
         <QuoteText>
           We wanted the platform to feel{" "}
           <Box component="span" color="text.secondary">
@@ -105,10 +89,9 @@ const GitpitProject = () => {
         </StyledP>
       </Stack>
 
-      <Spacer level={10} />
+      <SectionDivider />
       <Box>
-        <h4>Reimagining the home page</h4>
-        <Spacer level={10} />
+        <SectionTitle>Reimagining the home page</SectionTitle>
         <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>
@@ -139,14 +122,13 @@ const GitpitProject = () => {
       <SectionDivider />
 
       <Stack direction={{ xs: "column", md: "row" }} gap={8}>
-        <PhoneMockImage src={"/images/gigpit/home-page-logged-in.png"} />
         <PhoneMockImage src={"/images/gigpit/home-page.png"} />
+        <PhoneMockImage src={"/images/gigpit/home-page-logged-in.png"} />
       </Stack>
+      <SectionDivider />
 
-      <Spacer level={10} />
       <Box>
-        <h4>Expansive Navigation</h4>
-        <Spacer level={10} />
+        <SectionTitle>Expansive Navigation</SectionTitle>
         <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>
@@ -177,10 +159,17 @@ const GitpitProject = () => {
           </Stack>
         </Stack>
       </Box>
-      <Spacer level={10} />
+
+      <SectionDivider />
+
+      <Stack direction={{ xs: "column", md: "row" }} gap={8}>
+        <PhoneMockImage src={"/images/gigpit/show-detail.png"} />
+        <PhoneMockImage src={"/images/gigpit/home-page-scrolled.png"} />
+      </Stack>
+
+      <SectionDivider />
       <Box>
-        <h4>Outcomes</h4>
-        <Spacer level={10} />
+        <SectionTitle>Outcomes</SectionTitle>
         <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>
@@ -210,10 +199,16 @@ const GitpitProject = () => {
           </Stack>
         </Stack>
       </Box>
-      <Spacer level={10} />
+      <SectionDivider />
+      <Stack direction={{ xs: "column", md: "row" }} gap={8}>
+        <PhoneMockImage src={"/images/gigpit/shows-grid.png"} />
+        <PhoneMockImage src={"/images/gigpit/artist-profile.png"} />
+      </Stack>
+
+      <SectionDivider />
+
       <Box>
-        <h4>Learnings</h4>
-        <Spacer level={10} />
+        <SectionTitle>Learnings</SectionTitle>
         <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
           <StyledP>
             This project clarified how much I value constraints—and how

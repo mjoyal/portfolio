@@ -31,8 +31,9 @@ export const PhoneMockImage = styled.img`
   height: 100%;
 `;
 
-export const StyledTitle = styled.h4`
+export const SectionTitle = styled.h4`
   max-width: 700px;
+  margin-bottom: 20px;
 `;
 
 export const SectionDivider = () => {

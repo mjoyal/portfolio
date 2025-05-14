@@ -12,8 +12,8 @@ import {
   ProjectImage,
   ProjectPageContainer,
   SectionDivider,
+  StyledP,
 } from "../components";
-import { StyledP } from "../GigpitProject";
 
 const HeaderSection = styled.div`
   margin-top: 48px;

@@ -5,6 +5,7 @@ const StyledSpacer = styled.div<{
   direction?: "vertical" | "horizontal";
   level: number;
 }>`
+  display: block;
   ${({ direction, level }) =>
     direction === "vertical"
       ? `height: ${4 * level}px;`

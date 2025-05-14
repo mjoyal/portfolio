@@ -1,7 +1,8 @@
 import { Box, Stack } from "@mui/material";
 import Spacer from "src/components/Spacer";
-import { StyledP } from "..";
+
 import styled from "@emotion/styled";
+import { StyledP } from "../../components";
 
 const ReadMoreButton = styled.button<{ isHidden?: boolean }>`
   border-bottom: 1px solid white;
