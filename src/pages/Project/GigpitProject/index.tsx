@@ -9,6 +9,7 @@ import Spacer from "src/components/Spacer";
 import { useState } from "react";
 import MyRole from "./components/GigpitRoleSection";
 import GigpitHeroSection from "./components/GigpitHeroSection";
+import { PhoneMockImage, SectionDivider } from "../components";
 
 const ProjectPageContainer = styled(Box)`
   /* These 100% widths are important to keep the overall margin of the site */
@@ -134,6 +135,14 @@ const GitpitProject = () => {
           </Stack>
         </Stack>
       </Box>
+
+      <SectionDivider />
+
+      <Stack direction={{ xs: "column", md: "row" }} gap={8}>
+        <PhoneMockImage src={"/images/gigpit/home-page-logged-in.png"} />
+        <PhoneMockImage src={"/images/gigpit/home-page.png"} />
+      </Stack>
+
       <Spacer level={10} />
       <Box>
         <h4>Expansive Navigation</h4>
