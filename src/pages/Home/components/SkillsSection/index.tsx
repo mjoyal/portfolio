@@ -56,10 +56,10 @@ const SkillsSection = () => {
         alignItems={"flex-start"}
         gap={6}
       >
-        <h3>
+        <h1>
           Just like camping, I believe you should leave the codebase
           <StyledEmphasis> better than</StyledEmphasis> you found it.
-        </h3>
+        </h1>
 
         <Button href="/assets/mackenzie-joyal-resume-2025.pdf" isDownload>
           Download my resume
