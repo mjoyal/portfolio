@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import Spacer from "src/components/Spacer";
 
 export const StyledP = styled.p<{ isHidden?: boolean }>`
@@ -31,7 +31,7 @@ export const PhoneMockImage = styled.img`
   height: 100%;
 `;
 
-export const SectionTitle = styled.h4`
+export const SectionTitle = styled.h3`
   max-width: 700px;
   margin-bottom: 20px;
 `;
@@ -42,4 +42,28 @@ export const SectionDivider = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return isSmallScreen ? <Spacer level={8} /> : <Spacer level={30} />;
+};
+
+export const MockWrapper = (props: any) => {
+  const { children } = props;
+
+  return (
+    <Stack
+      direction={{ xs: "column", md: "row" }}
+      gap={8}
+      alignItems={"center"}
+    >
+      {children}
+    </Stack>
+  );
+};
+
+export const BodyTextWrapper = (props: any) => {
+  const { children } = props;
+
+  return (
+    <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+      {children}
+    </Stack>
+  );
 };

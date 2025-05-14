@@ -16,6 +16,8 @@ import {
   StyledP,
   SectionTitle,
   ProjectImage,
+  MockWrapper,
+  BodyTextWrapper,
 } from "../components";
 
 const QuoteText = styled.h4`
@@ -92,7 +94,7 @@ const GitpitProject = () => {
       <SectionDivider />
       <Box>
         <SectionTitle>Reimagining the home page</SectionTitle>
-        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+        <BodyTextWrapper>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>
               We initially considered separating content into a traditional home
@@ -116,15 +118,15 @@ const GitpitProject = () => {
               artist follows.
             </StyledP>
           </Stack>
-        </Stack>
+        </BodyTextWrapper>
       </Box>
 
       <SectionDivider />
 
-      <Stack direction={{ xs: "column", md: "row" }} gap={8}>
+      <MockWrapper>
         <PhoneMockImage src={"/images/gigpit/home-page.png"} />
         <PhoneMockImage src={"/images/gigpit/home-page-logged-in.png"} />
-      </Stack>
+      </MockWrapper>
       <SectionDivider />
 
       <Box>
@@ -162,10 +164,10 @@ const GitpitProject = () => {
 
       <SectionDivider />
 
-      <Stack direction={{ xs: "column", md: "row" }} gap={8}>
+      <MockWrapper>
         <PhoneMockImage src={"/images/gigpit/show-detail.png"} />
         <PhoneMockImage src={"/images/gigpit/home-page-scrolled.png"} />
-      </Stack>
+      </MockWrapper>
 
       <SectionDivider />
       <Box>
@@ -200,10 +202,10 @@ const GitpitProject = () => {
         </Stack>
       </Box>
       <SectionDivider />
-      <Stack direction={{ xs: "column", md: "row" }} gap={8}>
+      <MockWrapper>
         <PhoneMockImage src={"/images/gigpit/shows-grid.png"} />
         <PhoneMockImage src={"/images/gigpit/artist-profile.png"} />
-      </Stack>
+      </MockWrapper>
 
       <SectionDivider />
 

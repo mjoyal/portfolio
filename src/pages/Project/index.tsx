@@ -10,7 +10,7 @@ import GigpitProject from "./GigpitProject";
 import CrewlywedProject from "./CrewlywedProject";
 import Fit52Project from "./Fit52Project";
 
-const ProjectPageContainer = styled(Stack)`
+const PageContainer = styled(Stack)`
   /* These 100% widths are important to keep the overall margin of the site */
   width: 100%;
   min-height: 100vh;
@@ -50,7 +50,7 @@ const ProjectPage = () => {
     );
   };
 
-  return <ProjectPageContainer>{renderPageContent()}</ProjectPageContainer>;
+  return <PageContainer>{renderPageContent()}</PageContainer>;
 };
 
 export default observer(ProjectPage);

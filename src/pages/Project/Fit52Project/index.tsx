@@ -6,17 +6,14 @@ import Button from "src/components/Button";
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import LittleArrow from "src/icons/LittleArrow";
 import Spacer from "src/components/Spacer";
-
-const ProjectPageContainer = styled(Box)`
-  /* These 100% widths are important to keep the overall margin of the site */
-  width: 100%;
-  min-height: 100vh;
-  margin-top: 40px;
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-`;
+import {
+  BodyTextWrapper,
+  ProjectImage,
+  ProjectPageContainer,
+  SectionDivider,
+  SectionTitle,
+  StyledP,
+} from "../components";
 
 const HeaderSection = styled.div`
   margin-top: 48px;
@@ -26,23 +23,6 @@ const HeaderSection = styled.div`
 const StyledHeader = styled.h2`
   text-align: right;
   line-height: 1;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 3px;
-`;
-
-const SectionDivider = styled.div`
-  height: 200px;
-`;
-
-export const StyledP = styled.p<{ isHidden?: boolean }>`
-  max-width: 400px;
-  display: ${({ isHidden = false }) => (isHidden ? "none" : "block")};
 `;
 
 const StyledTitle = styled.h4`
@@ -64,7 +44,7 @@ const Fit52Project = () => {
         )}
         <Stack flex={1}>
           <StyledHeader>Fit52</StyledHeader>
-          <Image src={"/images/project-square.png"} />
+          <ProjectImage src={"/images/project-square.png"} />
         </Stack>
       </HeaderSection>
       {isSmallScreen ? <Spacer /> : <Spacer level={50} />}
@@ -88,9 +68,8 @@ const Fit52Project = () => {
       </Stack>
 
       <Box>
-        <h4>My Role</h4>
-        <Spacer level={10} />
-        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+        <SectionTitle>My Role</SectionTitle>
+        <BodyTextWrapper>
           <StyledP>
             Over three years at Fit52, I worked on UI refinement, scalable
             component architecture, and user-facing feature development. I
@@ -105,15 +84,14 @@ const Fit52Project = () => {
             product—translating design intent into polished, scalable interfaces
             that balanced aesthetics with functionality.
           </StyledP>
-        </Stack>
+        </BodyTextWrapper>
       </Box>
 
-      <Image src={"/images/fit52-feed.png"} />
+      <ProjectImage src={"/images/fit52-feed.png"} />
       <Spacer level={20} />
       <Box>
-        <h4>User Feed Redesign & Implementation</h4>
-        <Spacer level={10} />
-        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+        <SectionTitle>User Feed Redesign & Implementation</SectionTitle>
+        <BodyTextWrapper>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>
               I led the redesign and full implementation of the Fit52 user feed
@@ -142,13 +120,12 @@ const Fit52Project = () => {
               “cleaner,” “easier to read,” and “more fun to scroll.”
             </StyledP>
           </Stack>
-        </Stack>
+        </BodyTextWrapper>
       </Box>
       <Spacer level={20} />
       <Box>
-        <h4>TopBar API Refactor</h4>
-        <Spacer level={10} />
-        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+        <SectionTitle>TopBar API Refactor</SectionTitle>
+        <BodyTextWrapper>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>
               One of my most impactful technical contributions was refactoring
@@ -178,13 +155,12 @@ const Fit52Project = () => {
               and far less prone to introducing regressions.
             </StyledP>
           </Stack>
-        </Stack>
+        </BodyTextWrapper>
       </Box>
       <Spacer level={20} />
       <Box>
-        <h4>Building the Exercise Swap System</h4>
-        <Spacer level={10} />
-        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+        <SectionTitle>Building the Exercise Swap System</SectionTitle>
+        <BodyTextWrapper>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>
               I implemented a multi-step UI flow that let users swap exercises
@@ -210,13 +186,12 @@ const Fit52Project = () => {
               control, and it became a core part of the workout experience.
             </StyledP>
           </Stack>
-        </Stack>
+        </BodyTextWrapper>
       </Box>
       <Spacer level={20} />
       <Box>
-        <h4>Learnings</h4>
-        <Spacer level={10} />
-        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+        <SectionTitle>Learnings</SectionTitle>
+        <BodyTextWrapper>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>
               Working on Fit52 over several years taught me how much impact
@@ -243,9 +218,8 @@ const Fit52Project = () => {
               ability to shape their own experience.
             </StyledP>
           </Stack>
-        </Stack>
+        </BodyTextWrapper>
       </Box>
-      <Spacer level={20} />
     </ProjectPageContainer>
   );
 };

@@ -8,10 +8,13 @@ import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import LittleArrow from "src/icons/LittleArrow";
 import Spacer from "src/components/Spacer";
 import {
+  BodyTextWrapper,
+  MockWrapper,
   PhoneMockImage,
   ProjectImage,
   ProjectPageContainer,
   SectionDivider,
+  SectionTitle,
   StyledP,
 } from "../components";
 
@@ -25,7 +28,7 @@ const StyledHeader = styled.h2`
   line-height: 1;
 `;
 
-const StyledTitle = styled.h4`
+const StyledTitle = styled.h3`
   max-width: 700px;
 `;
 
@@ -83,9 +86,8 @@ const CrewlywedProject = () => {
       <SectionDivider />
 
       <Box>
-        <h4>My Role</h4>
-        <Spacer level={10} />
-        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+        <SectionTitle>My Role</SectionTitle>
+        <BodyTextWrapper>
           <StyledP>
             I co-led the design and front-end development of Crewlywed,
             collaborating on the game’s branding, character illustrations, and
@@ -99,13 +101,13 @@ const CrewlywedProject = () => {
             state synchronization between players, the game host, and the
             server.
           </StyledP>
-        </Stack>
+        </BodyTextWrapper>
       </Box>
       <SectionDivider />
-      <Stack gap={3}>
-        <h4>Designing for Play </h4>
+      <Box>
+        <SectionTitle>Designing for Play </SectionTitle>
 
-        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+        <BodyTextWrapper>
           <StyledP>
             The UI was designed to keep this flow light, funny, and
             social—blending clear structure with playful visuals to support both
@@ -119,21 +121,21 @@ const CrewlywedProject = () => {
             distraction. The result is a game that feels just as fun to lose as
             it does to win.
           </StyledP>
-        </Stack>
-      </Stack>
+        </BodyTextWrapper>
+      </Box>
 
       <SectionDivider />
 
-      <Stack direction={{ xs: "column", md: "row" }} gap={8}>
+      <MockWrapper>
         <PhoneMockImage src={"/images/crewlywed/question-screen.png"} />
         <PhoneMockImage src={"/images/crewlywed/response-screen.png"} />
-      </Stack>
+      </MockWrapper>
 
       <SectionDivider />
       <Box>
-        <h4>Designing Game Mechanics </h4>
-        <Spacer level={10} />
-        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+        <SectionTitle>Designing Game Mechanics </SectionTitle>
+
+        <BodyTextWrapper>
           <StyledP>
             I co-designed the game mechanics from the ground up—structuring how
             rounds worked, how scoring was calculated, and how host permissions
@@ -146,7 +148,7 @@ const CrewlywedProject = () => {
             make decisions, write cleaner, more focused code, and move forward
             confidently as a team.
           </StyledP>
-        </Stack>
+        </BodyTextWrapper>
       </Box>
 
       <SectionDivider />
@@ -159,9 +161,8 @@ const CrewlywedProject = () => {
       <SectionDivider />
 
       <Box>
-        <h4>Outcome & Results</h4>
-        <Spacer level={10} />
-        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+        <SectionTitle>Outcome & Results</SectionTitle>
+        <BodyTextWrapper>
           <StyledP>
             Crewlywed was ranked in the top three final projects of the
             bootcamp, recognized for its real-time multiplayer functionality and
@@ -174,16 +175,20 @@ const CrewlywedProject = () => {
             functional, real-time web app—deepening my skills in front-end
             architecture, state management, and WebSockets.
           </StyledP>
-        </Stack>
+        </BodyTextWrapper>
       </Box>
 
-      <PhoneMockImage src={"/images/crewlywed/final-screen.png"} />
+      <SectionDivider />
+
+      <MockWrapper>
+        <PhoneMockImage src={"/images/crewlywed/final-screen.png"} />
+      </MockWrapper>
 
       <SectionDivider />
       <Box>
-        <h4>Learnings</h4>
-        <Spacer level={10} />
-        <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+        <SectionTitle>Learnings</SectionTitle>
+
+        <BodyTextWrapper>
           <StyledP>
             Building Crewlywed showed me the importance of scalable
             architecture—even in small, fast-moving projects. We initially
@@ -196,7 +201,7 @@ const CrewlywedProject = () => {
             how centralized patterns could simplify complexity and support
             real-time collaboration more effectively.
           </StyledP>
-        </Stack>
+        </BodyTextWrapper>
       </Box>
       <SectionDivider />
     </ProjectPageContainer>
