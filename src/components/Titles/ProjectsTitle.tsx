@@ -10,8 +10,10 @@ const Container = styled.div`
 
 const Title = styled.h1`
   position: absolute;
-  line-height: 0.8;
-  bottom: 20px;
+  bottom: 3px;
+  font-size: 10rem;
+  letter-spacing: -5px;
+  font-weight: 500;
 `;
 
 const ProjectsTitle = () => {
@@ -25,7 +27,7 @@ const ProjectsTitle = () => {
         fill="none"
         height="132"
         viewBox="0 0 464 132"
-        width={isSmall ? 300 : 330}
+        width={isSmall ? 330 : 330}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

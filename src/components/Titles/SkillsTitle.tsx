@@ -9,6 +9,9 @@ const Container = styled.div`
 
 const Title = styled.h1`
   position: absolute;
+  font-size: 10rem;
+  letter-spacing: -5px;
+  font-weight: 500;
 `;
 
 const SkillsTitle = () => {
