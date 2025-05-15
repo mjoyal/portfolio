@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { useState } from "react";
 import Toast from "../Toast";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -21,6 +21,11 @@ const StyledLinkText = styled.h5`
 `;
 
 const HomeButton = styled.button``;
+
+const Logo = styled.h3`
+  font-weight: 700;
+  letter-spacing: -0.8px;
+`;
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +54,7 @@ const NavBar = () => {
       justifyContent={"space-between"}
     >
       <HomeButton onClick={() => navigate("/")}>
-        <h5> {`<mac />`}</h5>
+        <Logo>{`m/>`}</Logo>
       </HomeButton>
 
       <Stack direction={"row"} gap={5}>

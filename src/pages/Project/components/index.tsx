@@ -51,7 +51,7 @@ export const MockWrapper = (props: any) => {
   return (
     <Stack
       direction={{ xs: "column", md: "row" }}
-      gap={8}
+      gap={{ xs: 6, md: 8 }}
       alignItems={"center"}
     >
       {children}
@@ -87,7 +87,7 @@ export const PhoneMock = (props: IPhoneMockProps) => {
   const { src, label } = props;
 
   return (
-    <Stack alignItems={"center"} gap={2}>
+    <Stack alignItems={"center"} gap={2.5}>
       <PhoneMockImage src={src} alt={label} />
       <MockLabel>{label}</MockLabel>
     </Stack>

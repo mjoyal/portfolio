@@ -9,7 +9,6 @@ import {
   BodyTextWrapper,
   MockWrapper,
   PhoneMock,
-  PhoneMockImage,
   ProjectImage,
   ProjectPageContainer,
   SectionDivider,
@@ -102,7 +101,7 @@ const CrewlywedProject = () => {
         </BodyTextWrapper>
       </Box>
 
-      <SectionDivider />
+      <Spacer level={20} />
 
       <MockWrapper>
         <PhoneMock
@@ -111,7 +110,7 @@ const CrewlywedProject = () => {
         />
         <PhoneMock
           src={"/images/crewlywed/response-screen.png"}
-          label="Players submit a fake answer to fool others"
+          label="Players submit a fake answer to fool their friends"
         />
       </MockWrapper>
 
@@ -135,7 +134,7 @@ const CrewlywedProject = () => {
         </BodyTextWrapper>
       </Box>
 
-      <SectionDivider />
+      <Spacer level={20} />
 
       <MockWrapper>
         <PhoneMock
@@ -168,7 +167,7 @@ const CrewlywedProject = () => {
         </BodyTextWrapper>
       </Box>
 
-      <SectionDivider />
+      <Spacer level={20} />
 
       <MockWrapper>
         <PhoneMock

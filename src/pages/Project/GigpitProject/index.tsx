@@ -106,8 +106,8 @@ const GitpitProject = () => {
         <BodyTextWrapper>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>
-              We initially considered separating content into a traditional home
-              screen and a personalized “For You” page, but the overlap
+              Initially, we considered separating content into a traditional
+              home screen and a personalized “For You” page, but the overlap
               introduced unnecessary complexity.
             </StyledP>
             <StyledP>
@@ -130,7 +130,7 @@ const GitpitProject = () => {
         </BodyTextWrapper>
       </Box>
 
-      <SectionDivider />
+      <Spacer level={20} />
 
       <MockWrapper>
         <PhoneMockImage src={"/images/gigpit/home-page.png"} />
@@ -171,7 +171,7 @@ const GitpitProject = () => {
         </Stack>
       </Box>
 
-      <SectionDivider />
+      <Spacer level={20} />
 
       <MockWrapper>
         <PhoneMockImage src={"/images/gigpit/show-detail.png"} />
@@ -210,7 +210,7 @@ const GitpitProject = () => {
           </Stack>
         </Stack>
       </Box>
-      <SectionDivider />
+      <Spacer level={20} />
       <MockWrapper>
         <PhoneMockImage src={"/images/gigpit/shows-grid.png"} />
         <PhoneMockImage src={"/images/gigpit/artist-profile.png"} />
@@ -222,19 +222,19 @@ const GitpitProject = () => {
         <SectionTitle>Learnings</SectionTitle>
         <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
           <StyledP>
-            This project clarified how much I value constraints—and how
-            essential they are for building focused, high-impact products.
-            Without a product manager or clear MVP boundaries, scope expanded
-            quickly, and engineers often built complex features ahead of
-            foundational ones. As design adapted to these shifts, the product
-            grew in size but not always in strategic value.
+            This project clarified the value of constraints—and how essential
+            they are for building focused, high-impact products. Without a
+            product manager or clear MVP boundaries, scope expanded quickly, and
+            exciting features were sometimes built ahead of solidifying
+            foundational ones. The product expanded rapidly—sometimes outpacing
+            our capacity to refine, support, or strategically position what
+            mattered most.
           </StyledP>
           <StyledP>
-            The experience deepened my understanding of how business-minded my
-            design process is. I care deeply about building polished, lean tools
-            that serve a clear purpose and mission. I learned that having a
-            shared north star and defined scope isn’t a limitation—it is what
-            enables thoughtful, intentional work that creates real value.
+            The experience deepened my understanding of how product-minded my
+            design process is, and how much I value building lean, well-crafted
+            tools that serve a clear purpose and mission. It also reinforced how
+            essential constraints are to doing thoughtful, high-impact work.
           </StyledP>
         </Stack>
       </Box>
