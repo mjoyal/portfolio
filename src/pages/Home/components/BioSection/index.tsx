@@ -14,15 +14,16 @@ const BioSection = () => {
     <Stack direction={"row"} id="bio">
       {isMedium && (
         <Stack flex={1} alignItems={"center"} paddingTop={2}>
-          <h4>✻</h4>
+          <h1>✻</h1>
         </Stack>
       )}
 
       <Stack flex={3}>
         <h1>
           Hi, I'm Mackenzie. I specialize in front-end development and UX/UI
-          design — and I'm <EmphasisText> obsessed </EmphasisText> with building
-          interfaces that feel good, spark excitement, and scale beautifully.
+          design — and I'm lowkey<EmphasisText> obsessed </EmphasisText> with
+          building interfaces that feel good, spark excitement, and scale
+          effortlessly.
         </h1>
       </Stack>
     </Stack>

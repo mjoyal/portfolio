@@ -183,15 +183,14 @@ const CrewlywedProject = () => {
         <BodyTextWrapper>
           <StyledP>
             Building Crewlywed showed me the importance of scalable
-            architecture—even in small, fast-moving projects. We initially
-            relied on prop drilling for state, simply because more advanced
-            state management (like Context, Redux, or MobX) hadn’t been taught
-            in the bootcamp.
+            architecture—even in small, fast-moving projects. We relied on prop
+            drilling for state, simply because more advanced state management
+            (like Context, Redux, or MobX) hadn’t been taught in the bootcamp.
           </StyledP>
           <StyledP>
-            As the app grew, managing state became difficult, and I began to see
-            how centralized patterns could simplify complexity and support
-            real-time collaboration more effectively.
+            However, as the app grew, managing state became difficult, and I
+            began to see how centralized patterns could simplify complexity and
+            support real-time collaboration more effectively.
           </StyledP>
         </BodyTextWrapper>
       </Box>
