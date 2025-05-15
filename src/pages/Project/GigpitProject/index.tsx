@@ -30,6 +30,10 @@ const PageTitle = styled.h1`
   margin-bottom: 20px;
 `;
 
+const SmallerQuoteText = styled.h6`
+  max-width: 500px;
+`;
+
 const GitpitProject = () => {
   const theme = useTheme();
 
@@ -89,11 +93,11 @@ const GitpitProject = () => {
           </Box>
           —something users would actually enjoy exploring.
         </QuoteText>
-        <StyledP>
+        <SmallerQuoteText>
           That meant stripping away friction, simplifying decision points, and
           making every interaction feel intuitive. Two areas that shaped that
           process most: the home screen and navigation.
-        </StyledP>
+        </SmallerQuoteText>
       </Stack>
 
       <SectionDivider />

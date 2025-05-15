@@ -123,14 +123,13 @@ const Fit52Project = () => {
             <StyledP>
               One of my most impactful technical contributions was refactoring
               the TopBar component, which had become hard to maintain due to
-              excessive configuration props (rightComponentColor,
-              skipButtonIsDisabled, etc.).
+              excessive configuration props.
             </StyledP>
             <StyledP>
-              To address this, I broke the component into clear subcomponents
-              (such as Logo, BackButton, and CloseButton) and introduced a more
-              composable API using leftComponent, middleComponent, and
-              rightComponent props.
+              To solve this, I broke the component into clear subcomponents—like
+              Logo, BackButton, and CloseButton—and introduced a more composable
+              API using leftComponent, middleComponent, and rightComponent
+              props.
             </StyledP>
           </Stack>
           <Stack gap={{ xs: 3, md: 5 }}>
@@ -141,16 +140,15 @@ const Fit52Project = () => {
               layouts without cluttering the codebase.
             </StyledP>
             <StyledP>
-              The refactor not only cleaned up the codebase, but also fixed
-              several visual bugs and inconsistencies—such as incorrect icon
-              sizes, misaligned elements, and mismatched colors. After the
-              change, the component was easier to implement, easier to debug,
-              and far less prone to introducing regressions.
+              The refactor also fixed several visual inconsistencies—like
+              incorrect icon sizes, misaligned elements, and mismatched colors.
+              Overall, the component became easier to implement, easier to
+              debug, and far less prone to regressions.
             </StyledP>
           </Stack>
         </BodyTextWrapper>
       </Box>
-      <Spacer level={20} />
+      <SectionDivider />
 
       <Box>
         <SectionTitle>Building the Exercise Swap System</SectionTitle>

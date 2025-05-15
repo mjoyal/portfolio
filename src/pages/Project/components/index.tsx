@@ -19,7 +19,7 @@ export const ProjectPageContainer = styled(Box)`
   /* These 100% widths are important to keep the overall margin of the site */
   width: 100%;
   min-height: 100vh;
-  margin-top: 40px;
+  margin-top: 100px;
   margin-bottom: 200px;
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     padding-left: 60px;
@@ -34,7 +34,7 @@ export const PhoneMockImage = styled.img`
 
 export const SectionTitle = styled.h3`
   max-width: 700px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 `;
 
 export const SectionDivider = () => {
@@ -63,7 +63,10 @@ export const BodyTextWrapper = (props: any) => {
   const { children } = props;
 
   return (
-    <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
+    <Stack
+      direction={{ xs: "column", md: "row" }}
+      gap={{ xs: 3, md: 10, lg: 12 }}
+    >
       {children}
     </Stack>
   );
