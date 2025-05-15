@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const ImageWrapper = styled(motion.button)`
   overflow: hidden;
   width: 100%;
-  border-radius: 3px;
+  border-radius: 10px;
 `;
 
 const ZoomImage = styled(motion.img)`
@@ -55,7 +55,7 @@ const ProjectCard = (props: IProjectCardProps) => {
       >
         <ZoomImage
           src={imageSource}
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ borderRadius: 30 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         />
       </ImageWrapper>

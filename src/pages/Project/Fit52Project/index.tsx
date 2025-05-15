@@ -72,7 +72,7 @@ const Fit52Project = () => {
       </Box>
       <SectionDivider />
       <Box>
-        <SectionTitle>User Feed Redesign & Implementation</SectionTitle>
+        <SectionTitle>Social Feed Redesign & Implementation</SectionTitle>
         <BodyTextWrapper>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>
