@@ -8,6 +8,7 @@ import Spacer from "src/components/Spacer";
 import {
   BodyTextWrapper,
   MockWrapper,
+  PhoneMock,
   PhoneMockImage,
   ProjectImage,
   ProjectPageContainer,
@@ -104,8 +105,14 @@ const CrewlywedProject = () => {
       <SectionDivider />
 
       <MockWrapper>
-        <PhoneMockImage src={"/images/crewlywed/question-screen.png"} />
-        <PhoneMockImage src={"/images/crewlywed/response-screen.png"} />
+        <PhoneMock
+          src={"/images/crewlywed/question-screen.png"}
+          label="Players are shown this round’s question"
+        />
+        <PhoneMock
+          src={"/images/crewlywed/response-screen.png"}
+          label="Players submit a fake answer to fool others"
+        />
       </MockWrapper>
 
       <SectionDivider />
@@ -131,8 +138,14 @@ const CrewlywedProject = () => {
       <SectionDivider />
 
       <MockWrapper>
-        <PhoneMockImage src={"/images/crewlywed/choice-screen.png"} />
-        <PhoneMockImage src={"/images/crewlywed/results-screen.png"} />
+        <PhoneMock
+          src={"/images/crewlywed/choice-screen.png"}
+          label="Players guess which response is Will’s real answer"
+        />
+        <PhoneMock
+          src={"/images/crewlywed/results-screen.png"}
+          label="The correct answer and scores are revealed for the round"
+        />
       </MockWrapper>
 
       <SectionDivider />
@@ -158,7 +171,10 @@ const CrewlywedProject = () => {
       <SectionDivider />
 
       <MockWrapper>
-        <PhoneMockImage src={"/images/crewlywed/final-screen.png"} />
+        <PhoneMock
+          src={"/images/crewlywed/final-screen.png"}
+          label="The game ends with a final score screen and winner announcement"
+        />
       </MockWrapper>
 
       <SectionDivider />

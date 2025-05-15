@@ -68,3 +68,25 @@ export const BodyTextWrapper = (props: any) => {
     </Stack>
   );
 };
+
+const MockLabel = styled.p`
+  font-size: 1rem;
+  max-width: 250px;
+  text-align: center;
+`;
+
+interface IPhoneMockProps {
+  src: string;
+  label: string;
+}
+
+export const PhoneMock = (props: IPhoneMockProps) => {
+  const { src, label } = props;
+
+  return (
+    <Stack alignItems={"center"} gap={2}>
+      <PhoneMockImage src={src} alt={label} />
+      <MockLabel>{label}</MockLabel>
+    </Stack>
+  );
+};
