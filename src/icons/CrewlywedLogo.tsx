@@ -1,8 +1,8 @@
 const CrewlywedLogo = () => {
   return (
     <svg
-      width="699"
-      height="141"
+      width="500"
+      height="100%"
       viewBox="0 0 699 141"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

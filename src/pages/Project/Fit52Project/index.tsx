@@ -16,6 +16,7 @@ import {
   StyledP,
 } from "../components";
 import Fit52Logo from "src/icons/Fit52Logo";
+import useStores from "src/hooks/useStores";
 
 const PageTitle = styled.h1`
   max-width: 700px;
@@ -23,14 +24,17 @@ const PageTitle = styled.h1`
 `;
 
 const Fit52Project = () => {
+  const {
+    projectStore: { selectedProject },
+  } = useStores();
+
   return (
     <ProjectPageContainer>
-      <Stack>
-        <Stack flex={1}>
-          <Fit52Logo />
-          <ProjectImage src={"/images/project-square.png"} />
-        </Stack>
+      <Stack gap={3} alignItems={"flex-start"}>
+        <Fit52Logo />
+        <ProjectImage src={selectedProject?.imageSource} />{" "}
       </Stack>
+
       <SectionDivider />
 
       <Stack alignItems={"flex-start"}>

@@ -16,6 +16,7 @@ import {
   StyledP,
 } from "../components";
 import CrewlywedLogo from "src/icons/CrewlywedLogo";
+import useStores from "src/hooks/useStores";
 
 const PageTitle = styled.h1`
   max-width: 600px;
@@ -23,13 +24,15 @@ const PageTitle = styled.h1`
 `;
 
 const CrewlywedProject = () => {
+  const {
+    projectStore: { selectedProject },
+  } = useStores();
+
   return (
     <ProjectPageContainer>
-      <Stack>
-        <Stack gap={"32px"} flex={1}>
-          <CrewlywedLogo />
-          <ProjectImage src={"/images/project-square.png"} />
-        </Stack>
+      <Stack gap={3} alignItems={"flex-start"}>
+        <CrewlywedLogo />
+        <ProjectImage src={selectedProject?.imageSource} />
       </Stack>
 
       <SectionDivider />

@@ -8,7 +8,7 @@ export const StyledP = styled.p<{ isHidden?: boolean }>`
 `;
 
 export const ProjectImage = styled.img`
-  width: 100%;
+  width: 50%;
   height: auto;
   display: block;
   object-fit: cover;
@@ -19,7 +19,7 @@ export const ProjectPageContainer = styled(Box)`
   /* These 100% widths are important to keep the overall margin of the site */
   width: 100%;
   min-height: 100vh;
-  margin-top: 100px;
+  margin-top: 60px;
   margin-bottom: 200px;
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     padding-left: 60px;

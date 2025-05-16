@@ -8,7 +8,6 @@ import { Stack, useMediaQuery, useTheme, Box } from "@mui/material";
 import Spacer from "src/components/Spacer";
 import { useState } from "react";
 import MyRole from "./components/GigpitRoleSection";
-import GigpitHeroSection from "./components/GigpitHeroSection";
 import {
   PhoneMockImage,
   SectionDivider,
@@ -19,6 +18,8 @@ import {
   MockWrapper,
   BodyTextWrapper,
 } from "../components";
+import GigpitLogo from "src/icons/GigpitLogo";
+import useStores from "src/hooks/useStores";
 
 const QuoteText = styled.h4`
   max-width: 700px;
@@ -35,6 +36,10 @@ const SmallerQuoteText = styled.h6`
 `;
 
 const GitpitProject = () => {
+  const {
+    projectStore: { selectedProject },
+  } = useStores();
+
   const theme = useTheme();
 
   const [isRoleTextHidden, setIsRoleTextHidden] = useState(true);
@@ -43,7 +48,11 @@ const GitpitProject = () => {
 
   return (
     <ProjectPageContainer>
-      <GigpitHeroSection />
+      <Stack gap={3} alignItems={"flex-start"}>
+        <GigpitLogo />
+        <ProjectImage src={selectedProject?.imageSource} />
+      </Stack>
+
       {isSmallScreen ? <Spacer /> : <Spacer level={50} />}
       <Stack alignItems={"flex-start"} borderBottom={1}>
         <PageTitle>
