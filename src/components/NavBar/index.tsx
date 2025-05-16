@@ -18,6 +18,7 @@ const StyledLinkText = styled.h5`
   &:hover {
     color: ${({ theme }) => (theme as any).palette.text.secondary};
   }
+  font-weight: 500;
 `;
 
 const HomeButton = styled.button``;
@@ -54,7 +55,12 @@ const NavBar = () => {
       justifyContent={"space-between"}
     >
       <HomeButton onClick={() => navigate("/")}>
-        <Logo>{`m/>`}</Logo>
+        <Logo>
+          {`m`}
+          <Box component="span" color="text.secondary">
+            {"/>"}
+          </Box>
+        </Logo>
       </HomeButton>
 
       <Stack direction={"row"} gap={5}>
@@ -73,7 +79,7 @@ const NavBar = () => {
         </button>
       </Stack>
       <Toast
-        message="Email copied — paste away!"
+        message="Email copied – chat soon :)"
         isOpen={isOpen}
         handleClose={() => setIsOpen(false)}
       />

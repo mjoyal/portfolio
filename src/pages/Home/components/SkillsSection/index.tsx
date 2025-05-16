@@ -84,7 +84,7 @@ const SkillsSection = () => {
             Part developer, part designer, part product brain—I move between
             Figma and the frontend with ease. With my background in business, I
             care as much about product goals as I do about polish. After 4 years
-            in this work, one thing’s clear: good UI takes empathy, a sharp eye,
+            in this work, I've learned that good UI takes empathy, a sharp eye,
             and a bit of craft.
           </StyledText>
         </ParagraphContainer>

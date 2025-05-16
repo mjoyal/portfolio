@@ -27,7 +27,7 @@ const Asterisk = styled.span`
 `;
 
 const StyledHeader = styled.h1`
-  font-size: 10rem;
+  font-size: 14rem;
   letter-spacing: -5px;
   font-weight: 500;
 `;
