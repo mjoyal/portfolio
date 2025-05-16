@@ -41,6 +41,7 @@ const ProjectCard = (props: IProjectCardProps) => {
 
   const navigate = useNavigate();
 
+  console.log("image ", imageSource);
   return (
     <Stack>
       <ImageWrapper
