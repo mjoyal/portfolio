@@ -14,7 +14,7 @@ const FooterContainer = styled(Stack)<{ isMobile?: boolean }>`
   background-color: ${({ isMobile }) => (isMobile ? "black" : "transparent")};
   padding-top: ${({ isMobile }) => (isMobile ? "40px" : "0px")};
   border-top: ${({ isMobile }) =>
-    isMobile ? "  1px solid rgba(255, 255, 255, 0.2);" : "0px"};
+    isMobile ? "1px solid rgba(255, 255, 255, 0.2);" : "0px"};
 `;
 
 const MobileButton = styled(Button)`

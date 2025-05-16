@@ -20,6 +20,7 @@ import {
 } from "../components";
 import GigpitLogo from "src/icons/GigpitLogo";
 import useStores from "src/hooks/useStores";
+import ProjectOverview from "../components/ProjectOverview";
 
 const QuoteText = styled.h4`
   max-width: 700px;
@@ -54,32 +55,20 @@ const GitpitProject = () => {
       </Stack>
 
       {isSmallScreen ? <Spacer /> : <Spacer level={50} />}
-      <Stack alignItems={"flex-start"} borderBottom={1}>
-        <PageTitle>
-          A web app making local music easy to find{" "}
-          <span>(and hard to miss)</span>
-        </PageTitle>
-        <Spacer />
 
-        <Stack direction={{ sm: "column", lg: "row" }} gap={{ sm: 5, md: 10 }}>
-          <StyledP>
-            Local music often lives in the margins—buried in Instagram stories,
-            scattered across venue sites, or shared by word of mouth. For many
-            artists, that means playing to half-empty rooms, not for lack of
-            talent, but visibility. Gigpit was built to change that.
-          </StyledP>
-
-          <StyledP>
-            We created a platform where anyone can post a show and everyone can
-            find it—a shared space for artists, organizers, and fans. By
-            centralizing events and simplifying discovery, Gigpit helps give
-            local music the audience it deserves.
-          </StyledP>
-        </Stack>
-        <Spacer level={6} />
-        <Button href="https://gigpit.ca">View Project</Button>
-        <Spacer level={14} />
-      </Stack>
+      <ProjectOverview
+        project="Gigpit"
+        title="A web app making local music easy to find (and hard to miss)"
+        paragraphs={[
+          "Local music often lives in the margins—buried in Instagram stories, scattered across venue sites, or shared by word of mouth. For many artists, that means playing to half-empty rooms, not for lack of talent, but visibility. Gigpit was built to change that.",
+          "We created a platform where anyone can post a show and everyone can find it—a shared space for artists, organizers, and fans. By centralizing events and simplifying discovery, Gigpit helps give local music the audience it deserves.",
+        ]}
+        collaborators={
+          "Elizabeth Scott, Aidan Polglase, Evan Dungate, Josh Taylor"
+        }
+        url="gitpit.ca"
+        date="2024 - Present"
+      />
 
       <Spacer level={14} />
       <MyRole
