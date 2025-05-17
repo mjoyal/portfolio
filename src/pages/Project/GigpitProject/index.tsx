@@ -95,7 +95,7 @@ const GitpitProject = () => {
         direction={{ xs: "column", md: "row" }}
         gap={4}
         borderBottom="1px solid rgba(245, 245, 245, 0.75)"
-        paddingBottom={15}
+        paddingBottom={{ xs: 6, md: 15 }}
       >
         <QuoteText>
           We wanted the platform to feel{" "}
@@ -203,7 +203,7 @@ const GitpitProject = () => {
 
       <SectionDivider />
       <Box>
-        <SectionTitle>Outcomes</SectionTitle>
+        <SectionTitle>Impact</SectionTitle>
         <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>
@@ -248,7 +248,7 @@ const GitpitProject = () => {
       <SectionDivider />
 
       <Box>
-        <SectionTitle>Learnings</SectionTitle>
+        <SectionTitle>Reflections</SectionTitle>
         <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
           <StyledP>
             This project clarified the value of constraints—and how essential

@@ -205,7 +205,7 @@ const Fit52Project = () => {
       </MockWrapper>
       <SectionDivider />
       <Box>
-        <SectionTitle>Learnings</SectionTitle>
+        <SectionTitle>Reflections</SectionTitle>
         <BodyTextWrapper>
           <Stack gap={{ xs: 3, md: 5 }}>
             <StyledP>

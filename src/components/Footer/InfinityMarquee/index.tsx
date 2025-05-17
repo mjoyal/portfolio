@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 
 const Scroller = styled.div`
   display: inline-flex;
-  animation: scroll 150s linear infinite;
+  animation: scroll 120s linear infinite;
 
   @keyframes scroll {
     0% {
@@ -27,9 +27,14 @@ const Asterisk = styled.span`
 `;
 
 const StyledHeader = styled.h1`
-  font-size: 14rem;
+  font-size: 10rem;
   letter-spacing: -5px;
   font-weight: 500;
+
+  @media (min-width: 900px) {
+    font-size: 14rem;
+    letter-spacing: -5px;
+  }
 `;
 
 // const marqueeText = " let’s talk ✻ let’s talk ✻ let’s talk ✻ ";

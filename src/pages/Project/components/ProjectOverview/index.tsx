@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import Spacer from "src/components/Spacer";
 import { StyledP } from "..";
 
-const PageTitle = styled.h3`
+const PageTitle = styled.h2`
   max-width: 700px;
 `;
 
@@ -34,8 +34,12 @@ const ProjectOverview = (props: IProjectOverviewProps) => {
         direction={{ xs: "column", md: "row" }}
         justifyContent={"space-between"}
       >
-        <h6>{project}</h6>
-        <Stack direction={"row"} gap={10}>
+        <h5>{project}</h5>
+        <Stack
+          direction={"row"}
+          justifyContent={{ xs: "space-between" }}
+          gap={10}
+        >
           <h6>{date}</h6>
           <h6>{url}</h6>
         </Stack>

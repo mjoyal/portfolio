@@ -132,7 +132,7 @@ const CrewlywedProject = () => {
       </MockWrapper>
       <SectionDivider />
       <Box>
-        <SectionTitle>Outcome & results</SectionTitle>
+        <SectionTitle>Impact</SectionTitle>
         <BodyTextWrapper>
           <StyledP>
             Crewlywed was ranked in the top three final projects of the
@@ -157,7 +157,7 @@ const CrewlywedProject = () => {
       </MockWrapper>
       <SectionDivider />
       <Box>
-        <SectionTitle>Learnings</SectionTitle>
+        <SectionTitle>Reflections</SectionTitle>
 
         <BodyTextWrapper>
           <StyledP>

@@ -21,10 +21,11 @@ const BioSection = () => {
       )}
 
       <StyledHeader>
-        Hi, I'm Mackenzie! From code architecture to the perfect color
-        palette—I'm <EmphasisText>lowkey obsessed</EmphasisText> with thoughtful
-        design. I'm all about building interfaces that feel good, spark
-        excitement, and scale effortlessly.
+        Hi, I'm Mackenzie! I specialize in ux/ui & front-end development. From
+        code architecture to the perfect color palette—I'm{" "}
+        <EmphasisText>lowkey obsessed</EmphasisText> with thoughtful design. I'm
+        all about building interfaces that feel good, spark excitement, and
+        scale effortlessly.
         {/* Hi, I'm Mackenzie. I specialize in front-end development and UX/UI
           design — and I'm <EmphasisText>lowkey obsessed </EmphasisText> with
           building interfaces that feel good, spark excitement, and scale
