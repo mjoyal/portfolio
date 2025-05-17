@@ -1,11 +1,10 @@
 import styled from "@emotion/styled";
 import { observer } from "mobx-react";
 
-import { Stack, useMediaQuery, useTheme, Box } from "@mui/material";
+import { Stack, Box } from "@mui/material";
 
 import Spacer from "src/components/Spacer";
-import { useState } from "react";
-import MyRole from "./components/GigpitRoleSection";
+
 import {
   SectionDivider,
   ProjectPageContainer,
@@ -34,10 +33,6 @@ const GitpitProject = () => {
   const {
     projectStore: { selectedProject },
   } = useStores();
-  const [isRoleTextHidden, setIsRoleTextHidden] = useState(true);
-
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <ProjectPageContainer>
@@ -45,8 +40,6 @@ const GitpitProject = () => {
         <GigpitLogo />
         <ProjectImage src={selectedProject?.imageSource} />
       </HeroSectionWrapper>
-
-      {isSmallScreen ? <Spacer /> : <Spacer level={30} />}
 
       <ProjectOverview
         project="Gigpit"
@@ -66,11 +59,34 @@ const GitpitProject = () => {
       />
 
       <SectionDivider />
-      <Stack direction="row">
-        <MyRole
-          isRoleTextHidden={isRoleTextHidden}
-          setIsRoleTextHidden={setIsRoleTextHidden}
-        />
+      <Stack
+        direction={{ xs: "column-reverse", lg: "row" }}
+        gap={4}
+        justifyContent={"space-between"}
+      >
+        <Box>
+          <SectionTitle>My Role</SectionTitle>
+          <Stack gap={{ xs: 3, md: 5 }}>
+            <StyledP>
+              I joined Gigpit to help evolve early design work—already visually
+              strong—into a mobile-first web app with clearer UX and a more
+              product-driven approach. I led mobile design, created
+              high-fidelity mockups in Figma, and refined key user flows to
+              deliver a more functional, intuitive experience. My focus wasn’t
+              just on how the interface looked, but how it would be used, built,
+              and scaled.
+            </StyledP>
+            <StyledP>
+              Midway through, I began contributing on the engineering side to
+              refine high-impact areas like navigation, CTA buttons, the
+              homepage, and the “Post a Show” flow—spaces that shaped first
+              impressions. I introduced more reusable Svelte components, reduced
+              redundant Tailwind usage, and implemented a theme config.
+              Together, these changes not only improved visual consistency but
+              also set the stage for faster, more maintainable growth.
+            </StyledP>
+          </Stack>
+        </Box>
         <ProjectImage src={"/images/gigpit/hero.png"} />
       </Stack>
 

@@ -1,6 +1,8 @@
+import styled from "@emotion/styled";
+
 import { observer } from "mobx-react";
 
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import Spacer from "src/components/Spacer";
 import {
   BodyTextWrapper,
@@ -17,13 +19,15 @@ import CrewlywedLogo from "src/icons/CrewlywedLogo";
 import useStores from "src/hooks/useStores";
 import ProjectOverview from "../components/ProjectOverview";
 
+const BirdImage = styled.img`
+  width: 300px;
+  height: 100%;
+`;
+
 const CrewlywedProject = () => {
   const {
     projectStore: { selectedProject },
   } = useStores();
-
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <ProjectPageContainer>
@@ -31,37 +35,39 @@ const CrewlywedProject = () => {
         <CrewlywedLogo />
         <ProjectImage src={selectedProject?.imageSource} />
       </HeroSectionWrapper>
-      {isSmallScreen ? <Spacer /> : <Spacer level={30} />}{" "}
       <ProjectOverview
         project="Crewlywed"
         title="The Newlywed game for you and your crew"
         paragraphs={[
           "As my coding bootcamp’s final project, I wanted to build something that helped people feel connected again. During the pandemic, social isolation was everywhere—and I kept wondering how we could bring back lightness and play, even from a distance.",
-          "So I pitched Crewlywed, a real-time, multiplayer web game inspired by The Newlywed Game and designed for group play. Players join a shared room, answer questions about each other, and try to guess—or bluff—their way to the top. It’s fast, funny, and built to turn any group chat into a game night.",
+          "So I pitched Crewlywed, a real-time, multiplayer web game inspired by The Newlywed Game and designed for group play. Players join a shared room, answer questions about each other, and try to guess—or bluff—their way to the top.",
         ]}
         collaborators="Chantal Snazel, Will Portman"
         url="Github Repo"
         date="2020"
       />
       <SectionDivider />
-      <Box>
-        <SectionTitle>My Role</SectionTitle>
-        <BodyTextWrapper>
-          <StyledP>
-            I co-led the design and front-end development of Crewlywed,
-            collaborating on the game’s branding, character illustrations, and
-            UI components to create a playful, engaging experience. My focus was
-            on interaction design, animations, and implementing the interface
-            using React.
-          </StyledP>
-          <StyledP>
-            I also researched and led the implementation of WebSocket
-            functionality—designing the real-time architecture and handling
-            state synchronization between players, the game host, and the
-            server.
-          </StyledP>
-        </BodyTextWrapper>
-      </Box>
+      <Stack direction={{ xs: "column", md: "row" }}>
+        <Box>
+          <SectionTitle>My Role</SectionTitle>
+          <BodyTextWrapper>
+            <StyledP>
+              I co-led the design and front-end development of Crewlywed,
+              collaborating on the game’s branding, character illustrations, and
+              UI components to create a playful, engaging experience. My focus
+              was on interaction design, animations, and implementing the
+              interface using React.
+            </StyledP>
+            <StyledP>
+              I also researched and led the implementation of WebSocket
+              functionality—designing the real-time architecture and handling
+              state synchronization between players, the game host, and the
+              server.
+            </StyledP>
+          </BodyTextWrapper>
+        </Box>
+        <BirdImage src="/images/crewlywed/bird.png" />
+      </Stack>
       <SectionDivider />
       <Box>
         <SectionTitle>Designing for Play </SectionTitle>

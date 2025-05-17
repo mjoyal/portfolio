@@ -30,11 +30,14 @@ const ProjectOverview = (props: IProjectOverviewProps) => {
   const { project, title, paragraphs, collaborators, url, date } = props;
   return (
     <Stack>
-      <Stack direction="row" justifyContent={"space-between"}>
-        <p>{project}</p>
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={"space-between"}
+      >
+        <h6>{project}</h6>
         <Stack direction={"row"} gap={10}>
-          <p>{date}</p>
-          <p>{url}</p>
+          <h6>{date}</h6>
+          <h6>{url}</h6>
         </Stack>
       </Stack>
 
@@ -53,6 +56,7 @@ const ProjectOverview = (props: IProjectOverviewProps) => {
 
         {!!collaborators && (
           <Stack>
+            <Spacer level={5} />
             <CollaboratorsTitle>COLLABORATORS</CollaboratorsTitle>
             <CollaboratorsText>{collaborators}</CollaboratorsText>
           </Stack>

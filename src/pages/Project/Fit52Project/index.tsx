@@ -32,7 +32,6 @@ const Fit52Project = () => {
         <Fit52Logo />
         <ProjectImage src={selectedProject?.imageSource} />
       </HeroSectionWrapper>
-      {isSmallScreen ? <Spacer /> : <Spacer level={25} />}{" "}
       <ProjectOverview
         project="Fit52"
         title="Holistic fitness platform inspired by Carrie Underwood’s wellness philosophy"
@@ -44,8 +43,9 @@ const Fit52Project = () => {
       />
       <SectionDivider />
       <Stack
-        direction={{ xs: "column", md: "row" }}
+        direction={{ xs: "column-reverse", lg: "row" }}
         justifyContent={"space-between"}
+        gap={4}
       >
         <Box>
           <SectionTitle>My Role</SectionTitle>
@@ -94,7 +94,7 @@ const Fit52Project = () => {
           src={"/images/fit52/feed-before.png"}
           label="Social feed before redesign"
         />
-        <LittleArrow rotate="rotate(-90deg)" />
+        <LittleArrow rotate={!isSmallScreen && "rotate(-90deg)"} />
         <PhoneMock
           src={"/images/fit52/feed-after.png"}
           label="Social feed after redesign"
@@ -122,7 +122,7 @@ const Fit52Project = () => {
           src={"/images/fit52/comments-before.png"}
           label="Comments section before redesign"
         />
-        <LittleArrow rotate="rotate(-90deg)" />
+        <LittleArrow rotate={!isSmallScreen && "rotate(-90deg)"} />
         <PhoneMock
           src={"/images/fit52/comments-after.png"}
           label="Comments section after redesign"

@@ -1,7 +1,7 @@
 const Fit52Logo = () => {
   return (
     <svg
-      width="200"
+      width="150"
       height="100%"
       viewBox="0 0 406 228"
       fill="none"

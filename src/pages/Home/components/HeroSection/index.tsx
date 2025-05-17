@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import PreText from "./components/PreText";
-import LittleArrow from "src/icons/LittleArrow";
 import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
 
 const HeroContainer = styled.div`

@@ -8,11 +8,15 @@ export const StyledP = styled.p<{ isHidden?: boolean }>`
 `;
 
 export const ProjectImage = styled.img`
-  width: 50%;
+  width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
-  border-radius: 3px;
+
+  @media (min-width: 900px) {
+    height: 525px;
+    width: auto;
+  }
 `;
 
 export const ProjectPageContainer = styled(Box)`
@@ -74,12 +78,19 @@ export const BodyTextWrapper = (props: any) => {
   );
 };
 
+const StyledHeroSectionWrapper = styled(Stack)`
+  margin-bottom: 20px;
+  @media (min-width: 900px) {
+    min-height: 90vh;
+  }
+`;
+
 export const HeroSectionWrapper = (props: any) => {
   const { children } = props;
   return (
-    <Stack gap={5} alignItems={"flex-start"}>
+    <StyledHeroSectionWrapper gap={5} alignItems={"flex-start"}>
       {children}
-    </Stack>
+    </StyledHeroSectionWrapper>
   );
 };
 

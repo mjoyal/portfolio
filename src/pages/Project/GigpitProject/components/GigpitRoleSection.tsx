@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import Spacer from "src/components/Spacer";
 
 import styled from "@emotion/styled";
@@ -13,7 +13,7 @@ const ReadMoreButton = styled.button<{ isHidden?: boolean }>`
 const MyRole = (props: any) => {
   const { isRoleTextHidden, setIsRoleTextHidden } = props;
   return (
-    <Box>
+    <Stack width="100%">
       <h4>My role</h4>
       <Spacer level={6} />
       <Stack direction={{ sm: "column", lg: "row" }} gap={{ sm: 5, md: 10 }}>
@@ -36,11 +36,10 @@ const MyRole = (props: any) => {
           </Stack>
 
           <StyledP isHidden={isRoleTextHidden}>
-            I brought a product-focused mindset, thinking not just about how the
-            interface looked but how it would be used, built, and scaled. I led
-            mobile design, created high-fidelity mockups in Figma, and refined
-            key user flows to build on a strong visual foundation and deliver a
-            more functional, intuitive experience.
+            I thought not only about how the interface looked but how it would
+            be used, built, and scaled. I led mobile design, created
+            high-fidelity mockups in Figma, and refined key user flows to
+            deliver a more functional, intuitive experience.
           </StyledP>
         </Stack>
         <Stack
@@ -49,7 +48,7 @@ const MyRole = (props: any) => {
           gap={{ sm: 3, md: 6 }}
         >
           <StyledP isHidden={isRoleTextHidden}>
-            Midway through, I stepped in on the engineering side to polish
+            Midway through, I stepped in on the engineering side to refine
             high-impact areas like navigation, CTA buttons, the homepage, and
             the “Post a Show” flow, spaces that defined first impressions and
             core actions.
@@ -68,7 +67,7 @@ const MyRole = (props: any) => {
           </ReadMoreButton>
         </Stack>
       </Stack>
-    </Box>
+    </Stack>
   );
 };
 
