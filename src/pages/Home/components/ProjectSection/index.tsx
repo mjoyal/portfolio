@@ -5,6 +5,7 @@ import { observer } from "mobx-react";
 import useStores from "src/hooks/useStores";
 import { Box, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
+import SlideUpMotion from "src/components/SlideUpMotion";
 
 const ProjectContainer = styled.div`
   display: flex;
@@ -66,15 +67,20 @@ const ProjectSection = () => {
 
   return (
     <Box id="work" paddingTop={"30px"}>
-      <ProjectsTitle />
+      <SlideUpMotion>
+        <ProjectsTitle />
+      </SlideUpMotion>
+
       <Spacer />
       <ProjectContainer>
         {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            setIsVisible={setIsVisible}
-          />
+          <SlideUpMotion>
+            <ProjectCard
+              key={project.id}
+              project={project}
+              setIsVisible={setIsVisible}
+            />
+          </SlideUpMotion>
         ))}
       </ProjectContainer>
       <CustomCursor

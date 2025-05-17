@@ -4,6 +4,7 @@ import HeroSection from "./components/HeroSection";
 import ProjectSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
 import BioSection from "./components/BioSection";
+import SlideUpMotion from "src/components/SlideUpMotion";
 
 const HomePageContainer = styled.div`
   /* These 100% widths are important to keep the overall margin of the site */
@@ -24,7 +25,10 @@ const HomePage = () => {
     <HomePageContainer>
       <HeroSection />
       <SectionDivider id="bio" />
-      <BioSection />
+      <SlideUpMotion>
+        <BioSection />
+      </SlideUpMotion>
+
       <SectionDivider />
       <ProjectSection />
       <SectionDivider />
