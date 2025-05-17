@@ -2,6 +2,7 @@ import { Stack } from "@mui/material";
 import styled from "@emotion/styled";
 import Spacer from "src/components/Spacer";
 import { StyledP } from "..";
+import LinkArrow from "src/icons/LinkArrow";
 
 const PageTitle = styled.h2`
   max-width: 700px;
@@ -22,12 +23,14 @@ interface IProjectOverviewProps {
   title: string;
   paragraphs: string[];
   collaborators?: string;
+  linkText: string;
   url: string;
   date: string;
 }
 
 const ProjectOverview = (props: IProjectOverviewProps) => {
-  const { project, title, paragraphs, collaborators, url, date } = props;
+  const { project, title, paragraphs, collaborators, linkText, url, date } =
+    props;
   return (
     <Stack>
       <Stack
@@ -41,7 +44,12 @@ const ProjectOverview = (props: IProjectOverviewProps) => {
           gap={10}
         >
           <h6>{date}</h6>
-          <h6>{url}</h6>
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            <Stack direction={"row"} gap={1} alignItems={"center"}>
+              <h6>{linkText}</h6>
+              <LinkArrow />
+            </Stack>
+          </a>
         </Stack>
       </Stack>
 

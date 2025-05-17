@@ -12,7 +12,11 @@ const HomePageContainer = styled.div`
 
 // TODO: Section Divider & Spacer Components
 const SectionDivider = styled.div`
-  height: 250px;
+  height: 150px;
+
+  @media (min-width: 900px) {
+    height: 200px;
+  }
 `;
 
 const HomePage = () => {

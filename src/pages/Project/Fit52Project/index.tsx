@@ -38,7 +38,8 @@ const Fit52Project = () => {
         paragraphs={[
           "Built around a 52-card metaphor, fit52 generates dynamic, personalized workouts that adapt to each user’s fitness level and goals. The app also integrates nutrition guidance and community-driven features to support long-term health and motivation.",
         ]}
-        url="fit52.com"
+        linkText="fit52.com"
+        url="https://www.fit52.com/"
         date="2021-2024"
       />
       <SectionDivider />

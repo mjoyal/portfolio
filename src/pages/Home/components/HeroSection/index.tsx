@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Stack, useTheme } from "@mui/material";
 import PreText from "./components/PreText";
 import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
 
@@ -10,10 +10,7 @@ const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
-  ${({ theme }) => (theme as any).breakpoints.up("sm")} {
-    height: 92vh;
-  }
+  height: 92vh;
 `;
 
 const TextContainer = styled.div`
@@ -42,9 +39,9 @@ const FooterText = styled.p`
 `;
 
 const HeroSection = () => {
-  const theme = useTheme();
-  const scrollToAnchor = useSmoothScrollToAnchor();
-  const isMedium = useMediaQuery(theme.breakpoints.up("sm"));
+  //TODO: Come back to the arrow
+  // const theme = useTheme();
+  // const scrollToAnchor = useSmoothScrollToAnchor();
 
   return (
     <HeroContainer>

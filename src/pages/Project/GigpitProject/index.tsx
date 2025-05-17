@@ -54,7 +54,8 @@ const GitpitProject = () => {
         collaborators={
           "Elizabeth Scott, Aidan Polglase, Evan Dungate, Josh Taylor"
         }
-        url="gitpit.ca"
+        linkText="gitpit.ca"
+        url="https://gigpit.ca/"
         date="2024 - Present"
       />
 

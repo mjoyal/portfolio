@@ -44,7 +44,8 @@ const CrewlywedProject = () => {
           "So I pitched Crewlywed, a real-time, multiplayer web game inspired by The Newlywed Game and designed for group play. Players join a shared room, answer questions about each other, and try to guess—or bluff—their way to the top.",
         ]}
         collaborators="Chantal Snazel, Will Portman"
-        url="Github Repo"
+        linkText="Github Repo"
+        url="https://github.com/mjoyal/crewlywed-frontend"
         date="2020"
       />
       <SectionDivider />
