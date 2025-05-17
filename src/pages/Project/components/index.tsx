@@ -21,10 +21,6 @@ export const ProjectPageContainer = styled(Box)`
   min-height: 100vh;
   margin-top: 60px;
   margin-bottom: 200px;
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
 `;
 
 export const PhoneMockImage = styled.img`
@@ -73,6 +69,15 @@ export const BodyTextWrapper = (props: any) => {
       direction={{ xs: "column", md: "row" }}
       gap={{ xs: 3, md: 10, lg: 12 }}
     >
+      {children}
+    </Stack>
+  );
+};
+
+export const HeroSectionWrapper = (props: any) => {
+  const { children } = props;
+  return (
+    <Stack gap={5} alignItems={"flex-start"}>
       {children}
     </Stack>
   );

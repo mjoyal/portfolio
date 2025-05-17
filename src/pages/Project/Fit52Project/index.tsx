@@ -4,6 +4,7 @@ import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import Spacer from "src/components/Spacer";
 import {
   BodyTextWrapper,
+  HeroSectionWrapper,
   MockWrapper,
   PhoneMock,
   ProjectImage,
@@ -27,11 +28,11 @@ const Fit52Project = () => {
 
   return (
     <ProjectPageContainer>
-      <Stack gap={3} alignItems={"flex-start"}>
+      <HeroSectionWrapper>
         <Fit52Logo />
         <ProjectImage src={selectedProject?.imageSource} />
-      </Stack>
-      {isSmallScreen ? <Spacer /> : <Spacer level={20} />}{" "}
+      </HeroSectionWrapper>
+      {isSmallScreen ? <Spacer /> : <Spacer level={25} />}{" "}
       <ProjectOverview
         project="Fit52"
         title="Holistic fitness platform inspired by Carrie Underwood’s wellness philosophy"
@@ -42,7 +43,10 @@ const Fit52Project = () => {
         date="2021-2024"
       />
       <SectionDivider />
-      <Stack direction={{ xs: "column", md: "row" }}>
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={"space-between"}
+      >
         <Box>
           <SectionTitle>My Role</SectionTitle>
           <BodyTextWrapper>

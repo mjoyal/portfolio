@@ -15,6 +15,7 @@ import {
   MockWrapper,
   BodyTextWrapper,
   PhoneMock,
+  HeroSectionWrapper,
 } from "../components";
 import GigpitLogo from "src/icons/GigpitLogo";
 import useStores from "src/hooks/useStores";
@@ -40,12 +41,12 @@ const GitpitProject = () => {
 
   return (
     <ProjectPageContainer>
-      <Stack gap={5} alignItems={"flex-start"}>
+      <HeroSectionWrapper>
         <GigpitLogo />
         <ProjectImage src={selectedProject?.imageSource} />
-      </Stack>
+      </HeroSectionWrapper>
 
-      {isSmallScreen ? <Spacer /> : <Spacer level={20} />}
+      {isSmallScreen ? <Spacer /> : <Spacer level={30} />}
 
       <ProjectOverview
         project="Gigpit"

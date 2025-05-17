@@ -1,9 +1,10 @@
 import { observer } from "mobx-react";
 
-import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Spacer from "src/components/Spacer";
 import {
   BodyTextWrapper,
+  HeroSectionWrapper,
   MockWrapper,
   PhoneMock,
   ProjectImage,
@@ -26,11 +27,11 @@ const CrewlywedProject = () => {
 
   return (
     <ProjectPageContainer>
-      <Stack gap={3} alignItems={"flex-start"}>
+      <HeroSectionWrapper>
         <CrewlywedLogo />
         <ProjectImage src={selectedProject?.imageSource} />
-      </Stack>
-      {isSmallScreen ? <Spacer /> : <Spacer level={20} />}{" "}
+      </HeroSectionWrapper>
+      {isSmallScreen ? <Spacer /> : <Spacer level={30} />}{" "}
       <ProjectOverview
         project="Crewlywed"
         title="The Newlywed game for you and your crew"

@@ -8,8 +8,14 @@ import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
 const Container = styled(Stack)`
   width: 100%;
   height: 60px;
-  padding-left: clamp(20px, 5vw, 60px);
-  padding-right: clamp(20px, 5vw, 60px);
+
+  padding-left: clamp(20px, 4vw, 120px);
+  padding-right: clamp(20px, 4vw, 120px);
+
+  @media (min-width: 900px) {
+    padding-left: clamp(20px, 8vw, 120px);
+    padding-right: clamp(20px, 8vw, 120px);
+  }
 `;
 
 const StyledLinkText = styled.h5`

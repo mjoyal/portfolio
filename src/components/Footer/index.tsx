@@ -10,7 +10,7 @@ const FooterContainer = styled(Stack)<{ isMobile?: boolean }>`
   flex-direction: column;
   align-items: flex-end;
   gap: 20px;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   background-color: ${({ isMobile }) => (isMobile ? "black" : "transparent")};
   padding-top: ${({ isMobile }) => (isMobile ? "40px" : "0px")};
   border-top: ${({ isMobile }) =>
