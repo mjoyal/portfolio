@@ -23,7 +23,7 @@ const StyledLinkText = styled.h5`
 
 const HomeButton = styled.button``;
 
-const Logo = styled.h5`
+const Logo = styled.h4`
   font-weight: 700;
   letter-spacing: -0.8px;
 `;

@@ -17,11 +17,7 @@ import {
 } from "../components";
 import CrewlywedLogo from "src/icons/CrewlywedLogo";
 import useStores from "src/hooks/useStores";
-
-const PageTitle = styled.h1`
-  max-width: 600px;
-  margin-bottom: 20px;
-`;
+import ProjectOverview from "../components/ProjectOverview";
 
 const CrewlywedProject = () => {
   const {
@@ -37,31 +33,17 @@ const CrewlywedProject = () => {
 
       <SectionDivider />
 
-      <Stack alignItems={"flex-start"}>
-        <PageTitle>The Newlywed game for you and your crew</PageTitle>
-        <Spacer />
-        <Stack direction={{ sm: "column", lg: "row" }} gap={{ sm: 5, md: 10 }}>
-          <StyledP>
-            As my coding bootcamp’s final project, I wanted to build something
-            that helped people feel connected again. During the pandemic, social
-            isolation was everywhere—and I kept wondering how we could bring
-            back lightness and play, even from a distance.
-          </StyledP>
-          <StyledP>
-            So I pitched Crewlywed, a real-time, multiplayer web game inspired
-            by The Newlywed Game and designed for group play. Players join a
-            shared room, answer questions about each other, and try to guess—or
-            bluff—their way to the top. It’s fast, funny, and built to turn any
-            group chat into a game night.
-          </StyledP>
-        </Stack>
-
-        <Spacer level={6} />
-
-        <Button href="https://github.com/mjoyal/crewlywed-frontend">
-          View Github Repo
-        </Button>
-      </Stack>
+      <ProjectOverview
+        project="Crewlywed"
+        title="The Newlywed game for you and your crew"
+        paragraphs={[
+          "As my coding bootcamp’s final project, I wanted to build something that helped people feel connected again. During the pandemic, social isolation was everywhere—and I kept wondering how we could bring back lightness and play, even from a distance.",
+          "So I pitched Crewlywed, a real-time, multiplayer web game inspired by The Newlywed Game and designed for group play. Players join a shared room, answer questions about each other, and try to guess—or bluff—their way to the top. It’s fast, funny, and built to turn any group chat into a game night.",
+        ]}
+        collaborators="Chantal Snazel, Will Portman"
+        url="Github Repo"
+        date="2020"
+      />
 
       <SectionDivider />
 

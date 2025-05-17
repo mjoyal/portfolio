@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 import { observer } from "mobx-react";
 
-import Button from "src/components/Button";
-
 import { Stack, useMediaQuery, useTheme, Box } from "@mui/material";
 
 import Spacer from "src/components/Spacer";
@@ -27,11 +25,6 @@ const QuoteText = styled.h4`
   font-size: 3rem;
 `;
 
-const PageTitle = styled.h1`
-  max-width: 700px;
-  margin-bottom: 20px;
-`;
-
 const SmallerQuoteText = styled.h6`
   max-width: 500px;
 `;
@@ -49,12 +42,12 @@ const GitpitProject = () => {
 
   return (
     <ProjectPageContainer>
-      <Stack gap={3} alignItems={"flex-start"}>
+      <Stack gap={5} alignItems={"flex-start"}>
         <GigpitLogo />
         <ProjectImage src={selectedProject?.imageSource} />
       </Stack>
 
-      {isSmallScreen ? <Spacer /> : <Spacer level={50} />}
+      {isSmallScreen ? <Spacer /> : <SectionDivider />}
 
       <ProjectOverview
         project="Gigpit"
@@ -63,6 +56,9 @@ const GitpitProject = () => {
           "Local music often lives in the margins—buried in Instagram stories, scattered across venue sites, or shared by word of mouth. For many artists, that means playing to half-empty rooms, not for lack of talent, but visibility. Gigpit was built to change that.",
           "We created a platform where anyone can post a show and everyone can find it—a shared space for artists, organizers, and fans. By centralizing events and simplifying discovery, Gigpit helps give local music the audience it deserves.",
         ]}
+        // paragraphs={[
+        //   "Local music often gets lost—tucked in stories, scattered across venue sites, or passed along by word of mouth. Gigpit changes that by centralizing shows into one simple, searchable space. Anyone can post. Everyone can find. It’s built to give local music the audience it deserves.",
+        // ]}
         collaborators={
           "Elizabeth Scott, Aidan Polglase, Evan Dungate, Josh Taylor"
         }
@@ -70,19 +66,21 @@ const GitpitProject = () => {
         date="2024 - Present"
       />
 
-      <Spacer level={14} />
-      <MyRole
-        isRoleTextHidden={isRoleTextHidden}
-        setIsRoleTextHidden={setIsRoleTextHidden}
-      />
-      <Spacer level={10} />
-      <ProjectImage src={"/images/project-landscape.png"} />
+      <SectionDivider />
+      <Stack direction="row">
+        <MyRole
+          isRoleTextHidden={isRoleTextHidden}
+          setIsRoleTextHidden={setIsRoleTextHidden}
+        />
+        <ProjectImage src={"/images/gigpit/hero.png"} />
+      </Stack>
+
       <SectionDivider />
       <Stack
         direction={{ xs: "column", md: "row" }}
         gap={4}
-        borderBottom={1}
-        paddingBottom={10}
+        borderBottom="1px solid rgba(245, 245, 245, 0.75)"
+        paddingBottom={15}
       >
         <QuoteText>
           We wanted the platform to feel{" "}

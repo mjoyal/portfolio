@@ -1,8 +1,8 @@
 const GigpitLogo = () => {
   return (
     <svg
-      width="572"
-      height="95"
+      width="400"
+      height="100%"
       viewBox="0 0 572 95"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

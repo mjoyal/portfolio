@@ -73,11 +73,11 @@ const HeroSection = () => {
         alignItems={"flex-end"}
       >
         <FooterText>making the internet prettier since 2019.</FooterText>
-        {isMedium && (
+        {/* {isMedium && (
           <button onClick={() => scrollToAnchor("bio")}>
             <LittleArrow />
           </button>
-        )}
+        )} */}
       </Stack>
     </HeroContainer>
   );

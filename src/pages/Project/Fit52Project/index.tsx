@@ -1,7 +1,4 @@
-import styled from "@emotion/styled";
 import { observer } from "mobx-react";
-
-import Button from "src/components/Button";
 
 import { Box, Stack } from "@mui/material";
 import Spacer from "src/components/Spacer";
@@ -17,11 +14,7 @@ import {
 } from "../components";
 import Fit52Logo from "src/icons/Fit52Logo";
 import useStores from "src/hooks/useStores";
-
-const PageTitle = styled.h1`
-  max-width: 700px;
-  margin-bottom: 20px;
-`;
+import ProjectOverview from "../components/ProjectOverview";
 
 const Fit52Project = () => {
   const {
@@ -32,29 +25,19 @@ const Fit52Project = () => {
     <ProjectPageContainer>
       <Stack gap={3} alignItems={"flex-start"}>
         <Fit52Logo />
-        <ProjectImage src={selectedProject?.imageSource} />{" "}
+        <ProjectImage src={selectedProject?.imageSource} />
       </Stack>
-
+      <Spacer level={20} />
+      <ProjectOverview
+        project="Fit52"
+        title="Holistic fitness platform inspired by Carrie Underwood’s wellness philosophy"
+        paragraphs={[
+          "Built around a 52-card metaphor, fit52 generates dynamic, personalized workouts that adapt to each user’s fitness level and goals. The app also integrates nutrition guidance and community-driven features to support long-term health and motivation.",
+        ]}
+        url="fit52.com"
+        date="2021-2024"
+      />
       <SectionDivider />
-
-      <Stack alignItems={"flex-start"}>
-        <PageTitle>
-          Holistic fitness platform inspired by Carrie Underwood’s wellness
-          philosophy
-        </PageTitle>
-        <Spacer />
-        <StyledP>
-          Built around a 52-card metaphor, fit52 generates dynamic, personalized
-          workouts that adapt to each user’s fitness level and goals. The app
-          also integrates nutrition guidance and community-driven features to
-          support long-term health and motivation.
-        </StyledP>
-        <Spacer level={6} />
-
-        <Button href="https://www.fit52.com/">View Project</Button>
-        <SectionDivider />
-      </Stack>
-
       <Box>
         <SectionTitle>My Role</SectionTitle>
         <BodyTextWrapper>
@@ -64,14 +47,12 @@ const Fit52Project = () => {
             focused on improving visual clarity, usability, and long-term
             maintainability. My contributions included refining the user feed
             experience and leading component refactors to streamline development
-            workflows.
+            workflows. I also built interactive features such as the exercise
+            swap system. My role sat at the intersection of design, engineering,
+            and product—translating design intent into polished, scalable
+            interfaces that balanced aesthetics with functionality.
           </StyledP>
-          <StyledP>
-            I also built interactive features such as the exercise swap system.
-            My role sat at the intersection of design, engineering, and
-            product—translating design intent into polished, scalable interfaces
-            that balanced aesthetics with functionality.
-          </StyledP>
+          <StyledP></StyledP>
         </BodyTextWrapper>
       </Box>
       <SectionDivider />
