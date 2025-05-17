@@ -7,7 +7,6 @@ import Spacer from "src/components/Spacer";
 import { useState } from "react";
 import MyRole from "./components/GigpitRoleSection";
 import {
-  PhoneMockImage,
   SectionDivider,
   ProjectPageContainer,
   StyledP,
@@ -15,6 +14,7 @@ import {
   ProjectImage,
   MockWrapper,
   BodyTextWrapper,
+  PhoneMock,
 } from "../components";
 import GigpitLogo from "src/icons/GigpitLogo";
 import useStores from "src/hooks/useStores";
@@ -33,11 +33,9 @@ const GitpitProject = () => {
   const {
     projectStore: { selectedProject },
   } = useStores();
-
-  const theme = useTheme();
-
   const [isRoleTextHidden, setIsRoleTextHidden] = useState(true);
 
+  const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
@@ -47,7 +45,7 @@ const GitpitProject = () => {
         <ProjectImage src={selectedProject?.imageSource} />
       </Stack>
 
-      {isSmallScreen ? <Spacer /> : <SectionDivider />}
+      {isSmallScreen ? <Spacer /> : <Spacer level={20} />}
 
       <ProjectOverview
         project="Gigpit"
@@ -129,8 +127,14 @@ const GitpitProject = () => {
       <Spacer level={20} />
 
       <MockWrapper>
-        <PhoneMockImage src={"/images/gigpit/home-page.png"} />
-        <PhoneMockImage src={"/images/gigpit/home-page-logged-in.png"} />
+        <PhoneMock
+          src={"/images/gigpit/home-page.png"}
+          label="Explore page hero section, user not logged in"
+        />
+        <PhoneMock
+          src={"/images/gigpit/home-page-logged-in.png"}
+          label="Customized explore page, logged in state, user has access to their saved upcoming shows"
+        />
       </MockWrapper>
       <SectionDivider />
 
@@ -170,8 +174,14 @@ const GitpitProject = () => {
       <Spacer level={20} />
 
       <MockWrapper>
-        <PhoneMockImage src={"/images/gigpit/show-detail.png"} />
-        <PhoneMockImage src={"/images/gigpit/home-page-scrolled.png"} />
+        <PhoneMock
+          src={"/images/gigpit/show-detail.png"}
+          label="Show detail page, featuring sticky buttons for key actions"
+        />
+        <PhoneMock
+          src={"/images/gigpit/home-page-scrolled.png"}
+          label="Further down Explore page, showing key actions cards for navigation"
+        />
       </MockWrapper>
 
       <SectionDivider />
@@ -208,8 +218,14 @@ const GitpitProject = () => {
       </Box>
       <Spacer level={20} />
       <MockWrapper>
-        <PhoneMockImage src={"/images/gigpit/shows-grid.png"} />
-        <PhoneMockImage src={"/images/gigpit/artist-profile.png"} />
+        <PhoneMock
+          src={"/images/gigpit/shows-grid.png"}
+          label="Shows page, grid view. Ability to search, filter, and switch to list or map view."
+        />
+        <PhoneMock
+          src={"/images/gigpit/artist-profile.png"}
+          label="Artist Profile, displaying their upcoming shows, their profile stats, and their suggested shows"
+        />
       </MockWrapper>
 
       <SectionDivider />

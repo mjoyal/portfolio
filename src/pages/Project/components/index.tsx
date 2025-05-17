@@ -32,7 +32,7 @@ export const PhoneMockImage = styled.img`
   height: 100%;
 `;
 
-export const SectionTitle = styled.h3`
+export const SectionTitle = styled.h4`
   max-width: 700px;
   margin-bottom: 40px;
 `;
@@ -46,13 +46,19 @@ export const SectionDivider = () => {
 };
 
 export const MockWrapper = (props: any) => {
-  const { children } = props;
+  const {
+    children,
+    justifyContent,
+    gap = { xs: 6, md: 8 },
+    alignItems = { xs: "center", md: "flex-start" },
+  } = props;
 
   return (
     <Stack
       direction={{ xs: "column", md: "row" }}
-      gap={{ xs: 6, md: 8 }}
-      alignItems={"center"}
+      gap={gap}
+      alignItems={alignItems}
+      justifyContent={justifyContent}
     >
       {children}
     </Stack>
@@ -75,7 +81,7 @@ export const BodyTextWrapper = (props: any) => {
 const MockLabel = styled.p`
   font-size: 1rem;
   max-width: 250px;
-  text-align: center;
+  text-align: left;
 `;
 
 interface IPhoneMockProps {

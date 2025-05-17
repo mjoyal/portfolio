@@ -3,21 +3,19 @@ import styled from "@emotion/styled";
 import Spacer from "src/components/Spacer";
 import { StyledP } from "..";
 
-const PageTitle = styled.h2`
-  max-width: 850px;
+const PageTitle = styled.h3`
+  max-width: 700px;
 `;
 
 const CollaboratorsTitle = styled.p`
   font-size: 0.875rem;
-  letter-spacing: 2px;
+  letter-spacing: 2.2px;
+  font-weight: 600;
 `;
 
-const StyledBioText = styled.p`
-  font-size: 1.15rem;
-  max-width: 400px;
+const CollaboratorsText = styled.p`
+  font-size: 1rem;
 `;
-
-const CollaboratorsText = styled.p``;
 
 interface IProjectOverviewProps {
   project: string;
@@ -49,8 +47,8 @@ const ProjectOverview = (props: IProjectOverviewProps) => {
         <PageTitle>{title}</PageTitle>
 
         <Stack direction={{ sm: "column", lg: "row" }} gap={{ sm: 5, md: 10 }}>
-          <StyledBioText>{paragraphs[0]}</StyledBioText>
-          <StyledBioText>{paragraphs[1]}</StyledBioText>
+          <StyledP>{paragraphs[0]}</StyledP>
+          <StyledP>{paragraphs[1]}</StyledP>
         </Stack>
 
         {!!collaborators && (

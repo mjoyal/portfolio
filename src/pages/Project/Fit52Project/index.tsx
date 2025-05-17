@@ -1,11 +1,11 @@
 import { observer } from "mobx-react";
 
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import Spacer from "src/components/Spacer";
 import {
   BodyTextWrapper,
   MockWrapper,
-  PhoneMockImage,
+  PhoneMock,
   ProjectImage,
   ProjectPageContainer,
   SectionDivider,
@@ -15,11 +15,15 @@ import {
 import Fit52Logo from "src/icons/Fit52Logo";
 import useStores from "src/hooks/useStores";
 import ProjectOverview from "../components/ProjectOverview";
+import LittleArrow from "src/icons/LittleArrow";
 
 const Fit52Project = () => {
   const {
     projectStore: { selectedProject },
   } = useStores();
+
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <ProjectPageContainer>
@@ -27,7 +31,7 @@ const Fit52Project = () => {
         <Fit52Logo />
         <ProjectImage src={selectedProject?.imageSource} />
       </Stack>
-      <Spacer level={20} />
+      {isSmallScreen ? <Spacer /> : <Spacer level={20} />}{" "}
       <ProjectOverview
         project="Fit52"
         title="Holistic fitness platform inspired by Carrie Underwood’s wellness philosophy"
@@ -38,28 +42,32 @@ const Fit52Project = () => {
         date="2021-2024"
       />
       <SectionDivider />
-      <Box>
-        <SectionTitle>My Role</SectionTitle>
-        <BodyTextWrapper>
-          <StyledP>
-            Over three years at Fit52, I worked on UI refinement, scalable
-            component architecture, and user-facing feature development. I
-            focused on improving visual clarity, usability, and long-term
-            maintainability. My contributions included refining the user feed
-            experience and leading component refactors to streamline development
-            workflows. I also built interactive features such as the exercise
-            swap system. My role sat at the intersection of design, engineering,
-            and product—translating design intent into polished, scalable
-            interfaces that balanced aesthetics with functionality.
-          </StyledP>
-          <StyledP></StyledP>
-        </BodyTextWrapper>
-      </Box>
+      <Stack direction={{ xs: "column", md: "row" }}>
+        <Box>
+          <SectionTitle>My Role</SectionTitle>
+          <BodyTextWrapper>
+            <StyledP>
+              Over three years at Fit52, I worked on UI refinement, scalable
+              component architecture, and user-facing feature development. I
+              focused on improving visual clarity, usability, and long-term
+              maintainability. <br /> <br />
+              My contributions included refining the social feed experience,
+              leading component refactors to streamline development workflows,
+              and building interactive features such as the exercise swap
+              system. <br /> <br /> My role sat at the intersection of design,
+              engineering, and product—translating design intent into polished,
+              scalable interfaces that balanced aesthetics with functionality.
+            </StyledP>
+            <StyledP></StyledP>
+          </BodyTextWrapper>
+        </Box>
+        <ProjectImage src={selectedProject?.imageSource} />
+      </Stack>
       <SectionDivider />
       <Box>
         <SectionTitle>Social Feed Redesign & Implementation</SectionTitle>
         <BodyTextWrapper>
-          <Stack gap={{ xs: 3, md: 5 }}>
+          <Stack gap={{ xs: 3, md: 5 }} direction={{ xs: "column", md: "row" }}>
             <StyledP>
               I led the redesign and full implementation of the Fit52 user feed
               to improve clarity, engagement, and information density. The
@@ -74,32 +82,48 @@ const Fit52Project = () => {
               encouraged ongoing engagement.
             </StyledP>
           </Stack>
-          <Stack gap={{ xs: 3, md: 5 }}>
-            <StyledP>
-              As part of the update, I removed redundant elements such as the
-              “View All Comments” button and integrated that functionality
-              directly into the comment icon. This streamlined the interface and
-              reinforced more intuitive user behavior.
-            </StyledP>
-            <StyledP>
-              After launch, feedback from both users and team members was
-              immediate and overwhelmingly positive. Many described the feed as
-              “cleaner,” “easier to read,” and “more fun to scroll.”
-            </StyledP>
-          </Stack>
         </BodyTextWrapper>
       </Box>
       <Spacer level={20} />
-      <MockWrapper>
-        <PhoneMockImage src={"/images/fit52/feed-before.png"} />
-        <PhoneMockImage src={"/images/fit52/feed-after.png"} />
+      <MockWrapper gap={{ xs: 6, md: 10 }} alignItems="center">
+        <PhoneMock
+          src={"/images/fit52/feed-before.png"}
+          label="Social feed before redesign"
+        />
+        <LittleArrow rotate="rotate(-90deg)" />
+        <PhoneMock
+          src={"/images/fit52/feed-after.png"}
+          label="Social feed after redesign"
+        />
       </MockWrapper>
       <Spacer level={20} />
-      <MockWrapper>
-        <PhoneMockImage src={"/images/fit52/comments-before.png"} />
-        <PhoneMockImage src={"/images/fit52/comments-after.png"} />
+      <BodyTextWrapper>
+        <Stack gap={{ xs: 3, md: 5 }} direction={{ xs: "column", md: "row" }}>
+          <StyledP>
+            As part of the update, I removed redundant elements such as the
+            “View All Comments” button and integrated that functionality
+            directly into the comment icon. This streamlined the interface and
+            reinforced more intuitive user behavior.
+          </StyledP>
+          <StyledP>
+            After launch, feedback from both users and team members was
+            immediate and overwhelmingly positive. Many described the feed as
+            “cleaner,” “easier to read,” and “more fun to scroll.”
+          </StyledP>
+        </Stack>
+      </BodyTextWrapper>
+      <Spacer level={20} />
+      <MockWrapper gap={{ xs: 6, md: 10 }} alignItems="center">
+        <PhoneMock
+          src={"/images/fit52/comments-before.png"}
+          label="Comments section before redesign"
+        />
+        <LittleArrow rotate="rotate(-90deg)" />
+        <PhoneMock
+          src={"/images/fit52/comments-after.png"}
+          label="Comments section after redesign"
+        />
       </MockWrapper>
-
       <SectionDivider />
       <Box>
         <SectionTitle>TopBar API Refactor</SectionTitle>
@@ -134,7 +158,6 @@ const Fit52Project = () => {
         </BodyTextWrapper>
       </Box>
       <SectionDivider />
-
       <Box>
         <SectionTitle>Building the Exercise Swap System</SectionTitle>
         <BodyTextWrapper>
@@ -165,15 +188,18 @@ const Fit52Project = () => {
           </Stack>
         </BodyTextWrapper>
       </Box>
-
       <Spacer level={20} />
       <MockWrapper>
-        <PhoneMockImage src={"/images/fit52/exercise-swap.png"} />
-        <PhoneMockImage src={"/images/fit52/exercise-suggestions.png"} />
+        <PhoneMock
+          src={"/images/fit52/exercise-swap.png"}
+          label="Exercise detail screen, offering ability to Always Exclude and Randomly Swap exercise"
+        />
+        <PhoneMock
+          src={"/images/fit52/exercise-suggestions.png"}
+          label="Exercise swap screen, giving similar exercises, search feature, and ability to swap for a new exercise"
+        />
       </MockWrapper>
-
       <SectionDivider />
-
       <Box>
         <SectionTitle>Learnings</SectionTitle>
         <BodyTextWrapper>

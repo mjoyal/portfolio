@@ -1,9 +1,6 @@
 import { observer } from "mobx-react";
-import styled from "@emotion/styled";
 
-import Button from "src/components/Button";
-
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import Spacer from "src/components/Spacer";
 import {
   BodyTextWrapper,
@@ -24,15 +21,16 @@ const CrewlywedProject = () => {
     projectStore: { selectedProject },
   } = useStores();
 
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <ProjectPageContainer>
       <Stack gap={3} alignItems={"flex-start"}>
         <CrewlywedLogo />
         <ProjectImage src={selectedProject?.imageSource} />
       </Stack>
-
-      <SectionDivider />
-
+      {isSmallScreen ? <Spacer /> : <Spacer level={20} />}{" "}
       <ProjectOverview
         project="Crewlywed"
         title="The Newlywed game for you and your crew"
@@ -44,9 +42,7 @@ const CrewlywedProject = () => {
         url="Github Repo"
         date="2020"
       />
-
       <SectionDivider />
-
       <Box>
         <SectionTitle>My Role</SectionTitle>
         <BodyTextWrapper>
@@ -85,9 +81,7 @@ const CrewlywedProject = () => {
           </StyledP>
         </BodyTextWrapper>
       </Box>
-
       <Spacer level={20} />
-
       <MockWrapper>
         <PhoneMock
           src={"/images/crewlywed/question-screen.png"}
@@ -98,10 +92,9 @@ const CrewlywedProject = () => {
           label="Players submit a fake answer to fool their friends"
         />
       </MockWrapper>
-
       <SectionDivider />
       <Box>
-        <SectionTitle>Designing Game Mechanics </SectionTitle>
+        <SectionTitle>Building with Game Mechanics</SectionTitle>
 
         <BodyTextWrapper>
           <StyledP>
@@ -118,9 +111,7 @@ const CrewlywedProject = () => {
           </StyledP>
         </BodyTextWrapper>
       </Box>
-
       <Spacer level={20} />
-
       <MockWrapper>
         <PhoneMock
           src={"/images/crewlywed/choice-screen.png"}
@@ -131,9 +122,7 @@ const CrewlywedProject = () => {
           label="The correct answer and scores are revealed for the round"
         />
       </MockWrapper>
-
       <SectionDivider />
-
       <Box>
         <SectionTitle>Outcome & results</SectionTitle>
         <BodyTextWrapper>
@@ -151,16 +140,13 @@ const CrewlywedProject = () => {
           </StyledP>
         </BodyTextWrapper>
       </Box>
-
       <Spacer level={20} />
-
       <MockWrapper>
         <PhoneMock
           src={"/images/crewlywed/final-screen.png"}
           label="The game ends with a final score screen and winner announcement"
         />
       </MockWrapper>
-
       <SectionDivider />
       <Box>
         <SectionTitle>Learnings</SectionTitle>
