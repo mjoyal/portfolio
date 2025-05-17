@@ -34,7 +34,7 @@ const Fit52Project = () => {
       </HeroSectionWrapper>
       <ProjectOverview
         project="Fit52"
-        title="Holistic fitness platform inspired by Carrie Underwood’s wellness philosophy"
+        title="A holistic fitness platform inspired by Carrie Underwood’s wellness philosophy"
         paragraphs={[
           "Built around a 52-card metaphor, fit52 generates dynamic, personalized workouts that adapt to each user’s fitness level and goals. The app also integrates nutrition guidance and community-driven features to support long-term health and motivation.",
         ]}
@@ -92,12 +92,12 @@ const Fit52Project = () => {
       <MockWrapper gap={{ xs: 6, md: 10 }} alignItems="center">
         <PhoneMock
           src={"/images/fit52/feed-before.png"}
-          label="Social feed before redesign"
+          label="Social feed BEFORE redesign"
         />
         <LittleArrow rotate={!isSmallScreen && "rotate(-90deg)"} />
         <PhoneMock
           src={"/images/fit52/feed-after.png"}
-          label="Social feed after redesign"
+          label="Social feed AFTER redesign"
         />
       </MockWrapper>
       <Spacer level={20} />
@@ -120,12 +120,12 @@ const Fit52Project = () => {
       <MockWrapper gap={{ xs: 6, md: 10 }} alignItems="center">
         <PhoneMock
           src={"/images/fit52/comments-before.png"}
-          label="Comments section before redesign"
+          label="Comments section BEFORE redesign"
         />
         <LittleArrow rotate={!isSmallScreen && "rotate(-90deg)"} />
         <PhoneMock
           src={"/images/fit52/comments-after.png"}
-          label="Comments section after redesign"
+          label="Comments section AFTER redesign"
         />
       </MockWrapper>
       <SectionDivider />

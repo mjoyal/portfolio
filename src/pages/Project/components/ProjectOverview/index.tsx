@@ -49,7 +49,7 @@ const ProjectOverview = (props: IProjectOverviewProps) => {
         <Spacer />
         <PageTitle>{title}</PageTitle>
 
-        <Stack direction={{ sm: "column", lg: "row" }} gap={{ sm: 5, md: 10 }}>
+        <Stack direction={{ sm: "column", lg: "row" }} gap={{ xs: 5, md: 10 }}>
           <StyledP>{paragraphs[0]}</StyledP>
           <StyledP>{paragraphs[1]}</StyledP>
         </Stack>

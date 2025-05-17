@@ -33,6 +33,7 @@ const CrewlywedProject = () => {
     <ProjectPageContainer>
       <HeroSectionWrapper>
         <CrewlywedLogo />
+
         <ProjectImage src={selectedProject?.imageSource} />
       </HeroSectionWrapper>
       <ProjectOverview
@@ -47,7 +48,7 @@ const CrewlywedProject = () => {
         date="2020"
       />
       <SectionDivider />
-      <Stack direction={{ xs: "column", md: "row" }}>
+      <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 5 }}>
         <Box>
           <SectionTitle>My Role</SectionTitle>
           <BodyTextWrapper>
@@ -76,9 +77,9 @@ const CrewlywedProject = () => {
           <StyledP>
             The UI was designed to keep this flow light, funny, and
             social—blending clear structure with playful visuals to support both
-            competition and connection. Every screen was built to feel intuitive
-            at a glance, so players could focus on laughing, bluffing, and
-            reacting—not figuring out how to play.
+            engaging gameplay and connection. Every screen was built to feel
+            intuitive at a glance, so players could focus on laughing, bluffing,
+            and reacting—not figuring out how to play.
           </StyledP>
           <StyledP>
             Characters are quirky but expressive, prompts are casual and weird

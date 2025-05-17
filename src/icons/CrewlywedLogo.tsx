@@ -1,7 +1,12 @@
+import { useMediaQuery, useTheme } from "@mui/material";
+
 const CrewlywedLogo = () => {
+  const theme = useTheme();
+
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <svg
-      width="500"
+      width={isSmallScreen ? 300 : 500}
       height="100%"
       viewBox="0 0 699 141"
       fill="none"

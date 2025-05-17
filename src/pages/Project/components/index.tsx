@@ -32,7 +32,7 @@ export const PhoneMockImage = styled.img`
   height: 100%;
 `;
 
-export const SectionTitle = styled.h4`
+export const SectionTitle = styled.h3`
   max-width: 700px;
   margin-bottom: 40px;
 `;
@@ -88,7 +88,7 @@ const StyledHeroSectionWrapper = styled(Stack)`
 export const HeroSectionWrapper = (props: any) => {
   const { children } = props;
   return (
-    <StyledHeroSectionWrapper gap={5} alignItems={"flex-start"}>
+    <StyledHeroSectionWrapper gap={3} alignItems={"flex-start"}>
       {children}
     </StyledHeroSectionWrapper>
   );
