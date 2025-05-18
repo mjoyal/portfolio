@@ -29,6 +29,18 @@ const SmallerQuoteText = styled.h6`
   max-width: 500px;
 `;
 
+const SecondaryImage = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+
+  @media (min-width: 900px) {
+    height: 650px;
+    width: auto;
+  }
+`;
+
 const GitpitProject = () => {
   const {
     projectStore: { selectedProject },
@@ -88,7 +100,7 @@ const GitpitProject = () => {
             </StyledP>
           </Stack>
         </Box>
-        <ProjectImage src={"/images/gigpit/hero.png"} />
+        <SecondaryImage src={"/images/gigpit/secondary.png"} />
       </Stack>
 
       <SectionDivider />
