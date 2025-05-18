@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 
 const Scroller = styled.div`
   display: inline-flex;
-  animation: scroll 150s linear infinite;
+  animation: scroll 200s linear infinite;
 
   @keyframes scroll {
     0% {
@@ -17,6 +17,10 @@ const Scroller = styled.div`
     100% {
       transform: translateX(-50%);
     }
+  }
+
+  @media (min-width: 900px) {
+    animation: scroll 300s linear infinite;
   }
 `;
 

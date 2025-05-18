@@ -1,4 +1,4 @@
-import { Slide, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import { observer } from "mobx-react";
 import NumberedListItem from "src/components/NumberedListItem";
 import TechnologyTitle from "src/components/Titles/TechnologyTitle";

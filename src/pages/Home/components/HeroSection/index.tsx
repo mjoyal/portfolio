@@ -68,7 +68,7 @@ const HeroSection = () => {
         justifyContent={{ xs: "center", md: "flex-end" }}
         alignItems={"flex-end"}
       >
-        <FooterText>making the internet prettier since 2019.</FooterText>
+        <FooterText>* making the internet prettier since 2019</FooterText>
         {/* {isMedium && (
           <button onClick={() => scrollToAnchor("bio")}>
             <LittleArrow />
