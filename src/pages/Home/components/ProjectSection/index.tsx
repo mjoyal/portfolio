@@ -5,7 +5,6 @@ import { observer } from "mobx-react";
 import useStores from "src/hooks/useStores";
 import { Box, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
-import SlideUpMotion from "src/components/SlideUpMotion";
 
 const ProjectContainer = styled.div`
   display: flex;

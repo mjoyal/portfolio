@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const ImageWrapper = styled(motion.button)`
   overflow: hidden;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
 `;
 
 const ZoomImage = styled(motion.img)`
