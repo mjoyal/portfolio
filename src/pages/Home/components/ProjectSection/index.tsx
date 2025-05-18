@@ -67,20 +67,16 @@ const ProjectSection = () => {
 
   return (
     <Box id="work" paddingTop={"30px"}>
-      <SlideUpMotion>
-        <ProjectsTitle />
-      </SlideUpMotion>
+      <ProjectsTitle />
 
       <Spacer />
       <ProjectContainer>
         {projects.map((project) => (
-          <SlideUpMotion>
-            <ProjectCard
-              key={project.id}
-              project={project}
-              setIsVisible={setIsVisible}
-            />
-          </SlideUpMotion>
+          <ProjectCard
+            key={project.id}
+            project={project}
+            setIsVisible={setIsVisible}
+          />
         ))}
       </ProjectContainer>
       <CustomCursor
