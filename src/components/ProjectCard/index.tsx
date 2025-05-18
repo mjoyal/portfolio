@@ -21,6 +21,7 @@ const ZoomImage = styled(motion.img)`
 
 interface IProjectCardProps {
   project: IProjectModel;
+  // eslint-disable-next-line no-unused-vars
   setIsVisible: (arg1: boolean) => void;
 }
 

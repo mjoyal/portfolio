@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { Box, Stack, useTheme } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import PreText from "./components/PreText";
-import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
+// import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
 
 const HeroContainer = styled.div`
   position: relative;
