@@ -50,14 +50,14 @@ const SectionDivider = styled.div`
 const SkillsSection = () => {
   return (
     <Stack>
-      <Stack
-        maxWidth={"90ch"}
-        marginLeft={{ sm: 3, md: 4, lg: 6 }}
-        marginRight={{ sm: 3, md: 4 }}
-        alignItems={"flex-start"}
-        gap={6}
-      >
-        <SlideUpMotion>
+      <SlideUpMotion>
+        <Stack
+          maxWidth={"90ch"}
+          marginLeft={{ sm: 3, md: 4, lg: 6 }}
+          marginRight={{ sm: 3, md: 4 }}
+          alignItems={"flex-start"}
+          gap={6}
+        >
           <h1>
             Just like camping, I believe you should leave the codebase
             <StyledEmphasis> better than</StyledEmphasis> you found it.
@@ -66,8 +66,8 @@ const SkillsSection = () => {
           <Button href="/assets/mackenzie-joyal-resume-2025.pdf" isDownload>
             Download my resume
           </Button>
-        </SlideUpMotion>
-      </Stack>
+        </Stack>
+      </SlideUpMotion>
       <SectionDivider />
 
       <Stack direction={{ md: "row" }} rowGap={5}>
