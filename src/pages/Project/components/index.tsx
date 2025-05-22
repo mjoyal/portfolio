@@ -19,6 +19,18 @@ export const ProjectImage = styled.img`
   }
 `;
 
+export const SecondaryImage = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+
+  @media (min-width: 900px) {
+    height: 650px;
+    width: auto;
+  }
+`;
+
 export const ProjectPageContainer = styled(Box)`
   /* These 100% widths are important to keep the overall margin of the site */
   width: 100%;
@@ -102,16 +114,18 @@ const MockLabel = styled.p`
 
 interface IPhoneMockProps {
   src: string;
-  label: string;
+  label?: string;
+  title?: string;
 }
 
 export const PhoneMock = (props: IPhoneMockProps) => {
-  const { src, label } = props;
+  const { src, label, title } = props;
 
   return (
     <Stack alignItems={"center"} gap={2.5}>
+      {!!title && <h5>{title}</h5>}
       <PhoneMockImage src={src} alt={label} />
-      <MockLabel>{label}</MockLabel>
+      {!!label && <MockLabel>{label}</MockLabel>}
     </Stack>
   );
 };

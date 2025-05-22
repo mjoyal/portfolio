@@ -9,6 +9,7 @@ import {
   PhoneMock,
   ProjectImage,
   ProjectPageContainer,
+  SecondaryImage,
   SectionDivider,
   SectionTitle,
   StyledP,
@@ -66,7 +67,7 @@ const Fit52Project = () => {
             <StyledP></StyledP>
           </BodyTextWrapper>
         </Box>
-        <ProjectImage src={selectedProject?.imageSource} />
+        <SecondaryImage src={"/images/fit52/secondary.png"} />
       </Stack>
       <SectionDivider />
       <Box>
@@ -92,13 +93,15 @@ const Fit52Project = () => {
       <Spacer level={20} />
       <MockWrapper gap={{ xs: 6, md: 10 }} alignItems="center">
         <PhoneMock
+          title="Social Feed - Before"
           src={"/images/fit52/feed-before.png"}
-          label="Social feed BEFORE redesign"
+          // label="The layout felt clunky and crowded, with scattered, redundant actions and oversized elements taking up valuable screen space."
         />
         <LittleArrow rotate={!isSmallScreen && "rotate(-90deg)"} />
         <PhoneMock
+          title="Social Feed - After"
           src={"/images/fit52/feed-after.png"}
-          label="Social feed AFTER redesign"
+          // label="A more modern, streamlined feed with cleaner actions—for example, the ‘View all comments’ function is now folded into the comment button."
         />
       </MockWrapper>
       <Spacer level={20} />
@@ -120,13 +123,13 @@ const Fit52Project = () => {
       <Spacer level={20} />
       <MockWrapper gap={{ xs: 6, md: 10 }} alignItems="center">
         <PhoneMock
+          title="Comments View - Before"
           src={"/images/fit52/comments-before.png"}
-          label="Comments section BEFORE redesign"
         />
         <LittleArrow rotate={!isSmallScreen && "rotate(-90deg)"} />
         <PhoneMock
+          title="Comments View - After"
           src={"/images/fit52/comments-after.png"}
-          label="Comments section AFTER redesign"
         />
       </MockWrapper>
       <SectionDivider />

@@ -15,6 +15,7 @@ import {
   BodyTextWrapper,
   PhoneMock,
   HeroSectionWrapper,
+  SecondaryImage,
 } from "../components";
 import GigpitLogo from "src/icons/GigpitLogo";
 import useStores from "src/hooks/useStores";
@@ -29,19 +30,7 @@ const SmallerQuoteText = styled.h6`
   max-width: 500px;
 `;
 
-const SecondaryImage = styled.img`
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-
-  @media (min-width: 900px) {
-    height: 650px;
-    width: auto;
-  }
-`;
-
-const GitpitProject = () => {
+const GigpitProject = () => {
   const {
     projectStore: { selectedProject },
   } = useStores();
@@ -158,12 +147,14 @@ const GitpitProject = () => {
 
       <MockWrapper>
         <PhoneMock
+          title={"Browsing as a guest"}
           src={"/images/gigpit/home-page.png"}
-          label="Explore page hero section, user not logged in"
+          label="Users can discover what’s happening this week—no login required"
         />
         <PhoneMock
+          title={"Personalized home"}
           src={"/images/gigpit/home-page-logged-in.png"}
-          label="Customized explore page, logged in state, user has access to their saved upcoming shows"
+          label="Returning users see their saved gigs and curated suggestions"
         />
       </MockWrapper>
       <SectionDivider />
@@ -205,12 +196,14 @@ const GitpitProject = () => {
 
       <MockWrapper>
         <PhoneMock
+          title="Show detail view"
           src={"/images/gigpit/show-detail.png"}
-          label="Show detail page, featuring sticky buttons for key actions"
+          label="Key actions like tickets and directions stay sticky for quick access."
         />
         <PhoneMock
+          title="Deeper home exploration"
           src={"/images/gigpit/home-page-scrolled.png"}
-          label="Further down Explore page, showing key actions cards for navigation"
+          label="Action cards keep navigation playful and intuitive, helping users explore by mood, artist, or resource."
         />
       </MockWrapper>
 
@@ -249,12 +242,14 @@ const GitpitProject = () => {
       <Spacer level={20} />
       <MockWrapper>
         <PhoneMock
+          title="Browse all shows"
           src={"/images/gigpit/shows-grid.png"}
-          label="Shows page, grid view. Ability to search, filter, and switch to list or map view."
+          label="Users can search, filter, and switch between grid, list, or map views."
         />
         <PhoneMock
+          title="Artist's Dashboard"
           src={"/images/gigpit/artist-profile.png"}
-          label="Artist Profile, displaying their upcoming shows, their profile stats, and their suggested shows"
+          label="Artists can manage upcoming shows, track performance, and explore suggestions tailored to them."
         />
       </MockWrapper>
 
@@ -284,4 +279,4 @@ const GitpitProject = () => {
   );
 };
 
-export default observer(GitpitProject);
+export default observer(GigpitProject);
