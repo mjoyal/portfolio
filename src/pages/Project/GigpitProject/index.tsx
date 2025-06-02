@@ -114,50 +114,6 @@ const GigpitProject = () => {
       </Stack>
 
       <SectionDivider />
-      <Box>
-        <SectionTitle>Reimagining the home page</SectionTitle>
-        <BodyTextWrapper>
-          <Stack gap={{ xs: 3, md: 5 }}>
-            <StyledP>
-              Initially, we considered separating content into a traditional
-              home screen and a personalized “For You” page, but the overlap
-              introduced unnecessary complexity.
-            </StyledP>
-            <StyledP>
-              Instead, we embedded personalization directly into the home screen
-              using dynamic carousels based on user location and saved
-              shows—keeping the experience streamlined and relevant.
-            </StyledP>
-          </Stack>
-          <Stack gap={{ xs: 3, md: 5 }}>
-            <StyledP>
-              This approach gave users immediate access to content that felt
-              tailored, while maintaining a clean, focused interface.
-            </StyledP>
-            <StyledP>
-              The structure also sets us up to expand personalization over time,
-              incorporating behaviour like attended shows, liked events, or
-              artist follows.
-            </StyledP>
-          </Stack>
-        </BodyTextWrapper>
-      </Box>
-
-      <Spacer level={20} />
-
-      <MockWrapper>
-        <PhoneMock
-          title={"Browsing as a guest"}
-          src={"/images/gigpit/home-page.png"}
-          label="Users can discover what’s happening this week—no login required"
-        />
-        <PhoneMock
-          title={"Personalized home"}
-          src={"/images/gigpit/home-page-logged-in.png"}
-          label="Returning users see their saved gigs and curated suggestions"
-        />
-      </MockWrapper>
-      <SectionDivider />
 
       <Box>
         <SectionTitle>Expansive Navigation</SectionTitle>
@@ -208,6 +164,51 @@ const GigpitProject = () => {
       </MockWrapper>
 
       <SectionDivider />
+      <Box>
+        <SectionTitle>Reimagining the home page</SectionTitle>
+        <BodyTextWrapper>
+          <Stack gap={{ xs: 3, md: 5 }}>
+            <StyledP>
+              Initially, we considered separating content into a traditional
+              home screen and a personalized “For You” page, but the overlap
+              introduced unnecessary complexity.
+            </StyledP>
+            <StyledP>
+              Instead, we embedded personalization directly into the home screen
+              using dynamic carousels based on user location and saved
+              shows—keeping the experience streamlined and relevant.
+            </StyledP>
+          </Stack>
+          <Stack gap={{ xs: 3, md: 5 }}>
+            <StyledP>
+              This approach gave users immediate access to content that felt
+              tailored, while maintaining a clean, focused interface.
+            </StyledP>
+            <StyledP>
+              The structure also sets us up to expand personalization over time,
+              incorporating behaviour like attended shows, liked events, or
+              artist follows.
+            </StyledP>
+          </Stack>
+        </BodyTextWrapper>
+      </Box>
+
+      <Spacer level={20} />
+
+      <MockWrapper>
+        <PhoneMock
+          title={"Browsing as a guest"}
+          src={"/images/gigpit/home-page.png"}
+          label="Users can discover what’s happening this week—no login required"
+        />
+        <PhoneMock
+          title={"Personalized home"}
+          src={"/images/gigpit/home-page-logged-in.png"}
+          label="Returning users see their saved gigs and curated suggestions"
+        />
+      </MockWrapper>
+      <SectionDivider />
+
       <Box>
         <SectionTitle>Impact</SectionTitle>
         <Stack direction={{ xs: "column", md: "row" }} gap={{ xs: 3, md: 10 }}>
