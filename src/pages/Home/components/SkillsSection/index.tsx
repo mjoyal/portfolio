@@ -84,7 +84,10 @@ const SkillsSection = () => {
               <NumberedListItem number="02" listItem="UX/UI Design" />
             </SlideUpMotion>
             <SlideUpMotion>
-              <NumberedListItem number="03" listItem="Business Degree" />
+              <NumberedListItem
+                number="03"
+                listItem="Entrepreneurship Degree"
+              />
             </SlideUpMotion>
           </ListContainer>
         </StyledStack>
