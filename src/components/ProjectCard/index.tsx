@@ -33,7 +33,6 @@ const ProjectCard = (props: IProjectCardProps) => {
   const {
     project: { id, name, slug, imageSource, quickDescription },
     setIsVisible,
-    setCallOut
     ...rest
   } = props;
 
@@ -53,7 +52,7 @@ const ProjectCard = (props: IProjectCardProps) => {
         }}
         transition={{ duration: 0.4, ease: "easeOut" }}
         onMouseEnter={() => setIsVisible(true)}
-        onMouseLeave={() => }
+        onMouseLeave={() => setIsVisible(false)}
         {...rest}
       >
         <ZoomImage
