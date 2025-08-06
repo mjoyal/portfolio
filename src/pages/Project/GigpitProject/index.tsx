@@ -89,7 +89,7 @@ const GigpitProject = () => {
             </StyledP>
           </Stack>
         </Box>
-        <SecondaryImage src={"/images/gigpit/secondary.png"} />
+        <SecondaryImage src={"/images/gigpit/secondary.webp"} />
       </Stack>
 
       <SectionDivider />

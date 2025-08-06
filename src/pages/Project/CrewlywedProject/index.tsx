@@ -68,7 +68,7 @@ const CrewlywedProject = () => {
             </StyledP>
           </BodyTextWrapper>
         </Box>
-        <BirdImage src="/images/crewlywed/bird.png" />
+        <BirdImage src="/images/crewlywed/bird.webp" />
       </Stack>
       <SectionDivider />
       <Box>

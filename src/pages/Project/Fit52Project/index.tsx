@@ -67,7 +67,7 @@ const Fit52Project = () => {
             <StyledP></StyledP>
           </BodyTextWrapper>
         </Box>
-        <SecondaryImage src={"/images/fit52/secondary.png"} />
+        <SecondaryImage src={"/images/fit52/secondary.webp"} />
       </Stack>
       <SectionDivider />
       <Box>

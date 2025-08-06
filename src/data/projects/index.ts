@@ -4,14 +4,14 @@ const projects = [
     name: "Gigpit",
     slug: "gigpit",
     role: "UX/UI Design & UI Implementation",
-    imageSource: "/images/gigpit/hero.png",
+    imageSource: "/images/gigpit/hero.webp",
   },
   {
     id: 2,
     name: "Fit52",
     slug: "fit52",
     role: "Engineering & UX/UI Design",
-    imageSource: "/images/fit52/hero.png",
+    imageSource: "/images/fit52/hero.webp",
   },
 
   {
@@ -19,7 +19,7 @@ const projects = [
     name: "Crewlywed",
     slug: "crewlywed",
     role: "Engineering & Design",
-    imageSource: "/images/crewlywed/hero.png",
+    imageSource: "/images/crewlywed/hero.webp",
   },
 ];
 
