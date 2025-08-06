@@ -94,13 +94,13 @@ const Fit52Project = () => {
       <MockWrapper gap={{ xs: 6, md: 10 }} alignItems="center">
         <PhoneMock
           title="Social Feed - Before"
-          src={"/images/fit52/feed-before.png"}
+          src={"/images/fit52/feed-before.webp"}
           // label="The layout felt clunky and crowded, with scattered, redundant actions and oversized elements taking up valuable screen space."
         />
         <LittleArrow rotate={!isSmallScreen && "rotate(-90deg)"} />
         <PhoneMock
           title="Social Feed - After"
-          src={"/images/fit52/feed-after.png"}
+          src={"/images/fit52/feed-after.webp"}
           // label="A more modern, streamlined feed with cleaner actions—for example, the ‘View all comments’ function is now folded into the comment button."
         />
       </MockWrapper>
@@ -124,12 +124,12 @@ const Fit52Project = () => {
       <MockWrapper gap={{ xs: 6, md: 10 }} alignItems="center">
         <PhoneMock
           title="Comments View - Before"
-          src={"/images/fit52/comments-before.png"}
+          src={"/images/fit52/comments-before.webp"}
         />
         <LittleArrow rotate={!isSmallScreen && "rotate(-90deg)"} />
         <PhoneMock
           title="Comments View - After"
-          src={"/images/fit52/comments-after.png"}
+          src={"/images/fit52/comments-after.webp"}
         />
       </MockWrapper>
       <SectionDivider />
@@ -199,11 +199,11 @@ const Fit52Project = () => {
       <Spacer level={20} />
       <MockWrapper>
         <PhoneMock
-          src={"/images/fit52/exercise-swap.png"}
+          src={"/images/fit52/exercise-swap.webp"}
           label="Exercise detail screen, offering ability to Always Exclude and Randomly Swap exercise"
         />
         <PhoneMock
-          src={"/images/fit52/exercise-suggestions.png"}
+          src={"/images/fit52/exercise-suggestions.webp"}
           label="Exercise swap screen, giving similar exercises, search feature, and ability to swap for a new exercise"
         />
       </MockWrapper>

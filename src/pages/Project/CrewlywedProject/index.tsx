@@ -93,11 +93,11 @@ const CrewlywedProject = () => {
       <Spacer level={20} />
       <MockWrapper>
         <PhoneMock
-          src={"/images/crewlywed/question-screen.png"}
+          src={"/images/crewlywed/question-screen.webp"}
           label="Players are shown this round’s question"
         />
         <PhoneMock
-          src={"/images/crewlywed/response-screen.png"}
+          src={"/images/crewlywed/response-screen.webp"}
           label="Players submit a fake answer to fool their friends"
         />
       </MockWrapper>
@@ -123,11 +123,11 @@ const CrewlywedProject = () => {
       <Spacer level={20} />
       <MockWrapper>
         <PhoneMock
-          src={"/images/crewlywed/choice-screen.png"}
+          src={"/images/crewlywed/choice-screen.webp"}
           label="Players guess which response is Will’s real answer"
         />
         <PhoneMock
-          src={"/images/crewlywed/results-screen.png"}
+          src={"/images/crewlywed/results-screen.webp"}
           label="The correct answer and scores are revealed for the round"
         />
       </MockWrapper>
@@ -152,7 +152,7 @@ const CrewlywedProject = () => {
       <Spacer level={20} />
       <MockWrapper>
         <PhoneMock
-          src={"/images/crewlywed/final-screen.png"}
+          src={"/images/crewlywed/final-screen.webp"}
           label="The game ends with a final score screen and winner announcement"
         />
       </MockWrapper>

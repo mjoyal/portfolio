@@ -153,12 +153,12 @@ const GigpitProject = () => {
       <MockWrapper>
         <PhoneMock
           title="Show detail view"
-          src={"/images/gigpit/show-detail.png"}
+          src={"/images/gigpit/show-detail.webp"}
           label="Key actions like tickets and directions stay sticky for quick access."
         />
         <PhoneMock
           title="Deeper home exploration"
-          src={"/images/gigpit/home-page-scrolled.png"}
+          src={"/images/gigpit/home-page-scrolled.webp"}
           label="Action cards keep navigation playful and intuitive, helping users explore by mood, artist, or resource."
         />
       </MockWrapper>
@@ -198,12 +198,12 @@ const GigpitProject = () => {
       <MockWrapper>
         <PhoneMock
           title={"Browsing as a guest"}
-          src={"/images/gigpit/home-page.png"}
+          src={"/images/gigpit/home-page.webp"}
           label="Users can discover what’s happening this week—no login required"
         />
         <PhoneMock
           title={"Personalized home"}
-          src={"/images/gigpit/home-page-logged-in.png"}
+          src={"/images/gigpit/home-page-logged-in.webp"}
           label="Returning users see their saved gigs and curated suggestions"
         />
       </MockWrapper>
@@ -244,12 +244,12 @@ const GigpitProject = () => {
       <MockWrapper>
         <PhoneMock
           title="Browse all shows"
-          src={"/images/gigpit/shows-grid.png"}
+          src={"/images/gigpit/shows-grid.webp"}
           label="Users can search, filter, and switch between grid, list, or map views."
         />
         <PhoneMock
           title="Artist's Dashboard"
-          src={"/images/gigpit/artist-profile.png"}
+          src={"/images/gigpit/artist-profile.webp"}
           label="Artists can manage upcoming shows, track performance, and explore suggestions tailored to them."
         />
       </MockWrapper>
