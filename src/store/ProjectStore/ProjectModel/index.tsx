@@ -16,7 +16,7 @@ const ProjectModel = types
     return {
       get quickDescription(): string {
         if (self.slug === "fit52") {
-          return "Carrie Underwood's fitness app (pre-MAGA 🥲)";
+          return "Carrie Underwood's fitness app";
         }
 
         if (self.slug === "crewlywed") {
