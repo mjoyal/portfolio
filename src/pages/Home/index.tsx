@@ -5,7 +5,6 @@ import ProjectSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
 import BioSection from "./components/BioSection";
 import SlideUpMotion from "src/components/SlideUpMotion";
-import { Stack } from "@mui/material";
 
 const HomePageContainer = styled.div`
   /* These 100% widths are important to keep the overall margin of the site */
