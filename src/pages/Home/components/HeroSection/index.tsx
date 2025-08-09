@@ -10,7 +10,7 @@ const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 92vh;
+  height: 88vh;
 `;
 
 const TextContainer = styled.div`
@@ -33,7 +33,7 @@ const HeroText = styled.h4`
 `;
 
 const FooterText = styled.p`
-  font-size: clamp(1.25rem, 3vw, 1.35rem);
+  font-size: clamp(1.15rem, 3vw, 1.35rem);
   font-weight: 400;
   text-align: center;
 `;
@@ -55,6 +55,9 @@ const HeroSection = () => {
             .
           </Box>
         </HeroText>
+        <Stack display={{ xs: "block", sm: "none" }} paddingTop={3}>
+          <FooterText>* making the internet prettier since 2019</FooterText>
+        </Stack>
       </TextContainer>
       <Stack
         sx={{
@@ -68,7 +71,9 @@ const HeroSection = () => {
         justifyContent={{ xs: "center", md: "flex-end" }}
         alignItems={"flex-end"}
       >
-        <FooterText>* making the internet prettier since 2019</FooterText>
+        <Stack display={{ xs: "none", sm: "block" }}>
+          <FooterText>* making the internet prettier since 2019</FooterText>
+        </Stack>
         {/* {isMedium && (
           <button onClick={() => scrollToAnchor("bio")}>
             <LittleArrow />
