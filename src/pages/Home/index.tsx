@@ -5,6 +5,7 @@ import ProjectSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
 import BioSection from "./components/BioSection";
 import SlideUpMotion from "src/components/SlideUpMotion";
+import { Stack } from "@mui/material";
 
 const HomePageContainer = styled.div`
   /* These 100% widths are important to keep the overall margin of the site */
@@ -20,11 +21,23 @@ const SectionDivider = styled.div`
   }
 `;
 
+const FirstSectionDivider = styled.div`
+  height: 50px;
+
+  @media (min-width: 600px) {
+    height: 150px;
+  }
+
+  @media (min-width: 900px) {
+    height: 200px;
+  }
+`;
+
 const HomePage = () => {
   return (
     <HomePageContainer>
       <HeroSection />
-      <SectionDivider id="bio" />
+      <FirstSectionDivider id="bio" />
       <SlideUpMotion>
         <BioSection />
       </SlideUpMotion>
