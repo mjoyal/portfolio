@@ -3,19 +3,14 @@ import { Box } from "@mui/material";
 
 const StyledPreText = styled.p`
   font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
   line-height: 1;
   letter-spacing: -0.03em;
-  margin-left: 2%;
   margin-bottom: -1%;
   font-style: italic;
 
-  ${({ theme }) => (theme as any).breakpoints.up("sm")} {
-    margin-left: 10%;
-    margin-bottom: -1%;
-  }
-
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    margin-bottom: -3%;
+    margin-bottom: -2%;
   }
 `;
 

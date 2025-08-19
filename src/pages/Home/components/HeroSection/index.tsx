@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import PreText from "./components/PreText";
 
 const HeroContainer = styled.div`
@@ -7,28 +7,39 @@ const HeroContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   height: 60vh;
+  gap: 1rem;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+  }
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-bottom: 75px;
-
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-  }
+  width: 100%;
 `;
 
 const HeroText = styled.h4`
   font-weight: 600;
-  font-size: clamp(5.5rem, 18vw, 13rem);
+  font-size: clamp(6rem, 22vw, 16rem);
   letter-spacing: -0.05em;
   line-height: 1;
   text-align: left;
+`;
+
+const IntroText = styled.h6`
+  width: 400px;
+  max-width: 100%;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    margin-right: 2rem;
+  }
 `;
 
 const HeroSection = () => {
@@ -41,32 +52,17 @@ const HeroSection = () => {
       <TextContainer>
         <HeroText>
           <PreText />
-          Creative
-          <br />
-          Developer
+          Design Engineer
           <Box component="span" color="text.secondary">
             .
           </Box>
         </HeroText>
       </TextContainer>
-      <Stack
-        sx={{
-          width: "100%",
-          position: "absolute",
-          bottom: 45,
-        }}
-        gap={{ xs: 5, md: 10 }}
-        paddingRight={{ xs: "0px", sm: "30px" }}
-        direction={"row"}
-        justifyContent={{ xs: "center", md: "flex-end" }}
-        alignItems={"flex-end"}
-      >
-        {/* {isMedium && (
-          <button onClick={() => scrollToAnchor("bio")}>
-            <LittleArrow />
-          </button>
-        )} */}
-      </Stack>
+
+      <IntroText>
+        I specialize in app design, mobile-first UI/UX, and UI
+        engineering—always built with strategy, detail, and scalability in mind.
+      </IntroText>
     </HeroContainer>
   );
 };
