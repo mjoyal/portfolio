@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import ProjectCard from "../../../../components/ProjectCard";
-import ProjectsTitle from "../../../../components/Titles/ProjectsTitle";
 import { observer } from "mobx-react";
 import useStores from "src/hooks/useStores";
 import { Box, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
+import Spacer from "src/components/Spacer";
 
 const ProjectContainer = styled.div`
   display: flex;
@@ -41,10 +41,6 @@ const CustomCursor = styled(Stack)<{ isVisible: boolean }>`
   white-space: nowrap;
 `;
 
-const Spacer = styled.div`
-  height: 48px;
-`;
-
 const ProjectSection = () => {
   const {
     projectStore: { projects },
@@ -66,9 +62,8 @@ const ProjectSection = () => {
 
   return (
     <Box id="work" paddingTop={"30px"}>
-      <ProjectsTitle />
-
-      <Spacer />
+      <h4>Work that's changed me</h4>
+      <Spacer level={2} />
       <ProjectContainer>
         {projects.map((project) => (
           <ProjectCard

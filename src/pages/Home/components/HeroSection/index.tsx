@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { Box, Stack } from "@mui/material";
 import PreText from "./components/PreText";
-// import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
 
 const HeroContainer = styled.div`
   position: relative;
@@ -10,7 +9,7 @@ const HeroContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 88vh;
+  height: 60vh;
 `;
 
 const TextContainer = styled.div`
@@ -32,17 +31,11 @@ const HeroText = styled.h4`
   text-align: left;
 `;
 
-const FooterText = styled.p`
-  font-size: clamp(1.15rem, 3vw, 1.35rem);
-  font-weight: 400;
-  text-align: center;
-`;
-
 const HeroSection = () => {
   //TODO: Come back to the arrow
   // const theme = useTheme();
   // const scrollToAnchor = useSmoothScrollToAnchor();
-
+  // "Making The internet prettier since 2019"
   return (
     <HeroContainer>
       <TextContainer>
@@ -55,9 +48,6 @@ const HeroSection = () => {
             .
           </Box>
         </HeroText>
-        <Stack display={{ xs: "block", sm: "none" }} paddingTop={3}>
-          <FooterText>* making the internet prettier since 2019</FooterText>
-        </Stack>
       </TextContainer>
       <Stack
         sx={{
@@ -71,9 +61,6 @@ const HeroSection = () => {
         justifyContent={{ xs: "center", md: "flex-end" }}
         alignItems={"flex-end"}
       >
-        <Stack display={{ xs: "none", sm: "block" }}>
-          <FooterText>* making the internet prettier since 2019</FooterText>
-        </Stack>
         {/* {isMedium && (
           <button onClick={() => scrollToAnchor("bio")}>
             <LittleArrow />
