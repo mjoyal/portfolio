@@ -23,8 +23,8 @@ const AppWrapper = styled.div`
   padding-right: clamp(20px, 4vw, 120px);
 
   @media (min-width: 900px) {
-    padding-left: clamp(20px, 8vw, 120px);
-    padding-right: clamp(20px, 8vw, 120px);
+    padding-left: clamp(20px, 2vw, 120px);
+    padding-right: clamp(20px, 2vw, 120px);
   }
 `;
 
