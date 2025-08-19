@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import { Box, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import { useState } from "react";
 import Toast from "../Toast";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
 
 const Container = styled(Stack)`
@@ -18,27 +18,16 @@ const Container = styled(Stack)`
   }
 `;
 
-const StyledLinkText = styled.h5`
-  color: ${({ theme }) => (theme as any).palette.text.primary};
-  transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
-  &:hover {
-    color: ${({ theme }) => (theme as any).palette.text.secondary};
-  }
-  font-weight: 500;
-`;
-
-const HomeButton = styled.button``;
-
-const Logo = styled.h4`
-  font-weight: 700;
-  letter-spacing: -0.8px;
+const NavPillButton = styled.button`
+  padding: 6px 14px;
+  border-radius: 100px;
+  background-color: rgba(160, 199, 255, 0.3);
 `;
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const scrollToAnchor = useSmoothScrollToAnchor();
-  const { pathname } = useLocation();
 
   const handleCopy = async () => {
     try {
@@ -52,37 +41,28 @@ const NavBar = () => {
     }
   };
 
-  const isHomePage = pathname === "/";
-
   return (
     <Container
       direction={"row"}
       alignItems={"center"}
       justifyContent={"space-between"}
     >
-      <HomeButton onClick={() => navigate("/")}>
-        <Logo>
-          {`m`}
-          <Box component="span" color="text.secondary">
-            {"/>"}
-          </Box>
-        </Logo>
-      </HomeButton>
+      <NavPillButton onClick={() => navigate("/")}>
+        <h6>Home</h6>
+      </NavPillButton>
 
-      <Stack direction={"row"} gap={5}>
-        {isHomePage ? (
-          <button onClick={() => scrollToAnchor("work")}>
-            <StyledLinkText>work</StyledLinkText>
-          </button>
-        ) : (
-          <button onClick={() => navigate("/")}>
-            <StyledLinkText>home</StyledLinkText>
-          </button>
-        )}
+      <button onClick={() => navigate("/")}>
+        <h5>MacKenzie Joyal</h5>
+      </button>
 
-        <button onClick={handleCopy}>
-          <StyledLinkText>say hi!</StyledLinkText>
-        </button>
+      <Stack direction={"row"} gap={2}>
+        <NavPillButton onClick={() => scrollToAnchor("about")}>
+          <h6>About</h6>
+        </NavPillButton>
+
+        <NavPillButton onClick={handleCopy}>
+          <h6>Say hi!</h6>
+        </NavPillButton>
       </Stack>
       <Toast
         message="Email copied – chat soon :)"
