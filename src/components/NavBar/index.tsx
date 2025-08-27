@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Stack } from "@mui/material";
+import { Stack, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import Toast from "../Toast";
 import { useNavigate } from "react-router-dom";
@@ -19,15 +19,26 @@ const Container = styled(Stack)`
 `;
 
 const NavPillButton = styled.button`
-  padding: 6px 14px;
+  padding: 4px 14px;
   border-radius: 100px;
   background-color: rgba(160, 199, 255, 0.3);
+
+  ${({ theme }) => (theme as any).breakpoints.up("sm")} {
+    padding: 6px 14px;
+  }
+`;
+
+const NavButtonText = styled.h6`
+  font-size: 1.15rem;
 `;
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const scrollToAnchor = useSmoothScrollToAnchor();
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleCopy = async () => {
     try {
@@ -44,30 +55,31 @@ const NavBar = () => {
   return (
     <motion.div
       initial={{ y: -50, opacity: 0.3 }}
-      whileInView={{ y: 0, opacity: 1 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: "easeIn", delay: 1.8 }}
-      viewport={{ once: true, amount: 0.1 }}
     >
       <Container
         direction={"row"}
         alignItems={"center"}
         justifyContent={"space-between"}
       >
-        <NavPillButton onClick={() => navigate("/")}>
-          <h6>Home</h6>
-        </NavPillButton>
+        {!isMobile && (
+          <NavPillButton onClick={() => navigate("/")}>
+            <NavButtonText>Home</NavButtonText>
+          </NavPillButton>
+        )}
 
         <button onClick={() => navigate("/")}>
           <h5>MacKenzie Joyal</h5>
         </button>
 
-        <Stack direction={"row"} gap={2}>
+        <Stack direction={"row"} gap={{ xs: 1.5, sm: 2 }}>
           <NavPillButton onClick={() => scrollToAnchor("about")}>
-            <h6>About</h6>
+            <NavButtonText>About</NavButtonText>
           </NavPillButton>
 
           <NavPillButton onClick={handleCopy}>
-            <h6>Say hi!</h6>
+            <NavButtonText>Say hi!</NavButtonText>
           </NavPillButton>
         </Stack>
         <Toast

@@ -4,7 +4,6 @@ import PreText from "./components/PreText";
 import { motion } from "framer-motion";
 
 const HeroContainer = styled.div`
-  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -31,18 +30,20 @@ const HeroText = styled.h4`
   // font-size: clamp(6rem, 24vw, 16rem);
   font-size: 26vw;
   letter-spacing: -0.05em;
-  line-height: 1;
+  line-height: 0.85;
   text-align: left;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     font-size: 15.5vw;
     white-space: nowrap;
+    line-height: 1;
   }
 `;
 
 const IntroText = styled.h6`
   width: 400px;
   max-width: 100%;
+  margin-top: 40px;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     margin-right: 2rem;
@@ -58,27 +59,18 @@ const HeroSection = () => {
     <HeroContainer>
       <TextContainer>
         <HeroText>
-          {/* <motion.div
-            initial={{ y: -50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.3, ease: "easeIn", delay: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-          > */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.7, ease: "easeIn", delay: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
           >
             <PreText />
           </motion.div>
 
-          {/* </motion.div> */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.7, ease: "easeIn", delay: 0.8 }}
-            viewport={{ once: true, amount: 0.1 }}
           >
             Design Engineer
             <Box component="span" color="text.secondary">
@@ -90,9 +82,9 @@ const HeroSection = () => {
 
       <motion.div
         initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeIn", delay: 1.8 }}
-        viewport={{ once: true, amount: 0.1 }}
+        style={{ maxWidth: "100%" }}
       >
         <IntroText>
           I specialize in app design, mobile-first UI/UX, and UI
