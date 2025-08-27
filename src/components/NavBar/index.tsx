@@ -18,7 +18,7 @@ const Container = styled(Stack)`
   }
 `;
 
-const NavPillButton = styled.button`
+const NavPillButton = styled(motion.button)`
   padding: 4px 14px;
   border-radius: 100px;
   background-color: rgba(160, 199, 255, 0.3);
@@ -64,7 +64,11 @@ const NavBar = () => {
         justifyContent={"space-between"}
       >
         {!isMobile && (
-          <NavPillButton onClick={() => navigate("/")}>
+          <NavPillButton
+            onClick={() => navigate("/")}
+            whileHover={{ boxShadow: "0 0 0 1px white" }}
+            transition={{ duration: 0.1, ease: "easeOut" }}
+          >
             <NavButtonText>Home</NavButtonText>
           </NavPillButton>
         )}
@@ -74,11 +78,19 @@ const NavBar = () => {
         </button>
 
         <Stack direction={"row"} gap={{ xs: 1.5, sm: 2 }}>
-          <NavPillButton onClick={() => scrollToAnchor("about")}>
+          <NavPillButton
+            onClick={() => scrollToAnchor("about")}
+            whileHover={{ boxShadow: "0 0 0 1px white" }}
+            transition={{ duration: 0.1, ease: "easeOut" }}
+          >
             <NavButtonText>About</NavButtonText>
           </NavPillButton>
 
-          <NavPillButton onClick={handleCopy}>
+          <NavPillButton
+            onClick={handleCopy}
+            whileHover={{ boxShadow: "0 0 0 1px white" }}
+            transition={{ duration: 0.1, ease: "easeOut" }}
+          >
             <NavButtonText>Say hi!</NavButtonText>
           </NavPillButton>
         </Stack>

@@ -3,7 +3,9 @@ import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import Spacer from "src/components/Spacer";
 
 export const StyledP = styled.p<{ isHidden?: boolean }>`
-  max-width: 400px;
+  font-size: 1.3rem;
+  width: 400px;
+  max-width: 100%;
   display: ${({ isHidden = false }) => (isHidden ? "none" : "block")};
 `;
 
@@ -37,6 +39,10 @@ export const ProjectPageContainer = styled(Box)`
   min-height: 100vh;
   margin-top: 20px;
   margin-bottom: 200px;
+
+  /* TODO: This needs to change */
+  padding-left: clamp(20px, 8vw, 120px);
+  padding-right: clamp(20px, 8vw, 120px);
 `;
 
 export const PhoneMockImage = styled.img`
@@ -44,9 +50,9 @@ export const PhoneMockImage = styled.img`
   height: 100%;
 `;
 
-export const SectionTitle = styled.h3`
+export const SectionTitle = styled.h4`
   max-width: 700px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 `;
 
 export const SectionDivider = () => {

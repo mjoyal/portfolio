@@ -70,7 +70,7 @@ const HeroSection = () => {
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeIn", delay: 0.8 }}
+            transition={{ duration: 0.5, ease: "easeIn", delay: 1 }}
           >
             Design Engineer
             <Box component="span" color="text.secondary">
