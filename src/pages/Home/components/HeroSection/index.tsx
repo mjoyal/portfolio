@@ -92,9 +92,9 @@ const HeroSection = (props: IHeroSectionProps) => {
         style={{ maxWidth: "100%" }}
       >
         <IntroText>
-          I specialize in app design, mobile-first UI/UX, and UI
-          engineering—always built with strategy, detail, and scalability in
-          mind.
+          I design and build mobile-first experiences that blend UX design with
+          UI engineering—always built with product strategy, polish, and
+          scalability in mind.
         </IntroText>
       </motion.div>
     </HeroContainer>

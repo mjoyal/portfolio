@@ -3,7 +3,7 @@ import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
 import Spacer from "src/components/Spacer";
 
 export const StyledP = styled.p<{ isHidden?: boolean }>`
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   width: 400px;
   max-width: 100%;
   display: ${({ isHidden = false }) => (isHidden ? "none" : "block")};
@@ -41,8 +41,10 @@ export const ProjectPageContainer = styled(Box)`
   margin-bottom: 200px;
 
   /* TODO: This needs to change */
-  padding-left: clamp(20px, 8vw, 120px);
-  padding-right: clamp(20px, 8vw, 120px);
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    padding-left: clamp(20px, 8vw, 120px);
+    padding-right: clamp(20px, 8vw, 120px);
+  }
 `;
 
 export const PhoneMockImage = styled.img`

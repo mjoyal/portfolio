@@ -17,6 +17,7 @@ const ParagraphContainer = styled.div`
 `;
 
 const StyledText = styled.h6`
+  font-size: 1.4rem;
   max-width: 35ch;
   margin-left: 20px;
   margin-right: 20px;
@@ -70,7 +71,7 @@ const SkillsSection = () => {
       </SlideUpMotion>
       <SectionDivider />
 
-      <Stack direction={{ md: "row" }} rowGap={5}>
+      <Stack direction={{ md: "row" }} rowGap={5} id="about">
         <StyledStack>
           <SlideUpMotion>
             <SkillsTitle />

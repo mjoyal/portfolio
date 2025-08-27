@@ -22,10 +22,11 @@ const AppWrapper = styled.div`
   flex-direction: column;
   padding-left: clamp(20px, 4vw, 120px);
   padding-right: clamp(20px, 4vw, 120px);
-  padding-top: 40px;
+  padding-top: 20px;
   @media (min-width: 900px) {
     padding-left: clamp(20px, 2vw, 120px);
     padding-right: clamp(20px, 2vw, 120px);
+    padding-top: 40px;
   }
 `;
 
