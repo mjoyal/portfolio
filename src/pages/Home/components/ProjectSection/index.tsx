@@ -5,6 +5,7 @@ import useStores from "src/hooks/useStores";
 import { Box, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 import Spacer from "src/components/Spacer";
+import { motion } from "framer-motion";
 
 const ProjectContainer = styled.div`
   display: flex;
@@ -61,27 +62,34 @@ const ProjectSection = () => {
   }, []);
 
   return (
-    <Box id="work" paddingTop={"30px"}>
-      <h4>Work that's changed me</h4>
-      <Spacer level={2} />
-      <ProjectContainer>
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            setIsVisible={setIsVisible}
-          />
-        ))}
-      </ProjectContainer>
-      <CustomCursor
-        isVisible={isVisible}
-        style={{ left: `${position.x}px`, top: `${position.y}px` }}
-        direction={"row"}
-        gap={1}
-      >
-        <span>Have a look</span>
-      </CustomCursor>
-    </Box>
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: "easeIn", delay: 1.8 }}
+      viewport={{ once: true, amount: 0.1 }}
+    >
+      <Box id="work" paddingTop={"30px"}>
+        <h4>Work that's changed me</h4>
+        <Spacer level={5} />
+        <ProjectContainer>
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              setIsVisible={setIsVisible}
+            />
+          ))}
+        </ProjectContainer>
+        <CustomCursor
+          isVisible={isVisible}
+          style={{ left: `${position.x}px`, top: `${position.y}px` }}
+          direction={"row"}
+          gap={1}
+        >
+          <span>Have a look</span>
+        </CustomCursor>
+      </Box>
+    </motion.div>
   );
 };
 

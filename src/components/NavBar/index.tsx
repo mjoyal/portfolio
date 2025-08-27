@@ -4,6 +4,7 @@ import { useState } from "react";
 import Toast from "../Toast";
 import { useNavigate } from "react-router-dom";
 import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
+import { motion } from "framer-motion";
 
 const Container = styled(Stack)`
   width: 100%;
@@ -41,34 +42,41 @@ const NavBar = () => {
   };
 
   return (
-    <Container
-      direction={"row"}
-      alignItems={"center"}
-      justifyContent={"space-between"}
+    <motion.div
+      initial={{ y: -50, opacity: 0.3 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: "easeIn", delay: 1.8 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
-      <NavPillButton onClick={() => navigate("/")}>
-        <h6>Home</h6>
-      </NavPillButton>
-
-      <button onClick={() => navigate("/")}>
-        <h5>MacKenzie Joyal</h5>
-      </button>
-
-      <Stack direction={"row"} gap={2}>
-        <NavPillButton onClick={() => scrollToAnchor("about")}>
-          <h6>About</h6>
+      <Container
+        direction={"row"}
+        alignItems={"center"}
+        justifyContent={"space-between"}
+      >
+        <NavPillButton onClick={() => navigate("/")}>
+          <h6>Home</h6>
         </NavPillButton>
 
-        <NavPillButton onClick={handleCopy}>
-          <h6>Say hi!</h6>
-        </NavPillButton>
-      </Stack>
-      <Toast
-        message="Email copied – chat soon :)"
-        isOpen={isOpen}
-        handleClose={() => setIsOpen(false)}
-      />
-    </Container>
+        <button onClick={() => navigate("/")}>
+          <h5>MacKenzie Joyal</h5>
+        </button>
+
+        <Stack direction={"row"} gap={2}>
+          <NavPillButton onClick={() => scrollToAnchor("about")}>
+            <h6>About</h6>
+          </NavPillButton>
+
+          <NavPillButton onClick={handleCopy}>
+            <h6>Say hi!</h6>
+          </NavPillButton>
+        </Stack>
+        <Toast
+          message="Email copied – chat soon :)"
+          isOpen={isOpen}
+          handleClose={() => setIsOpen(false)}
+        />
+      </Container>
+    </motion.div>
   );
 };
 
