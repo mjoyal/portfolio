@@ -1,85 +1,102 @@
 import styled from "@emotion/styled";
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import PreText from "./components/PreText";
-// import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
+import { motion } from "framer-motion";
 
 const HeroContainer = styled.div`
-  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
-  height: 88vh;
+  height: 55vh;
+  gap: 1rem;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+  }
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-bottom: 75px;
-
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-  }
+  width: 100%;
 `;
 
 const HeroText = styled.h4`
   font-weight: 600;
-  font-size: clamp(5.5rem, 18vw, 13rem);
+  // font-size: clamp(6rem, 24vw, 16rem);
+  font-size: 26vw;
   letter-spacing: -0.05em;
-  line-height: 1;
+  line-height: 0.85;
   text-align: left;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    font-size: 15.5vw;
+    white-space: nowrap;
+    line-height: 1;
+  }
 `;
 
-const FooterText = styled.p`
-  font-size: clamp(1.15rem, 3vw, 1.35rem);
-  font-weight: 400;
-  text-align: center;
+const IntroText = styled.h6`
+  width: 400px;
+  max-width: 100%;
+  margin-top: 40px;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    margin-right: 2rem;
+  }
 `;
 
-const HeroSection = () => {
+interface IHeroSectionProps {
+  hasAnimated: boolean;
+}
+
+const HeroSection = (props: IHeroSectionProps) => {
+  const { hasAnimated } = props;
   //TODO: Come back to the arrow
   // const theme = useTheme();
   // const scrollToAnchor = useSmoothScrollToAnchor();
-
+  // "Making The internet prettier since 2019"
   return (
     <HeroContainer>
       <TextContainer>
         <HeroText>
-          <PreText />
-          Creative
-          <br />
-          Developer
-          <Box component="span" color="text.secondary">
-            .
-          </Box>
+          <motion.div
+            initial={hasAnimated ? false : { x: -30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0 }}
+          >
+            <PreText />
+          </motion.div>
+
+          <motion.div
+            initial={hasAnimated ? false : { x: 30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0 }}
+          >
+            Design Engineer
+            <Box component="span" color="text.secondary">
+              .
+            </Box>
+          </motion.div>
         </HeroText>
-        <Stack display={{ xs: "block", sm: "none" }} paddingTop={3}>
-          <FooterText>* making the internet prettier since 2019</FooterText>
-        </Stack>
       </TextContainer>
-      <Stack
-        sx={{
-          width: "100%",
-          position: "absolute",
-          bottom: 45,
-        }}
-        gap={{ xs: 5, md: 10 }}
-        paddingRight={{ xs: "0px", sm: "30px" }}
-        direction={"row"}
-        justifyContent={{ xs: "center", md: "flex-end" }}
-        alignItems={"flex-end"}
+
+      <motion.div
+        initial={hasAnimated ? false : { y: 30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0 }}
+        style={{ maxWidth: "100%" }}
       >
-        <Stack display={{ xs: "none", sm: "block" }}>
-          <FooterText>* making the internet prettier since 2019</FooterText>
-        </Stack>
-        {/* {isMedium && (
-          <button onClick={() => scrollToAnchor("bio")}>
-            <LittleArrow />
-          </button>
-        )} */}
-      </Stack>
+        <IntroText>
+          I design and build mobile-first experiences that blend UX design with
+          UI engineering—always built with product strategy, polish, and
+          scalability in mind.
+        </IntroText>
+      </motion.div>
     </HeroContainer>
   );
 };

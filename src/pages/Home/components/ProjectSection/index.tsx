@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
 import ProjectCard from "../../../../components/ProjectCard";
-import ProjectsTitle from "../../../../components/Titles/ProjectsTitle";
 import { observer } from "mobx-react";
 import useStores from "src/hooks/useStores";
 import { Box, Stack } from "@mui/material";
 import { useEffect, useState } from "react";
+import Spacer from "src/components/Spacer";
+import { motion } from "framer-motion";
 
 const ProjectContainer = styled.div`
   display: flex;
@@ -41,11 +42,12 @@ const CustomCursor = styled(Stack)<{ isVisible: boolean }>`
   white-space: nowrap;
 `;
 
-const Spacer = styled.div`
-  height: 48px;
-`;
+interface IProjectSectionProps {
+  hasAnimated: boolean;
+}
 
-const ProjectSection = () => {
+const ProjectSection = (props: IProjectSectionProps) => {
+  const { hasAnimated } = props;
   const {
     projectStore: { projects },
   } = useStores();
@@ -65,28 +67,33 @@ const ProjectSection = () => {
   }, []);
 
   return (
-    <Box id="work" paddingTop={"30px"}>
-      <ProjectsTitle />
-
-      <Spacer />
-      <ProjectContainer>
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            setIsVisible={setIsVisible}
-          />
-        ))}
-      </ProjectContainer>
-      <CustomCursor
-        isVisible={isVisible}
-        style={{ left: `${position.x}px`, top: `${position.y}px` }}
-        direction={"row"}
-        gap={1}
-      >
-        <span>Have a look</span>
-      </CustomCursor>
-    </Box>
+    <motion.div
+      initial={hasAnimated ? false : { y: 10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: "easeInOut", delay: 0.8 }}
+    >
+      <Box id="work" paddingTop={"30px"}>
+        <h4>Work that's changed me</h4>
+        <Spacer level={5} />
+        <ProjectContainer>
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              setIsVisible={setIsVisible}
+            />
+          ))}
+        </ProjectContainer>
+        <CustomCursor
+          isVisible={isVisible}
+          style={{ left: `${position.x}px`, top: `${position.y}px` }}
+          direction={"row"}
+          gap={1}
+        >
+          <span>Have a look</span>
+        </CustomCursor>
+      </Box>
+    </motion.div>
   );
 };
 

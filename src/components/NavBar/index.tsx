@@ -1,44 +1,50 @@
 import styled from "@emotion/styled";
-import { Box, Stack } from "@mui/material";
+import { Stack, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import Toast from "../Toast";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
+import { motion } from "framer-motion";
 
 const Container = styled(Stack)`
   width: 100%;
   height: 60px;
-
   padding-left: clamp(20px, 4vw, 120px);
   padding-right: clamp(20px, 4vw, 120px);
 
   @media (min-width: 900px) {
-    padding-left: clamp(20px, 8vw, 120px);
-    padding-right: clamp(20px, 8vw, 120px);
+    padding-left: clamp(20px, 2vw, 120px);
+    padding-right: clamp(20px, 2vw, 120px);
   }
 `;
 
-const StyledLinkText = styled.h5`
-  color: ${({ theme }) => (theme as any).palette.text.primary};
-  transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
-  &:hover {
-    color: ${({ theme }) => (theme as any).palette.text.secondary};
+const NavPillButton = styled(motion.button)`
+  padding: 4px 14px;
+  border-radius: 100px;
+  background-color: rgba(160, 199, 255, 0.3);
+
+  ${({ theme }) => (theme as any).breakpoints.up("sm")} {
+    padding: 6px 14px;
   }
-  font-weight: 500;
 `;
 
-const HomeButton = styled.button``;
-
-const Logo = styled.h4`
-  font-weight: 700;
-  letter-spacing: -0.8px;
+const NavButtonText = styled.h6`
+  font-size: 1.15rem;
 `;
 
-const NavBar = () => {
+interface INavBarProps {
+  hasAnimated: boolean;
+}
+
+const NavBar = (props: INavBarProps) => {
+  const { hasAnimated } = props;
+
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const scrollToAnchor = useSmoothScrollToAnchor();
-  const { pathname } = useLocation();
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleCopy = async () => {
     try {
@@ -52,44 +58,55 @@ const NavBar = () => {
     }
   };
 
-  const isHomePage = pathname === "/";
-
   return (
-    <Container
-      direction={"row"}
-      alignItems={"center"}
-      justifyContent={"space-between"}
+    <motion.div
+      initial={hasAnimated ? false : { y: -10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: "easeInOut", delay: 0.8 }}
     >
-      <HomeButton onClick={() => navigate("/")}>
-        <Logo>
-          {`m`}
-          <Box component="span" color="text.secondary">
-            {"/>"}
-          </Box>
-        </Logo>
-      </HomeButton>
-
-      <Stack direction={"row"} gap={5}>
-        {isHomePage ? (
-          <button onClick={() => scrollToAnchor("work")}>
-            <StyledLinkText>work</StyledLinkText>
-          </button>
-        ) : (
-          <button onClick={() => navigate("/")}>
-            <StyledLinkText>home</StyledLinkText>
-          </button>
+      <Container
+        direction={"row"}
+        alignItems={"center"}
+        justifyContent={"space-between"}
+      >
+        {!isMobile && (
+          <NavPillButton
+            onClick={() => navigate("/")}
+            whileHover={{ boxShadow: "0 0 0 1px #a0c8ff" }}
+            transition={{ duration: 0.1, ease: "easeOut" }}
+          >
+            <NavButtonText>Home</NavButtonText>
+          </NavPillButton>
         )}
 
-        <button onClick={handleCopy}>
-          <StyledLinkText>say hi!</StyledLinkText>
+        <button onClick={() => navigate("/")}>
+          <h5>MacKenzie Joyal</h5>
         </button>
-      </Stack>
-      <Toast
-        message="Email copied – chat soon :)"
-        isOpen={isOpen}
-        handleClose={() => setIsOpen(false)}
-      />
-    </Container>
+
+        <Stack direction={"row"} gap={{ xs: 1.5, sm: 2 }}>
+          <NavPillButton
+            onClick={() => scrollToAnchor("about")}
+            whileHover={{ boxShadow: "0 0 0 1px #a0c8ff" }}
+            transition={{ duration: 0.1, ease: "easeOut" }}
+          >
+            <NavButtonText>About</NavButtonText>
+          </NavPillButton>
+
+          <NavPillButton
+            onClick={handleCopy}
+            whileHover={{ boxShadow: "0 0 0 1px #a0c8ff" }}
+            transition={{ duration: 0.1, ease: "easeOut" }}
+          >
+            <NavButtonText>Say hi!</NavButtonText>
+          </NavPillButton>
+        </Stack>
+        <Toast
+          message="Email copied – chat soon :)"
+          isOpen={isOpen}
+          handleClose={() => setIsOpen(false)}
+        />
+      </Container>
+    </motion.div>
   );
 };
 

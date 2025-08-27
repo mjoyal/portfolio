@@ -3,8 +3,6 @@ import styled from "@emotion/styled";
 import HeroSection from "./components/HeroSection";
 import ProjectSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
-import BioSection from "./components/BioSection";
-import SlideUpMotion from "src/components/SlideUpMotion";
 
 const HomePageContainer = styled.div`
   /* These 100% widths are important to keep the overall margin of the site */
@@ -20,29 +18,29 @@ const SectionDivider = styled.div`
   }
 `;
 
-const FirstSectionDivider = styled.div`
-  height: 50px;
+// const FirstSectionDivider = styled.div`
+//   height: 50px;
 
-  @media (min-width: 600px) {
-    height: 150px;
-  }
+//   @media (min-width: 600px) {
+//     height: 150px;
+//   }
 
-  @media (min-width: 900px) {
-    height: 200px;
-  }
-`;
+//   @media (min-width: 900px) {
+//     height: 200px;
+//   }
+// `;
 
-const HomePage = () => {
+interface IHomePageProps {
+  hasAnimated: boolean;
+}
+
+const HomePage = (props: IHomePageProps) => {
+  const { hasAnimated } = props;
+
   return (
     <HomePageContainer>
-      <HeroSection />
-      <FirstSectionDivider id="bio" />
-      <SlideUpMotion>
-        <BioSection />
-      </SlideUpMotion>
-
-      <SectionDivider />
-      <ProjectSection />
+      <HeroSection hasAnimated={hasAnimated} />
+      <ProjectSection hasAnimated={hasAnimated} />
       <SectionDivider />
       <SkillsSection />
       <SectionDivider />

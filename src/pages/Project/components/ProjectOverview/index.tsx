@@ -32,10 +32,11 @@ const ProjectOverview = (props: IProjectOverviewProps) => {
   const { project, title, paragraphs, collaborators, linkText, url, date } =
     props;
   return (
-    <Stack>
+    <Stack maxWidth={"100%"}>
       <Stack
         direction={{ xs: "column", md: "row" }}
         justifyContent={"space-between"}
+        maxWidth={"100%"}
       >
         <h5>{project}</h5>
         <Stack
@@ -57,11 +58,16 @@ const ProjectOverview = (props: IProjectOverviewProps) => {
         alignItems={"flex-start"}
         gap={3}
         borderTop="1px solid rgba(245, 245, 245, 0.75)"
+        maxWidth={"100%"}
       >
         <Spacer />
         <PageTitle>{title}</PageTitle>
 
-        <Stack direction={{ sm: "column", lg: "row" }} gap={{ xs: 5, md: 10 }}>
+        <Stack
+          direction={{ sm: "column", lg: "row" }}
+          gap={{ xs: 5, md: 10 }}
+          maxWidth={"100%"}
+        >
           <StyledP>{paragraphs[0]}</StyledP>
           <StyledP>{paragraphs[1]}</StyledP>
         </Stack>

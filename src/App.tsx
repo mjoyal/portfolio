@@ -11,6 +11,7 @@ import StoreProvider from "./store";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import { useEffect, useState } from "react";
 // import PageTransition from "./components/PageTransition";
 
 const AppWrapper = styled.div`
@@ -21,14 +22,25 @@ const AppWrapper = styled.div`
   flex-direction: column;
   padding-left: clamp(20px, 4vw, 120px);
   padding-right: clamp(20px, 4vw, 120px);
-
+  padding-top: 20px;
   @media (min-width: 900px) {
-    padding-left: clamp(20px, 8vw, 120px);
-    padding-right: clamp(20px, 8vw, 120px);
+    padding-left: clamp(20px, 2vw, 120px);
+    padding-right: clamp(20px, 2vw, 120px);
+    padding-top: 40px;
   }
 `;
 
 function App() {
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem("hasSeenHeroAnimation")) {
+      setHasAnimated(true);
+    } else {
+      sessionStorage.setItem("hasSeenHeroAnimation", "true");
+    }
+  }, []);
+
   return (
     <StoreProvider>
       <ThemeProvider theme={theme}>
@@ -36,10 +48,14 @@ function App() {
         <Router>
           <ScrollToTop />
           {/* <PageTransition /> */}
-          <NavBar />
+
+          <NavBar hasAnimated={hasAnimated} />
           <AppWrapper>
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route
+                path="/"
+                element={<HomePage hasAnimated={hasAnimated} />}
+              />
               <Route path="/project/:slug" element={<ProjectPage />} />
             </Routes>
           </AppWrapper>

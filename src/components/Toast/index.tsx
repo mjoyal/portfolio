@@ -41,6 +41,7 @@ const Toast = (props: IToastProps) => {
           borderRadius: "8px",
           padding: "12px 20px",
           margin: "24px",
+          boxShadow: "none",
         },
       }}
     />
