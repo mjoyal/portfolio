@@ -65,17 +65,17 @@ const HeroSection = (props: IHeroSectionProps) => {
       <TextContainer>
         <HeroText>
           <motion.div
-            initial={hasAnimated ? false : { x: -50, opacity: 0 }}
+            initial={hasAnimated ? false : { x: -15, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeIn", delay: 0 }}
+            transition={{ duration: 0.7, ease: "easeInOut", delay: 0 }}
           >
             <PreText />
           </motion.div>
 
           <motion.div
-            initial={hasAnimated ? false : { x: -50, opacity: 0 }}
+            initial={hasAnimated ? false : { x: 15, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeIn", delay: 1 }}
+            transition={{ duration: 0.7, ease: "easeInOut", delay: 0 }}
           >
             Design Engineer
             <Box component="span" color="text.secondary">
@@ -86,9 +86,9 @@ const HeroSection = (props: IHeroSectionProps) => {
       </TextContainer>
 
       <motion.div
-        initial={hasAnimated ? false : { y: 50, opacity: 0 }}
+        initial={hasAnimated ? false : { y: 15, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.7, ease: "easeIn", delay: 1.8 }}
+        transition={{ duration: 0.7, ease: "easeInOut", delay: 0 }}
         style={{ maxWidth: "100%" }}
       >
         <IntroText>
