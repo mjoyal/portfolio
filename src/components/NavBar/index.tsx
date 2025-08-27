@@ -72,7 +72,7 @@ const NavBar = (props: INavBarProps) => {
         {!isMobile && (
           <NavPillButton
             onClick={() => navigate("/")}
-            whileHover={{ boxShadow: "0 0 0 1px white" }}
+            whileHover={{ boxShadow: "0 0 0 1px #a0c8ff" }}
             transition={{ duration: 0.1, ease: "easeOut" }}
           >
             <NavButtonText>Home</NavButtonText>
@@ -86,7 +86,7 @@ const NavBar = (props: INavBarProps) => {
         <Stack direction={"row"} gap={{ xs: 1.5, sm: 2 }}>
           <NavPillButton
             onClick={() => scrollToAnchor("about")}
-            whileHover={{ boxShadow: "0 0 0 1px white" }}
+            whileHover={{ boxShadow: "0 0 0 1px #a0c8ff" }}
             transition={{ duration: 0.1, ease: "easeOut" }}
           >
             <NavButtonText>About</NavButtonText>
@@ -94,7 +94,7 @@ const NavBar = (props: INavBarProps) => {
 
           <NavPillButton
             onClick={handleCopy}
-            whileHover={{ boxShadow: "0 0 0 1px white" }}
+            whileHover={{ boxShadow: "0 0 0 1px #a0c8ff" }}
             transition={{ duration: 0.1, ease: "easeOut" }}
           >
             <NavButtonText>Say hi!</NavButtonText>
