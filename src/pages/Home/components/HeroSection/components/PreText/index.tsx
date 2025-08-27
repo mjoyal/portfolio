@@ -6,7 +6,6 @@ const StyledPreText = styled.p`
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.03em;
-  margin-bottom: -1%;
   font-style: italic;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {

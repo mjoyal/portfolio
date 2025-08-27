@@ -35,7 +35,7 @@ export const ProjectPageContainer = styled(Box)`
   /* These 100% widths are important to keep the overall margin of the site */
   width: 100%;
   min-height: 100vh;
-  margin-top: 60px;
+  margin-top: 20px;
   margin-bottom: 200px;
 `;
 
