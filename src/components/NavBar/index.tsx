@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Stack, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import Toast from "../Toast";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useSmoothScrollToAnchor from "src/hooks/useSmoothScrollToAnchor";
 import { motion } from "framer-motion";
 
@@ -42,6 +42,7 @@ const NavBar = (props: INavBarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const scrollToAnchor = useSmoothScrollToAnchor();
+  const { pathname } = useLocation();
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -57,6 +58,8 @@ const NavBar = (props: INavBarProps) => {
       alert("Copy failed. Try again.");
     }
   };
+
+  const isHomePage = pathname === "/";
 
   return (
     <motion.div
@@ -84,13 +87,15 @@ const NavBar = (props: INavBarProps) => {
         </button>
 
         <Stack direction={"row"} gap={{ xs: 1.5, sm: 2 }}>
-          <NavPillButton
-            onClick={() => scrollToAnchor("about")}
-            whileHover={{ boxShadow: "0 0 0 1px #a0c8ff" }}
-            transition={{ duration: 0.1, ease: "easeOut" }}
-          >
-            <NavButtonText>About</NavButtonText>
-          </NavPillButton>
+          {isHomePage && (
+            <NavPillButton
+              onClick={() => scrollToAnchor("about")}
+              whileHover={{ boxShadow: "0 0 0 1px #a0c8ff" }}
+              transition={{ duration: 0.1, ease: "easeOut" }}
+            >
+              <NavButtonText>About</NavButtonText>
+            </NavPillButton>
+          )}
 
           <NavPillButton
             onClick={handleCopy}
