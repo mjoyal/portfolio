@@ -62,7 +62,7 @@ const NavBar = (props: INavBarProps) => {
     <motion.div
       initial={hasAnimated ? false : { y: -10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, ease: "easeInOut", delay: 1 }}
+      transition={{ duration: 0.7, ease: "easeInOut", delay: 0.8 }}
     >
       <Container
         direction={"row"}
