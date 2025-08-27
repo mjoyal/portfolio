@@ -30,11 +30,17 @@ const SectionDivider = styled.div`
 //   }
 // `;
 
-const HomePage = () => {
+interface IHomePageProps {
+  hasAnimated: boolean;
+}
+
+const HomePage = (props: IHomePageProps) => {
+  const { hasAnimated } = props;
+
   return (
     <HomePageContainer>
-      <HeroSection />
-      <ProjectSection />
+      <HeroSection hasAnimated={hasAnimated} />
+      <ProjectSection hasAnimated={hasAnimated} />
       <SectionDivider />
       <SkillsSection />
       <SectionDivider />

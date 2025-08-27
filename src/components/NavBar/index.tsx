@@ -32,7 +32,13 @@ const NavButtonText = styled.h6`
   font-size: 1.15rem;
 `;
 
-const NavBar = () => {
+interface INavBarProps {
+  hasAnimated: boolean;
+}
+
+const NavBar = (props: INavBarProps) => {
+  const { hasAnimated } = props;
+
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const scrollToAnchor = useSmoothScrollToAnchor();
@@ -54,7 +60,7 @@ const NavBar = () => {
 
   return (
     <motion.div
-      initial={{ y: -50, opacity: 0.3 }}
+      initial={hasAnimated ? false : { y: -50, opacity: 0.3 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: "easeIn", delay: 1.8 }}
     >

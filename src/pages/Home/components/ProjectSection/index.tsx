@@ -42,7 +42,12 @@ const CustomCursor = styled(Stack)<{ isVisible: boolean }>`
   white-space: nowrap;
 `;
 
-const ProjectSection = () => {
+interface IProjectSectionProps {
+  hasAnimated: boolean;
+}
+
+const ProjectSection = (props: IProjectSectionProps) => {
+  const { hasAnimated } = props;
   const {
     projectStore: { projects },
   } = useStores();
@@ -63,7 +68,7 @@ const ProjectSection = () => {
 
   return (
     <motion.div
-      initial={{ y: 50, opacity: 0 }}
+      initial={hasAnimated ? false : { y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: "easeIn", delay: 1.8 }}
     >

@@ -50,7 +50,12 @@ const IntroText = styled.h6`
   }
 `;
 
-const HeroSection = () => {
+interface IHeroSectionProps {
+  hasAnimated: boolean;
+}
+
+const HeroSection = (props: IHeroSectionProps) => {
+  const { hasAnimated } = props;
   //TODO: Come back to the arrow
   // const theme = useTheme();
   // const scrollToAnchor = useSmoothScrollToAnchor();
@@ -60,7 +65,7 @@ const HeroSection = () => {
       <TextContainer>
         <HeroText>
           <motion.div
-            initial={{ x: -50, opacity: 0 }}
+            initial={hasAnimated ? false : { x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.7, ease: "easeIn", delay: 0 }}
           >
@@ -68,7 +73,7 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div
-            initial={{ x: -50, opacity: 0 }}
+            initial={hasAnimated ? false : { x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeIn", delay: 1 }}
           >
@@ -81,7 +86,7 @@ const HeroSection = () => {
       </TextContainer>
 
       <motion.div
-        initial={{ y: 50, opacity: 0 }}
+        initial={hasAnimated ? false : { y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeIn", delay: 1.8 }}
         style={{ maxWidth: "100%" }}
