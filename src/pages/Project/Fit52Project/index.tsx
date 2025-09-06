@@ -51,7 +51,7 @@ const Fit52Project = () => {
       >
         <Box>
           <SectionTitle>My Role</SectionTitle>
-          <BodyTextWrapper>
+          <Stack>
             <StyledP>
               Over three years at Fit52, I worked on UI refinement, scalable
               component architecture, and user-facing feature development. I
@@ -65,7 +65,7 @@ const Fit52Project = () => {
               scalable interfaces that balanced aesthetics with functionality.
             </StyledP>
             <StyledP></StyledP>
-          </BodyTextWrapper>
+          </Stack>
         </Box>
         <SecondaryImage src={"/images/fit52/secondary.webp"} />
       </Stack>
