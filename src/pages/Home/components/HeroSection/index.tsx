@@ -41,12 +41,12 @@ const HeroText = styled.h4`
 `;
 
 const IntroText = styled.h6`
-  width: 400px;
+  width: 500px;
   max-width: 100%;
   margin-top: 40px;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    margin-right: 2rem;
+    margin-right: 3rem;
   }
 `;
 
@@ -92,9 +92,9 @@ const HeroSection = (props: IHeroSectionProps) => {
         style={{ maxWidth: "100%" }}
       >
         <IntroText>
-          I design and build mobile-first experiences that blend UX design with
-          UI engineering—always built with product strategy, polish, and
-          scalability in mind.
+          I bridge design and development to make interfaces that are memorable
+          and intuitive—always with product strategy, scalability, and human
+          behavior in mind.
         </IntroText>
       </motion.div>
     </HeroContainer>
