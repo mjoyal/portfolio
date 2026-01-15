@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import EmailMeButton from "../EmailMeButton";
 import Button from "../Button";
-import { Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Stack } from "@mui/material";
 
 const Title = styled.h1`
   font-size: 12rem;
@@ -12,10 +12,6 @@ const Title = styled.h1`
 `;
 
 const Footer = () => {
-  const theme = useTheme();
-
-  const isBelowMedium = useMediaQuery(theme.breakpoints.down("md"));
-
   return (
     <Stack
       alignItems={"center"}
@@ -30,10 +26,10 @@ const Footer = () => {
           isTextButton
           isSmall
         >
-          {isBelowMedium ? "Resume" : "Download my resume"}
+          Resume
         </Button>
 
-        <EmailMeButton isTextButton isShortText={isBelowMedium} />
+        <EmailMeButton isTextButton isShortText={true} />
         <Button
           isTextButton
           isSmall
