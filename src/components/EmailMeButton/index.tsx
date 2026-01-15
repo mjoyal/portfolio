@@ -5,9 +5,16 @@ import Toast from "../Toast";
 interface IEmailMeButtonProps {
   isTextButton?: boolean;
   isShortText?: boolean;
+  isSmall?: boolean;
 }
+
 const EmailMeButton = (props: IEmailMeButtonProps) => {
-  const { isTextButton = false, isShortText = false, ...rest } = props;
+  const {
+    isTextButton = false,
+    isShortText = false,
+    isSmall = false,
+    ...rest
+  } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCopy = async () => {
@@ -23,7 +30,12 @@ const EmailMeButton = (props: IEmailMeButtonProps) => {
   };
   return (
     <>
-      <Button onClick={handleCopy} isTextButton={isTextButton} {...rest}>
+      <Button
+        onClick={handleCopy}
+        isTextButton={isTextButton}
+        isSmall
+        {...rest}
+      >
         {isShortText ? "Email" : "Email me"}
       </Button>
       <Toast
