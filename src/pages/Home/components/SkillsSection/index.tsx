@@ -1,51 +1,24 @@
 import { Stack } from "@mui/material";
 import { observer } from "mobx-react";
 import NumberedListItem from "src/components/NumberedListItem";
-import TechnologyTitle from "src/components/Titles/TechnologyTitle";
 
 import styled from "@emotion/styled";
-import SkillsTitle from "src/components/Titles/SkillsTitle";
-import LongArrow from "src/icons/LongArrow";
-import Button from "src/components/Button";
 import SlideUpMotion from "src/components/SlideUpMotion";
+import { StyledP } from "src/pages/Project/components";
 
-const ParagraphContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1 1 0;
+const Title = styled.h1`
+  font-size: 10rem;
+  letter-spacing: -5px;
+  font-weight: 500;
+  line-height: 0.75;
 `;
 
-const StyledText = styled.h6`
-  font-size: 1.4rem;
-  max-width: 35ch;
-  margin-left: 20px;
-  margin-right: 20px;
-  // Keeps text nice and square
-`;
-
-const ListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-`;
-
-const StyledStack = styled(Stack)`
-  flex: 1 1 0;
-`;
-
-const Spacer = styled.div`
-  height: 40px;
-`;
-
-const StyledEmphasis = styled.span`
-  color: ${({ theme }) => (theme as any).palette.text.secondary};
-`;
-
-// TODO: Section Divider & Spacer Components
 const SectionDivider = styled.div`
   height: 200px;
+`;
+
+const SideNote = styled.p`
+  margin-top: 30px;
 `;
 
 const SkillsSection = () => {
@@ -53,73 +26,44 @@ const SkillsSection = () => {
     <Stack>
       <SlideUpMotion>
         <Stack
-          maxWidth={"90ch"}
-          marginLeft={{ sm: 3, md: 4, lg: 6 }}
-          marginRight={{ sm: 3, md: 4 }}
-          alignItems={"flex-start"}
-          gap={6}
+          direction={{ xs: "column", md: "row" }}
+          justifyContent={"space-around"}
+          gap={2}
         >
-          <h1>
-            Just like camping, I believe you should leave the codebase
-            <StyledEmphasis> better than</StyledEmphasis> you found it.
-          </h1>
-
-          <Button href="/assets/mackenzie-joyal-resume-2025.pdf" isDownload>
-            Download my resume
-          </Button>
+          <p>{"(a bit about me)"}</p>
+          <Stack maxWidth={"70ch"} alignItems={"flex-start"} gap={3}>
+            <h2>Part developer, part designer, part product brain.</h2>
+            <StyledP>
+              I move between Figma and the frontend with ease. With my
+              background in business, I care as much about product goals as I do
+              about polish. After years in this work, I've learned that good UI
+              takes empathy, a sharp eye, and a bit of craft.
+            </StyledP>
+          </Stack>
         </Stack>
       </SlideUpMotion>
       <SectionDivider />
-
-      <Stack direction={{ md: "row" }} rowGap={5} id="about">
-        <StyledStack>
-          <SlideUpMotion>
-            <SkillsTitle />
-          </SlideUpMotion>
-          <Spacer />
-          <ListContainer>
+      <Stack gap={10}>
+        <Stack
+          direction={{ xs: "column", md: "row-reverse" }}
+          justifyContent={"space-around"}
+          alignItems={{ xs: "center", md: "flex-start" }}
+          gap={2}
+        >
+          <SideNote>{"(no actually, i love css)"}</SideNote>
+          <Stack gap={3}>
             <SlideUpMotion>
-              <NumberedListItem number="01" listItem="Front-end Engineering" />
+              <Title>Tech.</Title>
             </SlideUpMotion>
-            <SlideUpMotion>
-              <NumberedListItem number="02" listItem="UX/UI Design" />
-            </SlideUpMotion>
-            <SlideUpMotion>
-              <NumberedListItem
-                number="03"
-                listItem="Entrepreneurship Degree"
-              />
-            </SlideUpMotion>
-          </ListContainer>
-        </StyledStack>
-
-        <Spacer />
-        <ParagraphContainer>
-          <StyledText>
-            Part developer, part designer, part product brain—I move between
-            Figma and the frontend with ease. With my background in business, I
-            care as much about product goals as I do about polish. After 4 years
-            in this work, I've learned that good UI takes empathy, a sharp eye,
-            and a bit of craft.
-          </StyledText>
-        </ParagraphContainer>
-      </Stack>
-
-      <SectionDivider />
-      <Stack direction={{ md: "row-reverse" }} columnGap={5}>
-        <StyledStack>
-          <Stack alignItems={{ xs: "center", md: "flex-start" }}>
-            <ListContainer>
+            <Stack gap={2} marginLeft={2}>
               <SlideUpMotion>
-                <TechnologyTitle />
-              </SlideUpMotion>
-              <Spacer />
-
-              <SlideUpMotion>
-                <NumberedListItem number="01" listItem="React" />
+                <NumberedListItem
+                  number="01"
+                  listItem="CSS Specialist (Tailwind, Emotion)"
+                />
               </SlideUpMotion>
               <SlideUpMotion>
-                <NumberedListItem number="02" listItem="React Native" />
+                <NumberedListItem number="02" listItem="React / React Native" />
               </SlideUpMotion>
               <SlideUpMotion>
                 <NumberedListItem
@@ -128,39 +72,42 @@ const SkillsSection = () => {
                 />
               </SlideUpMotion>
               <SlideUpMotion>
-                <NumberedListItem number="04" listItem="MobX / MST" />
+                <NumberedListItem number="04" listItem="Webflow & Wordpress" />
               </SlideUpMotion>
-            </ListContainer>
+              <SlideUpMotion>
+                <NumberedListItem number="06" listItem="Figma" />
+              </SlideUpMotion>
+            </Stack>
           </Stack>
+        </Stack>
 
-          <Stack
-            alignItems={{ xs: "center", md: "flex-end" }}
-            paddingTop={{ xs: "20px", md: "40px" }}
-          >
-            <ListContainer>
-              <SlideUpMotion>
-                <NumberedListItem number="05" listItem="HTML / CSS" />
-              </SlideUpMotion>
-              <SlideUpMotion>
-                <NumberedListItem number="06" listItem="Emotion" />
-              </SlideUpMotion>
-              <SlideUpMotion>
-                <NumberedListItem number="07" listItem="Tailwind" />
-              </SlideUpMotion>
-              <SlideUpMotion>
-                <NumberedListItem number="08" listItem="Figma" />
-              </SlideUpMotion>
-            </ListContainer>
-          </Stack>
-        </StyledStack>
-
-        <StyledStack
-          alignItems={"center"}
-          justifyContent={"center"}
-          paddingTop={{ md: "200px", xs: "100px" }}
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          justifyContent={"space-around"}
+          alignItems={{ xs: "center", md: "flex-start" }}
+          gap={2}
         >
-          <LongArrow />
-        </StyledStack>
+          <SideNote>{"(my brain mix)"}</SideNote>
+          <Stack gap={3}>
+            <SlideUpMotion>
+              <Title>Skills.</Title>
+            </SlideUpMotion>
+            <Stack gap={2} marginLeft={2}>
+              <SlideUpMotion>
+                <NumberedListItem number="01" listItem="UX/UI Design" />
+              </SlideUpMotion>
+              <SlideUpMotion>
+                <NumberedListItem number="02" listItem="Systems Thinking" />
+              </SlideUpMotion>
+              <SlideUpMotion>
+                <NumberedListItem
+                  number="03"
+                  listItem="(Very) Creative Problem Solving"
+                />
+              </SlideUpMotion>
+            </Stack>
+          </Stack>
+        </Stack>
       </Stack>
     </Stack>
   );
