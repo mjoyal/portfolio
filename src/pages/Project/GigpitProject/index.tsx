@@ -10,7 +10,7 @@ import {
   ProjectPageContainer,
   StyledP,
   SectionTitle,
-  ProjectImage,
+  HeroImage,
   MockWrapper,
   BodyTextWrapper,
   PhoneMock,
@@ -39,7 +39,7 @@ const GigpitProject = () => {
     <ProjectPageContainer>
       <HeroSectionWrapper>
         <GigpitLogo />
-        <ProjectImage src={selectedProject?.imageSource} />
+        <HeroImage src={selectedProject?.imageSource} />
       </HeroSectionWrapper>
 
       <ProjectOverview
