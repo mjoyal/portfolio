@@ -1,32 +1,17 @@
-import styled from "@emotion/styled";
-
 import { observer } from "mobx-react";
 
 import { Box, Stack } from "@mui/material";
-import Spacer from "src/components/Spacer";
 import {
-  BodyTextWrapper,
   HeroSectionWrapper,
-  ProjectImage,
+  HeroImage,
   ProjectPageContainer,
   SectionDivider,
   SectionTitle,
   StyledP,
   MockImage,
+  MockWrapper,
 } from "../components";
 import useStores from "src/hooks/useStores";
-
-const ProjectDescription = styled.p`
-  font-size: 1.75rem;
-  text-align: left;
-`;
-
-const MockWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 1rem;
-`;
 
 const CrewlywedProject = () => {
   const {
@@ -41,7 +26,7 @@ const CrewlywedProject = () => {
           <StyledP>Product Design, Design System, Engineering</StyledP>
           <StyledP>2024 - Present</StyledP>
         </Stack>
-        <ProjectImage src={selectedProject?.imageSource} />
+        <HeroImage src={selectedProject?.imageSource} />
       </HeroSectionWrapper>
 
       <SectionDivider />
