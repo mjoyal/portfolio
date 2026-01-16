@@ -24,17 +24,16 @@ const SkillsSection = () => {
           gap={2}
         >
           <p>{"(ABOUT)"}</p>
-          <Stack maxWidth={"70ch"} alignItems={"flex-start"} gap={3}>
+          <Stack maxWidth={"80ch"} alignItems={"flex-start"} gap={3}>
             <h2>
-              I help teams deliver cohesive websites and user interfaces that
-              are durable, maintainable, and high-fidelity to the original
-              design.
+              I believe strong interfaces should be both delightful to use and
+              durable in practice.
             </h2>
             <StyledP>
-              Working across design and front-end development, I translate
-              intent from Figma into production-ready systems—prioritizing
-              usability, visual consistency, and strong client and user
-              experiences.
+              Design means little if it can’t survive real context, client
+              edits, and ongoing change. By bridging design and front-end
+              development, I build maintainable systems that balance user needs,
+              business goals, and long-term product sustainability.
             </StyledP>
           </Stack>
         </Stack>
@@ -50,10 +49,10 @@ const SkillsSection = () => {
           gap={2}
         >
           <p>{"(SERVICES)"}</p>
-          <Stack maxWidth={"70ch"} alignItems={"flex-start"} gap={7}>
+          <Stack maxWidth={"80ch"} alignItems={"flex-start"} gap={7}>
             <h2>
-              I design and build thoughtful user experiences, from site builders
-              to fully custom interfaces.
+              Building thoughtful user experiences, from site builders to fully
+              custom interfaces.
             </h2>
 
             <Stack
