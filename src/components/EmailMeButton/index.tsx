@@ -23,7 +23,12 @@ const EmailMeButton = (props: IEmailMeButtonProps) => {
   };
   return (
     <>
-      <Button onClick={handleCopy} isTextButton={isTextButton} {...rest}>
+      <Button
+        onClick={handleCopy}
+        isTextButton={isTextButton}
+        {...rest}
+        isSmall
+      >
         {isShortText ? "Email" : "Email me"}
       </Button>
       <Toast
