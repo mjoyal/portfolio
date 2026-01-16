@@ -9,12 +9,7 @@ interface IEmailMeButtonProps {
 }
 
 const EmailMeButton = (props: IEmailMeButtonProps) => {
-  const {
-    isTextButton = false,
-    isShortText = false,
-    isSmall = false,
-    ...rest
-  } = props;
+  const { isTextButton = false, isShortText = false, ...rest } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCopy = async () => {
