@@ -106,9 +106,10 @@ const NavBar = (props: INavBarProps) => {
           </NavPillButton>
         </Stack>
         <Toast
-          message="Email copied – chat soon :)"
+          message="Email copied. Chat soon :)"
           isOpen={isOpen}
           handleClose={() => setIsOpen(false)}
+          verticalOrigin="top"
         />
       </Container>
     </motion.div>

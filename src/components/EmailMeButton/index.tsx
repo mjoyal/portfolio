@@ -39,7 +39,7 @@ const EmailMeButton = (props: IEmailMeButtonProps) => {
         {isShortText ? "Email" : "Email me"}
       </Button>
       <Toast
-        message="Email copied – chat soon :)"
+        message="Email copied. Chat soon :)"
         isOpen={isOpen}
         handleClose={() => setIsOpen(false)}
       />

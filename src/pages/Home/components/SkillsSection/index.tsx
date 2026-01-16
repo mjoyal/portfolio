@@ -23,7 +23,7 @@ const SideNote = styled.p`
 
 const SkillsSection = () => {
   return (
-    <Stack>
+    <Stack id="about">
       <SlideUpMotion>
         <Stack
           direction={{ xs: "column", md: "row" }}
