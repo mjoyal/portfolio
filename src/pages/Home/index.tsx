@@ -43,7 +43,6 @@ const HomePage = (props: IHomePageProps) => {
       <ProjectSection hasAnimated={hasAnimated} />
       <SectionDivider />
       <SkillsSection />
-      <SectionDivider />
     </HomePageContainer>
   );
 };

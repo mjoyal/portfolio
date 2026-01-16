@@ -4,18 +4,22 @@ import Button from "../Button";
 import { Stack } from "@mui/material";
 
 const Title = styled.h1`
-  font-size: 12rem;
+  font-size: 10rem;
   letter-spacing: -5px;
   font-weight: 500;
   line-height: 0.75;
   text-align: center;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    font-size: 12rem;
+  }
 `;
 
 const Footer = () => {
   return (
     <Stack
       alignItems={"center"}
-      paddingBottom={{ xs: 10, md: 20 }}
+      paddingY={{ xs: 12, md: 22 }}
       gap={{ xs: 4, md: 5 }}
     >
       <Title>Let's Talk.</Title>
