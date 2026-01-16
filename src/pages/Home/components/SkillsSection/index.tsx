@@ -23,7 +23,7 @@ const SkillsSection = () => {
           justifyContent={"space-around"}
           gap={2}
         >
-          <p>{"(ABOUT)"}</p>
+          <h6>{"(ABOUT)"}</h6>
           <Stack maxWidth={"80ch"} alignItems={"flex-start"} gap={3}>
             <h2>
               I believe strong interfaces should be both delightful to use and
@@ -48,7 +48,7 @@ const SkillsSection = () => {
           justifyContent={"space-around"}
           gap={2}
         >
-          <p>{"(SERVICES)"}</p>
+          <h6>{"(SERVICES)"}</h6>
           <Stack maxWidth={"80ch"} alignItems={"flex-start"} gap={7}>
             <h2>
               Building thoughtful user experiences, from site builders to fully
@@ -59,22 +59,25 @@ const SkillsSection = () => {
               direction={{ xs: "column", md: "row" }}
               gap={{ xs: 10, md: 20 }}
             >
-              <Stack gap={0.5}>
-                <h5 style={{ marginBottom: "10px" }}>Development</h5>
-                <p>Front-end Engineering</p>
-                <p>App & Website Development</p>
-                <p>Webflow</p>
-                <p>Wordpress</p>
-              </Stack>
+              <SlideUpMotion>
+                <Stack gap={0.5}>
+                  <h5 style={{ marginBottom: "10px" }}>Development</h5>
+                  <p>Front-end Engineering</p>
+                  <p>App & Website Development</p>
+                  <p>Webflow</p>
+                  <p>Wordpress</p>
+                </Stack>
+              </SlideUpMotion>
+              <SlideUpMotion delay={0.25}>
+                <Stack gap={0.5}>
+                  <h5 style={{ marginBottom: "10px" }}>Design</h5>
 
-              <Stack gap={0.5}>
-                <h5 style={{ marginBottom: "10px" }}>Design</h5>
-
-                <p>Web & App Design</p>
-                <p>User Experience Strategy</p>
-                <p>Design Systems</p>
-                <p>UX Flows</p>
-              </Stack>
+                  <p>Web & App Design</p>
+                  <p>User Experience Strategy</p>
+                  <p>Design Systems</p>
+                  <p>UX Flows</p>
+                </Stack>
+              </SlideUpMotion>
             </Stack>
           </Stack>
         </Stack>
