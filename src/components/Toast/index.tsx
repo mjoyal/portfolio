@@ -6,9 +6,10 @@ interface IToastProps {
   message: string;
   isOpen: boolean;
   handleClose: () => void;
+  verticalOrigin?: "top" | "bottom";
 }
 const Toast = (props: IToastProps) => {
-  const { message, isOpen, handleClose } = props;
+  const { message, isOpen, handleClose, verticalOrigin = "bottom" } = props;
 
   return (
     <Snackbar
@@ -28,7 +29,7 @@ const Toast = (props: IToastProps) => {
           {message}
         </span>
       }
-      anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+      anchorOrigin={{ vertical: verticalOrigin, horizontal: "right" }}
       sx={{
         "& .MuiSnackbarContent-root": {
           display: "flex",
@@ -37,10 +38,10 @@ const Toast = (props: IToastProps) => {
           backgroundColor: "#A0C7FF",
           color: "#0A0A0C",
           fontSize: "1rem",
-          fontWeight: "500",
+          fontWeight: "400",
           borderRadius: "8px",
           padding: "12px 20px",
-          margin: "24px",
+          marginTop: "40px",
           boxShadow: "none",
         },
       }}

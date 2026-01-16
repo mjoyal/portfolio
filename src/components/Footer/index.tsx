@@ -1,106 +1,44 @@
 import styled from "@emotion/styled";
 import EmailMeButton from "../EmailMeButton";
-import InfiniteMarquee from "./InfinityMarquee";
 import Button from "../Button";
-import { Box, Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Stack } from "@mui/material";
 
-const FooterContainer = styled(Stack)<{ isMobile?: boolean }>`
-  max-width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 20px;
-  margin-bottom: ${({ isMobile }) => (isMobile ? "64px" : "48px")};
-  background-color: ${({ isMobile }) => (isMobile ? "black" : "transparent")};
-  padding-top: ${({ isMobile }) => (isMobile ? "40px" : "0px")};
-  border-top: ${({ isMobile }) =>
-    isMobile ? "1px solid rgba(245, 245, 245, 0.6);" : "0px"};
-`;
-
-const MobileButton = styled(Button)`
-  padding: 0;
-  text-align: left;
-  border-radius: 0;
-  padding-top: 10px;
-  margin-top: -10px;
-  padding-bottom: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-left: -20px;
-`;
-
-const MobileEmailButton = styled(EmailMeButton)`
-  padding: 0;
-  text-align: left;
-  border-radius: 0;
-  padding-top: 10px;
-  margin-top: -10px;
-  padding-bottom: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-left: -20px;
+const Title = styled.h1`
+  font-size: 12rem;
+  letter-spacing: -5px;
+  font-weight: 500;
+  line-height: 0.75;
+  text-align: center;
 `;
 
 const Footer = () => {
-  const theme = useTheme();
-
-  const isBelowMedium = useMediaQuery(theme.breakpoints.down("md"));
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
   return (
-    <FooterContainer
-      alignItems={{ xs: "flex-start", sm: "flex-end" }}
-      isMobile={isMobile}
+    <Stack
+      alignItems={"center"}
+      paddingBottom={{ xs: 5, md: 10 }}
+      gap={{ xs: 4, md: 5 }}
     >
-      {isMobile && (
-        <Stack pl={"16px"} gap={3}>
-          <Box textAlign={"left"}>
-            <h6>Still Curious?</h6>
-            <MobileButton
-              isDownload
-              isTextButton
-              href="/assets/mackenzie-joyal-resume-2025.pdf"
-            >
-              Download my resume
-            </MobileButton>
-          </Box>
-          <Box textAlign={"left"}>
-            <h6>Want to stay in touch?</h6>
-            <MobileButton
-              isTextButton
-              href="https://www.linkedin.com/in/mackenziejoyal"
-            >
-              Connect with me on LinkedIn
-            </MobileButton>
-          </Box>
-          <Box textAlign={"left"}>
-            <h6>Need to reach me?</h6>
-            <MobileEmailButton isTextButton />
-          </Box>
-        </Stack>
-      )}
-      <InfiniteMarquee />
+      <Title>Let's Talk.</Title>
+      <Stack direction={"row"}>
+        <Button
+          href="/assets/mackenzie-joyal-resume-2025.pdf"
+          isDownload
+          isTextButton
+          isSmall
+        >
+          Resume
+        </Button>
 
-      {!isMobile && (
-        <Stack direction={"row"}>
-          <Button
-            href="/assets/mackenzie-joyal-resume-2025.pdf"
-            isDownload
-            isTextButton
-          >
-            {isBelowMedium ? "Resume" : "Download my resume"}
-          </Button>
-
-          <EmailMeButton isTextButton isShortText={isBelowMedium} />
-          <Button
-            isTextButton
-            href="https://www.linkedin.com/in/mackenziejoyal"
-          >
-            LinkedIn
-          </Button>
-        </Stack>
-      )}
-    </FooterContainer>
+        <EmailMeButton isTextButton isShortText={true} />
+        <Button
+          isTextButton
+          isSmall
+          href="https://www.linkedin.com/in/mackenziejoyal"
+        >
+          LinkedIn
+        </Button>
+      </Stack>
+    </Stack>
   );
 };
 

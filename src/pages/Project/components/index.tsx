@@ -4,8 +4,7 @@ import Spacer from "src/components/Spacer";
 
 export const StyledP = styled.p<{ isHidden?: boolean }>`
   font-size: 1.25rem;
-  width: 400px;
-  max-width: 100%;
+  max-width: 600px;
   display: ${({ isHidden = false }) => (isHidden ? "none" : "block")};
 `;
 
