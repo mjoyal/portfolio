@@ -20,7 +20,7 @@ const ProjectModel = types
         }
 
         if (self.slug === "crewlywed") {
-          return "Socket.io multiplayer web game";
+          return "Real-time multiplayer web game";
         }
 
         return "Discovering live local music gigs";

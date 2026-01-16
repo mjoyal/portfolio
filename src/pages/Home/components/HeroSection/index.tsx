@@ -17,8 +17,9 @@ const HeroContainer = styled.div`
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     justify-content: center;
     align-items: flex-end;
-    gap: 2rem;
+    margin-top: 15px;
     margin-bottom: 0px;
+    gap: 2rem;
   }
 `;
 
@@ -46,7 +47,7 @@ const HeroText = styled.h4`
 const IntroText = styled.h6`
   width: 500px;
   max-width: 100%;
-  margin-top: 40px;
+  margin-top: 25px;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     margin-right: 3rem;

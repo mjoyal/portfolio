@@ -1,24 +1,17 @@
 import { Stack } from "@mui/material";
 import { observer } from "mobx-react";
-import NumberedListItem from "src/components/NumberedListItem";
 
 import styled from "@emotion/styled";
 import SlideUpMotion from "src/components/SlideUpMotion";
 import { StyledP } from "src/pages/Project/components";
 
-const Title = styled.h1`
-  font-size: 10rem;
-  letter-spacing: -5px;
-  font-weight: 500;
-  line-height: 0.75;
-`;
-
 const SectionDivider = styled.div`
-  height: 200px;
+  height: 150px;
 `;
 
-const SideNote = styled.p`
-  margin-top: 30px;
+const Line = styled.hr`
+  border: 0;
+  border-top: 1px solid rgba(245, 245, 245, 0.5);
 `;
 
 const SkillsSection = () => {
@@ -30,20 +23,76 @@ const SkillsSection = () => {
           justifyContent={"space-around"}
           gap={2}
         >
-          <p>{"(a bit about me)"}</p>
+          <p>{"(ABOUT)"}</p>
           <Stack maxWidth={"70ch"} alignItems={"flex-start"} gap={3}>
-            <h2>Part developer, part designer, part product brain.</h2>
+            <h2>
+              Design-led UI engineering focused on user experience, systems, and
+              detailed execution.
+            </h2>
             <StyledP>
-              I move between Figma and the frontend with ease. With my
-              background in business, I care as much about product goals as I do
-              about polish. After years in this work, I've learned that good UI
-              takes empathy, a sharp eye, and a bit of craft.
+              I work across design and front-end development to build cohesive,
+              scalable user interfaces. From Figma to production code, I focus
+              on usability, visual consistency, and product intent—balancing
+              design quality with technical constraints.
             </StyledP>
           </Stack>
         </Stack>
       </SlideUpMotion>
       <SectionDivider />
-      <Stack gap={10}>
+      <Line />
+      <SectionDivider />
+
+      <SlideUpMotion>
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          justifyContent={"space-around"}
+          gap={2}
+        >
+          <p>{"(SERVICES)"}</p>
+          <Stack maxWidth={"70ch"} alignItems={"flex-start"} gap={7}>
+            <h2>
+              I design and build thoughtful user experiences, from builder
+              websites to fully custom interfaces.
+            </h2>
+
+            <Stack
+              direction={{ xs: "column", md: "row" }}
+              gap={{ xs: 10, md: 20 }}
+            >
+              <Stack gap={0.5}>
+                <h5 style={{ marginBottom: "10px" }}>Development</h5>
+
+                <p>Front-end Engineering</p>
+                <p>React Native App Development</p>
+                <p>React Website Development</p>
+                <p>Webflow</p>
+                <p>Wordpress</p>
+              </Stack>
+
+              <Stack gap={0.5}>
+                <h5 style={{ marginBottom: "10px" }}>Design</h5>
+
+                <p>Web & App Design</p>
+                <p>Design Systems</p>
+                <p>UX Flows</p>
+                <p>User Experience Audit</p>
+              </Stack>
+            </Stack>
+          </Stack>
+        </Stack>
+      </SlideUpMotion>
+      <SectionDivider />
+      <Line />
+    </Stack>
+  );
+};
+
+export default observer(SkillsSection);
+
+/* 
+
+
+    <Stack gap={10}>
         <Stack
           direction={{ xs: "column", md: "row-reverse" }}
           justifyContent={"space-around"}
@@ -109,8 +158,5 @@ const SkillsSection = () => {
           </Stack>
         </Stack>
       </Stack>
-    </Stack>
-  );
-};
 
-export default observer(SkillsSection);
+*/

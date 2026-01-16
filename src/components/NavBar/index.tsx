@@ -21,7 +21,7 @@ const Container = styled(Stack)`
 const NavPillButton = styled(motion.button)`
   padding: 4px 14px;
   border-radius: 100px;
-  background-color: rgba(160, 199, 255, 0.3);
+  background-color: #202833;
 
   ${({ theme }) => (theme as any).breakpoints.up("sm")} {
     padding: 6px 14px;
@@ -29,7 +29,7 @@ const NavPillButton = styled(motion.button)`
 `;
 
 const NavButtonText = styled.h6`
-  font-size: 1.15rem;
+  font-size: 1rem;
 `;
 
 interface INavBarProps {
@@ -45,7 +45,7 @@ const NavBar = (props: INavBarProps) => {
   const { pathname } = useLocation();
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleCopy = async () => {
     try {
@@ -86,7 +86,7 @@ const NavBar = (props: INavBarProps) => {
           <h5>MacKenzie Joyal</h5>
         </button>
 
-        <Stack direction={"row"} gap={{ xs: 1.5, sm: 2 }}>
+        <Stack direction={"row"} gap={1.5}>
           {isHomePage && (
             <NavPillButton
               onClick={() => scrollToAnchor("about")}
@@ -97,16 +97,26 @@ const NavBar = (props: INavBarProps) => {
             </NavPillButton>
           )}
 
+          {isHomePage && (
+            <NavPillButton
+              onClick={() => scrollToAnchor("services")}
+              whileHover={{ boxShadow: "0 0 0 1px #a0c8ff" }}
+              transition={{ duration: 0.1, ease: "easeOut" }}
+            >
+              <NavButtonText>Services</NavButtonText>
+            </NavPillButton>
+          )}
+
           <NavPillButton
             onClick={handleCopy}
             whileHover={{ boxShadow: "0 0 0 1px #a0c8ff" }}
             transition={{ duration: 0.1, ease: "easeOut" }}
           >
-            <NavButtonText>Say hi!</NavButtonText>
+            <NavButtonText>Contact</NavButtonText>
           </NavPillButton>
         </Stack>
         <Toast
-          message="Email copied. Chat soon :)"
+          message="Email copied to clipboard. Chat soon!"
           isOpen={isOpen}
           handleClose={() => setIsOpen(false)}
           verticalOrigin="top"
