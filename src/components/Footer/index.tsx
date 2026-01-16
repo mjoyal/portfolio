@@ -16,7 +16,7 @@ const Footer = () => {
     <Stack
       alignItems={"center"}
       paddingBottom={{ xs: 5, md: 10 }}
-      gap={{ xs: 2, md: 5 }}
+      gap={{ xs: 4, md: 5 }}
     >
       <Title>Let's Talk.</Title>
       <Stack direction={"row"}>

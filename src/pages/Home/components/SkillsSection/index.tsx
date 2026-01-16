@@ -26,14 +26,15 @@ const SkillsSection = () => {
           <p>{"(ABOUT)"}</p>
           <Stack maxWidth={"70ch"} alignItems={"flex-start"} gap={3}>
             <h2>
-              Design-led UI engineering focused on user experience, systems, and
-              detailed execution.
+              I help teams deliver cohesive websites and user interfaces that
+              are durable, maintainable, and high-fidelity to the original
+              design.
             </h2>
             <StyledP>
-              I work across design and front-end development to build cohesive,
-              scalable user interfaces. From Figma to production code, I focus
-              on usability, visual consistency, and product intent—balancing
-              design quality with technical constraints.
+              Working across design and front-end development, I translate
+              intent from Figma into production-ready systems—prioritizing
+              usability, visual consistency, and strong client and user
+              experiences.
             </StyledP>
           </Stack>
         </Stack>
@@ -51,8 +52,8 @@ const SkillsSection = () => {
           <p>{"(SERVICES)"}</p>
           <Stack maxWidth={"70ch"} alignItems={"flex-start"} gap={7}>
             <h2>
-              I design and build thoughtful user experiences, from builder
-              websites to fully custom interfaces.
+              I design and build thoughtful user experiences, from site builders
+              to fully custom interfaces.
             </h2>
 
             <Stack
@@ -61,10 +62,8 @@ const SkillsSection = () => {
             >
               <Stack gap={0.5}>
                 <h5 style={{ marginBottom: "10px" }}>Development</h5>
-
                 <p>Front-end Engineering</p>
-                <p>React Native App Development</p>
-                <p>React Website Development</p>
+                <p>App & Website Development</p>
                 <p>Webflow</p>
                 <p>Wordpress</p>
               </Stack>
@@ -73,9 +72,9 @@ const SkillsSection = () => {
                 <h5 style={{ marginBottom: "10px" }}>Design</h5>
 
                 <p>Web & App Design</p>
+                <p>User Experience Strategy</p>
                 <p>Design Systems</p>
                 <p>UX Flows</p>
-                <p>User Experience Audit</p>
               </Stack>
             </Stack>
           </Stack>
