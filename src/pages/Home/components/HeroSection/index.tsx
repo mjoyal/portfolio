@@ -11,11 +11,14 @@ const HeroContainer = styled.div`
   flex-direction: column;
   height: 55vh;
   gap: 1rem;
+  margin-top: 50px;
+  margin-bottom: 25px;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     justify-content: center;
     align-items: flex-end;
     gap: 2rem;
+    margin-bottom: 0px;
   }
 `;
 
