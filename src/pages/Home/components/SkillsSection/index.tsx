@@ -39,7 +39,7 @@ const SkillsSection = () => {
         </Stack>
       </SlideUpMotion>
       <SectionDivider />
-      <Line />
+      <Line id="services" />
       <SectionDivider />
 
       <SlideUpMotion>
