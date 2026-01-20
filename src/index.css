@@ -46,7 +46,7 @@ h1 {
 
 h2 {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -2px;
   text-align: left;
   line-height: 1.1;
@@ -78,7 +78,7 @@ h5 {
 
 /* Using h6 as large body text */
 h6 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 400;
   text-align: left;
 }

@@ -10,9 +10,9 @@ const StyledButton = styled.button<{
       : `1.5px solid ${(theme as any).palette.primary.main}`};
   color: ${({ theme }) => (theme as any).palette.text.primary};
   border-radius: 100px;
-  font-weight: 600;
+  font-weight: 500;
   padding: ${({ isSmall }) => (isSmall ? "8px 30px" : "10px 40px")};
-  font-size: ${({ isSmall }) => (isSmall ? "1.5rem" : "1.5rem")};
+  font-size: ${({ isSmall }) => (isSmall ? "1.375rem" : "1.5rem")};
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   &:hover {
     background-color: ${({ theme, isTextButton }) =>
