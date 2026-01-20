@@ -18,18 +18,6 @@ const SectionDivider = styled.div`
   }
 `;
 
-// const FirstSectionDivider = styled.div`
-//   height: 50px;
-
-//   @media (min-width: 600px) {
-//     height: 150px;
-//   }
-
-//   @media (min-width: 900px) {
-//     height: 200px;
-//   }
-// `;
-
 interface IHomePageProps {
   hasAnimated: boolean;
 }
