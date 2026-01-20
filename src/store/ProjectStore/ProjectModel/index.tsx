@@ -23,7 +23,7 @@ const ProjectModel = types
           return "Real-time multiplayer web game";
         }
 
-        return "Discovering live local music gigs";
+        return "Discovering local music gigs";
       },
     };
   });

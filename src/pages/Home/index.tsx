@@ -13,7 +13,7 @@ const HomePageContainer = styled.div`
 const SectionDivider = styled.div`
   height: 150px;
 
-  @media (min-width: 900px) {
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
     height: 200px;
   }
 `;
