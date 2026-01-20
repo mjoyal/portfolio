@@ -97,7 +97,7 @@ const NavBar = (props: INavBarProps) => {
             </NavPillButton>
           )}
 
-          {isHomePage && (
+          {isHomePage && !isMobile && (
             <NavPillButton
               onClick={() => scrollToAnchor("services")}
               whileHover={{ boxShadow: "0 0 0 1px #a0c8ff" }}

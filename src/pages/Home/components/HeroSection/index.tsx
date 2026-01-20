@@ -48,6 +48,7 @@ const IntroText = styled.h6`
   width: 500px;
   max-width: 100%;
   margin-top: 25px;
+  font-size: 1.25rem;
 
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     margin-right: 3rem;
