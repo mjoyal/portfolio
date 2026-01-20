@@ -6,7 +6,11 @@ import SlideUpMotion from "src/components/SlideUpMotion";
 import { StyledP } from "src/pages/Project/components";
 
 const SectionDivider = styled.div`
-  height: 150px;
+  height: 100px;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    height: 150px;
+  }
 `;
 
 const Line = styled.hr`
@@ -57,7 +61,7 @@ const SkillsSection = () => {
 
             <Stack
               direction={{ xs: "column", md: "row" }}
-              gap={{ xs: 10, md: 20 }}
+              gap={{ xs: 5, md: 20 }}
             >
               <SlideUpMotion>
                 <Stack gap={0.5}>
