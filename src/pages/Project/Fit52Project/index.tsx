@@ -41,7 +41,7 @@ const Fit52Project = () => {
             rel="noopener noreferrer"
           >
             <Stack direction={"row"} gap={1} alignItems={"center"}>
-              <h6>{"fit52.com"}</h6>
+              <StyledP>{"fit52.com"}</StyledP>
               <LinkArrow />
             </Stack>
           </a>

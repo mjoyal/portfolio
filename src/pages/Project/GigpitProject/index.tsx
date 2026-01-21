@@ -17,9 +17,8 @@ import {
   HeroSectionWrapper,
   SecondaryImage,
 } from "../components";
-import GigpitLogo from "src/icons/GigpitLogo";
 import useStores from "src/hooks/useStores";
-import ProjectOverview from "../components/ProjectOverview";
+import LinkArrow from "src/icons/LinkArrow";
 
 const QuoteText = styled.h4`
   max-width: 700px;
@@ -30,6 +29,16 @@ const SmallerQuoteText = styled.h6`
   max-width: 500px;
 `;
 
+const CollaboratorsTitle = styled.p`
+  font-size: 0.875rem;
+  letter-spacing: 2.2px;
+  font-weight: 600;
+`;
+
+const CollaboratorsText = styled.p`
+  font-size: 1rem;
+`;
+
 const GigpitProject = () => {
   const {
     projectStore: { selectedProject },
@@ -38,27 +47,47 @@ const GigpitProject = () => {
   return (
     <ProjectPageContainer>
       <HeroSectionWrapper>
-        <GigpitLogo />
+        <h2>Gigpit.ca</h2>
+        <Stack
+          direction={"row"}
+          justifyContent={"space-between"}
+          width={"100%"}
+        >
+          <Stack direction={"row"} justifyContent={"start"} gap={10}>
+            <StyledP>
+              Product Design, UI Engineering, Project Management
+            </StyledP>
+            <StyledP>2024 - Present</StyledP>
+          </Stack>
+          <a
+            href={"https://gigpit.ca/"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Stack direction={"row"} gap={1} alignItems={"center"}>
+              <StyledP>{"gigpit.ca"}</StyledP>
+              <LinkArrow />
+            </Stack>
+          </a>
+        </Stack>
+
         <HeroImage src={selectedProject?.imageSource} />
       </HeroSectionWrapper>
 
-      <ProjectOverview
-        project="Gigpit"
-        title="A web app making local music easy to find (and hard to miss)"
-        paragraphs={[
-          "Local music often lives in the margins—buried in Instagram stories, scattered across venue sites, or shared by word of mouth. For many artists, that means playing to half-empty rooms, not for lack of talent, but visibility. Gigpit was built to change that.",
-          "We created a platform where anyone can post a show and everyone can find it—a shared space for artists, organizers, and fans. By centralizing events and simplifying discovery, Gigpit helps give local music the audience it deserves.",
-        ]}
-        // paragraphs={[
-        //   "Local music often gets lost—tucked in stories, scattered across venue sites, or passed along by word of mouth. Gigpit changes that by centralizing shows into one simple, searchable space. Anyone can post. Everyone can find. It’s built to give local music the audience it deserves.",
-        // ]}
-        collaborators={
-          "Elizabeth Scott, Aidan Polglase, Evan Dungate, Josh Taylor"
-        }
-        linkText="gigpit.ca"
-        url="https://gigpit.ca/"
-        date="2024 - Present"
-      />
+      <p>
+        Local music often lives in the margins—buried in Instagram stories,
+        scattered across venue sites, or shared by word of mouth. For many
+        artists, that means playing to half-empty rooms, not for lack of talent,
+        but visibility. Gigpit was built to change that. We created a platform
+        where anyone can post a show and everyone can find it—a shared space for
+        artists, organizers, and fans. By centralizing events and simplifying
+        discovery, Gigpit helps give local music the audience it deserves.
+      </p>
+
+      <CollaboratorsTitle>COLLABORATORS</CollaboratorsTitle>
+      <CollaboratorsText>
+        Ellie Scott, Aidan Polglase, Evan Dungate, Josh Taylor
+      </CollaboratorsText>
 
       <SectionDivider />
       <Stack
