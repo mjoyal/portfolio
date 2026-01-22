@@ -31,19 +31,22 @@ const CrewlywedProject = () => {
 
       <SectionDivider />
       <Stack
-        direction={"row"}
-        justifyContent={"space-around"}
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={"space-between"}
         marginBottom={10}
+        marginX={{ xs: 5, md: 10 }}
       >
-        <StyledP>Intro</StyledP>
+        <StyledP>(INTRO)</StyledP>
         <Box>
           <SectionTitle>
             During the pandemic, isolation was widespread
           </SectionTitle>
           <StyledP>
-            I was interested in how lightness and play could exist even at a
-            distance. I wanted to build something that helped people feel
-            playful and connected again.
+            I became interested in how play could recreate a sense of connection
+            from afar. Crewlywed is a real-time multiplayer web game inspired by
+            The Newlywed Game, built for shared rooms where players get to know
+            each other by guessing, bluffing, and competing their way to the
+            top.
           </StyledP>
         </Box>
       </Stack>
@@ -61,21 +64,21 @@ const CrewlywedProject = () => {
       <SectionDivider />
 
       <Stack
-        direction={"row"}
-        justifyContent={"space-around"}
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={"space-between"}
         marginBottom={10}
+        marginX={{ xs: 5, md: 10 }}
       >
-        <StyledP>1. Designing for play</StyledP>
+        <StyledP>(DESIGNING FOR PLAY)</StyledP>
         <Box>
           <SectionTitle>
-            We wanted the app to feel playful and fun.
+            The UI was designed to be light, funny, and social.
           </SectionTitle>
           <StyledP>
-            The UI was designed to keep this flow light, funny, and
-            social—blending clear structure with playful visuals to support both
-            engaging gameplay and connection. Every screen was built to feel
-            intuitive at a glance, so players could focus on laughing, bluffing,
-            and reacting—not figuring out how to play.
+            The design blends clear structure with playful visuals to support
+            both engaging gameplay and connection. Every screen was built to
+            feel intuitive at a glance, so players could focus on laughing,
+            bluffing, and reacting—not figuring out how to play.
           </StyledP>
         </Box>
       </Stack>
@@ -92,21 +95,17 @@ const CrewlywedProject = () => {
       </MockWrapper>
       <SectionDivider />
       <Stack
-        direction={"row"}
-        justifyContent={"space-around"}
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={"space-between"}
         marginBottom={10}
+        marginX={{ xs: 5, md: 10 }}
       >
-        <StyledP>2. Building game mechanics</StyledP>
+        <StyledP>(GAME MECHANICS)</StyledP>
         <Box>
-          <SectionTitle>
-            We wanted the app to feel playful and fun.
-          </SectionTitle>
           <StyledP>
-            The UI was designed to keep this flow light, funny, and
-            social—blending clear structure with playful visuals to support both
-            engaging gameplay and connection. Every screen was built to feel
-            intuitive at a glance, so players could focus on laughing, bluffing,
-            and reacting—not figuring out how to play.
+            We started by designing the game mechanics from the ground
+            up—defining rounds, scoring, and host permissions—which supported
+            clearer decisions, cleaner code, and confident collaboration.
           </StyledP>
         </Box>
       </Stack>
@@ -123,21 +122,19 @@ const CrewlywedProject = () => {
       </MockWrapper>
       <SectionDivider />
       <Stack
-        direction={"row"}
-        justifyContent={"space-around"}
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={"space-between"}
         marginBottom={10}
+        marginX={{ xs: 5, md: 10 }}
       >
-        <StyledP>3. Impact</StyledP>
+        <StyledP>(RESULTS)</StyledP>
         <Box>
-          <SectionTitle>
-            We wanted the app to feel playful and fun.
-          </SectionTitle>
           <StyledP>
-            The UI was designed to keep this flow light, funny, and
-            social—blending clear structure with playful visuals to support both
-            engaging gameplay and connection. Every screen was built to feel
-            intuitive at a glance, so players could focus on laughing, bluffing,
-            and reacting—not figuring out how to play.
+            We successfully built a Jackbox-style game that helped people feel
+            more connected during a time of global isolation. This project was a
+            milestone in designing and building a fully functional, real-time
+            web app—deepening my skills in front-end architecture, state
+            management, and WebSockets.
           </StyledP>
         </Box>
       </Stack>
@@ -153,23 +150,18 @@ const CrewlywedProject = () => {
       </MockWrapper>
       <SectionDivider />
       <Stack
-        direction={"row"}
-        justifyContent={"space-around"}
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={"space-between"}
         marginBottom={10}
+        marginX={{ xs: 5, md: 10 }}
       >
-        <StyledP>4. Impact</StyledP>
-        <Box>
-          <SectionTitle>
-            We wanted the app to feel playful and fun.
-          </SectionTitle>
-          <StyledP>
-            The UI was designed to keep this flow light, funny, and
-            social—blending clear structure with playful visuals to support both
-            engaging gameplay and connection. Every screen was built to feel
-            intuitive at a glance, so players could focus on laughing, bluffing,
-            and reacting—not figuring out how to play.
-          </StyledP>
-        </Box>
+        <StyledP>(REFLECTIONS)</StyledP>
+        <StyledP>
+          Building Crewlywed reinforced the importance of scalable state
+          architecture, even in small, fast-moving projects. As the app grew,
+          centralized patterns became essential for managing complexity and
+          supporting real-time collaboration.
+        </StyledP>
       </Stack>
     </ProjectPageContainer>
   );

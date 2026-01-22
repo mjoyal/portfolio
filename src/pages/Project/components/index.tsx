@@ -6,6 +6,10 @@ export const StyledP = styled.p<{ isHidden?: boolean }>`
   font-size: 1.25rem;
   max-width: 600px;
   display: ${({ isHidden = false }) => (isHidden ? "none" : "block")};
+  margin-bottom: 10px;
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    margin-bottom: 0px;
+  }
 `;
 
 export const HeroImage = styled.img`
@@ -15,7 +19,7 @@ export const HeroImage = styled.img`
   object-fit: cover;
   border-radius: 10px;
 
-  @media (min-width: 900px) {
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
     width: 100%;
     aspect-ratio: 2 / 1;
   }
@@ -27,7 +31,7 @@ export const SecondaryImage = styled.img`
   display: block;
   object-fit: cover;
 
-  @media (min-width: 900px) {
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
     height: 650px;
     width: auto;
   }
@@ -48,7 +52,11 @@ export const PhoneMockImage = styled.img`
 
 export const SectionTitle = styled.h4`
   max-width: 700px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    margin-bottom: 30px;
+  }
 `;
 
 export const SectionDivider = () => {
@@ -56,7 +64,7 @@ export const SectionDivider = () => {
 
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
-  return isSmallScreen ? <Spacer level={30} /> : <Spacer level={50} />;
+  return isSmallScreen ? <Spacer level={20} /> : <Spacer level={50} />;
 };
 
 export const BodyTextWrapper = (props: any) => {
@@ -95,10 +103,17 @@ export const MockImage = styled.img`
 `;
 
 export const MockWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
 
 const MockLabel = styled.p`
