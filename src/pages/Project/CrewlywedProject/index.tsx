@@ -2,7 +2,6 @@ import { observer } from "mobx-react";
 
 import { Box, Stack } from "@mui/material";
 import {
-  HeroSectionWrapper,
   HeroImage,
   ProjectPageContainer,
   SectionDivider,
@@ -20,14 +19,14 @@ const CrewlywedProject = () => {
 
   return (
     <ProjectPageContainer>
-      <HeroSectionWrapper>
+      <Stack gap={2} alignItems={"flex-start"}>
         <h2>Crewlywed</h2>
-        <Stack direction={"row"}>
+        <Stack direction={{ xs: "column", md: "row" }}>
           <StyledP>Product Design, Design System, Engineering</StyledP>
           <StyledP>2024 - Present</StyledP>
         </Stack>
         <HeroImage src={selectedProject?.heroImage} />
-      </HeroSectionWrapper>
+      </Stack>
 
       <SectionDivider />
       <Stack
@@ -35,6 +34,7 @@ const CrewlywedProject = () => {
         justifyContent={"space-between"}
         marginBottom={10}
         marginX={{ xs: 5, md: 10 }}
+        gap={{ xs: 1 }}
       >
         <StyledP>(INTRO)</StyledP>
         <Box>
@@ -68,6 +68,7 @@ const CrewlywedProject = () => {
         justifyContent={"space-between"}
         marginBottom={10}
         marginX={{ xs: 5, md: 10 }}
+        gap={{ xs: 1 }}
       >
         <StyledP>(DESIGNING FOR PLAY)</StyledP>
         <Box>
@@ -99,6 +100,7 @@ const CrewlywedProject = () => {
         justifyContent={"space-between"}
         marginBottom={10}
         marginX={{ xs: 5, md: 10 }}
+        gap={{ xs: 1 }}
       >
         <StyledP>(GAME MECHANICS)</StyledP>
         <Box>
@@ -126,6 +128,7 @@ const CrewlywedProject = () => {
         justifyContent={"space-between"}
         marginBottom={10}
         marginX={{ xs: 5, md: 10 }}
+        gap={{ xs: 1 }}
       >
         <StyledP>(RESULTS)</StyledP>
         <Box>
@@ -154,6 +157,7 @@ const CrewlywedProject = () => {
         justifyContent={"space-between"}
         marginBottom={10}
         marginX={{ xs: 5, md: 10 }}
+        gap={{ xs: 1 }}
       >
         <StyledP>(REFLECTIONS)</StyledP>
         <StyledP>

@@ -6,10 +6,6 @@ export const StyledP = styled.p<{ isHidden?: boolean }>`
   font-size: 1.25rem;
   max-width: 600px;
   display: ${({ isHidden = false }) => (isHidden ? "none" : "block")};
-  margin-bottom: 10px;
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    margin-bottom: 0px;
-  }
 `;
 
 export const HeroImage = styled.img`
