@@ -22,7 +22,7 @@ const Footer = () => {
       paddingY={{ xs: 12, md: 22 }}
       gap={{ xs: 4, md: 5 }}
     >
-      <Title>Let's Talk.</Title>
+      <Title>Let's Talk?</Title>
       <Stack direction={"row"}>
         <Button
           href="/assets/mackenzie-joyal-resume-2025.pdf"

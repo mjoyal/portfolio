@@ -31,7 +31,7 @@ const Spacer = styled.div`
 
 const ProjectCard = (props: IProjectCardProps) => {
   const {
-    project: { id, name, slug, imageSource, quickDescription },
+    project: { id, name, slug, cardImage, quickDescription },
     setIsVisible,
     ...rest
   } = props;
@@ -42,7 +42,6 @@ const ProjectCard = (props: IProjectCardProps) => {
 
   const navigate = useNavigate();
 
-  console.log("image ", imageSource);
   return (
     <Stack>
       <ImageWrapper
@@ -56,7 +55,7 @@ const ProjectCard = (props: IProjectCardProps) => {
         {...rest}
       >
         <ZoomImage
-          src={imageSource}
+          src={cardImage}
           whileHover={{ borderRadius: 30 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         />
