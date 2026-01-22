@@ -26,7 +26,7 @@ const CrewlywedProject = () => {
           <StyledP>Product Design, Design System, Engineering</StyledP>
           <StyledP>2024 - Present</StyledP>
         </Stack>
-        <HeroImage src={selectedProject?.imageSource} />
+        <HeroImage src={selectedProject?.heroImage} />
       </HeroSectionWrapper>
 
       <SectionDivider />

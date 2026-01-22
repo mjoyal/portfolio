@@ -71,7 +71,7 @@ const GigpitProject = () => {
           </a>
         </Stack>
 
-        <HeroImage src={selectedProject?.imageSource} />
+        <HeroImage src={selectedProject?.heroImage} />
       </HeroSectionWrapper>
 
       <p>

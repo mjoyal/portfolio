@@ -8,8 +8,8 @@ const ProjectModel = types
     name: types.maybe(types.string),
     slug: types.string,
     role: types.maybe(types.string),
-    imageSource: types.string,
-    heroImageSource: types.maybe(types.string),
+    cardImage: types.string,
+    heroImage: types.maybe(types.string),
     description: types.maybe(types.string),
   })
   .views((self) => {

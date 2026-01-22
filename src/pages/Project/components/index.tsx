@@ -59,13 +59,6 @@ export const SectionDivider = () => {
   return isSmallScreen ? <Spacer level={30} /> : <Spacer level={50} />;
 };
 
-export const MockWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 1rem;
-`;
-
 export const BodyTextWrapper = (props: any) => {
   const { children } = props;
 
@@ -98,6 +91,14 @@ export const HeroSectionWrapper = (props: any) => {
 export const MockImage = styled.img`
   aspect-ratio: 1;
   width: 100%;
+  border-radius: 12px;
+`;
+
+export const MockWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 1rem;
 `;
 
 const MockLabel = styled.p`

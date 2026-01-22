@@ -47,7 +47,7 @@ const Fit52Project = () => {
           </a>
         </Stack>
 
-        <HeroImage src={selectedProject?.imageSource} />
+        <HeroImage src={selectedProject?.heroImage} />
       </HeroSectionWrapper>
 
       <SectionDivider />
