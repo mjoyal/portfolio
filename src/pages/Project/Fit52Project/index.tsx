@@ -24,14 +24,18 @@ const Fit52Project = () => {
 
   return (
     <ProjectPageContainer>
-      <HeroSectionWrapper>
+      <Stack gap={2} alignItems={"flex-start"}>
         <h2>Fit52</h2>
         <Stack
-          direction={"row"}
+          direction={{ xs: "column", md: "row" }}
           justifyContent={"space-between"}
           width={"100%"}
         >
-          <Stack direction={"row"} justifyContent={"start"} gap={10}>
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            justifyContent={"start"}
+            gap={{ md: 10 }}
+          >
             <StyledP>Product Design, Engineering</StyledP>
             <StyledP>2021 - 2024</StyledP>
           </Stack>
@@ -48,16 +52,18 @@ const Fit52Project = () => {
         </Stack>
 
         <HeroImage src={selectedProject?.heroImage} />
-      </HeroSectionWrapper>
+      </Stack>
 
       <SectionDivider />
 
       <Stack
-        direction={"row"}
-        justifyContent={"space-around"}
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={"space-between"}
         marginBottom={10}
+        marginX={{ xs: 5, md: 10 }}
+        gap={{ xs: 1 }}
       >
-        <StyledP>Intro</StyledP>
+        <StyledP>(INTRO)</StyledP>
         <Box>
           <SectionTitle>
             During the pandemic, isolation was widespread
@@ -72,7 +78,7 @@ const Fit52Project = () => {
 
       <MockWrapper>
         <MockImage
-          src={"/images/fit52/swap-screen.webp"}
+          src={"/images/fit52/swap-screen.png"}
           alt="Mockup of fit52 exercise swap screen"
         />
         <MockImage
@@ -83,11 +89,13 @@ const Fit52Project = () => {
       <SectionDivider />
 
       <Stack
-        direction={"row"}
-        justifyContent={"space-around"}
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={"space-between"}
         marginBottom={10}
+        marginX={{ xs: 5, md: 10 }}
+        gap={{ xs: 1 }}
       >
-        <StyledP>1. Social Feed Redesign & Implementation</StyledP>
+        <StyledP>(SOCIAL FEED REDESIGN)</StyledP>
         <Box>
           <SectionTitle>
             During the pandemic, isolation was widespread
@@ -105,17 +113,19 @@ const Fit52Project = () => {
       <MockWrapper>
         <MockImage src={"/images/fit52/kettlebell.webp"} alt="Kettlebell" />
         <MockImage
-          src={"/images/fit52/swap-screen.webp"}
+          src={"/images/fit52/swap-screen.png"}
           alt="Mockup of fit52 exercise swap screen"
         />
       </MockWrapper>
       <SectionDivider />
       <Stack
-        direction={"row"}
-        justifyContent={"space-around"}
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={"space-between"}
         marginBottom={10}
+        marginX={{ xs: 5, md: 10 }}
+        gap={{ xs: 1 }}
       >
-        <StyledP>1. Social Feed Redesign & Implementation</StyledP>
+        <StyledP>(LOOKING FORWARD)</StyledP>
         <Box>
           <SectionTitle>
             During the pandemic, isolation was widespread
@@ -141,11 +151,13 @@ const Fit52Project = () => {
       </MockWrapper>
       <SectionDivider />
       <Stack
-        direction={"row"}
-        justifyContent={"space-around"}
+        direction={{ xs: "column", md: "row" }}
+        justifyContent={"space-between"}
         marginBottom={10}
+        marginX={{ xs: 5, md: 10 }}
+        gap={{ xs: 1 }}
       >
-        <StyledP>Reflections</StyledP>
+        <StyledP>(REFLECTIONS)</StyledP>
         <Box>
           <SectionTitle>
             During the pandemic, isolation was widespread
