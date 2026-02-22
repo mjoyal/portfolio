@@ -93,9 +93,9 @@ export const HeroSectionWrapper = (props: any) => {
 };
 
 export const MockImage = styled.img`
-  aspect-ratio: 1;
+  height: auto;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 4px;
 `;
 
 export const MockWrapper = styled.div`
@@ -107,7 +107,8 @@ export const MockWrapper = styled.div`
   ${({ theme }) => (theme as any).breakpoints.up("md")} {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 1rem;
   }
 `;

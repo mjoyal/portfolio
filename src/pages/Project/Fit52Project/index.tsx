@@ -40,7 +40,9 @@ const Fit52Project = () => {
             <StyledP>2021 - 2024</StyledP>
           </Stack>
           <a
-            href={"https://www.fit52.com/"}
+            href={
+              "https://apps.apple.com/us/app/fit52-with-carrie-underwood/id1475006543"
+            }
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -78,7 +80,7 @@ const Fit52Project = () => {
 
       <MockWrapper>
         <MockImage
-          src={"/images/fit52/swap-screen.png"}
+          src={"/images/fit52/social-feed.png"}
           alt="Mockup of fit52 exercise swap screen"
         />
         <MockImage
@@ -171,7 +173,6 @@ const Fit52Project = () => {
           </StyledP>
         </Box>
       </Stack>
-      <SectionDivider />
     </ProjectPageContainer>
   );
 };
