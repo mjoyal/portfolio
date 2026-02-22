@@ -27,7 +27,7 @@ const TextContainer = styled.div`
 `;
 
 const HeroText = styled.h4`
-  font-weight: 600;
+  font-weight: 500;
   // font-size: clamp(6rem, 24vw, 16rem);
   font-size: 26vw;
   letter-spacing: -0.05em;
