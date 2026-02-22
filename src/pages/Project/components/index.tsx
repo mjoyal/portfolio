@@ -8,15 +8,16 @@ export const StyledP = styled.p<{ isHidden?: boolean }>`
   display: ${({ isHidden = false }) => (isHidden ? "none" : "block")};
 `;
 
-export const ProjectImage = styled.img`
+export const HeroImage = styled.img`
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
+  border-radius: 10px;
 
-  @media (min-width: 900px) {
-    height: 525px;
-    width: auto;
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    width: 100%;
+    aspect-ratio: 2 / 1;
   }
 `;
 
@@ -26,7 +27,7 @@ export const SecondaryImage = styled.img`
   display: block;
   object-fit: cover;
 
-  @media (min-width: 900px) {
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
     height: 650px;
     width: auto;
   }
@@ -38,12 +39,6 @@ export const ProjectPageContainer = styled(Box)`
   min-height: 100vh;
   margin-top: 20px;
   margin-bottom: 200px;
-
-  /* TODO: This needs to change */
-  ${({ theme }) => (theme as any).breakpoints.up("md")} {
-    padding-left: clamp(20px, 8vw, 120px);
-    padding-right: clamp(20px, 8vw, 120px);
-  }
 `;
 
 export const PhoneMockImage = styled.img`
@@ -53,7 +48,11 @@ export const PhoneMockImage = styled.img`
 
 export const SectionTitle = styled.h4`
   max-width: 700px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    margin-bottom: 30px;
+  }
 `;
 
 export const SectionDivider = () => {
@@ -61,27 +60,7 @@ export const SectionDivider = () => {
 
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
-  return isSmallScreen ? <Spacer level={30} /> : <Spacer level={50} />;
-};
-
-export const MockWrapper = (props: any) => {
-  const {
-    children,
-    justifyContent,
-    gap = { xs: 6, md: 8 },
-    alignItems = { xs: "center", md: "flex-start" },
-  } = props;
-
-  return (
-    <Stack
-      direction={{ xs: "column", md: "row" }}
-      gap={gap}
-      alignItems={alignItems}
-      justifyContent={justifyContent}
-    >
-      {children}
-    </Stack>
-  );
+  return isSmallScreen ? <Spacer level={20} /> : <Spacer level={50} />;
 };
 
 export const BodyTextWrapper = (props: any) => {
@@ -105,13 +84,34 @@ const StyledHeroSectionWrapper = styled(Stack)`
 `;
 
 export const HeroSectionWrapper = (props: any) => {
-  const { children } = props;
+  const { children, restProps } = props;
   return (
-    <StyledHeroSectionWrapper gap={3} alignItems={"flex-start"}>
+    <StyledHeroSectionWrapper gap={2} alignItems={"flex-start"} {...restProps}>
       {children}
     </StyledHeroSectionWrapper>
   );
 };
+
+export const MockImage = styled.img`
+  height: auto;
+  width: 100%;
+  border-radius: 4px;
+`;
+
+export const MockWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  ${({ theme }) => (theme as any).breakpoints.up("md")} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+`;
 
 const MockLabel = styled.p`
   font-size: 1rem;
