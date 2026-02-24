@@ -30,8 +30,8 @@ const SkillsSection = () => {
           <h6>{"(ABOUT)"}</h6>
           <Stack maxWidth={"80ch"} alignItems={"flex-start"} gap={3}>
             <h2>
-              I believe strong interfaces should be both delightful to use and
-              durable in practice.
+              I believe interfaces should be both delightful to use and durable
+              in practice.
             </h2>
             <StyledP>
               Design means little if it can’t survive real context, client
